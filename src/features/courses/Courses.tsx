@@ -54,7 +54,7 @@ const PATH_SECTIONS = [
   {
     title: 'Part 4 · 사념처경',
     color: '#7C3AED',
-    lessons: ['satipatthana'],
+    lessons: ['satipatthana-1', 'satipatthana-2'],
   },
   {
     title: '추가학습 · 문법 완성',
@@ -126,7 +126,8 @@ const GRAMMAR_SECTIONS = [
     icon: '📖',
     items: [
       { label: '오온 분석 반복 구문', lesson: 'anatta', status: '무아경' },
-      { label: '수행 관찰 정형문', lesson: 'satipatthana', status: '사념처경' },
+      { label: '신념처 (몸 관찰)', lesson: 'satipatthana-1', status: '사념처경 1부' },
+      { label: '수심법념처 + 팔정도', lesson: 'satipatthana-2', status: '사념처경 2부' },
     ],
   },
   {

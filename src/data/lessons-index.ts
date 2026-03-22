@@ -8,6 +8,8 @@ import { ALL_VERSES as METTA_VERSES, ALL_METTA_WORDS } from './metta-words'
 import { ALL_VERSES as DHAMMACAKKA_VERSES } from './dhammacakka-words'
 import { ALL_VERSES as ANATTA_VERSES } from './anatta-words'
 import { ALL_VERSES as SATIPATTHANA_VERSES } from './satipatthana-words'
+import { KAYA_VERSES } from './satipatthana-kaya'
+import { DHAMMA_VERSES } from './satipatthana-dhamma'
 import { generateMixedQuizzes, generateGrammarQuizzes, generateFillBlankQuizzes, generateSentenceQuizzes } from './quiz-generator'
 import { ALL_ARRANGE_QUIZZES } from './mangala-arrange'
 import { MANGALA_GRAMMAR, DHAMMACAKKA_GRAMMAR, ANATTA_GRAMMAR, SATIPATTHANA_GRAMMAR } from './grammar-steps'
@@ -223,6 +225,10 @@ function buildMangalaSteps(): Step[] {
   // 독해/작문 조립 퀴즈 (셔플)
   steps.push(...shuffle(ALL_ARRANGE_QUIZZES))
 
+  // 빈칸 채우기 + 문장 완성
+  steps.push(...generateFillBlankQuizzes(ALL_VERSES))
+  steps.push(...generateSentenceQuizzes(ALL_VERSES))
+
   return steps
 }
 
@@ -358,24 +364,9 @@ function buildAnattaSteps(): Step[] {
   return steps
 }
 
-// ── Part 2: 사념처경 (문법 중심 구조) ──
-function buildSatipatthanaSteps(): Step[] {
-  const steps: Step[] = []
-
-  steps.push({
-    type: 'intro',
-    title: 'Mahāsatipaṭṭhāna Sutta',
-    subtitle: '사념처경',
-    description: '몸·느낌·마음·법 네 가지 관찰을 설한 수행 경전. 정형문 패턴과 긴 텍스트 독해를 학습합니다.',
-    icon: '🧘',
-  })
-
-  // 1단계: 문법 설명 (메인 콘텐츠!)
-  steps.push(...SATIPATTHANA_GRAMMAR)
-
-  // 2단계: 경전 원문
-  for (const entry of SATIPATTHANA_VERSES) {
-    // KAYA/DHAMMA_VERSES는 { verse: {...}, words } 구조일 수 있음
+// ── 사념처경 공통: verse 삽입 헬퍼 ──
+function pushVerseEntries(steps: Step[], verses: any[]) {
+  for (const entry of verses) {
     const v = 'verse' in entry ? entry.verse : entry
     const w = entry.words
     steps.push({
@@ -387,9 +378,51 @@ function buildSatipatthanaSteps(): Step[] {
       grammarNotes: ('grammarNotes' in v) ? (v as any).grammarNotes : undefined,
     })
   }
+}
 
-  // 4단계: 문법 퀴즈
+// ── Part 4-1: 사념처경 1부 — 신념처 (서문 + 몸 관찰) ──
+function buildSatipatthana1Steps(): Step[] {
+  const steps: Step[] = []
+
+  steps.push({
+    type: 'intro',
+    title: 'Mahāsatipaṭṭhāna Sutta (1부)',
+    subtitle: '사념처경 · 신념처',
+    description: '서문(유일한 길) + 신념처(몸 관찰): 호흡관찰, 자세관찰, 분명한 앎, 부정관(32신체), 요소관찰(4대), 9묘지관.',
+    icon: '🧘',
+  })
+
+  // 문법 설명
+  steps.push(...SATIPATTHANA_GRAMMAR)
+
+  // 신념처 원문 (KAYA_VERSES)
+  pushVerseEntries(steps, KAYA_VERSES)
+
+  // 문법 퀴즈 + 빈칸 + 문장
   steps.push(...generateGrammarQuizzes(SATIPATTHANA_GRAMMAR))
+  steps.push(...generateFillBlankQuizzes(KAYA_VERSES))
+  steps.push(...generateSentenceQuizzes(KAYA_VERSES))
+  return steps
+}
+
+// ── Part 4-2: 사념처경 2부 — 수/심/법념처 + 결론 ──
+function buildSatipatthana2Steps(): Step[] {
+  const steps: Step[] = []
+
+  steps.push({
+    type: 'intro',
+    title: 'Mahāsatipaṭṭhāna Sutta (2부)',
+    subtitle: '사념처경 · 수심법념처',
+    description: '수념처(느낌 관찰) + 심념처(마음 관찰) + 법념처(오개·오온·육입처·칠각지·사성제·팔정도) + 결론.',
+    icon: '🧘',
+  })
+
+  // 수/심/법념처 원문 (DHAMMA_VERSES)
+  pushVerseEntries(steps, DHAMMA_VERSES)
+
+  // 빈칸 + 문장
+  steps.push(...generateFillBlankQuizzes(DHAMMA_VERSES))
+  steps.push(...generateSentenceQuizzes(DHAMMA_VERSES))
   return steps
 }
 
@@ -416,8 +449,9 @@ const LESSON_META = [
   // Part 3: 무아경
   { id: 'anatta', title: 'Anattalakkhaṇa Sutta', subtitle: '무아경', icon: '🔍', category: 'prose' as const, builder: buildAnattaSteps },
 
-  // Part 4: 사념처경
-  { id: 'satipatthana', title: 'Mahāsatipaṭṭhāna Sutta', subtitle: '사념처경', icon: '🧘', category: 'prose' as const, builder: buildSatipatthanaSteps },
+  // Part 4: 사념처경 (2분할)
+  { id: 'satipatthana-1', title: 'Mahāsatipaṭṭhāna Sutta (1부)', subtitle: '사념처경 · 신념처', icon: '🧘', category: 'prose' as const, builder: buildSatipatthana1Steps },
+  { id: 'satipatthana-2', title: 'Mahāsatipaṭṭhāna Sutta (2부)', subtitle: '사념처경 · 수심법념처', icon: '🧘', category: 'prose' as const, builder: buildSatipatthana2Steps },
 
   // 추가학습 3: 문법 완성
   { id: 'grammar-extra3', title: '추가학습: 복합어 · 연성법 · 총정리', subtitle: '문법 완성', icon: '📐', category: 'grammar' as const, builder: buildGrammarExtra3Steps },
