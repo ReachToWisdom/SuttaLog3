@@ -1353,7 +1353,7 @@ export const QUESTION_BANK: {
         options: ['pabbajitena', 'gahaṭṭhena', 'bhikkhunā', 'sāvakena'],
         answer: 0,
         explanation: {
-          correct: 'pabbajitena는 "출가자에 의해"라는 뜻의 조격(도구격)입니다.',
+          correct: 'pabbajitena는 "출가자에 의해"라는 뜻의 조격(조격)입니다.',
           detail: 'pabbajita(출가자) — 재가자(gahaṭṭha)의 반대. 집을 떠난 수행자를 뜻합니다.',
         },
       },

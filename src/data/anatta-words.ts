@@ -445,7 +445,7 @@ export const VERSE_12 = {
   grammarNotes: [
     '문장 구조: 5온 각각에 11종 분류(시간3+내외2+조세2+열수2+원근2) 적용 후 삼상 부정 정형구',
     '핵심 문법: "netaṃ mama, nesohamasmi, na meso attā" — 제7단락의 삼상 정형구를 부정형으로 전환',
-    '복합어: atītānāgatapaccuppannaṃ = atīta(과거)+anāgata(미래)+paccuppanna(현재), yathābhūtaṃ = yathā(~대로)+bhūta(있는), sammappaññāya = sammā(바른)+paññā(지혜) 도구격',
+    '복합어: atītānāgatapaccuppannaṃ = atīta(과거)+anāgata(미래)+paccuppanna(현재), yathābhūtaṃ = yathā(~대로)+bhūta(있는), sammappaññāya = sammā(바른)+paññā(지혜) 조격',
     '성·수 변화: 5온의 성에 따라 관계대명사·형용사 어미 변화 — yaṃ/yā/ye, sabbaṃ/sabbā/sabbe',
     'daṭṭhabbaṃ = dassati(보다)의 미래수동분사(의무형). "보아야 한다"',
   ],
@@ -469,7 +469,7 @@ export const VERSE_12_WORDS: VerseWord[] = [
   { pali: 'meso', pronKo: '메소', meaning: '나의 이것', grammar: 'me + eso (연성)' },
   { pali: 'evametaṃ', pronKo: '에와메땅', meaning: '이와 같이 이것을', grammar: 'evaṃ + etaṃ (연성)' },
   { pali: 'yathābhūtaṃ', pronKo: '야타-부-땅', meaning: '있는 그대로', grammar: '부사 (yathā + bhūta)', important: true },
-  { pali: 'sammappaññāya', pronKo: '삼맙빤냐-야', meaning: '바른 지혜로', grammar: '여성 단수 도구격 (sammā + paññā)', important: true },
+  { pali: 'sammappaññāya', pronKo: '삼맙빤냐-야', meaning: '바른 지혜로', grammar: '여성 단수 조격 (sammā + paññā)', important: true },
   { pali: 'daṭṭhabbaṃ', pronKo: '닷타방', meaning: '보아야 한다', grammar: '미래수동분사 (dassati)', important: true },
 ]
 
@@ -524,7 +524,7 @@ export const VERSE_14 = {
   translation: '세존께서 이와 같이 말씀하셨다. 다섯 비구는 기뻐하며 세존의 말씀을 환영하였다. 이 가르침이 설해졌을 때 다섯 비구의 마음은 집착 없이 번뇌로부터 해탈하였다.',
   grammarNotes: [
     '문장 구조: ①결어 정형구(Idamavoca) ②청중 반응(abhinandun) ③해탈 선언(vimucciṃsu)',
-    '핵심 문법: bhaññamāne = 현재수동분사 처격("설해지고 있을 때"), anupādāya = 절대용법("집착 없이"), āsavehi = 도구격 복수("번뇌로부터")',
+    '핵심 문법: bhaññamāne = 현재수동분사 처격("설해지고 있을 때"), anupādāya = 절대용법("집착 없이"), āsavehi = 조격 복수("번뇌로부터")',
     '연성: Idamavoca = Idaṃ + avoca, Imasmiñca = Imasmiṃ + ca, vimucciṃsūti = vimucciṃsu + iti',
   ],
 }
@@ -542,7 +542,7 @@ export const VERSE_14_WORDS: VerseWord[] = [
   { pali: 'pañcavaggiyānaṃ', pronKo: '빤짜왁기야-낭', meaning: '다섯 무리의 (소유격)', grammar: '형용사 남성 복수 소유격' },
   { pali: 'bhikkhūnaṃ', pronKo: '빅쿠-낭', meaning: '비구들의', grammar: '남성 복수 소유격' },
   { pali: 'anupādāya', pronKo: '아누빠-다-야', meaning: '집착 없이', grammar: '절대용법 (an + upādāya)', important: true },
-  { pali: 'āsavehi', pronKo: '아-사웨히', meaning: '번뇌들로부터', grammar: '남성 복수 도구격 (āsava)', important: true },
+  { pali: 'āsavehi', pronKo: '아-사웨히', meaning: '번뇌들로부터', grammar: '남성 복수 조격 (āsava)', important: true },
   { pali: 'cittāni', pronKo: '짓따-니', meaning: '마음들이', grammar: '중성 복수 주격 (citta)' },
   { pali: 'vimucciṃsūti', pronKo: '위뭇찐수-띠', meaning: '해탈하였다 + 라고', grammar: '과거 3인칭 복수 + iti (vimuccati)', important: true },
 ]

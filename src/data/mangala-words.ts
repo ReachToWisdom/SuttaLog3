@@ -14,7 +14,7 @@ export const VERSE_0 = {
     '문장 구조: "Evaṃ me sutaṃ"(정형 도입구) + 주어(bhagavā) + 동사(viharati) + 장소(처격 3연속)',
     '처격(-yaṃ, -e): Sāvatthiyaṃ, Jetavane, ārāme — 장소를 나타내는 처격이 3개 연속하여 큰 장소→작은 장소로 좁혀감',
     '소유격(-ssa): Anāthapiṇḍikassa — "아나타삔디까의", 소유를 나타내는 소유격',
-    '"Evaṃ me sutaṃ"은 경전 시작의 정형구. me는 도구격(나에 의해) 또는 여격, sutaṃ은 과거수동분사(들려진 것)',
+    '"Evaṃ me sutaṃ"은 경전 시작의 정형구. me는 조격(나에 의해) 또는 여격, sutaṃ은 과거수동분사(들려진 것)',
   ],
 }
 
@@ -196,8 +196,8 @@ export const VERSE_8 = {
   pronKo: '가-라워 짜 니와-또 짜, 산뚯티- 짜 까딴누따-;\n까-레나 담마사와낭, 에땅 망갈라뭇따망.',
   translation: '존경과 겸손, 만족과 감사함,\n때맞추어 법을 들음, 이것이 최상의 행복이니라.',
   grammarNotes: [
-    '문장 구조: 4개 덕목 명사(gāravo, nivāto, santuṭṭhī, kataññutā) + 도구격 부사구(kālena) + 복합명사(dhammasavanaṃ)',
-    '도구격(-ena): kālena — "때에 맞추어/적절한 때에". 수단/방법을 나타내는 도구격의 부사적 용법',
+    '문장 구조: 4개 덕목 명사(gāravo, nivāto, santuṭṭhī, kataññutā) + 조격 부사구(kālena) + 복합명사(dhammasavanaṃ)',
+    '조격(-ena): kālena — "때에 맞추어/적절한 때에". 수단/방법을 나타내는 조격의 부사적 용법',
     '추상명사 -tā: kataññutā = kata(행해진) + aññu(아는) + tā → "행해진 것을 아는 상태" = 감사함',
     '복합어: dhammasavanaṃ = dhamma(법) + savana(들음) → "법을 들음". 목적격 관계 복합어(tappurisa)',
   ],
@@ -208,7 +208,7 @@ export const VERSE_8_WORDS: VerseWord[] = [
   { pali: 'nivāto', pronKo: '니와-또', meaning: '겸손', grammar: '남성 단수 주격' },
   { pali: 'santuṭṭhī', pronKo: '산뚯티-', meaning: '만족', grammar: '여성 단수 주격' },
   { pali: 'kataññutā', pronKo: '까딴누따-', meaning: '감사함/은혜를 앎', grammar: '여성 단수 주격 (kata + aññu + tā)' },
-  { pali: 'kālena', pronKo: '까-레나', meaning: '때에 맞추어', grammar: '남성 단수 도구격' },
+  { pali: 'kālena', pronKo: '까-레나', meaning: '때에 맞추어', grammar: '남성 단수 조격' },
   { pali: 'dhammasavanaṃ', pronKo: '담마사와낭', meaning: '법을 들음', grammar: '중성 단수 주격 (dhamma + savana)' },
 ]
 
@@ -218,7 +218,7 @@ export const VERSE_9 = {
   pronKo: '칸띠- 짜 소와짯사따-, 사마나-난짜 닷사낭;\n까-레나 담마사-깟차-, 에땅 망갈라뭇따망.',
   translation: '인내와 유순함, 수행자들을 만남,\n때맞추어 법에 대해 논의함, 이것이 최상의 행복이니라.',
   grammarNotes: [
-    '문장 구조: 명사(khantī, sovacassatā) + 소유격(samaṇānaṃ)+명사(dassanaṃ) + 도구격부사(kālena)+명사(dhammasākacchā)',
+    '문장 구조: 명사(khantī, sovacassatā) + 소유격(samaṇānaṃ)+명사(dassanaṃ) + 조격부사(kālena)+명사(dhammasākacchā)',
     '추상명사 -tā: sovacassatā = su(잘) + vacassa(말 듣는) + tā → "말 잘 듣는 상태" = 유순함',
     '연성(sandhi): samaṇānañca = samaṇānaṃ + ca. 소유격 복수 어미 -ānaṃ에 ca가 결합하여 -ānañca',
     '복합어: dhammasākacchā = dhamma(법) + sākacchā(논의) → "법에 대한 논의". 여성 명사 단수 주격',
@@ -261,14 +261,14 @@ export const VERSE_11 = {
   grammarNotes: [
     '문장 구조: 관계절(yassa cittaṃ na kampati) + 분사구(phuṭṭhassa lokadhammehi) + 형용사 나열 + 판정문',
     '관계대명사: yassa — "그의(~인 자의)". 소유격. cittaṃ(마음이) na kampati(흔들리지 않는) 자의 마음',
-    '과거분사+도구격: phuṭṭhassa(접촉된 자의, 소유격) + lokadhammehi(세상법들에 의해, 도구격) → "세상법에 부딪힌 자의"',
+    '과거분사+조격: phuṭṭhassa(접촉된 자의, 소유격) + lokadhammehi(세상법들에 의해, 조격) → "세상법에 부딪힌 자의"',
     '접두사 a-/vi-: asokaṃ = a+soka(슬픔 없는), virajaṃ = vi+raja(티끌 없는). 중성 주격으로 cittaṃ의 상태 서술',
   ],
 }
 
 export const VERSE_11_WORDS: VerseWord[] = [
   { pali: 'Phuṭṭhassa', pronKo: '풋탓사', meaning: '부딪힌 자의', grammar: '과거분사 남성 단수 소유격 (phusati)' },
-  { pali: 'lokadhammehi', pronKo: '로까담메히', meaning: '세상의 법들에 의해', grammar: '남성 복수 도구격 (loka + dhamma)' },
+  { pali: 'lokadhammehi', pronKo: '로까담메히', meaning: '세상의 법들에 의해', grammar: '남성 복수 조격 (loka + dhamma)' },
   { pali: 'cittaṃ', pronKo: '찟땅', meaning: '마음이', grammar: '중성 단수 주격' },
   { pali: 'yassa', pronKo: '얏사', meaning: '~의 (그의)', grammar: '관계대명사 남성 단수 소유격' },
   { pali: 'na', pronKo: '나', meaning: '~않다', grammar: '불변어(부정사)' },

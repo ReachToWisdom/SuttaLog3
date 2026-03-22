@@ -886,7 +886,7 @@ export const VERSE_8_WORDS: VerseWord[] = [
   { pali: 'ca', pronKo: '짜', meaning: '그리고', grammar: '불변어' },
   { pali: 'uppannassa', pronKo: '웁빤낫사', meaning: '생겨난 것의', grammar: '과거분사 소유격' },
   { pali: 'satisambojjhaṅgassa', pronKo: '사띠삼봇장갓사', meaning: '새김의 깨달음 요소의', grammar: '남성 단수 소유격' },
-  { pali: 'bhāvanāya', pronKo: '바-와나-야', meaning: '수행으로/닦음으로', grammar: '여성 단수 도구격', important: true },
+  { pali: 'bhāvanāya', pronKo: '바-와나-야', meaning: '수행으로/닦음으로', grammar: '여성 단수 조격', important: true },
   { pali: 'pāripūrī', pronKo: '빠-리뿌-리-', meaning: '완성/충만', grammar: '여성 단수 주격', important: true },
   { pali: 'hoti', pronKo: '호띠', meaning: '~이다', grammar: '현재 3인칭 단수' },
   { pali: 'tañca', pronKo: '딴짜', meaning: '그것을 그리고', grammar: '대명사 목적격 + ca' },
@@ -959,8 +959,8 @@ export const VERSE_10 = {
   grammarNotes: [
     '문장 구조: 의문문 + 8종 괴로움 나열 + 총괄문. pi(~도)가 반복되며 병렬 강조',
     '핵심 문법: Katamañca = 의문대명사("어떤 것이?"). jāti/jarā/byādhi/maraṇa = 태어남/늙음/병/죽음(4고)',
-    '복합어: appiyehi sampayogo = appiya(싫어하는)+도구격 + sampayoga(만남). piyehi vippayogo = piya(좋아하는)+도구격 + vippayoga(헤어짐)',
-    '총괄문: saṅkhittena = "요약하면"(도구격 부사). pañcupādānakkhandhā = pañca + upādāna + khandha + 주격 복수',
+    '복합어: appiyehi sampayogo = appiya(싫어하는)+조격 + sampayoga(만남). piyehi vippayogo = piya(좋아하는)+조격 + vippayoga(헤어짐)',
+    '총괄문: saṅkhittena = "요약하면"(조격 부사). pañcupādānakkhandhā = pañca + upādāna + khandha + 주격 복수',
   ],
 }
 
@@ -977,10 +977,10 @@ export const VERSE_10_WORDS: VerseWord[] = [
   { pali: 'dukkhā', pronKo: '둑카-', meaning: '괴로움이다', grammar: '여성 단수 주격' },
   { pali: 'maraṇampi', pronKo: '마라남삐', meaning: '죽음도', grammar: '중성 단수 주격 + pi', important: true },
   { pali: 'dukkhaṃ', pronKo: '둑캉', meaning: '괴로움이다', grammar: '중성 단수 주격' },
-  { pali: 'appiyehi', pronKo: '압삐예히', meaning: '싫어하는 것들과', grammar: '형용사 남성 복수 도구격 (a + piya)', important: true },
+  { pali: 'appiyehi', pronKo: '압삐예히', meaning: '싫어하는 것들과', grammar: '형용사 남성 복수 조격 (a + piya)', important: true },
   { pali: 'sampayogo', pronKo: '삼빠요고', meaning: '만남/결합', grammar: '남성 단수 주격', important: true },
   { pali: 'dukkho', pronKo: '둑코', meaning: '괴로움이다', grammar: '남성 단수 주격' },
-  { pali: 'piyehi', pronKo: '삐예히', meaning: '좋아하는 것들과', grammar: '형용사 남성 복수 도구격', important: true },
+  { pali: 'piyehi', pronKo: '삐예히', meaning: '좋아하는 것들과', grammar: '형용사 남성 복수 조격', important: true },
   { pali: 'vippayogo', pronKo: '윕빠요고', meaning: '헤어짐/이별', grammar: '남성 단수 주격', important: true },
   { pali: 'dukkho', pronKo: '둑코', meaning: '괴로움이다', grammar: '남성 단수 주격' },
   { pali: 'yampicchaṃ', pronKo: '얌삣짱', meaning: '원하는 것을(yaṃ+icchaṃ)', grammar: '관계대명사+현재분사' },
@@ -988,7 +988,7 @@ export const VERSE_10_WORDS: VerseWord[] = [
   { pali: 'labhati', pronKo: '라바띠', meaning: '얻다', grammar: '현재 3인칭 단수' },
   { pali: 'tampi', pronKo: '땀삐', meaning: '그것도', grammar: '대명사 중성 단수 주격 + pi' },
   { pali: 'dukkhaṃ', pronKo: '둑캉', meaning: '괴로움이다', grammar: '중성 단수 주격' },
-  { pali: 'saṅkhittena', pronKo: '상킷테나', meaning: '요약하면', grammar: '과거분사 중성 단수 도구격(부사적)' },
+  { pali: 'saṅkhittena', pronKo: '상킷테나', meaning: '요약하면', grammar: '과거분사 중성 단수 조격(부사적)' },
   { pali: 'pañcupādānakkhandhā', pronKo: '빤주빠-다-낙칸다-', meaning: '다섯 취착의 무더기들이', grammar: '남성 복수 주격 (pañca + upādāna + khandha)', important: true },
   { pali: 'dukkhā', pronKo: '둑카-', meaning: '괴로움이다', grammar: '여성/남성 복수 주격' },
 ]
@@ -1209,7 +1209,7 @@ export const VERSE_18 = {
   pronKo: '까따모 짜 빅카웨 삼마-아-지-오? 이다 빅카웨 아리야사-와꼬 밋차-아-지-왕 빠하-야 삼마-아-지-웨나 지-위땅 깝뻬띠 — 아양 웃짜띠 빅카웨 삼마-아-지-오.',
   translation: '비구들이여, 바른 생계란 무엇인가? 여기서 거룩한 제자는 삿된 생계를 버리고 바른 생계로 생활한다 — 이것을 바른 생계라고 부른다.',
   grammarNotes: [
-    '핵심 문법: micchāājīvaṃ pahāya = 삿된 생계를 버리고(절대분사). sammāājīvena = 바른 생계로(도구격, 수단)',
+    '핵심 문법: micchāājīvaṃ pahāya = 삿된 생계를 버리고(절대분사). sammāājīvena = 바른 생계로(조격, 수단)',
     '복합어: ariyasāvako = ariya(거룩한) + sāvaka(제자). jīvitaṃ kappeti = "생계를 꾸리다/생활하다"',
   ],
 }
@@ -1224,7 +1224,7 @@ export const VERSE_18_WORDS: VerseWord[] = [
   { pali: 'ariyasāvako', pronKo: '아리야사-와꼬', meaning: '거룩한 제자는', grammar: '남성 단수 주격 (ariya + sāvaka)', important: true },
   { pali: 'micchāājīvaṃ', pronKo: '밋차-아-지-왕', meaning: '삿된 생계를', grammar: '남성 단수 목적격 (micchā + ājīva)' },
   { pali: 'pahāya', pronKo: '빠하-야', meaning: '버리고서', grammar: '절대분사 (pajahati)', important: true },
-  { pali: 'sammāājīvena', pronKo: '삼마-아-지-웨나', meaning: '바른 생계로', grammar: '남성 단수 도구격' },
+  { pali: 'sammāājīvena', pronKo: '삼마-아-지-웨나', meaning: '바른 생계로', grammar: '남성 단수 조격' },
   { pali: 'jīvitaṃ', pronKo: '지-위땅', meaning: '생활을/삶을', grammar: '중성 단수 목적격' },
   { pali: 'kappeti', pronKo: '깝뻬띠', meaning: '꾸리다/영위하다', grammar: '현재 3인칭 단수' },
   { pali: 'ayaṃ', pronKo: '아양', meaning: '이것을', grammar: '지시대명사' },
@@ -1451,7 +1451,7 @@ export const VERSE_21_WORDS: VerseWord[] = [
   { pali: 'ca', pronKo: '짜', meaning: '그리고', grammar: '불변어' },
   { pali: 'sampajāno', pronKo: '삼빠자-노', meaning: '분명히 아는', grammar: '형용사' },
   { pali: 'sukhañca', pronKo: '수칸짜', meaning: '즐거움을 그리고', grammar: '중성 단수 목적격 + ca' },
-  { pali: 'kāyena', pronKo: '까-예나', meaning: '몸으로', grammar: '남성 단수 도구격' },
+  { pali: 'kāyena', pronKo: '까-예나', meaning: '몸으로', grammar: '남성 단수 조격' },
   { pali: 'paṭisaṃvedeti', pronKo: '빠띠상웨데띠', meaning: '경험한다', grammar: '현재 3인칭 단수', important: true },
   { pali: 'yaṃ', pronKo: '양', meaning: '그것을', grammar: '관계대명사' },
   { pali: 'taṃ', pronKo: '땅', meaning: '그것을', grammar: '지시대명사' },

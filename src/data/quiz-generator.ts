@@ -6,34 +6,34 @@ import type { VerseWord } from './types'
 // 동일 어근에서 파생된 다른 격/형태 → 대충 알면 못 맞추게
 const CASE_DISTRACTORS: Record<string, { text: string; why: string }[]> = {
   'me': [
-    { text: 'mayā', why: 'mayā는 도구격(~에 의해)이지 주격(나는)이 아닙니다' },
+    { text: 'mayā', why: 'mayā는 조격(~에 의해)이지 주격(나는)이 아닙니다' },
     { text: 'mama', why: 'mama는 소유격(나의)이지 주격(나는)이 아닙니다' },
     { text: 'maṃ', why: 'maṃ은 목적격(나를)이지 주격(나는)이 아닙니다' },
   ],
   'sutaṃ': [
     { text: 'sutassa', why: 'sutassa는 소유격(들은 것의)입니다' },
-    { text: 'sutena', why: 'sutena는 도구격(들은 것에 의해)입니다' },
+    { text: 'sutena', why: 'sutena는 조격(들은 것에 의해)입니다' },
     { text: 'suttaṃ', why: 'suttaṃ은 경전(sutta)의 목적격이지, 듣다(suṇāti)의 분사가 아닙니다' },
   ],
   'bhagavā': [
     { text: 'bhagavato', why: 'bhagavato는 소유격/여격(세존의/세존에게)입니다' },
     { text: 'bhagavantaṃ', why: 'bhagavantaṃ은 목적격(세존을)입니다' },
-    { text: 'bhagavatā', why: 'bhagavatā는 도구격(세존에 의해)입니다' },
+    { text: 'bhagavatā', why: 'bhagavatā는 조격(세존에 의해)입니다' },
   ],
   'devā': [
     { text: 'devānaṃ', why: 'devānaṃ은 소유격(천신들의)이지 주격(천신들이)이 아닙니다' },
     { text: 'devaṃ', why: 'devaṃ은 단수 목적격(천신을)입니다' },
-    { text: 'devehi', why: 'devehi는 도구격(천신들에 의해)입니다' },
+    { text: 'devehi', why: 'devehi는 조격(천신들에 의해)입니다' },
   ],
   'maṅgalāni': [
     { text: 'maṅgalaṃ', why: 'maṅgalaṃ은 단수(행복을), maṅgalāni는 복수(행복들을)입니다' },
     { text: 'maṅgalassa', why: 'maṅgalassa는 소유격(행복의)입니다' },
-    { text: 'maṅgalehi', why: 'maṅgalehi는 도구격(행복들에 의해)입니다' },
+    { text: 'maṅgalehi', why: 'maṅgalehi는 조격(행복들에 의해)입니다' },
   ],
   'bālānaṃ': [
     { text: 'bālā', why: 'bālā는 주격(어리석은 이들이)이지 소유격이 아닙니다' },
     { text: 'bālaṃ', why: 'bālaṃ은 단수 목적격(어리석은 이를)입니다' },
-    { text: 'bālehi', why: 'bālehi는 도구격(어리석은 이들에 의해)입니다' },
+    { text: 'bālehi', why: 'bālehi는 조격(어리석은 이들에 의해)입니다' },
   ],
   'dhammesu': [
     { text: 'dhammaṃ', why: 'dhammaṃ은 단수 목적격(법을), dhammesu는 복수 처격(법들에서)입니다' },
@@ -42,13 +42,13 @@ const CASE_DISTRACTORS: Record<string, { text: string; why: string }[]> = {
   ],
   'cittaṃ': [
     { text: 'cittassa', why: 'cittassa는 소유격(마음의)입니다' },
-    { text: 'cittena', why: 'cittena는 도구격(마음에 의해)입니다' },
+    { text: 'cittena', why: 'cittena는 조격(마음에 의해)입니다' },
     { text: 'cittesu', why: 'cittesu는 복수 처격(마음들에서)입니다' },
   ],
   'kammāni': [
     { text: 'kammaṃ', why: 'kammaṃ은 단수(행위를), kammāni는 복수(행위들)입니다' },
     { text: 'kammassa', why: 'kammassa는 단수 소유격(행위의)입니다' },
-    { text: 'kammehi', why: 'kammehi는 복수 도구격(행위들에 의해)입니다' },
+    { text: 'kammehi', why: 'kammehi는 복수 조격(행위들에 의해)입니다' },
   ],
   // 동사 인칭 변화
   'viharati': [
@@ -59,48 +59,48 @@ const CASE_DISTRACTORS: Record<string, { text: string; why: string }[]> = {
   // a-어간 남성 전체 (dhamma)
   'dhammo': [
     { text: 'dhammaṃ', why: 'dhammaṃ은 목적격(법을)이지 주격(법이)이 아닙니다' },
-    { text: 'dhammena', why: 'dhammena는 도구격(법에 의해)입니다' },
+    { text: 'dhammena', why: 'dhammena는 조격(법에 의해)입니다' },
     { text: 'dhammassa', why: 'dhammassa는 소유격(법의)입니다' },
   ],
   'dhammaṃ': [
     { text: 'dhammo', why: 'dhammo는 주격(법이)이지 목적격(법을)이 아닙니다' },
     { text: 'dhamme', why: 'dhamme는 처격(법에서)입니다' },
-    { text: 'dhammena', why: 'dhammena는 도구격(법에 의해)입니다' },
+    { text: 'dhammena', why: 'dhammena는 조격(법에 의해)입니다' },
   ],
   // tathāgata 격변화
   'tathāgatena': [
-    { text: 'tathāgato', why: 'tathāgato는 주격(여래가)이지 도구격이 아닙니다' },
+    { text: 'tathāgato', why: 'tathāgato는 주격(여래가)이지 조격이 아닙니다' },
     { text: 'tathāgatassa', why: 'tathāgatassa는 소유격(여래의)입니다' },
     { text: 'tathāgataṃ', why: 'tathāgataṃ은 목적격(여래를)입니다' },
   ],
   'tathāgato': [
-    { text: 'tathāgatena', why: 'tathāgatena는 도구격(여래에 의해)입니다' },
+    { text: 'tathāgatena', why: 'tathāgatena는 조격(여래에 의해)입니다' },
     { text: 'tathāgatassa', why: 'tathāgatassa는 소유격(여래의)입니다' },
     { text: 'tathāgataṃ', why: 'tathāgataṃ은 목적격(여래를)입니다' },
   ],
   // dukkha 격변화
   'dukkhaṃ': [
     { text: 'dukkhassa', why: 'dukkhassa는 소유격(고통의)입니다' },
-    { text: 'dukkhena', why: 'dukkhena는 도구격(고통에 의해)입니다' },
+    { text: 'dukkhena', why: 'dukkhena는 조격(고통에 의해)입니다' },
     { text: 'dukkhe', why: 'dukkhe는 처격(고통에서)입니다' },
   ],
   // magga (도)
   'maggo': [
     { text: 'maggaṃ', why: 'maggaṃ은 목적격(길을)이지 주격(길이)이 아닙니다' },
-    { text: 'maggena', why: 'maggena는 도구격(길에 의해)입니다' },
+    { text: 'maggena', why: 'maggena는 조격(길에 의해)입니다' },
     { text: 'maggassa', why: 'maggassa는 소유격(길의)입니다' },
   ],
   // bhikkhu 호격/주격
   'bhikkhave': [
     { text: 'bhikkhū', why: 'bhikkhū는 주격(비구들이)이지 호격이 아닙니다' },
     { text: 'bhikkhunaṃ', why: 'bhikkhunaṃ은 소유격(비구들의)입니다' },
-    { text: 'bhikkhūhi', why: 'bhikkhūhi는 도구격(비구들에 의해)입니다' },
+    { text: 'bhikkhūhi', why: 'bhikkhūhi는 조격(비구들에 의해)입니다' },
   ],
 
   // ── 무아경 핵심 단어 ──
   'rūpaṃ': [
     { text: 'rūpassa', why: 'rūpassa는 소유격(물질의)이지 주격이 아닙니다' },
-    { text: 'rūpena', why: 'rūpena는 도구격(물질에 의해)입니다' },
+    { text: 'rūpena', why: 'rūpena는 조격(물질에 의해)입니다' },
     { text: 'rūpe', why: 'rūpe는 처격(물질에서)입니다' },
   ],
   'vedanā': [
@@ -116,11 +116,11 @@ const CASE_DISTRACTORS: Record<string, { text: string; why: string }[]> = {
   'saṅkhārā': [
     { text: 'saṅkhāre', why: 'saṅkhāre는 목적격 복수(형성들을)입니다' },
     { text: 'saṅkhāresu', why: 'saṅkhāresu는 처격 복수(형성들에서)입니다' },
-    { text: 'saṅkhārehi', why: 'saṅkhārehi는 도구격 복수(형성들에 의해)입니다' },
+    { text: 'saṅkhārehi', why: 'saṅkhārehi는 조격 복수(형성들에 의해)입니다' },
   ],
   'viññāṇaṃ': [
     { text: 'viññāṇassa', why: 'viññāṇassa는 소유격(의식의)입니다' },
-    { text: 'viññāṇena', why: 'viññāṇena는 도구격(의식에 의해)입니다' },
+    { text: 'viññāṇena', why: 'viññāṇena는 조격(의식에 의해)입니다' },
     { text: 'viññāṇe', why: 'viññāṇe는 처격(의식에서)입니다' },
   ],
   'anattā': [
@@ -131,7 +131,7 @@ const CASE_DISTRACTORS: Record<string, { text: string; why: string }[]> = {
   'aniccaṃ': [
     { text: 'niccaṃ', why: 'niccaṃ은 "영원한"이고, aniccaṃ은 "무상한"입니다 — 정반대!' },
     { text: 'aniccā', why: 'aniccā는 여성/복수형이지 중성 단수가 아닙니다' },
-    { text: 'aniccena', why: 'aniccena는 도구격(무상한 것에 의해)입니다' },
+    { text: 'aniccena', why: 'aniccena는 조격(무상한 것에 의해)입니다' },
   ],
 
   // ── 사념처경 핵심 단어 ──
@@ -142,12 +142,12 @@ const CASE_DISTRACTORS: Record<string, { text: string; why: string }[]> = {
   ],
   'satiṃ': [
     { text: 'sati', why: 'sati는 주격(새김이)이지 목적격(새김을)이 아닙니다' },
-    { text: 'satiyā', why: 'satiyā는 도구격/여격(새김에 의해/새김을 위해)입니다' },
+    { text: 'satiyā', why: 'satiyā는 조격/여격(새김에 의해/새김을 위해)입니다' },
     { text: 'satimā', why: 'satimā는 "새김을 가진"이라는 형용사입니다' },
   ],
   'taṇhā': [
     { text: 'taṇhaṃ', why: 'taṇhaṃ은 목적격(갈애를)입니다' },
-    { text: 'taṇhāya', why: 'taṇhāya는 여격/도구격(갈애에 의해)입니다' },
+    { text: 'taṇhāya', why: 'taṇhāya는 여격/조격(갈애에 의해)입니다' },
     { text: 'taṇhāsu', why: 'taṇhāsu는 복수 처격(갈애들에서)입니다' },
   ],
 }

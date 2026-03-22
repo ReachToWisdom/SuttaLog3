@@ -47,13 +47,13 @@ export const MANGALA_GRAMMAR: TeachGrammarStep[] = [
       rows: [
         { case: '주격 (~이/가)', ending: '-o / -ā', example: 'dhammo / dhammā', meaning: '법이 / 법들이' },
         { case: '목적격 (~을/를)', ending: '-aṃ / -e', example: 'dhammaṃ / dhamme', meaning: '법을 / 법들을' },
-        { case: '도구격 (~에 의해)', ending: '-ena / -ehi', example: 'dhammena / dhammehi', meaning: '법에 의해' },
+        { case: '조격 (~에 의해)', ending: '-ena / -ehi', example: 'dhammena / dhammehi', meaning: '법에 의해' },
         { case: '소유격 (~의)', ending: '-assa / -ānaṃ', example: 'dhammassa / dhammānaṃ', meaning: '법의 / 법들의' },
         { case: '처격 (~에서)', ending: '-e / -esu', example: 'dhamme / dhammesu', meaning: '법에서 / 법들에서' },
       ],
     },
     tip: '처음엔 주격(~이)과 처격(~에서)만 구분해도 충분합니다. 나머지는 경전을 읽으면서 자연스럽게 배웁니다.',
-    relatedLesson: '보배경에서 도구격(-ena)이 핵심 역할을 하고, 전법륜경에서 중성 주격(-aṃ)이 반복됩니다.',
+    relatedLesson: '보배경에서 조격(-ena)이 핵심 역할을 하고, 전법륜경에서 중성 주격(-aṃ)이 반복됩니다.',
   },
 ]
 
@@ -210,13 +210,13 @@ export const RATANA_GRAMMAR: TeachGrammarStep[] = [
     title: '반복 구문: etena saccena suvatthi hotu',
     description: '보배경의 거의 모든 게송이 이 구절로 끝납니다. "이 진리로 안녕이 있기를"이라는 축원문입니다.',
     examples: [
-      { pali: 'etena', breakdown: 'eta + ena (도구격 단수)', meaning: '이것에 의해', highlight: '-ena' },
-      { pali: 'saccena', breakdown: 'sacca + ena (도구격 단수)', meaning: '진리에 의해', highlight: '-ena' },
+      { pali: 'etena', breakdown: 'eta + ena (조격 단수)', meaning: '이것에 의해', highlight: '-ena' },
+      { pali: 'saccena', breakdown: 'sacca + ena (조격 단수)', meaning: '진리에 의해', highlight: '-ena' },
       { pali: 'suvatthi', breakdown: 'su + atthi (불변어)', meaning: '안녕이', highlight: 'suvatthi' },
       { pali: 'hotu', breakdown: 'hoti의 명령형 3인칭 단수', meaning: '있기를', highlight: 'hotu' },
     ],
-    relatedLesson: '행복경의 격변화에서 배운 도구격(-ena)이 여기서 핵심 역할을 합니다.',
-    tip: '도구격(~에 의해)이 도구/수단을 나타냅니다. "진리라는 수단에 의해 안녕이 있기를"이라는 구조입니다.',
+    relatedLesson: '행복경의 격변화에서 배운 조격(-ena)이 여기서 핵심 역할을 합니다.',
+    tip: '조격(~에 의해)이 도구/수단을 나타냅니다. "진리라는 수단에 의해 안녕이 있기를"이라는 구조입니다.',
   },
   {
     type: 'teach-grammar',
@@ -254,7 +254,7 @@ export const METTA_GRAMMAR: TeachGrammarStep[] = [
     description: '자비경의 첫 단어 karanīyam이 의무분사입니다. karoti(하다)에서 파생된 "해야 할 것"이라는 의미입니다.',
     examples: [
       { pali: 'karanīyaṃ', breakdown: 'karoti(하다) + anīya(의무) + ṃ(중성 목적격)', meaning: '행해야 할 것은', highlight: '-anīya' },
-      { pali: 'atthakusalena', breakdown: 'attha + kusala + ena (도구격)', meaning: '선에 능숙한 자에 의해', highlight: '-ena' },
+      { pali: 'atthakusalena', breakdown: 'attha + kusala + ena (조격)', meaning: '선에 능숙한 자에 의해', highlight: '-ena' },
     ],
     table: {
       label: '의무분사 접미사 비교',

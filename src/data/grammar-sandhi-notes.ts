@@ -47,7 +47,7 @@ export const MANGALA_SANDHI_NOTES: TeachGrammarStep[] = [
     title: '본문 변형: bhagavā — ant-어간 불규칙 주격',
     description:
       '문법 테이블에서 배운 a-어간(-o 주격)과 달리, bhagavā(세존)는 ant-어간 명사로 ' +
-      '주격이 -ā, 소유격이 -ato, 도구격이 -atā 형태입니다. bhagavant에서 ant가 탈락합니다.',
+      '주격이 -ā, 소유격이 -ato, 조격이 -atā 형태입니다. bhagavant에서 ant가 탈락합니다.',
     examples: [
       { pali: 'bhagavā', breakdown: 'bhagavant + ā (주격: ant 탈락)', meaning: '세존께서' },
       { pali: 'bhagavato', breakdown: 'bhagavant + o (소유격)', meaning: '세존의' },

@@ -42,7 +42,7 @@ export const GRAMMAR_BASICS: TeachGrammarStep[] = [
       rows: [
         { case: '① 주격 (Nominative)', ending: '~이/가', example: 'buddho', meaning: '주어' },
         { case: '② 목적격 (Accusative)', ending: '~을/를', example: 'dhammaṃ', meaning: '목적어' },
-        { case: '③ 도구격 (Instrumental)', ending: '~에 의해, ~(으)로', example: 'dhammena', meaning: '수단/도구' },
+        { case: '③ 조격 (Instrumental)', ending: '~에 의해, ~(으)로', example: 'dhammena', meaning: '수단/도구' },
         { case: '④ 여격 (Dative)', ending: '~에게', example: 'buddhāya', meaning: '간접 목적어' },
         { case: '⑤ 탈격 (Ablative)', ending: '~에서, ~(으)로부터', example: 'dhammā', meaning: '출발점/원인' },
         { case: '⑥ 소유격 (Genitive)', ending: '~의', example: 'dhammassa', meaning: '소유' },
@@ -69,7 +69,7 @@ export const GRAMMAR_BASICS: TeachGrammarStep[] = [
       rows: [
         { case: '주격 (~이/가)', ending: '-o / -ā', example: 'dhammo / dhammā', meaning: '법이 / 법들이' },
         { case: '목적격 (~을/를)', ending: '-aṃ / -e', example: 'dhammaṃ / dhamme', meaning: '법을 / 법들을' },
-        { case: '도구격 (~에 의해)', ending: '-ena / -ehi', example: 'dhammena / dhammehi', meaning: '법에 의해' },
+        { case: '조격 (~에 의해)', ending: '-ena / -ehi', example: 'dhammena / dhammehi', meaning: '법에 의해' },
         { case: '여격 (~에게)', ending: '-āya / -ānaṃ', example: 'dhammāya / dhammānaṃ', meaning: '법에게' },
         { case: '탈격 (~로부터)', ending: '-ā, -smā / -ehi', example: 'dhammā / dhammehi', meaning: '법으로부터' },
         { case: '소유격 (~의)', ending: '-assa / -ānaṃ', example: 'dhammassa / dhammānaṃ', meaning: '법의 / 법들의' },
@@ -109,19 +109,19 @@ export const GRAMMAR_BASICS: TeachGrammarStep[] = [
     examples: [
       { pali: 'paññā', breakdown: 'paññā (여성 주격)', meaning: '지혜가', highlight: '-ā' },
       { pali: 'paññaṃ', breakdown: 'paññā → paññaṃ (목적격)', meaning: '지혜를', highlight: '-aṃ' },
-      { pali: 'paññāya', breakdown: 'paññā + ya (도구격/여격/탈격)', meaning: '지혜에 의해/에게/로부터', highlight: '-āya' },
+      { pali: 'paññāya', breakdown: 'paññā + ya (조격/여격/탈격)', meaning: '지혜에 의해/에게/로부터', highlight: '-āya' },
     ],
     table: {
       label: 'ā-어간 여성 (paññā 지혜)',
       rows: [
         { case: '주격 (~이/가)', ending: '-ā / -ā, -āyo', example: 'paññā / paññā', meaning: '지혜가' },
         { case: '목적격 (~을/를)', ending: '-aṃ / -ā, -āyo', example: 'paññaṃ / paññā', meaning: '지혜를' },
-        { case: '도구격 (~에 의해)', ending: '-āya / -āhi', example: 'paññāya / paññāhi', meaning: '지혜에 의해' },
+        { case: '조격 (~에 의해)', ending: '-āya / -āhi', example: 'paññāya / paññāhi', meaning: '지혜에 의해' },
         { case: '소유격 (~의)', ending: '-āya / -ānaṃ', example: 'paññāya / paññānaṃ', meaning: '지혜의' },
         { case: '처격 (~에서)', ending: '-āya, -āyaṃ / -āsu', example: 'paññāya / paññāsu', meaning: '지혜에서' },
       ],
     },
-    tip: '여성의 핵심: -āya가 도구격·여격·탈격·소유격·처격에 모두 쓰입니다. 만능 어미! 문맥으로 어떤 격인지 판단합니다.',
+    tip: '여성의 핵심: -āya가 조격·여격·탈격·소유격·처격에 모두 쓰입니다. 만능 어미! 문맥으로 어떤 격인지 판단합니다.',
   },
 
   // 6. 동사 기초
@@ -254,11 +254,11 @@ export function generateGrammarBasicsQuizzes(): QuizStep[] {
     {
       type: 'quiz',
       question: '"paññāya"는 여성 명사의 어떤 격에 쓰이나요?',
-      options: shuffle(['도구격/여격/탈격/소유격/처격 (여러 격)', '주격만', '목적격만', '호격만']),
+      options: shuffle(['조격/여격/탈격/소유격/처격 (여러 격)', '주격만', '목적격만', '호격만']),
       answer: -1,
       explanation: {
         correct: '-āya는 여성 명사의 만능 어미로, 여러 격에 쓰입니다.',
-        detail: '도구격(~에 의해), 여격(~에게), 탈격(~으로부터), 소유격(~의), 처격(~에서)',
+        detail: '조격(~에 의해), 여격(~에게), 탈격(~으로부터), 소유격(~의), 처격(~에서)',
         tip: '문맥을 통해 어떤 격인지 판단합니다.',
       },
     },
@@ -273,7 +273,7 @@ export function generateGrammarBasicsQuizzes(): QuizStep[] {
       : q.explanation.correct.includes('-e는') ? '처격 (~에서)'
       : q.explanation.correct.includes('-ti는') ? '현재 3인칭 단수'
       : q.explanation.correct.includes('주격과 목적격') ? '주격과 목적격이 같다'
-      : q.explanation.correct.includes('-āya') ? '도구격/여격/탈격/소유격/처격 (여러 격)'
+      : q.explanation.correct.includes('-āya') ? '조격/여격/탈격/소유격/처격 (여러 격)'
       : q.options[0]
 
     return {

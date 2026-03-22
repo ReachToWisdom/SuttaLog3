@@ -16,11 +16,11 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
       rows: [
         { case: '1인칭 주격 단', ending: 'ahaṃ', example: 'ahaṃ gacchāmi', meaning: '나는 간다' },
         { case: '1인칭 목적격 단', ending: 'maṃ', example: 'maṃ passati', meaning: '나를 본다' },
-        { case: '1인칭 도구격 단', ending: 'mayā', example: 'mayā kataṃ', meaning: '나에 의해 행해진' },
+        { case: '1인칭 조격 단', ending: 'mayā', example: 'mayā kataṃ', meaning: '나에 의해 행해진' },
         { case: '1인칭 소유격 단', ending: 'mama/mayhaṃ/me', example: 'mama dhammo', meaning: '나의 법' },
         { case: '2인칭 주격 단', ending: 'tvaṃ/tuvaṃ', example: 'tvaṃ gacchasi', meaning: '너는 간다' },
         { case: '2인칭 목적격 단', ending: 'taṃ/tavaṃ', example: 'taṃ passati', meaning: '너를 본다' },
-        { case: '2인칭 도구격 단', ending: 'tayā/tvayā', example: 'tayā kataṃ', meaning: '너에 의해 행해진' },
+        { case: '2인칭 조격 단', ending: 'tayā/tvayā', example: 'tayā kataṃ', meaning: '너에 의해 행해진' },
         { case: '2인칭 소유격 단', ending: 'tava/tuyhaṃ/te', example: 'tava dhammo', meaning: '너의 법' },
       ],
     },
@@ -44,7 +44,7 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
       rows: [
         { case: '주격 단수', ending: 'so', example: 'so puriso', meaning: '그 사람은' },
         { case: '목적격 단수', ending: 'taṃ', example: 'taṃ purisaṃ', meaning: '그 사람을' },
-        { case: '도구격 단수', ending: 'tena', example: 'tena purisena', meaning: '그 사람에 의해' },
+        { case: '조격 단수', ending: 'tena', example: 'tena purisena', meaning: '그 사람에 의해' },
         { case: '소유격 단수', ending: 'tassa', example: 'tassa purisassa', meaning: '그 사람의' },
         { case: '처격 단수', ending: 'tasmiṃ', example: 'tasmiṃ vihāre', meaning: '그 절에서' },
         { case: '주격 복수', ending: 'te', example: 'te purisā', meaning: '그 사람들은' },
@@ -71,7 +71,7 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
       rows: [
         { case: '주격 단수', ending: 'yo', example: 'yo passati', meaning: '~하는 자는' },
         { case: '목적격 단수', ending: 'yaṃ', example: 'yaṃ passati', meaning: '~하는 것을' },
-        { case: '도구격 단수', ending: 'yena', example: 'yena kataṃ', meaning: '~에 의해' },
+        { case: '조격 단수', ending: 'yena', example: 'yena kataṃ', meaning: '~에 의해' },
         { case: '소유격 단수', ending: 'yassa', example: 'yassa dhammo', meaning: '~의' },
         { case: '처격 단수', ending: 'yasmiṃ', example: 'yasmiṃ ṭhāne', meaning: '~하는 곳에서' },
       ],
@@ -97,7 +97,7 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
       rows: [
         { case: '남성 주격', ending: 'ko', example: 'ko ayaṃ?', meaning: '이 사람은 누구?' },
         { case: '남성 목적격', ending: 'kaṃ', example: 'kaṃ passasi?', meaning: '누구를 보느냐?' },
-        { case: '남성 도구격', ending: 'kena', example: 'kena kataṃ?', meaning: '누구에 의해 행해진?' },
+        { case: '남성 조격', ending: 'kena', example: 'kena kataṃ?', meaning: '누구에 의해 행해진?' },
         { case: '남성 소유격', ending: 'kassa', example: 'kassa putto?', meaning: '누구의 아들?' },
         { case: '남성 처격', ending: 'kasmiṃ', example: 'kasmiṃ ṭhāne?', meaning: '어디에서?' },
         { case: '여성 주격', ending: 'kā', example: 'kā sā itthī?', meaning: '그 여인은 누구?' },
@@ -126,7 +126,7 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
       rows: [
         { case: '주격 단수', ending: '-anto/-aṃ', example: 'gacchanto puriso', meaning: '가고 있는 사람은' },
         { case: '목적격 단수', ending: '-antaṃ', example: 'gacchantaṃ purisaṃ', meaning: '가고 있는 사람을' },
-        { case: '도구격 단수', ending: '-antena/-atā', example: 'gacchantena purisena', meaning: '가고 있는 사람에 의해' },
+        { case: '조격 단수', ending: '-antena/-atā', example: 'gacchantena purisena', meaning: '가고 있는 사람에 의해' },
         { case: '소유격 단수', ending: '-antassa/-ato', example: 'gacchantassa purisassa', meaning: '가고 있는 사람의' },
         { case: '여성 주격', ending: '-antī', example: 'gacchantī itthī', meaning: '가고 있는 여인' },
       ],
@@ -162,7 +162,7 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
       { pali: 'diṭṭho me dhammo', breakdown: 'diṭṭho(본) + me(나에 의해) + dhammo(법)', meaning: '나에 의해 본 법 (= 내가 본 법)', highlight: 'diṭṭho' },
       { pali: 'evaṃ me sutaṃ', breakdown: 'evaṃ(이와 같이) + me(나에 의해) + sutaṃ(들린 것)', meaning: '이와 같이 나는 들었다', highlight: 'sutaṃ' },
     ],
-    tip: '과거분사 + 도구격 = 수동문입니다. "evaṃ me sutaṃ"은 모든 경의 시작입니다.',
+    tip: '과거분사 + 조격 = 수동문입니다. "evaṃ me sutaṃ"은 모든 경의 시작입니다.',
   },
 
   // 스텝3: 미래수동분사
@@ -301,7 +301,7 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
     title: '수동태 (-iya-/-ya-)',
     description:
       '수동태는 어근에 -iya-/-ya-를 삽입하여 만듭니다. ' +
-      '행위자는 도구격(~에 의해)으로 표현합니다.',
+      '행위자는 조격(~에 의해)으로 표현합니다.',
     table: {
       label: '주요 수동태',
       rows: [
@@ -316,7 +316,7 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
       { pali: 'idaṃ dukkhaṃ vuccati', breakdown: 'idaṃ(이것이) + dukkhaṃ(괴로움이라) + vuccati(불린다)', meaning: '이것이 괴로움이라 불린다', highlight: 'vuccati' },
       { pali: 'dhammo desīyati bhagavatā', breakdown: 'dhammo(법이) + desīyati(설해진다) + bhagavatā(세존에 의해)', meaning: '법이 세존에 의해 설해진다', highlight: 'desīyati' },
     ],
-    tip: '경전에서 수동태는 과거분사 + 도구격 형태로 더 자주 나옵니다 (예: kataṃ purisena).',
+    tip: '경전에서 수동태는 과거분사 + 조격 형태로 더 자주 나옵니다 (예: kataṃ purisena).',
   },
 
   // ── Lesson 20-21: 절대분사/부정사 ──
@@ -386,7 +386,7 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
       rows: [
         { case: '주격 단수', ending: '-vā', example: 'bhagavā', meaning: '세존은' },
         { case: '목적격 단수', ending: '-vantaṃ', example: 'bhagavantaṃ', meaning: '세존을' },
-        { case: '도구격 단수', ending: '-vatā', example: 'bhagavatā', meaning: '세존에 의해' },
+        { case: '조격 단수', ending: '-vatā', example: 'bhagavatā', meaning: '세존에 의해' },
         { case: '소유격 단수', ending: '-vato', example: 'bhagavato', meaning: '세존의' },
         { case: '처격 단수', ending: '-vati', example: 'bhagavati', meaning: '세존에게서' },
         { case: '호격 단수', ending: '-vaṃ/-vā', example: 'bhagavā', meaning: '세존이시여' },
@@ -412,7 +412,7 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
       rows: [
         { case: '주격 단수', ending: '-tā', example: 'satthā', meaning: '스승은' },
         { case: '목적격 단수', ending: '-tāraṃ', example: 'satthāraṃ', meaning: '스승을' },
-        { case: '도구격 단수', ending: '-tārā', example: 'satthārā', meaning: '스승에 의해' },
+        { case: '조격 단수', ending: '-tārā', example: 'satthārā', meaning: '스승에 의해' },
         { case: '소유격 단수', ending: '-tu', example: 'satthu', meaning: '스승의' },
         { case: '호격 단수', ending: '-tā', example: 'satthā', meaning: '스승이시여' },
         { case: '주격 복수', ending: '-tāro', example: 'satthāro', meaning: '스승들은' },
