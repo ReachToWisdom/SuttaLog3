@@ -121,6 +121,7 @@ export interface GrammarExample {
   breakdown: string        // 예: "bārāṇasī + yaṃ"
   meaning: string          // 예: "바라나시에서"
   highlight?: string       // 강조 부분 (예: "yaṃ")
+  source?: string          // 출처 경전 (예: "전법륜경(SN 56.11) 단락2")
 }
 
 export interface GrammarTable {
