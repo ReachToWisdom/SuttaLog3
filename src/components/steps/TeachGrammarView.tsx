@@ -1,10 +1,34 @@
-// 문법 설명 스텝 — 격변화 테이블 + 예문 + 팁
+// 문법 설명 스텝 — 단어 터치 시 발음 재생
 import type { TeachGrammarStep } from '../../data/types'
+import { speakPali } from '../../utils/pali-tts'
 
 interface Props {
   step: TeachGrammarStep
   onNext: () => void
   onBack?: () => void
+}
+
+/** 빠알리 텍스트를 터치하면 발음 재생 */
+function PaliTap({ text, className, style }: {
+  text: string
+  className?: string
+  style?: React.CSSProperties
+}) {
+  const handleTap = () => {
+    const soundOn = localStorage.getItem('suttalog3-sound') !== 'off'
+    if (soundOn) speakPali(text)
+  }
+
+  return (
+    <span
+      onClick={handleTap}
+      className={`cursor-pointer active:opacity-60 transition-opacity ${className ?? ''}`}
+      style={style}
+    >
+      {text}
+      <span className="text-xs ml-1 opacity-40">🔊</span>
+    </span>
+  )
 }
 
 export default function TeachGrammarView({ step, onNext, onBack }: Props) {
@@ -42,7 +66,7 @@ export default function TeachGrammarView({ step, onNext, onBack }: Props) {
         </p>
       </div>
 
-      {/* 예문들 */}
+      {/* 예문들 — 터치 시 발음 재생 */}
       <div className="flex flex-col gap-3 intro-fade-up-delay">
         {step.examples.map((ex, i) => (
           <div
@@ -54,10 +78,12 @@ export default function TeachGrammarView({ step, onNext, onBack }: Props) {
               boxShadow: 'var(--shadow-sm)',
             }}
           >
-            {/* 빠알리 원문 */}
-            <p className="pali-text text-base font-semibold mb-1" style={{ color: 'var(--color-text)' }}>
-              {ex.pali}
-            </p>
+            {/* 빠알리 원문 — 터치하면 발음 */}
+            <PaliTap
+              text={ex.pali}
+              className="pali-text text-base font-semibold block mb-1"
+              style={{ color: 'var(--color-text)' }}
+            />
             {/* 분해 */}
             <p className="text-sm mb-1" style={{ color: '#5B21B6' }}>
               → {ex.breakdown}
@@ -70,7 +96,7 @@ export default function TeachGrammarView({ step, onNext, onBack }: Props) {
         ))}
       </div>
 
-      {/* 격변화 테이블 */}
+      {/* 격변화 테이블 — 예시 터치 시 발음 */}
       {step.table && (
         <div className="intro-fade-up-delay2">
           <h3 className="text-sm font-bold mb-2" style={{ color: 'var(--color-text-secondary)' }}>
@@ -96,7 +122,13 @@ export default function TeachGrammarView({ step, onNext, onBack }: Props) {
                   }}>
                     <td className="px-3 py-2 font-medium" style={{ color: 'var(--color-text)' }}>{row.case}</td>
                     <td className="px-3 py-2" style={{ color: '#5B21B6' }}>{row.ending}</td>
-                    <td className="px-3 py-2 pali-text" style={{ color: 'var(--color-text)' }}>{row.example}</td>
+                    <td className="px-3 py-2">
+                      <PaliTap
+                        text={row.example}
+                        className="pali-text"
+                        style={{ color: 'var(--color-text)' }}
+                      />
+                    </td>
                     <td className="px-3 py-2" style={{ color: 'var(--color-text-secondary)' }}>{row.meaning}</td>
                   </tr>
                 ))}
