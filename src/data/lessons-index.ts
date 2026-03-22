@@ -5,28 +5,14 @@ import { VOWELS, ALL_CONSONANTS } from './alphabet'
 import { ALL_VERSES, ALL_MANGALA_WORDS } from './mangala-words'
 import { ALL_VERSES as RATANA_VERSES, ALL_RATANA_WORDS } from './ratana-words'
 import { ALL_VERSES as METTA_VERSES, ALL_METTA_WORDS } from './metta-words'
-import { ALL_VERSES as DHAMMACAKKA_VERSES, ALL_DHAMMACAKKA_WORDS } from './dhammacakka-words'
-import { ALL_VERSES as ANATTA_VERSES, ALL_ANATTA_WORDS } from './anatta-words'
-import { ALL_VERSES as SATIPATTHANA_VERSES, ALL_SATIPATTHANA_WORDS } from './satipatthana-words'
+import { ALL_VERSES as DHAMMACAKKA_VERSES } from './dhammacakka-words'
+import { ALL_VERSES as ANATTA_VERSES } from './anatta-words'
+import { ALL_VERSES as SATIPATTHANA_VERSES } from './satipatthana-words'
 import { generateMixedQuizzes, generateGrammarQuizzes } from './quiz-generator'
 import { ALL_ARRANGE_QUIZZES } from './mangala-arrange'
 import { MANGALA_GRAMMAR, DHAMMACAKKA_GRAMMAR, ANATTA_GRAMMAR, SATIPATTHANA_GRAMMAR } from './grammar-steps'
 import { GRAMMAR_BASICS, generateGrammarBasicsQuizzes } from './grammar-basics'
 import { GRAMMAR_ADVANCED } from './grammar-advanced'
-
-/** 중복 제거 단어 수집: 경전 단어 배열에서 고유 단어만 추출 */
-function collectUniqueWords(words: import('./types').VerseWord[]): import('./types').VerseWord[] {
-  const seen = new Set<string>()
-  const result: import('./types').VerseWord[] = []
-  for (const w of words) {
-    const key = w.pali.toLowerCase()
-    if (!seen.has(key)) {
-      seen.add(key)
-      result.push(w)
-    }
-  }
-  return result
-}
 
 /** 배열 셔플 */
 function shuffle<T>(arr: T[]): T[] {
@@ -192,14 +178,10 @@ function buildMangalaSteps(): Step[] {
     icon: '🪷',
   })
 
-  // 1단계: 핵심 단어 한눈에 보기
-  const mangalaWords = collectUniqueWords(ALL_MANGALA_WORDS)
-  steps.push({ type: 'vocab-list', title: '핵심 단어', words: mangalaWords })
-
-  // 2단계: 문법 설명
+  // 1단계: 문법 설명
   steps.push(...MANGALA_GRAMMAR)
 
-  // 3단계: 게송 원문 (단어 터치로 의미 확인)
+  // 2단계: 게송 원문 (문법 글로서리 기본 표시)
   for (const verse of ALL_VERSES) {
     steps.push({
       type: 'verse',
@@ -231,11 +213,7 @@ function buildRatanaSteps(): Step[] {
     icon: '💎',
   })
 
-  // 핵심 단어 한눈에 보기
-  const ratanaWords = collectUniqueWords(ALL_RATANA_WORDS)
-  steps.push({ type: 'vocab-list', title: '핵심 단어', words: ratanaWords })
-
-  // 게송 원문 (단어 터치로 의미 확인)
+  // 게송 원문 (문법 글로서리 기본 표시)
   for (const verse of RATANA_VERSES) {
     steps.push({
       type: 'verse',
@@ -262,11 +240,7 @@ function buildMettaSteps(): Step[] {
     icon: '💛',
   })
 
-  // 핵심 단어 한눈에 보기
-  const mettaWords = collectUniqueWords(ALL_METTA_WORDS)
-  steps.push({ type: 'vocab-list', title: '핵심 단어', words: mettaWords })
-
-  // 게송 원문 (단어 터치로 의미 확인)
+  // 게송 원문 (문법 글로서리 기본 표시)
   for (const verse of METTA_VERSES) {
     steps.push({
       type: 'verse',
@@ -293,14 +267,10 @@ function buildDhammacakkaSteps(): Step[] {
     icon: '☸️',
   })
 
-  // 1단계: 새 단어 한눈에 보기 (탭으로 자율 학습)
-  const newWords = collectUniqueWords(ALL_DHAMMACAKKA_WORDS)
-  steps.push({ type: 'vocab-list', title: '핵심 단어', words: newWords })
-
-  // 2단계: 문법 설명 (메인 콘텐츠!)
+  // 1단계: 문법 설명 (메인 콘텐츠!)
   steps.push(...DHAMMACAKKA_GRAMMAR)
 
-  // 3단계: 경전 원문 (단어 터치로 의미 확인)
+  // 2단계: 경전 원문 (문법 글로서리 기본 표시)
   for (const verse of DHAMMACAKKA_VERSES) {
     steps.push({
       type: 'verse',
@@ -328,14 +298,10 @@ function buildAnattaSteps(): Step[] {
     icon: '🔍',
   })
 
-  // 1단계: 새 단어 한눈에 보기 (탭으로 자율 학습)
-  const newWords = collectUniqueWords(ALL_ANATTA_WORDS)
-  steps.push({ type: 'vocab-list', title: '핵심 단어', words: newWords })
-
-  // 2단계: 문법 설명 (메인 콘텐츠!)
+  // 1단계: 문법 설명 (메인 콘텐츠!)
   steps.push(...ANATTA_GRAMMAR)
 
-  // 3단계: 경전 원문 (단어 터치로 의미 확인)
+  // 2단계: 경전 원문 (문법 글로서리 기본 표시)
   for (const verse of ANATTA_VERSES) {
     steps.push({
       type: 'verse',
@@ -363,14 +329,10 @@ function buildSatipatthanaSteps(): Step[] {
     icon: '🧘',
   })
 
-  // 1단계: 새 단어 한눈에 보기 (탭으로 자율 학습)
-  const newWords = collectUniqueWords(ALL_SATIPATTHANA_WORDS)
-  steps.push({ type: 'vocab-list', title: '핵심 단어', words: newWords })
-
-  // 2단계: 문법 설명 (메인 콘텐츠!)
+  // 1단계: 문법 설명 (메인 콘텐츠!)
   steps.push(...SATIPATTHANA_GRAMMAR)
 
-  // 3단계: 경전 원문 (단어 터치로 의미 확인)
+  // 2단계: 경전 원문 (문법 글로서리 기본 표시)
   for (const verse of SATIPATTHANA_VERSES) {
     steps.push({
       type: 'verse',
