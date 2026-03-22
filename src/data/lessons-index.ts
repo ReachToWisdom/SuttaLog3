@@ -369,24 +369,23 @@ function buildSatipatthanaSteps(): Step[] {
   // 1단계: 문법 설명 (메인 콘텐츠!)
   steps.push(...SATIPATTHANA_GRAMMAR)
 
-  // 2단계: 경전 원문 (문법 글로서리 기본 표시)
-  for (const verse of SATIPATTHANA_VERSES) {
+  // 2단계: 경전 원문
+  for (const entry of SATIPATTHANA_VERSES) {
+    // KAYA/DHAMMA_VERSES는 { verse: {...}, words } 구조일 수 있음
+    const v = 'verse' in entry ? entry.verse : entry
+    const w = entry.words
     steps.push({
       type: 'verse',
-      pali: verse.pali,
-      pronKo: verse.pronKo,
-      translation: verse.translation,
-      words: verse.words,
-      grammarNotes: verse.grammarNotes,
+      pali: v.pali,
+      pronKo: v.pronKo,
+      translation: v.translation,
+      words: w,
+      grammarNotes: ('grammarNotes' in v) ? (v as any).grammarNotes : undefined,
     })
   }
 
-  // 4단계: 문법 퀴즈 (문법 내용 기반)
+  // 4단계: 문법 퀴즈
   steps.push(...generateGrammarQuizzes(SATIPATTHANA_GRAMMAR))
-
-  // 5단계: 빈칸 채우기 + 문장 작문 (경전 문장 기반)
-  steps.push(...generateFillBlankQuizzes(SATIPATTHANA_VERSES))
-  steps.push(...generateSentenceQuizzes(SATIPATTHANA_VERSES))
   return steps
 }
 
