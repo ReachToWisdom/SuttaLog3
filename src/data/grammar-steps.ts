@@ -1,6 +1,7 @@
 // SSOT: 경전별 문법 설명 스텝
 // 각 경전에서 처음 만나는 문법 포인트를 정리
 import type { TeachGrammarStep } from './types'
+import { MANGALA_SANDHI_NOTES, DHAMMACAKKA_SANDHI_NOTES, ANATTA_SANDHI_NOTES, SATIPATTHANA_SANDHI_NOTES } from './grammar-sandhi-notes'
 
 // ── 행복경 문법 ──
 
@@ -27,6 +28,8 @@ export const MANGALA_GRAMMAR: TeachGrammarStep[] = [
     ],
     tip: '연성법은 규칙을 외우기보다, 많이 읽으면 자연스럽게 익숙해집니다. 분해해서 원래 형태를 찾는 연습이 중요합니다.',
   },
+  // 본문 변형 보충 (연성법 상세, 관계/지시대명사, ant-어간)
+  ...MANGALA_SANDHI_NOTES,
   {
     type: 'teach-grammar',
     title: '명사의 격 (Case) 기초',
@@ -100,6 +103,8 @@ export const DHAMMACAKKA_GRAMMAR: TeachGrammarStep[] = [
     ],
     tip: 'sammā(바른) ↔ micchā(잘못된). 이 대비를 기억하면 많은 빠알리 단어를 이해할 수 있습니다.',
   },
+  // 본문 변형 보충 (미래수동분사, 불규칙 과거형, 축약, 절대분사)
+  ...DHAMMACAKKA_SANDHI_NOTES,
 ]
 
 // ── 무아경 문법 ──
@@ -146,6 +151,8 @@ export const ANATTA_GRAMMAR: TeachGrammarStep[] = [
     },
     tip: '본문에서 ce(만약)가 직접 나오지 않아도, 가정법 동사 어미(-ssa, -eyya)가 보이면 조건문입니다. "만약 A라면 B일 것이다" 구조를 파악하세요.',
   },
+  // 본문 변형 보충 (연성 축약, 미래수동분사 daṭṭhabbaṃ, 11종 분류)
+  ...ANATTA_SANDHI_NOTES,
 ]
 
 // ── 사념처경 문법 ──
@@ -184,4 +191,6 @@ export const SATIPATTHANA_GRAMMAR: TeachGrammarStep[] = [
     ],
     tip: '-ī, -mā(mant)는 "~을 가진"이라는 소유 접미사입니다. ātāpī = 열정을 가진, satimā = 새김을 가진.',
   },
+  // 본문 변형 보충 (정형문 구조, 절대분사/축약, 처격 다양한 형태)
+  ...SATIPATTHANA_SANDHI_NOTES,
 ]

@@ -227,7 +227,26 @@ export const VERSE_8 = {
 }
 
 export const VERSE_8_WORDS: VerseWord[] = [
+  { pali: 'Idaṃ', pronKo: '이당', meaning: '이것', grammar: '지시대명사 중성 단수 주격' },
+  { pali: 'kho', pronKo: '코', meaning: '실로/참으로', grammar: '불변어(강조사)' },
+  { pali: 'pana', pronKo: '빠나', meaning: '그런데/또한', grammar: '불변어(접속사)' },
+  { pali: 'bhikkhave', pronKo: '빅카웨', meaning: '비구들이여', grammar: '남성 복수 호격' },
   { pali: 'dukkhanirodhagāminī', pronKo: '둑카니로다가-미니-', meaning: '괴로움의 소멸로 이끄는', grammar: '형용사 여성 단수 주격 (dukkha + nirodha + gāminī)', important: true },
+  { pali: 'paṭipadā', pronKo: '빠띠빠다-', meaning: '도/길/실천', grammar: '여성 단수 주격' },
+  { pali: 'ariyasaccaṃ', pronKo: '아리야삿짱', meaning: '성스러운 진리', grammar: '중성 단수 주격 (ariya + sacca)', important: true },
+  { pali: 'ayameva', pronKo: '아야메와', meaning: '바로 이것', grammar: '지시대명사 + eva(강조)' },
+  { pali: 'ariyo', pronKo: '아리요', meaning: '성스러운/고귀한', grammar: '형용사 남성 단수 주격' },
+  { pali: 'aṭṭhaṅgiko', pronKo: '앗탕기꼬', meaning: '여덟 가지로 된', grammar: '형용사 남성 단수 주격 (aṭṭha + aṅga + ika)' },
+  { pali: 'maggo', pronKo: '맏고', meaning: '도/길', grammar: '남성 단수 주격' },
+  { pali: 'seyyathidaṃ', pronKo: '세야티당', meaning: '이른바/곧', grammar: '불변어(설명 도입사)' },
+  { pali: 'sammādiṭṭhi', pronKo: '삼마-딧티', meaning: '바른 견해', grammar: '여성 단수 주격 (sammā + diṭṭhi)', important: true },
+  { pali: 'sammāsaṅkappo', pronKo: '삼마-상깝뽀', meaning: '바른 사유', grammar: '남성 단수 주격 (sammā + saṅkappa)', important: true },
+  { pali: 'sammāvācā', pronKo: '삼마-와-짜-', meaning: '바른 말', grammar: '여성 단수 주격 (sammā + vācā)', important: true },
+  { pali: 'sammākammanto', pronKo: '삼마-깜만또', meaning: '바른 행위', grammar: '남성 단수 주격 (sammā + kammanta)', important: true },
+  { pali: 'sammāājīvo', pronKo: '삼마-아-지-워', meaning: '바른 생계', grammar: '남성 단수 주격 (sammā + ājīva)', important: true },
+  { pali: 'sammāvāyāmo', pronKo: '삼마-와-야-모', meaning: '바른 노력', grammar: '남성 단수 주격 (sammā + vāyāma)', important: true },
+  { pali: 'sammāsati', pronKo: '삼마-사띠', meaning: '바른 새김/알아차림', grammar: '여성 단수 주격 (sammā + sati)', important: true },
+  { pali: 'sammāsamādhi', pronKo: '삼마-사마-디', meaning: '바른 삼매/집중', grammar: '남성 단수 주격 (sammā + samādhi)', important: true },
 ]
 
 // ── 단락9: 삼전십이행상 — 고제 ──
@@ -276,7 +295,24 @@ export const VERSE_10 = {
 }
 
 export const VERSE_10_WORDS: VerseWord[] = [
-  { pali: 'dukkhasamudayaṃ', pronKo: '둑카사무다양', meaning: '괴로움의 발생', grammar: '중성 단수 주격 (dukkha + samudaya)' },
+  { pali: 'Idaṃ', pronKo: '이당', meaning: '이것', grammar: '지시대명사 중성 단수 주격' },
+  { pali: 'dukkhasamudayaṃ', pronKo: '둑카사무다양', meaning: '괴로움의 발생', grammar: '중성 단수 주격 (dukkha + samudaya)', important: true },
+  { pali: 'ariyasaccanti', pronKo: '아리야삿짠띠', meaning: '성스러운 진리라고', grammar: '중성 단수 주격 + iti (ariyasacca + iti)' },
+  { pali: 'me', pronKo: '메', meaning: '나에게', grammar: '인칭대명사 1인칭 단수 여격' },
+  { pali: 'bhikkhave', pronKo: '빅카웨', meaning: '비구들이여', grammar: '남성 복수 호격' },
+  { pali: 'pubbe', pronKo: '뿝베', meaning: '이전에', grammar: '불변어(부사)' },
+  { pali: 'ananussutesu', pronKo: '아나눗수떼수', meaning: '들어보지 못한', grammar: '과거분사 남성 복수 처격 (an + anussuta)' },
+  { pali: 'dhammesu', pronKo: '담메수', meaning: '법들에서', grammar: '남성 복수 처격' },
+  { pali: 'cakkhuṃ', pronKo: '짝쿵', meaning: '눈', grammar: '중성 단수 주격', important: true },
+  { pali: 'udapādi', pronKo: '우다빠-디', meaning: '생겨났다', grammar: '과거 3인칭 단수 (ud + ā + pad)', important: true },
+  { pali: 'ñāṇaṃ', pronKo: '냐-낭', meaning: '지혜/앎', grammar: '중성 단수 주격', important: true },
+  { pali: 'paññā', pronKo: '빤냐-', meaning: '반야/지혜', grammar: '여성 단수 주격', important: true },
+  { pali: 'vijjā', pronKo: '윗자-', meaning: '명지/앎', grammar: '여성 단수 주격', important: true },
+  { pali: 'āloko', pronKo: '아-로꼬', meaning: '밝음/광명', grammar: '남성 단수 주격', important: true },
+  { pali: 'Taṃ', pronKo: '땅', meaning: '그것', grammar: '지시대명사 중성 단수 주격' },
+  { pali: 'kho', pronKo: '코', meaning: '실로/참으로', grammar: '불변어(강조사)' },
+  { pali: 'panidaṃ', pronKo: '빠니당', meaning: '또한 이것', grammar: 'pana + idaṃ (접속사 + 지시대명사)' },
+  { pali: 'ariyasaccaṃ', pronKo: '아리야삿짱', meaning: '성스러운 진리', grammar: '중성 단수 주격 (ariya + sacca)' },
   { pali: 'pahātabbanti', pronKo: '빠하-땁반띠', meaning: '버려야 한다고', grammar: '미래수동분사 + iti (pahātabba + iti)', important: true },
   { pali: 'pahīnanti', pronKo: '빠히-난띠', meaning: '버렸다고', grammar: '과거분사 + iti (pahīna + iti)', important: true },
 ]
@@ -295,7 +331,24 @@ export const VERSE_11 = {
 }
 
 export const VERSE_11_WORDS: VerseWord[] = [
-  { pali: 'dukkhanirodhaṃ', pronKo: '둑카니로당', meaning: '괴로움의 소멸', grammar: '중성 단수 주격 (dukkha + nirodha)' },
+  { pali: 'Idaṃ', pronKo: '이당', meaning: '이것', grammar: '지시대명사 중성 단수 주격' },
+  { pali: 'dukkhanirodhaṃ', pronKo: '둑카니로당', meaning: '괴로움의 소멸', grammar: '중성 단수 주격 (dukkha + nirodha)', important: true },
+  { pali: 'ariyasaccanti', pronKo: '아리야삿짠띠', meaning: '성스러운 진리라고', grammar: '중성 단수 주격 + iti (ariyasacca + iti)' },
+  { pali: 'me', pronKo: '메', meaning: '나에게', grammar: '인칭대명사 1인칭 단수 여격' },
+  { pali: 'bhikkhave', pronKo: '빅카웨', meaning: '비구들이여', grammar: '남성 복수 호격' },
+  { pali: 'pubbe', pronKo: '뿝베', meaning: '이전에', grammar: '불변어(부사)' },
+  { pali: 'ananussutesu', pronKo: '아나눗수떼수', meaning: '들어보지 못한', grammar: '과거분사 남성 복수 처격 (an + anussuta)' },
+  { pali: 'dhammesu', pronKo: '담메수', meaning: '법들에서', grammar: '남성 복수 처격' },
+  { pali: 'cakkhuṃ', pronKo: '짝쿵', meaning: '눈', grammar: '중성 단수 주격', important: true },
+  { pali: 'udapādi', pronKo: '우다빠-디', meaning: '생겨났다', grammar: '과거 3인칭 단수 (ud + ā + pad)', important: true },
+  { pali: 'ñāṇaṃ', pronKo: '냐-낭', meaning: '지혜/앎', grammar: '중성 단수 주격', important: true },
+  { pali: 'paññā', pronKo: '빤냐-', meaning: '반야/지혜', grammar: '여성 단수 주격', important: true },
+  { pali: 'vijjā', pronKo: '윗자-', meaning: '명지/앎', grammar: '여성 단수 주격', important: true },
+  { pali: 'āloko', pronKo: '아-로꼬', meaning: '밝음/광명', grammar: '남성 단수 주격', important: true },
+  { pali: 'Taṃ', pronKo: '땅', meaning: '그것', grammar: '지시대명사 중성 단수 주격' },
+  { pali: 'kho', pronKo: '코', meaning: '실로/참으로', grammar: '불변어(강조사)' },
+  { pali: 'panidaṃ', pronKo: '빠니당', meaning: '또한 이것', grammar: 'pana + idaṃ (접속사 + 지시대명사)' },
+  { pali: 'ariyasaccaṃ', pronKo: '아리야삿짱', meaning: '성스러운 진리', grammar: '중성 단수 주격 (ariya + sacca)' },
   { pali: 'sacchikātabbanti', pronKo: '삿치까-땁반띠', meaning: '실현해야 한다고', grammar: '미래수동분사 + iti (sacchikātabba + iti)', important: true },
   { pali: 'sacchikatanti', pronKo: '삿치까딴띠', meaning: '실현했다고', grammar: '과거분사 + iti (sacchikata + iti)', important: true },
 ]
@@ -314,7 +367,25 @@ export const VERSE_12 = {
 }
 
 export const VERSE_12_WORDS: VerseWord[] = [
-  { pali: 'dukkhanirodhagāminī', pronKo: '둑카니로다가-미니-', meaning: '괴로움의 소멸로 이끄는', grammar: '형용사 여성 단수 주격' },
+  { pali: 'Idaṃ', pronKo: '이당', meaning: '이것', grammar: '지시대명사 중성 단수 주격' },
+  { pali: 'dukkhanirodhagāminī', pronKo: '둑카니로다가-미니-', meaning: '괴로움의 소멸로 이끄는', grammar: '형용사 여성 단수 주격 (dukkha + nirodha + gāminī)', important: true },
+  { pali: 'paṭipadā', pronKo: '빠띠빠다-', meaning: '도/길/실천', grammar: '여성 단수 주격' },
+  { pali: 'ariyasaccanti', pronKo: '아리야삿짠띠', meaning: '성스러운 진리라고', grammar: '중성 단수 주격 + iti (ariyasacca + iti)' },
+  { pali: 'me', pronKo: '메', meaning: '나에게', grammar: '인칭대명사 1인칭 단수 여격' },
+  { pali: 'bhikkhave', pronKo: '빅카웨', meaning: '비구들이여', grammar: '남성 복수 호격' },
+  { pali: 'pubbe', pronKo: '뿝베', meaning: '이전에', grammar: '불변어(부사)' },
+  { pali: 'ananussutesu', pronKo: '아나눗수떼수', meaning: '들어보지 못한', grammar: '과거분사 남성 복수 처격 (an + anussuta)' },
+  { pali: 'dhammesu', pronKo: '담메수', meaning: '법들에서', grammar: '남성 복수 처격' },
+  { pali: 'cakkhuṃ', pronKo: '짝쿵', meaning: '눈', grammar: '중성 단수 주격', important: true },
+  { pali: 'udapādi', pronKo: '우다빠-디', meaning: '생겨났다', grammar: '과거 3인칭 단수 (ud + ā + pad)', important: true },
+  { pali: 'ñāṇaṃ', pronKo: '냐-낭', meaning: '지혜/앎', grammar: '중성 단수 주격', important: true },
+  { pali: 'paññā', pronKo: '빤냐-', meaning: '반야/지혜', grammar: '여성 단수 주격', important: true },
+  { pali: 'vijjā', pronKo: '윗자-', meaning: '명지/앎', grammar: '여성 단수 주격', important: true },
+  { pali: 'āloko', pronKo: '아-로꼬', meaning: '밝음/광명', grammar: '남성 단수 주격', important: true },
+  { pali: 'Taṃ', pronKo: '땅', meaning: '그것', grammar: '지시대명사 중성 단수 주격' },
+  { pali: 'kho', pronKo: '코', meaning: '실로/참으로', grammar: '불변어(강조사)' },
+  { pali: 'panidaṃ', pronKo: '빠니당', meaning: '또한 이것', grammar: 'pana + idaṃ (접속사 + 지시대명사)' },
+  { pali: 'ariyasaccaṃ', pronKo: '아리야삿짱', meaning: '성스러운 진리', grammar: '중성 단수 주격 (ariya + sacca)' },
   { pali: 'bhāvetabbanti', pronKo: '바-웨땁반띠', meaning: '닦아야 한다고', grammar: '미래수동분사 + iti (bhāvetabba + iti)', important: true },
   { pali: 'bhāvitanti', pronKo: '바-위딴띠', meaning: '닦았다고', grammar: '과거분사 + iti (bhāvita + iti)', important: true },
 ]

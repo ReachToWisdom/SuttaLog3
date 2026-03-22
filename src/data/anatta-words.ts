@@ -92,7 +92,28 @@ export const VERSE_3 = {
 
 export const VERSE_3_WORDS: VerseWord[] = [
   { pali: 'Vedanā', pronKo: '웨다나-', meaning: '느낌/수(受)', grammar: '여성 단수 주격', important: true },
+  { pali: 'bhikkhave', pronKo: '빅카웨', meaning: '비구들이여', grammar: '남성 복수 호격' },
+  { pali: 'anattā', pronKo: '아낫따-', meaning: '자아가 아닌/무아', grammar: '남성 단수 주격 (an + attā)' },
+  { pali: 'ca', pronKo: '짜', meaning: '~과/그리고', grammar: '불변어(접속사)' },
+  { pali: 'hidaṃ', pronKo: '히당', meaning: '만약 이것이', grammar: 'hi(만약) + idaṃ(이것)' },
+  { pali: 'attā', pronKo: '앗따-', meaning: '자아/나', grammar: '남성 단수 주격' },
+  { pali: 'abhavissa', pronKo: '아바윗사', meaning: '~이었다면', grammar: '가정법 과거 3인칭 단수 (bhavati)' },
+  { pali: 'nayidaṃ', pronKo: '나이당', meaning: '이것은 ~않을 것이다', grammar: 'na(부정) + ayidaṃ(이것)' },
+  { pali: 'ābādhāya', pronKo: '아-바-다-야', meaning: '병들기 위해/병듦에', grammar: '남성 단수 여격 (ābādha)' },
+  { pali: 'saṃvatteyya', pronKo: '상왓떼이야', meaning: '이끌 것이다', grammar: '가정법 3인칭 단수 (saṃvattati)' },
+  { pali: 'labbhetha', pronKo: '랍베타', meaning: '얻어질 수 있어야 한다', grammar: '가정법 수동 3인칭 단수 (labhati)' },
   { pali: 'vedanāya', pronKo: '웨다나-야', meaning: '느낌에 대해', grammar: '여성 단수 처격/여격' },
+  { pali: 'evaṃ', pronKo: '에왕', meaning: '이와 같이', grammar: '불변어(부사)' },
+  { pali: 'me', pronKo: '메', meaning: '나의', grammar: '1인칭 단수 속격' },
+  { pali: 'hotu', pronKo: '호뚜', meaning: '~이 되어라', grammar: '명령법 3인칭 단수 (bhavati)' },
+  { pali: 'mā', pronKo: '마-', meaning: '~하지 말라', grammar: '불변어(금지사)' },
+  { pali: 'ahosīti', pronKo: '아호시-띠', meaning: '되었다 + 라고', grammar: '과거 3인칭 단수 + iti (ahosi + iti)' },
+  { pali: 'Yasmā', pronKo: '야스마-', meaning: '~이므로', grammar: '관계대명사 탈격 (원인)' },
+  { pali: 'kho', pronKo: '코', meaning: '참으로/실로', grammar: '불변어(강조사)' },
+  { pali: 'tasmā', pronKo: '따스마-', meaning: '그러므로', grammar: '지시대명사 탈격 (결론)' },
+  { pali: 'saṃvattati', pronKo: '상왓따띠', meaning: '이끌다/이르다', grammar: '현재 3인칭 단수' },
+  { pali: 'na', pronKo: '나', meaning: '~아니다', grammar: '불변어(부정사)' },
+  { pali: 'labbhati', pronKo: '랍바띠', meaning: '얻어지다/할 수 있다', grammar: '현재 수동 3인칭 단수 (labhati)' },
 ]
 
 // ── 제4단락: 상온(想蘊) 무아 ──
@@ -109,7 +130,28 @@ export const VERSE_4 = {
 
 export const VERSE_4_WORDS: VerseWord[] = [
   { pali: 'Saññā', pronKo: '산냐-', meaning: '인식/상(想)', grammar: '여성 단수 주격', important: true },
+  { pali: 'bhikkhave', pronKo: '빅카웨', meaning: '비구들이여', grammar: '남성 복수 호격' },
+  { pali: 'anattā', pronKo: '아낫따-', meaning: '자아가 아닌/무아', grammar: '남성 단수 주격 (an + attā)' },
+  { pali: 'ca', pronKo: '짜', meaning: '~과/그리고', grammar: '불변어(접속사)' },
+  { pali: 'hidaṃ', pronKo: '히당', meaning: '만약 이것이', grammar: 'hi(만약) + idaṃ(이것)' },
+  { pali: 'attā', pronKo: '앗따-', meaning: '자아/나', grammar: '남성 단수 주격' },
+  { pali: 'abhavissa', pronKo: '아바윗사', meaning: '~이었다면', grammar: '가정법 과거 3인칭 단수 (bhavati)' },
+  { pali: 'nayidaṃ', pronKo: '나이당', meaning: '이것은 ~않을 것이다', grammar: 'na(부정) + ayidaṃ(이것)' },
+  { pali: 'ābādhāya', pronKo: '아-바-다-야', meaning: '병들기 위해/병듦에', grammar: '남성 단수 여격 (ābādha)' },
+  { pali: 'saṃvatteyya', pronKo: '상왓떼이야', meaning: '이끌 것이다', grammar: '가정법 3인칭 단수 (saṃvattati)' },
+  { pali: 'labbhetha', pronKo: '랍베타', meaning: '얻어질 수 있어야 한다', grammar: '가정법 수동 3인칭 단수 (labhati)' },
   { pali: 'saññāya', pronKo: '산냐-야', meaning: '인식에 대해', grammar: '여성 단수 처격/여격' },
+  { pali: 'evaṃ', pronKo: '에왕', meaning: '이와 같이', grammar: '불변어(부사)' },
+  { pali: 'me', pronKo: '메', meaning: '나의', grammar: '1인칭 단수 속격' },
+  { pali: 'hotu', pronKo: '호뚜', meaning: '~이 되어라', grammar: '명령법 3인칭 단수 (bhavati)' },
+  { pali: 'mā', pronKo: '마-', meaning: '~하지 말라', grammar: '불변어(금지사)' },
+  { pali: 'ahosīti', pronKo: '아호시-띠', meaning: '되었다 + 라고', grammar: '과거 3인칭 단수 + iti (ahosi + iti)' },
+  { pali: 'Yasmā', pronKo: '야스마-', meaning: '~이므로', grammar: '관계대명사 탈격 (원인)' },
+  { pali: 'kho', pronKo: '코', meaning: '참으로/실로', grammar: '불변어(강조사)' },
+  { pali: 'tasmā', pronKo: '따스마-', meaning: '그러므로', grammar: '지시대명사 탈격 (결론)' },
+  { pali: 'saṃvattati', pronKo: '상왓따띠', meaning: '이끌다/이르다', grammar: '현재 3인칭 단수' },
+  { pali: 'na', pronKo: '나', meaning: '~아니다', grammar: '불변어(부정사)' },
+  { pali: 'labbhati', pronKo: '랍바띠', meaning: '얻어지다/할 수 있다', grammar: '현재 수동 3인칭 단수 (labhati)' },
 ]
 
 // ── 제5단락: 행온(行蘊) 무아 ──
@@ -127,12 +169,28 @@ export const VERSE_5 = {
 
 export const VERSE_5_WORDS: VerseWord[] = [
   { pali: 'Saṅkhārā', pronKo: '상카-라-', meaning: '형성들/행(行)', grammar: '남성 복수 주격', important: true },
+  { pali: 'bhikkhave', pronKo: '빅카웨', meaning: '비구들이여', grammar: '남성 복수 호격' },
+  { pali: 'anattā', pronKo: '아낫따-', meaning: '자아가 아닌/무아', grammar: '남성 단수 주격 (an + attā)' },
+  { pali: 'ca', pronKo: '짜', meaning: '~과/그리고', grammar: '불변어(접속사)' },
+  { pali: 'hidaṃ', pronKo: '히당', meaning: '만약 이것이', grammar: 'hi(만약) + idaṃ(이것)' },
+  { pali: 'attā', pronKo: '앗따-', meaning: '자아/나', grammar: '남성 단수 주격' },
   { pali: 'abhavissaṃsu', pronKo: '아바윗상수', meaning: '~이었다면(복수)', grammar: '가정법 과거 3인칭 복수 (bhavati)' },
+  { pali: 'nayidaṃ', pronKo: '나이당', meaning: '이것은 ~않을 것이다', grammar: 'na(부정) + ayidaṃ(이것)' },
+  { pali: 'ābādhāya', pronKo: '아-바-다-야', meaning: '병들기 위해/병듦에', grammar: '남성 단수 여격 (ābādha)' },
   { pali: 'saṃvatteyyuṃ', pronKo: '상왓떼이융', meaning: '이끌 것이다(복수)', grammar: '가정법 3인칭 복수 (saṃvattati)' },
+  { pali: 'labbhetha', pronKo: '랍베타', meaning: '얻어질 수 있어야 한다', grammar: '가정법 수동 3인칭 단수 (labhati)' },
   { pali: 'saṅkhāresu', pronKo: '상카-레수', meaning: '형성들에 대해', grammar: '남성 복수 처격' },
+  { pali: 'evaṃ', pronKo: '에왕', meaning: '이와 같이', grammar: '불변어(부사)' },
+  { pali: 'me', pronKo: '메', meaning: '나의', grammar: '1인칭 단수 속격' },
   { pali: 'hontu', pronKo: '혼뚜', meaning: '~이 되어라(복수)', grammar: '명령법 3인칭 복수 (bhavati)' },
+  { pali: 'mā', pronKo: '마-', meaning: '~하지 말라', grammar: '불변어(금지사)' },
   { pali: 'ahesuṃti', pronKo: '아헤숭띠', meaning: '되었다(복수) + 라고', grammar: '과거 3인칭 복수 + iti' },
+  { pali: 'Yasmā', pronKo: '야스마-', meaning: '~이므로', grammar: '관계대명사 탈격 (원인)' },
+  { pali: 'kho', pronKo: '코', meaning: '참으로/실로', grammar: '불변어(강조사)' },
+  { pali: 'tasmā', pronKo: '따스마-', meaning: '그러므로', grammar: '지시대명사 탈격 (결론)' },
   { pali: 'saṃvattanti', pronKo: '상왓딴띠', meaning: '이끌다(복수)', grammar: '현재 3인칭 복수 (saṃvattati)' },
+  { pali: 'na', pronKo: '나', meaning: '~아니다', grammar: '불변어(부정사)' },
+  { pali: 'labbhati', pronKo: '랍바띠', meaning: '얻어지다/할 수 있다', grammar: '현재 수동 3인칭 단수 (labhati)' },
 ]
 
 // ── 제6단락: 식온(識蘊) 무아 ──
@@ -149,8 +207,29 @@ export const VERSE_6 = {
 
 export const VERSE_6_WORDS: VerseWord[] = [
   { pali: 'Viññāṇaṃ', pronKo: '윈냐-낭', meaning: '의식/식(識)', grammar: '중성 단수 주격', important: true },
+  { pali: 'bhikkhave', pronKo: '빅카웨', meaning: '비구들이여', grammar: '남성 복수 호격' },
+  { pali: 'anattā', pronKo: '아낫따-', meaning: '자아가 아닌/무아', grammar: '남성 단수 주격 (an + attā)' },
   { pali: 'Viññāṇañca', pronKo: '윈냐-난짜', meaning: '의식이 + 그리고', grammar: '중성 단수 주격 + ca (연성)' },
+  { pali: 'hidaṃ', pronKo: '히당', meaning: '만약 이것이', grammar: 'hi(만약) + idaṃ(이것)' },
+  { pali: 'attā', pronKo: '앗따-', meaning: '자아/나', grammar: '남성 단수 주격' },
+  { pali: 'abhavissa', pronKo: '아바윗사', meaning: '~이었다면', grammar: '가정법 과거 3인칭 단수 (bhavati)' },
+  { pali: 'nayidaṃ', pronKo: '나이당', meaning: '이것은 ~않을 것이다', grammar: 'na(부정) + ayidaṃ(이것)' },
+  { pali: 'ābādhāya', pronKo: '아-바-다-야', meaning: '병들기 위해/병듦에', grammar: '남성 단수 여격 (ābādha)' },
+  { pali: 'saṃvatteyya', pronKo: '상왓떼이야', meaning: '이끌 것이다', grammar: '가정법 3인칭 단수 (saṃvattati)' },
+  { pali: 'labbhetha', pronKo: '랍베타', meaning: '얻어질 수 있어야 한다', grammar: '가정법 수동 3인칭 단수 (labhati)' },
+  { pali: 'ca', pronKo: '짜', meaning: '~과/그리고', grammar: '불변어(접속사)' },
   { pali: 'viññāṇe', pronKo: '윈냐-네', meaning: '의식에 대해', grammar: '중성 단수 처격' },
+  { pali: 'evaṃ', pronKo: '에왕', meaning: '이와 같이', grammar: '불변어(부사)' },
+  { pali: 'me', pronKo: '메', meaning: '나의', grammar: '1인칭 단수 속격' },
+  { pali: 'hotu', pronKo: '호뚜', meaning: '~이 되어라', grammar: '명령법 3인칭 단수 (bhavati)' },
+  { pali: 'mā', pronKo: '마-', meaning: '~하지 말라', grammar: '불변어(금지사)' },
+  { pali: 'ahosīti', pronKo: '아호시-띠', meaning: '되었다 + 라고', grammar: '과거 3인칭 단수 + iti (ahosi + iti)' },
+  { pali: 'Yasmā', pronKo: '야스마-', meaning: '~이므로', grammar: '관계대명사 탈격 (원인)' },
+  { pali: 'kho', pronKo: '코', meaning: '참으로/실로', grammar: '불변어(강조사)' },
+  { pali: 'tasmā', pronKo: '따스마-', meaning: '그러므로', grammar: '지시대명사 탈격 (결론)' },
+  { pali: 'saṃvattati', pronKo: '상왓따띠', meaning: '이끌다/이르다', grammar: '현재 3인칭 단수' },
+  { pali: 'na', pronKo: '나', meaning: '~아니다', grammar: '불변어(부정사)' },
+  { pali: 'labbhati', pronKo: '랍바띠', meaning: '얻어지다/할 수 있다', grammar: '현재 수동 3인칭 단수 (labhati)' },
 ]
 
 // ── 제7단락: 색온 질문 — 무상·고·무아의 논리 ──
@@ -206,8 +285,32 @@ export const VERSE_8 = {
 }
 
 export const VERSE_8_WORDS: VerseWord[] = [
+  { pali: 'Taṃ', pronKo: '땅', meaning: '그것을', grammar: '지시대명사 중성 단수 대격' },
+  { pali: 'kiṃ', pronKo: '낑', meaning: '무엇을/어떻게', grammar: '의문대명사 중성 단수 대격' },
+  { pali: 'maññatha', pronKo: '만냐타', meaning: '생각하느냐', grammar: '현재 2인칭 복수 (maññati)' },
+  { pali: 'bhikkhave', pronKo: '빅카웨', meaning: '비구들이여', grammar: '남성 복수 호격' },
+  { pali: 'vedanā', pronKo: '웨다나-', meaning: '느낌/수(受)', grammar: '여성 단수 주격', important: true },
   { pali: 'niccā', pronKo: '닛짜-', meaning: '영원한(여성형)', grammar: '형용사 여성 단수 주격' },
-  { pali: 'aniccā', pronKo: '아닛짜-', meaning: '무상한(여성형)', grammar: '형용사 여성 단수 주격 (an + nicca)' },
+  { pali: 'vā', pronKo: '와-', meaning: '또는', grammar: '불변어(접속사)' },
+  { pali: 'aniccā', pronKo: '아닛짜-', meaning: '무상한(여성형)', grammar: '형용사 여성 단수 주격 (an + nicca)', important: true },
+  { pali: 'ti', pronKo: '띠', meaning: '~라고 (인용)', grammar: '불변어(인용사, iti의 줄임)' },
+  { pali: 'bhante', pronKo: '반떼', meaning: '존자시여', grammar: '호격 (공경어)' },
+  { pali: 'Yaṃ', pronKo: '양', meaning: '~하는 것은', grammar: '관계대명사 중성 단수 주격' },
+  { pali: 'panāniccaṃ', pronKo: '빠나닛짱', meaning: '그런데 무상한 것은', grammar: 'pana(그런데) + aniccaṃ (연성)' },
+  { pali: 'dukkhaṃ', pronKo: '둑캉', meaning: '괴로움/고(苦)', grammar: '중성 단수 주격' },
+  { pali: 'sukhaṃ', pronKo: '수캉', meaning: '즐거움/행복', grammar: '중성 단수 주격' },
+  { pali: 'vipariṇāmadhammaṃ', pronKo: '위빠리나-마담망', meaning: '변하는 성질의', grammar: '형용사 중성 단수 주격 (vipariṇāma + dhamma)' },
+  { pali: 'kallaṃ', pronKo: '깔랑', meaning: '합당한/적절한', grammar: '형용사 중성 단수 주격' },
+  { pali: 'nu', pronKo: '누', meaning: '과연 ~인가', grammar: '불변어(의문사)' },
+  { pali: 'samanupassituṃ', pronKo: '사마누빳시뚱', meaning: '~라고 보기에', grammar: '부정사 (sam + anu + passati)' },
+  { pali: 'etaṃ', pronKo: '에땅', meaning: '이것은', grammar: '지시대명사 중성 단수 주격' },
+  { pali: 'mama', pronKo: '마마', meaning: '나의 것', grammar: '1인칭 단수 속격' },
+  { pali: 'esohamasmi', pronKo: '에소하맛미', meaning: '이것은 나이다', grammar: 'eso + aham + asmi (연성)' },
+  { pali: 'eso', pronKo: '에소', meaning: '이것은', grammar: '지시대명사 남성 단수 주격' },
+  { pali: 'me', pronKo: '메', meaning: '나의', grammar: '1인칭 단수 속격' },
+  { pali: 'attāti', pronKo: '앗따-띠', meaning: '자아이다 + 라고', grammar: 'attā + iti (연성)' },
+  { pali: 'No', pronKo: '노', meaning: '아니다', grammar: '불변어(부정사)' },
+  { pali: 'hetaṃ', pronKo: '헤땅', meaning: '참으로 이것은', grammar: 'hi + etaṃ (연성, 강조)' },
 ]
 
 // ── 제9단락: 상온 질문 ──
@@ -222,7 +325,34 @@ export const VERSE_9 = {
   ],
 }
 
-export const VERSE_9_WORDS: VerseWord[] = []
+export const VERSE_9_WORDS: VerseWord[] = [
+  { pali: 'Taṃ', pronKo: '땅', meaning: '그것을', grammar: '지시대명사 중성 단수 대격' },
+  { pali: 'kiṃ', pronKo: '낑', meaning: '무엇을/어떻게', grammar: '의문대명사 중성 단수 대격' },
+  { pali: 'maññatha', pronKo: '만냐타', meaning: '생각하느냐', grammar: '현재 2인칭 복수 (maññati)' },
+  { pali: 'bhikkhave', pronKo: '빅카웨', meaning: '비구들이여', grammar: '남성 복수 호격' },
+  { pali: 'saññā', pronKo: '산냐-', meaning: '인식/상(想)', grammar: '여성 단수 주격', important: true },
+  { pali: 'niccā', pronKo: '닛짜-', meaning: '영원한(여성형)', grammar: '형용사 여성 단수 주격' },
+  { pali: 'vā', pronKo: '와-', meaning: '또는', grammar: '불변어(접속사)' },
+  { pali: 'aniccā', pronKo: '아닛짜-', meaning: '무상한(여성형)', grammar: '형용사 여성 단수 주격 (an + nicca)', important: true },
+  { pali: 'ti', pronKo: '띠', meaning: '~라고 (인용)', grammar: '불변어(인용사, iti의 줄임)' },
+  { pali: 'bhante', pronKo: '반떼', meaning: '존자시여', grammar: '호격 (공경어)' },
+  { pali: 'Yaṃ', pronKo: '양', meaning: '~하는 것은', grammar: '관계대명사 중성 단수 주격' },
+  { pali: 'panāniccaṃ', pronKo: '빠나닛짱', meaning: '그런데 무상한 것은', grammar: 'pana(그런데) + aniccaṃ (연성)' },
+  { pali: 'dukkhaṃ', pronKo: '둑캉', meaning: '괴로움/고(苦)', grammar: '중성 단수 주격' },
+  { pali: 'sukhaṃ', pronKo: '수캉', meaning: '즐거움/행복', grammar: '중성 단수 주격' },
+  { pali: 'vipariṇāmadhammaṃ', pronKo: '위빠리나-마담망', meaning: '변하는 성질의', grammar: '형용사 중성 단수 주격 (vipariṇāma + dhamma)' },
+  { pali: 'kallaṃ', pronKo: '깔랑', meaning: '합당한/적절한', grammar: '형용사 중성 단수 주격' },
+  { pali: 'nu', pronKo: '누', meaning: '과연 ~인가', grammar: '불변어(의문사)' },
+  { pali: 'samanupassituṃ', pronKo: '사마누빳시뚱', meaning: '~라고 보기에', grammar: '부정사 (sam + anu + passati)' },
+  { pali: 'etaṃ', pronKo: '에땅', meaning: '이것은', grammar: '지시대명사 중성 단수 주격' },
+  { pali: 'mama', pronKo: '마마', meaning: '나의 것', grammar: '1인칭 단수 속격' },
+  { pali: 'esohamasmi', pronKo: '에소하맛미', meaning: '이것은 나이다', grammar: 'eso + aham + asmi (연성)' },
+  { pali: 'eso', pronKo: '에소', meaning: '이것은', grammar: '지시대명사 남성 단수 주격' },
+  { pali: 'me', pronKo: '메', meaning: '나의', grammar: '1인칭 단수 속격' },
+  { pali: 'attāti', pronKo: '앗따-띠', meaning: '자아이다 + 라고', grammar: 'attā + iti (연성)' },
+  { pali: 'No', pronKo: '노', meaning: '아니다', grammar: '불변어(부정사)' },
+  { pali: 'hetaṃ', pronKo: '헤땅', meaning: '참으로 이것은', grammar: 'hi + etaṃ (연성, 강조)' },
+]
 
 // ── 제10단락: 행온 질문 ──
 
@@ -236,7 +366,34 @@ export const VERSE_10 = {
   ],
 }
 
-export const VERSE_10_WORDS: VerseWord[] = []
+export const VERSE_10_WORDS: VerseWord[] = [
+  { pali: 'Taṃ', pronKo: '땅', meaning: '그것을', grammar: '지시대명사 중성 단수 대격' },
+  { pali: 'kiṃ', pronKo: '낑', meaning: '무엇을/어떻게', grammar: '의문대명사 중성 단수 대격' },
+  { pali: 'maññatha', pronKo: '만냐타', meaning: '생각하느냐', grammar: '현재 2인칭 복수 (maññati)' },
+  { pali: 'bhikkhave', pronKo: '빅카웨', meaning: '비구들이여', grammar: '남성 복수 호격' },
+  { pali: 'saṅkhārā', pronKo: '상카-라-', meaning: '형성들/행(行)', grammar: '남성 복수 주격', important: true },
+  { pali: 'niccā', pronKo: '닛짜-', meaning: '영원한(복수형)', grammar: '형용사 복수 주격' },
+  { pali: 'vā', pronKo: '와-', meaning: '또는', grammar: '불변어(접속사)' },
+  { pali: 'aniccā', pronKo: '아닛짜-', meaning: '무상한(복수형)', grammar: '형용사 복수 주격 (an + nicca)', important: true },
+  { pali: 'ti', pronKo: '띠', meaning: '~라고 (인용)', grammar: '불변어(인용사, iti의 줄임)' },
+  { pali: 'bhante', pronKo: '반떼', meaning: '존자시여', grammar: '호격 (공경어)' },
+  { pali: 'Yaṃ', pronKo: '양', meaning: '~하는 것은', grammar: '관계대명사 중성 단수 주격' },
+  { pali: 'panāniccaṃ', pronKo: '빠나닛짱', meaning: '그런데 무상한 것은', grammar: 'pana(그런데) + aniccaṃ (연성)' },
+  { pali: 'dukkhaṃ', pronKo: '둑캉', meaning: '괴로움/고(苦)', grammar: '중성 단수 주격' },
+  { pali: 'sukhaṃ', pronKo: '수캉', meaning: '즐거움/행복', grammar: '중성 단수 주격' },
+  { pali: 'vipariṇāmadhammaṃ', pronKo: '위빠리나-마담망', meaning: '변하는 성질의', grammar: '형용사 중성 단수 주격 (vipariṇāma + dhamma)' },
+  { pali: 'kallaṃ', pronKo: '깔랑', meaning: '합당한/적절한', grammar: '형용사 중성 단수 주격' },
+  { pali: 'nu', pronKo: '누', meaning: '과연 ~인가', grammar: '불변어(의문사)' },
+  { pali: 'samanupassituṃ', pronKo: '사마누빳시뚱', meaning: '~라고 보기에', grammar: '부정사 (sam + anu + passati)' },
+  { pali: 'etaṃ', pronKo: '에땅', meaning: '이것은', grammar: '지시대명사 중성 단수 주격' },
+  { pali: 'mama', pronKo: '마마', meaning: '나의 것', grammar: '1인칭 단수 속격' },
+  { pali: 'esohamasmi', pronKo: '에소하맛미', meaning: '이것은 나이다', grammar: 'eso + aham + asmi (연성)' },
+  { pali: 'eso', pronKo: '에소', meaning: '이것은', grammar: '지시대명사 남성 단수 주격' },
+  { pali: 'me', pronKo: '메', meaning: '나의', grammar: '1인칭 단수 속격' },
+  { pali: 'attāti', pronKo: '앗따-띠', meaning: '자아이다 + 라고', grammar: 'attā + iti (연성)' },
+  { pali: 'No', pronKo: '노', meaning: '아니다', grammar: '불변어(부정사)' },
+  { pali: 'hetaṃ', pronKo: '헤땅', meaning: '참으로 이것은', grammar: 'hi + etaṃ (연성, 강조)' },
+]
 
 // ── 제11단락: 식온 질문 ──
 
@@ -250,7 +407,34 @@ export const VERSE_11 = {
   ],
 }
 
-export const VERSE_11_WORDS: VerseWord[] = []
+export const VERSE_11_WORDS: VerseWord[] = [
+  { pali: 'Taṃ', pronKo: '땅', meaning: '그것을', grammar: '지시대명사 중성 단수 대격' },
+  { pali: 'kiṃ', pronKo: '낑', meaning: '무엇을/어떻게', grammar: '의문대명사 중성 단수 대격' },
+  { pali: 'maññatha', pronKo: '만냐타', meaning: '생각하느냐', grammar: '현재 2인칭 복수 (maññati)' },
+  { pali: 'bhikkhave', pronKo: '빅카웨', meaning: '비구들이여', grammar: '남성 복수 호격' },
+  { pali: 'viññāṇaṃ', pronKo: '윈냐-낭', meaning: '의식/식(識)', grammar: '중성 단수 주격', important: true },
+  { pali: 'niccaṃ', pronKo: '닛짱', meaning: '영원한/상(常)', grammar: '형용사 중성 단수 주격' },
+  { pali: 'vā', pronKo: '와-', meaning: '또는', grammar: '불변어(접속사)' },
+  { pali: 'aniccaṃ', pronKo: '아닛짱', meaning: '무상한', grammar: '형용사 중성 단수 주격 (an + nicca)', important: true },
+  { pali: 'ti', pronKo: '띠', meaning: '~라고 (인용)', grammar: '불변어(인용사, iti의 줄임)' },
+  { pali: 'bhante', pronKo: '반떼', meaning: '존자시여', grammar: '호격 (공경어)' },
+  { pali: 'Yaṃ', pronKo: '양', meaning: '~하는 것은', grammar: '관계대명사 중성 단수 주격' },
+  { pali: 'panāniccaṃ', pronKo: '빠나닛짱', meaning: '그런데 무상한 것은', grammar: 'pana(그런데) + aniccaṃ (연성)' },
+  { pali: 'dukkhaṃ', pronKo: '둑캉', meaning: '괴로움/고(苦)', grammar: '중성 단수 주격' },
+  { pali: 'sukhaṃ', pronKo: '수캉', meaning: '즐거움/행복', grammar: '중성 단수 주격' },
+  { pali: 'vipariṇāmadhammaṃ', pronKo: '위빠리나-마담망', meaning: '변하는 성질의', grammar: '형용사 중성 단수 주격 (vipariṇāma + dhamma)' },
+  { pali: 'kallaṃ', pronKo: '깔랑', meaning: '합당한/적절한', grammar: '형용사 중성 단수 주격' },
+  { pali: 'nu', pronKo: '누', meaning: '과연 ~인가', grammar: '불변어(의문사)' },
+  { pali: 'samanupassituṃ', pronKo: '사마누빳시뚱', meaning: '~라고 보기에', grammar: '부정사 (sam + anu + passati)' },
+  { pali: 'etaṃ', pronKo: '에땅', meaning: '이것은', grammar: '지시대명사 중성 단수 주격' },
+  { pali: 'mama', pronKo: '마마', meaning: '나의 것', grammar: '1인칭 단수 속격' },
+  { pali: 'esohamasmi', pronKo: '에소하맛미', meaning: '이것은 나이다', grammar: 'eso + aham + asmi (연성)' },
+  { pali: 'eso', pronKo: '에소', meaning: '이것은', grammar: '지시대명사 남성 단수 주격' },
+  { pali: 'me', pronKo: '메', meaning: '나의', grammar: '1인칭 단수 속격' },
+  { pali: 'attāti', pronKo: '앗따-띠', meaning: '자아이다 + 라고', grammar: 'attā + iti (연성)' },
+  { pali: 'No', pronKo: '노', meaning: '아니다', grammar: '불변어(부정사)' },
+  { pali: 'hetaṃ', pronKo: '헤땅', meaning: '참으로 이것은', grammar: 'hi + etaṃ (연성, 강조)' },
+]
 
 // ── 제12단락: 결론 — "있는 그대로 바른 지혜로 보아야 한다" ──
 
