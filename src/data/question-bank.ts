@@ -1353,7 +1353,7 @@ export const QUESTION_BANK: {
         options: ['pabbajitena', 'gahaṭṭhena', 'bhikkhunā', 'sāvakena'],
         answer: 0,
         explanation: {
-          correct: 'pabbajitena는 "출가자에 의해"라는 뜻의 조격(조격)입니다.',
+          correct: 'pabbajitena는 "출가자에 의해"라는 뜻의 구격(구격)입니다.',
           detail: 'pabbajita(출가자) — 재가자(gahaṭṭha)의 반대. 집을 떠난 수행자를 뜻합니다.',
         },
       },
@@ -2506,15 +2506,15 @@ export const QUESTION_BANK: {
         type: 'quiz',
         question: '"Atthi imasmiṃ kāye kesā lomā nakhā"에서 "kāye"의 뜻은?',
         options: [
-          '몸에(처격)',
+          '몸에(처소격)',
           '몸이(주격)',
           '몸을(목적격)',
           '몸의(소유격)',
         ],
         answer: 0,
         explanation: {
-          correct: 'kāye는 kāya(몸)의 처격으로 "몸에, 몸 안에"를 뜻합니다.',
-          tip: '-e 어미 = "~에, ~에서" (처격)',
+          correct: 'kāye는 kāya(몸)의 처소격으로 "몸에, 몸 안에"를 뜻합니다.',
+          tip: '-e 어미 = "~에, ~에서" (처소격)',
         },
       },
 

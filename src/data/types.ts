@@ -108,7 +108,7 @@ export interface VerseWord {
 /** 문법 설명 스텝 */
 export interface TeachGrammarStep {
   type: 'teach-grammar'
-  title: string            // 예: "격변화: 처격 (-yaṃ)"
+  title: string            // 예: "격변화: 처소격 (-yaṃ)"
   description: string      // 문법 설명
   examples: GrammarExample[]
   table?: GrammarTable     // 격변화 테이블 (선택)

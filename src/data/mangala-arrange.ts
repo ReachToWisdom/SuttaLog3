@@ -17,7 +17,7 @@ export const ARRANGE_V0_WRITING = genWritingArrange(
   '이와 같이 나는 들었다',
   ['Evaṃ', 'me', 'sutaṃ'],
   [
-    { text: 'mayā', why: 'mayā는 조격(나에 의해)이지 주격이 아닙니다. 이 구문에서는 me가 맞습니다' },
+    { text: 'mayā', why: 'mayā는 구격(나에 의해)이지 주격이 아닙니다. 이 구문에서는 me가 맞습니다' },
     { text: 'sutassa', why: 'sutassa는 소유격(들은 것의)입니다. 여기서는 주격 sutaṃ이 맞습니다' },
     { text: 'Evā', why: 'Evā는 존재하지 않는 형태입니다. Evaṃ이 맞습니다' },
   ],
@@ -51,7 +51,7 @@ export const ARRANGE_V2_READING = genReadingArrange(
   'Asevanā ca bālānaṃ, paṇḍitānañca sevanā',
   ['어리석은 이를', '가까이하지 않고', '현명한 이를', '가까이하며'],
   [
-    { text: '어리석은 이에 의해', why: 'bālānaṃ은 소유격(~의/~을)이지 조격(~에 의해)이 아닙니다' },
+    { text: '어리석은 이에 의해', why: 'bālānaṃ은 소유격(~의/~을)이지 구격(~에 의해)이 아닙니다' },
     { text: '현명한 이의', why: '여기서 paṇḍitānaṃ은 "현명한 이를(섬기는 대상)"의 의미입니다' },
     { text: '가까이한 것', why: 'sevanā는 동작명사(가까이함)이지 과거분사가 아닙니다' },
   ],
@@ -75,7 +75,7 @@ export const ARRANGE_V5_READING = genReadingArrange(
   [
     { text: '어머니의', why: 'Mātāpitu는 "어머니와 아버지의(를)"이지 "어머니의"만이 아닙니다' },
     { text: '봉양하는 자', why: 'upaṭṭhānaṃ은 "봉양(행위)"이지 "봉양하는 자(사람)"가 아닙니다' },
-    { text: '아내와 자녀에 의해', why: 'puttadārassa는 소유격(~의/~을)이지 조격(~에 의해)이 아닙니다' },
+    { text: '아내와 자녀에 의해', why: 'puttadārassa는 소유격(~의/~을)이지 구격(~에 의해)이 아닙니다' },
   ],
 )
 
@@ -85,7 +85,7 @@ export const ARRANGE_V8_READING = genReadingArrange(
   'Gāravo ca nivāto ca, santuṭṭhī ca kataññutā',
   ['존경과', '겸손', '만족과', '감사함'],
   [
-    { text: '존경에 의해', why: 'Gāravo는 주격(존경이)이지 조격(존경에 의해)이 아닙니다' },
+    { text: '존경에 의해', why: 'Gāravo는 주격(존경이)이지 구격(존경에 의해)이 아닙니다' },
     { text: '만족을', why: 'santuṭṭhī는 주격(만족이)이지 목적격(만족을)이 아닙니다' },
   ],
 )
@@ -97,7 +97,7 @@ export const ARRANGE_V11_READING = genReadingArrange(
   ['세상의 법에', '부딪혀도', '마음이', '흔들리지 않는'],
   [
     { text: '마음을', why: 'cittaṃ은 여기서 주격(마음이)이지 목적격(마음을)이 아닙니다' },
-    { text: '세상의 법을', why: 'lokadhammehi는 조격(법에 의해/법에 부딪혀)이지 목적격이 아닙니다' },
+    { text: '세상의 법을', why: 'lokadhammehi는 구격(법에 의해/법에 부딪혀)이지 목적격이 아닙니다' },
     { text: '흔들린', why: 'na kampati는 "흔들리지 않는"이지 "흔들린"이 아닙니다' },
   ],
 )
@@ -107,7 +107,7 @@ export const ARRANGE_V11_WRITING = genWritingArrange(
   ['cittaṃ', 'na', 'kampati'],
   [
     { text: 'cittassa', why: 'cittassa는 소유격(마음의)이지 주격(마음이)이 아닙니다' },
-    { text: 'cittena', why: 'cittena는 조격(마음에 의해)이지 주격이 아닙니다' },
+    { text: 'cittena', why: 'cittena는 구격(마음에 의해)이지 주격이 아닙니다' },
     { text: 'kampeti', why: 'kampeti는 사역형(흔들리게 하다)이지 자동사(흔들리다)가 아닙니다' },
   ],
 )

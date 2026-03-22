@@ -47,7 +47,7 @@ export const MANGALA_SANDHI_NOTES: TeachGrammarStep[] = [
     title: '본문 변형: bhagavā — ant-어간 불규칙 주격',
     description:
       '문법 테이블에서 배운 a-어간(-o 주격)과 달리, bhagavā(세존)는 ant-어간 명사로 ' +
-      '주격이 -ā, 소유격이 -ato, 조격이 -atā 형태입니다. bhagavant에서 ant가 탈락합니다.',
+      '주격이 -ā, 소유격이 -ato, 구격이 -atā 형태입니다. bhagavant에서 ant가 탈락합니다.',
     examples: [
       { pali: 'bhagavā', breakdown: 'bhagavant + ā (주격: ant 탈락)', meaning: '세존께서' },
       { pali: 'bhagavato', breakdown: 'bhagavant + o (소유격)', meaning: '세존의' },
@@ -228,9 +228,9 @@ export const SATIPATTHANA_SANDHI_NOTES: TeachGrammarStep[] = [
   },
   {
     type: 'teach-grammar',
-    title: '본문 변형: 처격의 다양한 형태',
+    title: '본문 변형: 처소격의 다양한 형태',
     description:
-      '사념처경에는 처격(-에서)이 특히 다양한 형태로 나옵니다. 어간 유형에 따라 처격 어미가 다릅니다.',
+      '사념처경에는 처소격(-에서)이 특히 다양한 형태로 나옵니다. 어간 유형에 따라 처소격 어미가 다릅니다.',
     examples: [
       { pali: 'kāye / kāyasmiṃ', breakdown: '남성 a-어간: -e (단축) / -asmiṃ (완전)', meaning: '몸에서' },
       { pali: 'vedanāsu', breakdown: '여성 ā-어간 복수: -āsu', meaning: '느낌들에서' },
@@ -239,7 +239,7 @@ export const SATIPATTHANA_SANDHI_NOTES: TeachGrammarStep[] = [
       { pali: 'Imasmiṃ veyyākaraṇasmiṃ', breakdown: '중성 a-어간: -asmiṃ (완전형)', meaning: '이 가르침에서 (전법륜경)' },
     ],
     table: {
-      label: '처격 어미 변이 정리',
+      label: '처소격 어미 변이 정리',
       rows: [
         { case: 'a-어간 단수', ending: '-e / -asmiṃ', example: 'kāye = kāyasmiṃ', meaning: '몸에서' },
         { case: 'a-어간 복수', ending: '-esu', example: 'dhammesu', meaning: '법들에서' },

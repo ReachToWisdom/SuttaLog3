@@ -11,7 +11,7 @@ export const VERSE_1 = {
   translation: '한 때 세존께서 바라나시의 이시빠따나 녹야원에 머무셨다. 거기서 세존께서 다섯 비구에게 "비구들이여"라고 말씀하셨다. "세존이시여"라고 그 비구들이 대답하였다. 세존께서 이렇게 말씀하셨다.',
   grammarNotes: [
     '문장 구조: 4문장. ①시간+장소 서두 ②부름 ③대답 ④도입. 경전 정형 서두(nidāna)',
-    '핵심 문법: "Ekaṃ samayaṃ"은 목적격의 시간 부사 용법. 처격 bārāṇasiyaṃ/isipatane/migadāye가 장소',
+    '핵심 문법: "Ekaṃ samayaṃ"은 목적격의 시간 부사 용법. 처소격 bārāṇasiyaṃ/isipatane/migadāye가 장소',
     '연성: bhikkhavoti = bhikkhavo + iti, Bhadanteti = Bhadante + iti, etadavoca = etad + avoca, paccassosuṃ = pati + assosuṃ',
   ],
 }
@@ -20,10 +20,10 @@ export const VERSE_1_WORDS: VerseWord[] = [
   { pali: 'Ekaṃ', pronKo: '에깡', meaning: '하나의/한', grammar: '수사 중성 단수 목적격' },
   { pali: 'samayaṃ', pronKo: '사마양', meaning: '때/시기', grammar: '남성 단수 목적격' },
   { pali: 'bhagavā', pronKo: '바가와-', meaning: '세존(부처님)', grammar: '남성 단수 주격', important: true },
-  { pali: 'bārāṇasiyaṃ', pronKo: '바-라-나시양', meaning: '바라나시에서', grammar: '여성 단수 처격 (지명)' },
+  { pali: 'bārāṇasiyaṃ', pronKo: '바-라-나시양', meaning: '바라나시에서', grammar: '여성 단수 처소격 (지명)' },
   { pali: 'viharati', pronKo: '위하라띠', meaning: '머무시다', grammar: '현재 3인칭 단수 (vi + harati)' },
-  { pali: 'isipatane', pronKo: '이시빠따네', meaning: '이시빠따나에서', grammar: '중성 단수 처격 (지명)' },
-  { pali: 'migadāye', pronKo: '미가다-예', meaning: '녹야원에서', grammar: '남성 단수 처격 (miga + dāya)' },
+  { pali: 'isipatane', pronKo: '이시빠따네', meaning: '이시빠따나에서', grammar: '중성 단수 처소격 (지명)' },
+  { pali: 'migadāye', pronKo: '미가다-예', meaning: '녹야원에서', grammar: '남성 단수 처소격 (miga + dāya)' },
   { pali: 'Tatra', pronKo: '따뜨라', meaning: '거기서', grammar: '불변어(부사)' },
   { pali: 'kho', pronKo: '코', meaning: '참으로/실로', grammar: '불변어(강조사)' },
   { pali: 'pañcavaggiye', pronKo: '빤짜왁기예', meaning: '다섯 무리의', grammar: '형용사 남성 복수 목적격 (pañca + vaggiya)' },
@@ -64,7 +64,7 @@ export const VERSE_2_WORDS: VerseWord[] = [
   { pali: 'saṃvatteyya', pronKo: '상왓떼이야', meaning: '이끌 것이다', grammar: '가정법 3인칭 단수 (saṃvattati)' },
   { pali: 'labbhetha', pronKo: '랍베타', meaning: '얻어질 수 있어야 한다', grammar: '가정법 수동 3인칭 단수 (labhati)' },
   { pali: 'ca', pronKo: '짜', meaning: '~과/그리고', grammar: '불변어(접속사)' },
-  { pali: 'rūpe', pronKo: '루-뻬', meaning: '물질에 대해', grammar: '중성 단수 처격' },
+  { pali: 'rūpe', pronKo: '루-뻬', meaning: '물질에 대해', grammar: '중성 단수 처소격' },
   { pali: 'evaṃ', pronKo: '에왕', meaning: '이와 같이', grammar: '불변어(부사)' },
   { pali: 'me', pronKo: '메', meaning: '나의', grammar: '1인칭 단수 소유격' },
   { pali: 'hotu', pronKo: '호뚜', meaning: '~이 되어라', grammar: '명령법 3인칭 단수 (bhavati)' },
@@ -85,7 +85,7 @@ export const VERSE_3 = {
   translation: '비구들이여, 느낌은 자아가 아니다. 만약 느낌이 자아라면 느낌이 병들지 않아야 할 것이며, 느낌에 대해 "나의 느낌이 이렇게 되어라, 이렇게 되지 말라"고 할 수 있어야 한다. 그러나 느낌은 자아가 아니므로 느낌은 병듦에 이르고, 느낌에 대해 "나의 느낌이 이렇게 되어라, 이렇게 되지 말라"고 할 수 없다.',
   grammarNotes: [
     '색온(제2단락)과 동일한 구문 패턴. vedanā(여성 단수 주격)로 대체',
-    '핵심 차이: 처격이 rūpe(중성) → vedanāya(여성)로 변경. 여성 명사의 처격 어미 -āya',
+    '핵심 차이: 처소격이 rūpe(중성) → vedanāya(여성)로 변경. 여성 명사의 처소격 어미 -āya',
     '연성 규칙 동일: Vedanā ca(별도 단어, 연성 없음 — 여성이므로 Rūpañca와 다름)',
   ],
 }
@@ -102,7 +102,7 @@ export const VERSE_3_WORDS: VerseWord[] = [
   { pali: 'ābādhāya', pronKo: '아-바-다-야', meaning: '병들기 위해/병듦에', grammar: '남성 단수 여격 (ābādha)' },
   { pali: 'saṃvatteyya', pronKo: '상왓떼이야', meaning: '이끌 것이다', grammar: '가정법 3인칭 단수 (saṃvattati)' },
   { pali: 'labbhetha', pronKo: '랍베타', meaning: '얻어질 수 있어야 한다', grammar: '가정법 수동 3인칭 단수 (labhati)' },
-  { pali: 'vedanāya', pronKo: '웨다나-야', meaning: '느낌에 대해', grammar: '여성 단수 처격/여격' },
+  { pali: 'vedanāya', pronKo: '웨다나-야', meaning: '느낌에 대해', grammar: '여성 단수 처소격/여격' },
   { pali: 'evaṃ', pronKo: '에왕', meaning: '이와 같이', grammar: '불변어(부사)' },
   { pali: 'me', pronKo: '메', meaning: '나의', grammar: '1인칭 단수 소유격' },
   { pali: 'hotu', pronKo: '호뚜', meaning: '~이 되어라', grammar: '명령법 3인칭 단수 (bhavati)' },
@@ -124,7 +124,7 @@ export const VERSE_4 = {
   translation: '비구들이여, 인식은 자아가 아니다. 만약 인식이 자아라면 인식이 병들지 않아야 할 것이며, 인식에 대해 "나의 인식이 이렇게 되어라, 이렇게 되지 말라"고 할 수 있어야 한다. 그러나 인식은 자아가 아니므로 인식은 병듦에 이르고, 인식에 대해 "나의 인식이 이렇게 되어라, 이렇게 되지 말라"고 할 수 없다.',
   grammarNotes: [
     '색온(제2단락)과 동일한 구문 패턴. saññā(여성 단수 주격)로 대체',
-    '핵심 차이: vedanā와 마찬가지로 여성 명사. 처격 saññāya',
+    '핵심 차이: vedanā와 마찬가지로 여성 명사. 처소격 saññāya',
   ],
 }
 
@@ -140,7 +140,7 @@ export const VERSE_4_WORDS: VerseWord[] = [
   { pali: 'ābādhāya', pronKo: '아-바-다-야', meaning: '병들기 위해/병듦에', grammar: '남성 단수 여격 (ābādha)' },
   { pali: 'saṃvatteyya', pronKo: '상왓떼이야', meaning: '이끌 것이다', grammar: '가정법 3인칭 단수 (saṃvattati)' },
   { pali: 'labbhetha', pronKo: '랍베타', meaning: '얻어질 수 있어야 한다', grammar: '가정법 수동 3인칭 단수 (labhati)' },
-  { pali: 'saññāya', pronKo: '산냐-야', meaning: '인식에 대해', grammar: '여성 단수 처격/여격' },
+  { pali: 'saññāya', pronKo: '산냐-야', meaning: '인식에 대해', grammar: '여성 단수 처소격/여격' },
   { pali: 'evaṃ', pronKo: '에왕', meaning: '이와 같이', grammar: '불변어(부사)' },
   { pali: 'me', pronKo: '메', meaning: '나의', grammar: '1인칭 단수 소유격' },
   { pali: 'hotu', pronKo: '호뚜', meaning: '~이 되어라', grammar: '명령법 3인칭 단수 (bhavati)' },
@@ -163,7 +163,7 @@ export const VERSE_5 = {
   grammarNotes: [
     '색온(제2단락)과 동일한 구문 패턴. saṅkhārā(남성 복수 주격)로 대체',
     '핵심 차이: 복수형이므로 동사도 복수 — abhavissaṃsu, saṃvatteyyuṃ, saṃvattanti, hontu, ahesuṃ',
-    '처격: saṅkhāresu(남성 복수 처격). 단수 처격과 달리 -esu 어미',
+    '처소격: saṅkhāresu(남성 복수 처소격). 단수 처소격과 달리 -esu 어미',
   ],
 }
 
@@ -179,7 +179,7 @@ export const VERSE_5_WORDS: VerseWord[] = [
   { pali: 'ābādhāya', pronKo: '아-바-다-야', meaning: '병들기 위해/병듦에', grammar: '남성 단수 여격 (ābādha)' },
   { pali: 'saṃvatteyyuṃ', pronKo: '상왓떼이융', meaning: '이끌 것이다(복수)', grammar: '가정법 3인칭 복수 (saṃvattati)' },
   { pali: 'labbhetha', pronKo: '랍베타', meaning: '얻어질 수 있어야 한다', grammar: '가정법 수동 3인칭 단수 (labhati)' },
-  { pali: 'saṅkhāresu', pronKo: '상카-레수', meaning: '형성들에 대해', grammar: '남성 복수 처격' },
+  { pali: 'saṅkhāresu', pronKo: '상카-레수', meaning: '형성들에 대해', grammar: '남성 복수 처소격' },
   { pali: 'evaṃ', pronKo: '에왕', meaning: '이와 같이', grammar: '불변어(부사)' },
   { pali: 'me', pronKo: '메', meaning: '나의', grammar: '1인칭 단수 소유격' },
   { pali: 'hontu', pronKo: '혼뚜', meaning: '~이 되어라(복수)', grammar: '명령법 3인칭 복수 (bhavati)' },
@@ -201,7 +201,7 @@ export const VERSE_6 = {
   translation: '비구들이여, 의식은 자아가 아니다. 만약 의식이 자아라면 의식이 병들지 않아야 할 것이며, 의식에 대해 "나의 의식이 이렇게 되어라, 이렇게 되지 말라"고 할 수 있어야 한다. 그러나 의식은 자아가 아니므로 의식은 병듦에 이르고, 의식에 대해 "나의 의식이 이렇게 되어라, 이렇게 되지 말라"고 할 수 없다.',
   grammarNotes: [
     '색온(제2단락)과 동일한 구문 패턴. viññāṇaṃ(중성 단수 주격)로 대체',
-    '핵심 차이: rūpaṃ과 같은 중성 명사. 처격 viññāṇe. 연성 Viññāṇañca = Viññāṇaṃ + ca',
+    '핵심 차이: rūpaṃ과 같은 중성 명사. 처소격 viññāṇe. 연성 Viññāṇañca = Viññāṇaṃ + ca',
   ],
 }
 
@@ -218,7 +218,7 @@ export const VERSE_6_WORDS: VerseWord[] = [
   { pali: 'saṃvatteyya', pronKo: '상왓떼이야', meaning: '이끌 것이다', grammar: '가정법 3인칭 단수 (saṃvattati)' },
   { pali: 'labbhetha', pronKo: '랍베타', meaning: '얻어질 수 있어야 한다', grammar: '가정법 수동 3인칭 단수 (labhati)' },
   { pali: 'ca', pronKo: '짜', meaning: '~과/그리고', grammar: '불변어(접속사)' },
-  { pali: 'viññāṇe', pronKo: '윈냐-네', meaning: '의식에 대해', grammar: '중성 단수 처격' },
+  { pali: 'viññāṇe', pronKo: '윈냐-네', meaning: '의식에 대해', grammar: '중성 단수 처소격' },
   { pali: 'evaṃ', pronKo: '에왕', meaning: '이와 같이', grammar: '불변어(부사)' },
   { pali: 'me', pronKo: '메', meaning: '나의', grammar: '1인칭 단수 소유격' },
   { pali: 'hotu', pronKo: '호뚜', meaning: '~이 되어라', grammar: '명령법 3인칭 단수 (bhavati)' },
@@ -445,7 +445,7 @@ export const VERSE_12 = {
   grammarNotes: [
     '문장 구조: 5온 각각에 11종 분류(시간3+내외2+조세2+열수2+원근2) 적용 후 삼상 부정 정형구',
     '핵심 문법: "netaṃ mama, nesohamasmi, na meso attā" — 제7단락의 삼상 정형구를 부정형으로 전환',
-    '복합어: atītānāgatapaccuppannaṃ = atīta(과거)+anāgata(미래)+paccuppanna(현재), yathābhūtaṃ = yathā(~대로)+bhūta(있는), sammappaññāya = sammā(바른)+paññā(지혜) 조격',
+    '복합어: atītānāgatapaccuppannaṃ = atīta(과거)+anāgata(미래)+paccuppanna(현재), yathābhūtaṃ = yathā(~대로)+bhūta(있는), sammappaññāya = sammā(바른)+paññā(지혜) 구격',
     '성·수 변화: 5온의 성에 따라 관계대명사·형용사 어미 변화 — yaṃ/yā/ye, sabbaṃ/sabbā/sabbe',
     'daṭṭhabbaṃ = dassati(보다)의 미래수동분사(의무형). "보아야 한다"',
   ],
@@ -461,15 +461,15 @@ export const VERSE_12_WORDS: VerseWord[] = [
   { pali: 'sukhumaṃ', pronKo: '수쿠망', meaning: '미세한/섬세한', grammar: '형용사 중성 단수 목적격' },
   { pali: 'hīnaṃ', pronKo: '히-낭', meaning: '열등한/낮은', grammar: '형용사 중성 단수 목적격' },
   { pali: 'paṇītaṃ', pronKo: '빠니-땅', meaning: '수승한/뛰어난', grammar: '형용사 중성 단수 목적격' },
-  { pali: 'dūre', pronKo: '두-레', meaning: '먼 곳에', grammar: '중성 단수 처격 (dūra)' },
-  { pali: 'santike', pronKo: '산띠게', meaning: '가까운 곳에', grammar: '중성 단수 처격 (santika)' },
+  { pali: 'dūre', pronKo: '두-레', meaning: '먼 곳에', grammar: '중성 단수 처소격 (dūra)' },
+  { pali: 'santike', pronKo: '산띠게', meaning: '가까운 곳에', grammar: '중성 단수 처소격 (santika)' },
   { pali: 'sabbaṃ', pronKo: '삽방', meaning: '모든', grammar: '형용사 중성 단수 주격' },
   { pali: 'netaṃ', pronKo: '네땅', meaning: '이것은 ~아니다', grammar: 'na + etaṃ (연성)', important: true },
   { pali: 'nesohamasmi', pronKo: '네소하맛미', meaning: '이것은 내가 아니다', grammar: 'na + eso + aham + asmi (연성)', important: true },
   { pali: 'meso', pronKo: '메소', meaning: '나의 이것', grammar: 'me + eso (연성)' },
   { pali: 'evametaṃ', pronKo: '에와메땅', meaning: '이와 같이 이것을', grammar: 'evaṃ + etaṃ (연성)' },
   { pali: 'yathābhūtaṃ', pronKo: '야타-부-땅', meaning: '있는 그대로', grammar: '부사 (yathā + bhūta)', important: true },
-  { pali: 'sammappaññāya', pronKo: '삼맙빤냐-야', meaning: '바른 지혜로', grammar: '여성 단수 조격 (sammā + paññā)', important: true },
+  { pali: 'sammappaññāya', pronKo: '삼맙빤냐-야', meaning: '바른 지혜로', grammar: '여성 단수 구격 (sammā + paññā)', important: true },
   { pali: 'daṭṭhabbaṃ', pronKo: '닷타방', meaning: '보아야 한다', grammar: '미래수동분사 (dassati)', important: true },
 ]
 
@@ -482,7 +482,7 @@ export const VERSE_13 = {
   grammarNotes: [
     '문장 구조: ①분사구문(Evaṃ passaṃ) → 염오(5온 각각) → ②해탈 연쇄 → ③해탈 지혜 → ④아라한과 선언',
     '해탈 연쇄: nibbindati(염오) → virajjati(이욕) → vimuccati(해탈) — 경전 전체 반복 정형구',
-    '처격 5온: rūpasmim(중성), vedanāya(여성), saññāya(여성), saṅkhāresu(남성 복수), viññāṇasmim(중성)',
+    '처소격 5온: rūpasmim(중성), vedanāya(여성), saññāya(여성), saṅkhāresu(남성 복수), viññāṇasmim(중성)',
     '아라한과 4구: Khīṇā jāti(태어남 다함), vusitaṃ brahmacariyaṃ(청정행 완성), kataṃ karaṇīyaṃ(할 일 완수), nāparaṃ itthattāya(더 이상 윤회 없음)',
   ],
 }
@@ -491,17 +491,17 @@ export const VERSE_13_WORDS: VerseWord[] = [
   { pali: 'passaṃ', pronKo: '빳상', meaning: '보면서/관찰하면서', grammar: '현재분사 남성 단수 주격 (passati)' },
   { pali: 'sutavā', pronKo: '수따와-', meaning: '(법을) 들은/배운', grammar: '형용사 남성 단수 주격 (suta + vant)' },
   { pali: 'ariyasāvako', pronKo: '아리야사-와꼬', meaning: '성스러운 제자', grammar: '남성 단수 주격 (ariya + sāvaka)', important: true },
-  { pali: 'rūpasmimpi', pronKo: '루-빠스밈삐', meaning: '물질에서도', grammar: '중성 단수 처격 + api' },
+  { pali: 'rūpasmimpi', pronKo: '루-빠스밈삐', meaning: '물질에서도', grammar: '중성 단수 처소격 + api' },
   { pali: 'nibbindati', pronKo: '닙빈다띠', meaning: '염오하다/싫어지다', grammar: '현재 3인칭 단수 (nis + vindati)', important: true },
-  { pali: 'vedanāyapi', pronKo: '웨다나-야삐', meaning: '느낌에서도', grammar: '여성 단수 처격 + api' },
-  { pali: 'saññāyapi', pronKo: '산냐-야삐', meaning: '인식에서도', grammar: '여성 단수 처격 + api' },
-  { pali: 'saṅkhāresupi', pronKo: '상카-레수삐', meaning: '형성들에서도', grammar: '남성 복수 처격 + api' },
-  { pali: 'viññāṇasmimpi', pronKo: '윈냐-나스밈삐', meaning: '의식에서도', grammar: '중성 단수 처격 + api' },
+  { pali: 'vedanāyapi', pronKo: '웨다나-야삐', meaning: '느낌에서도', grammar: '여성 단수 처소격 + api' },
+  { pali: 'saññāyapi', pronKo: '산냐-야삐', meaning: '인식에서도', grammar: '여성 단수 처소격 + api' },
+  { pali: 'saṅkhāresupi', pronKo: '상카-레수삐', meaning: '형성들에서도', grammar: '남성 복수 처소격 + api' },
+  { pali: 'viññāṇasmimpi', pronKo: '윈냐-나스밈삐', meaning: '의식에서도', grammar: '중성 단수 처소격 + api' },
   { pali: 'Nibbindaṃ', pronKo: '닙빈당', meaning: '염오하여', grammar: '현재분사 남성 단수 주격' },
   { pali: 'virajjati', pronKo: '위랏자띠', meaning: '이욕하다', grammar: '현재 3인칭 단수 (vi + rajjati)', important: true },
   { pali: 'virāgā', pronKo: '위라-가-', meaning: '이욕으로/탐욕 여읨으로', grammar: '남성 단수 탈격 (vi + rāga)', important: true },
   { pali: 'vimuccati', pronKo: '위뭇짜띠', meaning: '해탈하다', grammar: '현재 3인칭 단수 (vi + muccati)', important: true },
-  { pali: 'Vimuttasmiṃ', pronKo: '위뭇따스밍', meaning: '해탈했을 때', grammar: '과거분사 남성 단수 처격 (절대처격)' },
+  { pali: 'Vimuttasmiṃ', pronKo: '위뭇따스밍', meaning: '해탈했을 때', grammar: '과거분사 남성 단수 처소격 (절대처소격)' },
   { pali: 'vimuttamiti', pronKo: '위뭇따미띠', meaning: '"해탈했다"라고', grammar: 'vimuttam + iti (연성)' },
   { pali: 'ñāṇaṃ', pronKo: '냐-낭', meaning: '지혜/앎', grammar: '중성 단수 주격', important: true },
   { pali: 'hoti', pronKo: '호띠', meaning: '~이다/생기다', grammar: '현재 3인칭 단수 (bhavati)' },
@@ -524,7 +524,7 @@ export const VERSE_14 = {
   translation: '세존께서 이와 같이 말씀하셨다. 다섯 비구는 기뻐하며 세존의 말씀을 환영하였다. 이 가르침이 설해졌을 때 다섯 비구의 마음은 집착 없이 번뇌로부터 해탈하였다.',
   grammarNotes: [
     '문장 구조: ①결어 정형구(Idamavoca) ②청중 반응(abhinandun) ③해탈 선언(vimucciṃsu)',
-    '핵심 문법: bhaññamāne = 현재수동분사 처격("설해지고 있을 때"), anupādāya = 절대용법("집착 없이"), āsavehi = 조격 복수("번뇌로부터")',
+    '핵심 문법: bhaññamāne = 현재수동분사 처소격("설해지고 있을 때"), anupādāya = 절대용법("집착 없이"), āsavehi = 구격 복수("번뇌로부터")',
     '연성: Idamavoca = Idaṃ + avoca, Imasmiñca = Imasmiṃ + ca, vimucciṃsūti = vimucciṃsu + iti',
   ],
 }
@@ -535,14 +535,14 @@ export const VERSE_14_WORDS: VerseWord[] = [
   { pali: 'pañcavaggiyā', pronKo: '빤짜왁기야-', meaning: '다섯 무리의', grammar: '형용사 남성 복수 주격' },
   { pali: 'bhāsitaṃ', pronKo: '바-시땅', meaning: '말씀/법문', grammar: '과거분사 중성 단수 목적격 (bhāsati)' },
   { pali: 'abhinandunti', pronKo: '아비난둔띠', meaning: '환영하였다 + 라고', grammar: '과거 3인칭 복수 + iti (abhinandati)' },
-  { pali: 'Imasmiñca', pronKo: '이마스민짜', meaning: '이것에서 + 그리고', grammar: 'Imasmiṃ(처격) + ca (연성)' },
+  { pali: 'Imasmiñca', pronKo: '이마스민짜', meaning: '이것에서 + 그리고', grammar: 'Imasmiṃ(처소격) + ca (연성)' },
   { pali: 'pana', pronKo: '빠나', meaning: '그런데/또한', grammar: '불변어(접속사)' },
-  { pali: 'veyyākaraṇasmiṃ', pronKo: '웨이야-까라나스밍', meaning: '설명/해설에서', grammar: '중성 단수 처격' },
-  { pali: 'bhaññamāne', pronKo: '반냐마-네', meaning: '설해지고 있을 때', grammar: '현재수동분사 중성 단수 처격 (bhaṇati)', important: true },
+  { pali: 'veyyākaraṇasmiṃ', pronKo: '웨이야-까라나스밍', meaning: '설명/해설에서', grammar: '중성 단수 처소격' },
+  { pali: 'bhaññamāne', pronKo: '반냐마-네', meaning: '설해지고 있을 때', grammar: '현재수동분사 중성 단수 처소격 (bhaṇati)', important: true },
   { pali: 'pañcavaggiyānaṃ', pronKo: '빤짜왁기야-낭', meaning: '다섯 무리의 (소유격)', grammar: '형용사 남성 복수 소유격' },
   { pali: 'bhikkhūnaṃ', pronKo: '빅쿠-낭', meaning: '비구들의', grammar: '남성 복수 소유격' },
   { pali: 'anupādāya', pronKo: '아누빠-다-야', meaning: '집착 없이', grammar: '절대용법 (an + upādāya)', important: true },
-  { pali: 'āsavehi', pronKo: '아-사웨히', meaning: '번뇌들로부터', grammar: '남성 복수 조격 (āsava)', important: true },
+  { pali: 'āsavehi', pronKo: '아-사웨히', meaning: '번뇌들로부터', grammar: '남성 복수 구격 (āsava)', important: true },
   { pali: 'cittāni', pronKo: '짓따-니', meaning: '마음들이', grammar: '중성 복수 주격 (citta)' },
   { pali: 'vimucciṃsūti', pronKo: '위뭇찐수-띠', meaning: '해탈하였다 + 라고', grammar: '과거 3인칭 복수 + iti (vimuccati)', important: true },
 ]

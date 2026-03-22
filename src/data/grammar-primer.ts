@@ -17,7 +17,7 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
     examples: [
       { pali: 'buddho', breakdown: 'buddha + o', meaning: '붓다가 (주격)', highlight: 'o' },
       { pali: 'buddhaṃ', breakdown: 'buddha + aṃ', meaning: '붓다를 (목적격)', highlight: 'aṃ' },
-      { pali: 'buddhena', breakdown: 'buddha + ena', meaning: '붓다에 의해 (조격)', highlight: 'ena' },
+      { pali: 'buddhena', breakdown: 'buddha + ena', meaning: '붓다에 의해 (구격)', highlight: 'ena' },
       { pali: 'buddhassa', breakdown: 'buddha + ssa', meaning: '붓다의 (소유격)', highlight: 'ssa' },
     ],
     table: {
@@ -25,11 +25,11 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
       rows: [
         { case: '주격 (nom.)', ending: '-o', example: 'buddho', meaning: '~이/가' },
         { case: '목적격 (acc.)', ending: '-aṃ', example: 'buddhaṃ', meaning: '~을/를' },
-        { case: '조격 (ins.)', ending: '-ena', example: 'buddhena', meaning: '~에 의해' },
+        { case: '구격 (ins.)', ending: '-ena', example: 'buddhena', meaning: '~에 의해' },
         { case: '여격 (dat.)', ending: '-āya/-ssa', example: 'buddhāya', meaning: '~에게' },
         { case: '탈격 (abl.)', ending: '-ā/-mhā/-smā', example: 'buddhā', meaning: '~로부터' },
         { case: '소유격 (gen.)', ending: '-ssa', example: 'buddhassa', meaning: '~의' },
-        { case: '처격 (loc.)', ending: '-e/-mhi/-smiṃ', example: 'buddhe', meaning: '~에서' },
+        { case: '처소격 (loc.)', ending: '-e/-mhi/-smiṃ', example: 'buddhe', meaning: '~에서' },
         { case: '호격 (voc.)', ending: '= 어간', example: 'buddha', meaning: '~이여' },
       ],
     },
@@ -44,7 +44,7 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
     examples: [
       { pali: 'buddhā', breakdown: 'buddha + ā', meaning: '붓다들이 (주격)', highlight: 'ā' },
       { pali: 'buddhe', breakdown: 'buddha + e', meaning: '붓다들을 (목적격)', highlight: 'e' },
-      { pali: 'buddhehi', breakdown: 'buddha + ehi', meaning: '붓다들에 의해 (조격)', highlight: 'ehi' },
+      { pali: 'buddhehi', breakdown: 'buddha + ehi', meaning: '붓다들에 의해 (구격)', highlight: 'ehi' },
       { pali: 'buddhānaṃ', breakdown: 'buddha + ānaṃ', meaning: '붓다들의 (소유격)', highlight: 'ānaṃ' },
     ],
     table: {
@@ -52,11 +52,11 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
       rows: [
         { case: '주격 (nom.)', ending: '-ā', example: 'buddhā', meaning: '~들이' },
         { case: '목적격 (acc.)', ending: '-e', example: 'buddhe', meaning: '~들을' },
-        { case: '조격 (ins.)', ending: '-ehi/-ebhi', example: 'buddhehi', meaning: '~들에 의해' },
+        { case: '구격 (ins.)', ending: '-ehi/-ebhi', example: 'buddhehi', meaning: '~들에 의해' },
         { case: '여격 (dat.)', ending: '-ānaṃ', example: 'buddhānaṃ', meaning: '~들에게' },
         { case: '탈격 (abl.)', ending: '-ehi/-ebhi', example: 'buddhehi', meaning: '~들로부터' },
         { case: '소유격 (gen.)', ending: '-ānaṃ', example: 'buddhānaṃ', meaning: '~들의' },
-        { case: '처격 (loc.)', ending: '-esu', example: 'buddhesu', meaning: '~들에서' },
+        { case: '처소격 (loc.)', ending: '-esu', example: 'buddhesu', meaning: '~들에서' },
         { case: '호격 (voc.)', ending: '= 주격', example: 'buddhā', meaning: '~들이여' },
       ],
     },
@@ -143,11 +143,11 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
       rows: [
         { case: '주격 (nom.)', ending: '-aṃ', example: 'cittaṃ', meaning: '~이/가' },
         { case: '목적격 (acc.)', ending: '-aṃ', example: 'cittaṃ', meaning: '~을/를' },
-        { case: '조격 (ins.)', ending: '-ena', example: 'cittena', meaning: '~에 의해' },
+        { case: '구격 (ins.)', ending: '-ena', example: 'cittena', meaning: '~에 의해' },
         { case: '여격 (dat.)', ending: '-āya/-ssa', example: 'cittassa', meaning: '~에게' },
         { case: '탈격 (abl.)', ending: '-ā/-mhā/-smā', example: 'cittā', meaning: '~로부터' },
         { case: '소유격 (gen.)', ending: '-ssa', example: 'cittassa', meaning: '~의' },
-        { case: '처격 (loc.)', ending: '-e/-mhi/-smiṃ', example: 'citte', meaning: '~에서' },
+        { case: '처소격 (loc.)', ending: '-e/-mhi/-smiṃ', example: 'citte', meaning: '~에서' },
         { case: '호격 (voc.)', ending: '-aṃ / 어간', example: 'cittaṃ', meaning: '~이여' },
       ],
     },
@@ -169,11 +169,11 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
       rows: [
         { case: '주격 (nom.)', ending: '-āni', example: 'cittāni', meaning: '~들이' },
         { case: '목적격 (acc.)', ending: '-āni', example: 'cittāni', meaning: '~들을' },
-        { case: '조격 (ins.)', ending: '-ehi/-ebhi', example: 'cittehi', meaning: '~들에 의해' },
+        { case: '구격 (ins.)', ending: '-ehi/-ebhi', example: 'cittehi', meaning: '~들에 의해' },
         { case: '여격 (dat.)', ending: '-ānaṃ', example: 'cittānaṃ', meaning: '~들에게' },
         { case: '탈격 (abl.)', ending: '-ehi/-ebhi', example: 'cittehi', meaning: '~들로부터' },
         { case: '소유격 (gen.)', ending: '-ānaṃ', example: 'cittānaṃ', meaning: '~들의' },
-        { case: '처격 (loc.)', ending: '-esu', example: 'cittesu', meaning: '~들에서' },
+        { case: '처소격 (loc.)', ending: '-esu', example: 'cittesu', meaning: '~들에서' },
         { case: '호격 (voc.)', ending: '-āni', example: 'cittāni', meaning: '~들이여' },
       ],
     },
@@ -189,7 +189,7 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
     type: 'teach-grammar',
     title: 'ā-어간 여성 명사: 단수 격변화',
     description:
-      '-ā로 끝나는 여성 명사. 조격~처격이 대부분 -āya로 동일한 것이 특징.',
+      '-ā로 끝나는 여성 명사. 구격~처소격이 대부분 -āya로 동일한 것이 특징.',
     examples: [
       { pali: 'paññā', breakdown: 'paññ + ā', meaning: '지혜가 (주격)', highlight: 'ā' },
       { pali: 'paññaṃ', breakdown: 'paññ + aṃ', meaning: '지혜를 (목적격)', highlight: 'aṃ' },
@@ -201,15 +201,15 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
       rows: [
         { case: '주격 (nom.)', ending: '-ā', example: 'paññā', meaning: '~이/가' },
         { case: '목적격 (acc.)', ending: '-aṃ', example: 'paññaṃ', meaning: '~을/를' },
-        { case: '조격 (ins.)', ending: '-āya', example: 'paññāya', meaning: '~에 의해' },
+        { case: '구격 (ins.)', ending: '-āya', example: 'paññāya', meaning: '~에 의해' },
         { case: '여격 (dat.)', ending: '-āya', example: 'paññāya', meaning: '~에게' },
         { case: '탈격 (abl.)', ending: '-āya', example: 'paññāya', meaning: '~로부터' },
         { case: '소유격 (gen.)', ending: '-āya', example: 'paññāya', meaning: '~의' },
-        { case: '처격 (loc.)', ending: '-āya/-āyaṃ', example: 'paññāyaṃ', meaning: '~에서' },
+        { case: '처소격 (loc.)', ending: '-āya/-āyaṃ', example: 'paññāyaṃ', meaning: '~에서' },
         { case: '호격 (voc.)', ending: '-e', example: 'paññe', meaning: '~이여' },
       ],
     },
-    tip: '여성 단수 조격~소유격이 모두 -āya — 외우기 쉽다!',
+    tip: '여성 단수 구격~소유격이 모두 -āya — 외우기 쉽다!',
     relatedLesson: 'Primer Lesson 5',
   },
 
@@ -220,7 +220,7 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
     examples: [
       { pali: 'paññā', breakdown: 'paññ + ā', meaning: '지혜들이 (주격)', highlight: 'ā' },
       { pali: 'paññāyo', breakdown: 'paññ + āyo', meaning: '지혜들이 (주격 대안)', highlight: 'āyo' },
-      { pali: 'paññāhi', breakdown: 'paññ + āhi', meaning: '지혜들에 의해 (조격)', highlight: 'āhi' },
+      { pali: 'paññāhi', breakdown: 'paññ + āhi', meaning: '지혜들에 의해 (구격)', highlight: 'āhi' },
       { pali: 'paññānaṃ', breakdown: 'paññ + ānaṃ', meaning: '지혜들의 (소유격)', highlight: 'ānaṃ' },
     ],
     table: {
@@ -228,15 +228,15 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
       rows: [
         { case: '주격 (nom.)', ending: '-ā/-āyo', example: 'paññā', meaning: '~들이' },
         { case: '목적격 (acc.)', ending: '-ā/-āyo', example: 'paññāyo', meaning: '~들을' },
-        { case: '조격 (ins.)', ending: '-āhi', example: 'paññāhi', meaning: '~들에 의해' },
+        { case: '구격 (ins.)', ending: '-āhi', example: 'paññāhi', meaning: '~들에 의해' },
         { case: '여격 (dat.)', ending: '-ānaṃ', example: 'paññānaṃ', meaning: '~들에게' },
         { case: '탈격 (abl.)', ending: '-āhi', example: 'paññāhi', meaning: '~들로부터' },
         { case: '소유격 (gen.)', ending: '-ānaṃ', example: 'paññānaṃ', meaning: '~들의' },
-        { case: '처격 (loc.)', ending: '-āsu', example: 'paññāsu', meaning: '~들에서' },
+        { case: '처소격 (loc.)', ending: '-āsu', example: 'paññāsu', meaning: '~들에서' },
         { case: '호격 (voc.)', ending: '= 주격', example: 'paññā', meaning: '~들이여' },
       ],
     },
-    tip: '여성 복수 조격/탈격 -āhi, 처격 -āsu — 남성 -ehi/-esu와 비교!',
+    tip: '여성 복수 구격/탈격 -āhi, 처소격 -āsu — 남성 -ehi/-esu와 비교!',
     relatedLesson: 'Primer Lesson 5',
   },
 
@@ -324,7 +324,7 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
     examples: [
       { pali: 'aggi', breakdown: 'aggi (어간)', meaning: '불이 (남성 주격)', highlight: 'i' },
       { pali: 'aggiṃ', breakdown: 'agg + iṃ', meaning: '불을 (목적격)', highlight: 'iṃ' },
-      { pali: 'agginā', breakdown: 'agg + inā', meaning: '불에 의해 (조격)', highlight: 'inā' },
+      { pali: 'agginā', breakdown: 'agg + inā', meaning: '불에 의해 (구격)', highlight: 'inā' },
       { pali: 'muni', breakdown: 'muni (어간)', meaning: '성자가 (남성 주격)', highlight: 'i' },
     ],
     table: {
@@ -332,15 +332,15 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
       rows: [
         { case: '주격 (nom.)', ending: '-i', example: 'aggi', meaning: '~이/가' },
         { case: '목적격 (acc.)', ending: '-iṃ', example: 'aggiṃ', meaning: '~을/를' },
-        { case: '조격 (ins.)', ending: '-inā', example: 'agginā', meaning: '~에 의해' },
+        { case: '구격 (ins.)', ending: '-inā', example: 'agginā', meaning: '~에 의해' },
         { case: '여격 (dat.)', ending: '-ino/-issa', example: 'aggissa', meaning: '~에게' },
         { case: '탈격 (abl.)', ending: '-inā/-imhā/-ismā', example: 'agginā', meaning: '~로부터' },
         { case: '소유격 (gen.)', ending: '-ino/-issa', example: 'aggino', meaning: '~의' },
-        { case: '처격 (loc.)', ending: '-imhi/-ismiṃ', example: 'aggimhi', meaning: '~에서' },
+        { case: '처소격 (loc.)', ending: '-imhi/-ismiṃ', example: 'aggimhi', meaning: '~에서' },
         { case: '호격 (voc.)', ending: '-i', example: 'aggi', meaning: '~이여' },
       ],
     },
-    tip: 'i-어간은 조격 -inā, 소유격 -ino/-issa — a-어간의 -ena, -ssa와 비교!',
+    tip: 'i-어간은 구격 -inā, 소유격 -ino/-issa — a-어간의 -ena, -ssa와 비교!',
     relatedLesson: 'Primer Lesson 8',
   },
 
@@ -348,7 +348,7 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
     type: 'teach-grammar',
     title: 'i-어간 여성 명사',
     description:
-      '-i로 끝나는 여성 명사. 조격~소유격이 대부분 -iyā로 동일.',
+      '-i로 끝나는 여성 명사. 구격~소유격이 대부분 -iyā로 동일.',
     examples: [
       { pali: 'bhūmi', breakdown: 'bhūmi (어간)', meaning: '땅이 (주격)', highlight: 'i' },
       { pali: 'bhūmiṃ', breakdown: 'bhūm + iṃ', meaning: '땅을 (목적격)', highlight: 'iṃ' },
@@ -360,15 +360,15 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
       rows: [
         { case: '주격 (nom.)', ending: '-i', example: 'bhūmi', meaning: '~이/가' },
         { case: '목적격 (acc.)', ending: '-iṃ', example: 'bhūmiṃ', meaning: '~을/를' },
-        { case: '조격 (ins.)', ending: '-iyā', example: 'bhūmiyā', meaning: '~에 의해' },
+        { case: '구격 (ins.)', ending: '-iyā', example: 'bhūmiyā', meaning: '~에 의해' },
         { case: '여격 (dat.)', ending: '-iyā', example: 'bhūmiyā', meaning: '~에게' },
         { case: '탈격 (abl.)', ending: '-iyā', example: 'bhūmiyā', meaning: '~로부터' },
         { case: '소유격 (gen.)', ending: '-iyā', example: 'bhūmiyā', meaning: '~의' },
-        { case: '처격 (loc.)', ending: '-iyā/-iyaṃ', example: 'bhūmiyaṃ', meaning: '~에서' },
+        { case: '처소격 (loc.)', ending: '-iyā/-iyaṃ', example: 'bhūmiyaṃ', meaning: '~에서' },
         { case: '호격 (voc.)', ending: '-i', example: 'bhūmi', meaning: '~이여' },
       ],
     },
-    tip: '여성 i-어간 조격~소유격 -iyā = ā-어간의 -āya와 같은 패턴!',
+    tip: '여성 i-어간 구격~소유격 -iyā = ā-어간의 -āya와 같은 패턴!',
     relatedLesson: 'Primer Lesson 9',
   },
 
@@ -384,7 +384,7 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
     examples: [
       { pali: 'bhikkhu', breakdown: 'bhikkhu (어간)', meaning: '비구가 (주격)', highlight: 'u' },
       { pali: 'bhikkhuṃ', breakdown: 'bhikkh + uṃ', meaning: '비구를 (목적격)', highlight: 'uṃ' },
-      { pali: 'bhikkhunā', breakdown: 'bhikkh + unā', meaning: '비구에 의해 (조격)', highlight: 'unā' },
+      { pali: 'bhikkhunā', breakdown: 'bhikkh + unā', meaning: '비구에 의해 (구격)', highlight: 'unā' },
       { pali: 'bhikkhussa', breakdown: 'bhikkh + ussa', meaning: '비구의 (소유격)', highlight: 'ussa' },
     ],
     table: {
@@ -392,11 +392,11 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
       rows: [
         { case: '주격 (nom.)', ending: '-u', example: 'bhikkhu', meaning: '~이/가' },
         { case: '목적격 (acc.)', ending: '-uṃ', example: 'bhikkhuṃ', meaning: '~을/를' },
-        { case: '조격 (ins.)', ending: '-unā', example: 'bhikkhunā', meaning: '~에 의해' },
+        { case: '구격 (ins.)', ending: '-unā', example: 'bhikkhunā', meaning: '~에 의해' },
         { case: '여격 (dat.)', ending: '-uno/-ussa', example: 'bhikkhussa', meaning: '~에게' },
         { case: '탈격 (abl.)', ending: '-unā/-umhā/-usmā', example: 'bhikkhunā', meaning: '~로부터' },
         { case: '소유격 (gen.)', ending: '-uno/-ussa', example: 'bhikkhuno', meaning: '~의' },
-        { case: '처격 (loc.)', ending: '-umhi/-usmiṃ', example: 'bhikkhumhi', meaning: '~에서' },
+        { case: '처소격 (loc.)', ending: '-umhi/-usmiṃ', example: 'bhikkhumhi', meaning: '~에서' },
         { case: '호격 (voc.)', ending: '-u', example: 'bhikkhu', meaning: '~이여' },
       ],
     },
@@ -420,15 +420,15 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
       rows: [
         { case: '주격 (nom.)', ending: '-u', example: 'dhātu', meaning: '~이/가' },
         { case: '목적격 (acc.)', ending: '-uṃ', example: 'dhātuṃ', meaning: '~을/를' },
-        { case: '조격 (ins.)', ending: '-uyā', example: 'dhātuyā', meaning: '~에 의해' },
+        { case: '구격 (ins.)', ending: '-uyā', example: 'dhātuyā', meaning: '~에 의해' },
         { case: '여격 (dat.)', ending: '-uyā', example: 'dhātuyā', meaning: '~에게' },
         { case: '탈격 (abl.)', ending: '-uyā', example: 'dhātuyā', meaning: '~로부터' },
         { case: '소유격 (gen.)', ending: '-uyā', example: 'dhātuyā', meaning: '~의' },
-        { case: '처격 (loc.)', ending: '-uyā/-uyaṃ', example: 'dhātuyaṃ', meaning: '~에서' },
+        { case: '처소격 (loc.)', ending: '-uyā/-uyaṃ', example: 'dhātuyaṃ', meaning: '~에서' },
         { case: '호격 (voc.)', ending: '-u', example: 'dhātu', meaning: '~이여' },
       ],
     },
-    tip: '여성 u-어간 조격~소유격 -uyā = i-어간의 -iyā, ā-어간의 -āya와 같은 패턴!',
+    tip: '여성 u-어간 구격~소유격 -uyā = i-어간의 -iyā, ā-어간의 -āya와 같은 패턴!',
     relatedLesson: 'Primer Lesson 10',
   },
 ]

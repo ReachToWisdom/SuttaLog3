@@ -38,8 +38,8 @@ export const MANGALA_GRAMMAR: TeachGrammarStep[] = [
     description: '빠알리어 명사는 문장에서 역할에 따라 형태가 변합니다. 이것을 "격변화"라 합니다. 한국어의 은/는/이/가/을/를/의/에서 와 비슷합니다.',
     examples: [
       { pali: 'bhagavā', breakdown: 'bhagavant + ā (주격)', meaning: '세존께서 (주어)', highlight: '-ā' },
-      { pali: 'Sāvatthiyaṃ', breakdown: 'Sāvatthī + yaṃ (처격)', meaning: '사왓티에서 (장소)', highlight: '-yaṃ' },
-      { pali: 'ārāme', breakdown: 'ārāma + e (처격)', meaning: '동산에서 (장소)', highlight: '-e' },
+      { pali: 'Sāvatthiyaṃ', breakdown: 'Sāvatthī + yaṃ (처소격)', meaning: '사왓티에서 (장소)', highlight: '-yaṃ' },
+      { pali: 'ārāme', breakdown: 'ārāma + e (처소격)', meaning: '동산에서 (장소)', highlight: '-e' },
       { pali: 'Anāthapiṇḍikassa', breakdown: 'Anāthapiṇḍika + ssa (소유격)', meaning: '아나타삔디까의 (소유)', highlight: '-ssa' },
     ],
     table: {
@@ -47,13 +47,13 @@ export const MANGALA_GRAMMAR: TeachGrammarStep[] = [
       rows: [
         { case: '주격 (~이/가)', ending: '-o / -ā', example: 'dhammo / dhammā', meaning: '법이 / 법들이' },
         { case: '목적격 (~을/를)', ending: '-aṃ / -e', example: 'dhammaṃ / dhamme', meaning: '법을 / 법들을' },
-        { case: '조격 (~에 의해)', ending: '-ena / -ehi', example: 'dhammena / dhammehi', meaning: '법에 의해' },
+        { case: '구격 (~에 의해)', ending: '-ena / -ehi', example: 'dhammena / dhammehi', meaning: '법에 의해' },
         { case: '소유격 (~의)', ending: '-assa / -ānaṃ', example: 'dhammassa / dhammānaṃ', meaning: '법의 / 법들의' },
-        { case: '처격 (~에서)', ending: '-e / -esu', example: 'dhamme / dhammesu', meaning: '법에서 / 법들에서' },
+        { case: '처소격 (~에서)', ending: '-e / -esu', example: 'dhamme / dhammesu', meaning: '법에서 / 법들에서' },
       ],
     },
-    tip: '처음엔 주격(~이)과 처격(~에서)만 구분해도 충분합니다. 나머지는 경전을 읽으면서 자연스럽게 배웁니다.',
-    relatedLesson: '보배경에서 조격(-ena)이 핵심 역할을 하고, 전법륜경에서 중성 주격(-aṃ)이 반복됩니다.',
+    tip: '처음엔 주격(~이)과 처소격(~에서)만 구분해도 충분합니다. 나머지는 경전을 읽으면서 자연스럽게 배웁니다.',
+    relatedLesson: '보배경에서 구격(-ena)이 핵심 역할을 하고, 전법륜경에서 중성 주격(-aṃ)이 반복됩니다.',
   },
 ]
 
@@ -144,7 +144,7 @@ export const ANATTA_GRAMMAR: TeachGrammarStep[] = [
     examples: [
       { pali: 'Rūpañca hidaṃ attā abhavissa', breakdown: 'rūpaṃ + ca + hi + idaṃ = "실로 이 물질이" + abhavissa(가정법: ~였을 것이다). ca hi가 "만약 ~라면"의 역할. 본문에 ce는 나오지 않지만 ca hi + 가정법 동사가 같은 기능', meaning: '만약 물질이 자아라면 (= 자아였을 것이라면)', highlight: 'ca hi ... abhavissa' },
       { pali: 'nayidaṃ rūpaṃ ābādhāya saṃvatteyya', breakdown: 'na + ayidaṃ(= ayaṃ + idaṃ 연성) + rūpaṃ + ābādhāya(병들기 위해, 여격) + saṃvatteyya(가정법: ~해야 할 것이다)', meaning: '(그렇다면) 물질이 병들지 않아야 할 것이다', highlight: 'saṃvatteyya' },
-      { pali: 'labbhetha ca rūpe', breakdown: 'labbhetha(가정법 수동: 얻어질 것이다) + ca + rūpe(처격: 물질에 대해)', meaning: '(그렇다면) 물질에 대해 이렇게 할 수 있어야 할 것이다', highlight: 'labbhetha' },
+      { pali: 'labbhetha ca rūpe', breakdown: 'labbhetha(가정법 수동: 얻어질 것이다) + ca + rūpe(처소격: 물질에 대해)', meaning: '(그렇다면) 물질에 대해 이렇게 할 수 있어야 할 것이다', highlight: 'labbhetha' },
     ],
     table: {
       label: '조건문 표현 비교',
@@ -169,13 +169,13 @@ export const SATIPATTHANA_GRAMMAR: TeachGrammarStep[] = [
     title: '복합 관찰 구문: -ānupassī viharati',
     description: '사념처경의 핵심 정형문은 "~에서 ~을 관찰하며 머문다"입니다. 이 구문이 몸·느낌·마음·법 4번 반복됩니다.',
     examples: [
-      { pali: 'kāye kāyānupassī viharati', breakdown: 'kāye (처격) + kāya + anupassī + viharati', meaning: '몸에서 몸을 관찰하며 머문다', highlight: 'ānupassī' },
-      { pali: 'vedanāsu vedanānupassī viharati', breakdown: 'vedanāsu (처격 복수) + vedanā + anupassī + viharati', meaning: '느낌에서 느낌을 관찰하며 머문다', highlight: 'ānupassī' },
-      { pali: 'citte cittānupassī viharati', breakdown: 'citte (처격) + citta + anupassī + viharati', meaning: '마음에서 마음을 관찰하며 머문다', highlight: 'ānupassī' },
-      { pali: 'dhammesu dhammānupassī viharati', breakdown: 'dhammesu (처격 복수) + dhamma + anupassī + viharati', meaning: '법에서 법을 관찰하며 머문다', highlight: 'ānupassī' },
+      { pali: 'kāye kāyānupassī viharati', breakdown: 'kāye (처소격) + kāya + anupassī + viharati', meaning: '몸에서 몸을 관찰하며 머문다', highlight: 'ānupassī' },
+      { pali: 'vedanāsu vedanānupassī viharati', breakdown: 'vedanāsu (처소격 복수) + vedanā + anupassī + viharati', meaning: '느낌에서 느낌을 관찰하며 머문다', highlight: 'ānupassī' },
+      { pali: 'citte cittānupassī viharati', breakdown: 'citte (처소격) + citta + anupassī + viharati', meaning: '마음에서 마음을 관찰하며 머문다', highlight: 'ānupassī' },
+      { pali: 'dhammesu dhammānupassī viharati', breakdown: 'dhammesu (처소격 복수) + dhamma + anupassī + viharati', meaning: '법에서 법을 관찰하며 머문다', highlight: 'ānupassī' },
     ],
     table: {
-      label: '사념처 정형문의 처격',
+      label: '사념처 정형문의 처소격',
       rows: [
         { case: '몸 (kāya)', ending: '-e', example: 'kāye', meaning: '몸에서' },
         { case: '느낌 (vedanā)', ending: '-āsu', example: 'vedanāsu', meaning: '느낌들에서' },
@@ -183,7 +183,7 @@ export const SATIPATTHANA_GRAMMAR: TeachGrammarStep[] = [
         { case: '법 (dhamma)', ending: '-esu', example: 'dhammesu', meaning: '법들에서' },
       ],
     },
-    relatedLesson: '행복경의 dhammesu(법들에서)와 같은 처격 복수!',
+    relatedLesson: '행복경의 dhammesu(법들에서)와 같은 처소격 복수!',
     tip: 'anupassī = anu(따라) + passī(보는 자). "따라 관찰하는 자"라는 현재분사입니다.',
   },
   {
@@ -198,7 +198,7 @@ export const SATIPATTHANA_GRAMMAR: TeachGrammarStep[] = [
     tip: '-ī, -mā(mant)는 "~을 가진"이라는 소유 접미사입니다. ātāpī = 열정을 가진, satimā = 새김을 가진.',
     relatedLesson: '자비경의 santussako(-ko 소유접미사)도 같은 패턴입니다. 행복경의 bhagavā(-vant 소유접미사)도 동일 원리!',
   },
-  // 본문 변형 보충 (정형문 구조, 절대분사/축약, 처격 다양한 형태)
+  // 본문 변형 보충 (정형문 구조, 절대분사/축약, 처소격 다양한 형태)
   ...SATIPATTHANA_SANDHI_NOTES,
 ]
 
@@ -210,25 +210,25 @@ export const RATANA_GRAMMAR: TeachGrammarStep[] = [
     title: '반복 구문: etena saccena suvatthi hotu',
     description: '보배경의 거의 모든 게송이 이 구절로 끝납니다. "이 진리로 안녕이 있기를"이라는 축원문입니다.',
     examples: [
-      { pali: 'etena', breakdown: 'eta + ena (조격 단수)', meaning: '이것에 의해', highlight: '-ena' },
-      { pali: 'saccena', breakdown: 'sacca + ena (조격 단수)', meaning: '진리에 의해', highlight: '-ena' },
+      { pali: 'etena', breakdown: 'eta + ena (구격 단수)', meaning: '이것에 의해', highlight: '-ena' },
+      { pali: 'saccena', breakdown: 'sacca + ena (구격 단수)', meaning: '진리에 의해', highlight: '-ena' },
       { pali: 'suvatthi', breakdown: 'su + atthi (불변어)', meaning: '안녕이', highlight: 'suvatthi' },
       { pali: 'hotu', breakdown: 'hoti의 명령형 3인칭 단수', meaning: '있기를', highlight: 'hotu' },
     ],
-    relatedLesson: '행복경의 격변화에서 배운 조격(-ena)이 여기서 핵심 역할을 합니다.',
-    tip: '조격(~에 의해)이 도구/수단을 나타냅니다. "진리라는 수단에 의해 안녕이 있기를"이라는 구조입니다.',
+    relatedLesson: '행복경의 격변화에서 배운 구격(-ena)이 여기서 핵심 역할을 합니다.',
+    tip: '구격(~에 의해)이 도구/수단을 나타냅니다. "진리라는 수단에 의해 안녕이 있기를"이라는 구조입니다.',
   },
   {
     type: 'teach-grammar',
     title: '삼보 찬탄 구조: idampi ... ratanaṃ paṇītaṃ',
-    description: '보배경에서 삼보(불·법·승)를 찬탄할 때 동일한 정형문이 반복됩니다. buddhe/dhamme/saṅghe는 처격(~안에)입니다.',
+    description: '보배경에서 삼보(불·법·승)를 찬탄할 때 동일한 정형문이 반복됩니다. buddhe/dhamme/saṅghe는 처소격(~안에)입니다.',
     examples: [
-      { pali: 'buddhe', breakdown: 'buddha + e (처격 단수)', meaning: '부처님 안에', highlight: '-e' },
-      { pali: 'dhamme', breakdown: 'dhamma + e (처격 단수)', meaning: '법 안에', highlight: '-e' },
-      { pali: 'saṅghe', breakdown: 'saṅgha + e (처격 단수)', meaning: '승가 안에', highlight: '-e' },
+      { pali: 'buddhe', breakdown: 'buddha + e (처소격 단수)', meaning: '부처님 안에', highlight: '-e' },
+      { pali: 'dhamme', breakdown: 'dhamma + e (처소격 단수)', meaning: '법 안에', highlight: '-e' },
+      { pali: 'saṅghe', breakdown: 'saṅgha + e (처소격 단수)', meaning: '승가 안에', highlight: '-e' },
       { pali: 'ratanaṃ paṇītaṃ', breakdown: 'ratana + ṃ + paṇīta + ṃ (중성 주격)', meaning: '뛰어난 보배', highlight: '-aṃ' },
     ],
-    relatedLesson: '행복경의 처격(-e, -esu)이 여기서도 "~안에"의 의미로 사용됩니다.',
+    relatedLesson: '행복경의 처소격(-e, -esu)이 여기서도 "~안에"의 의미로 사용됩니다.',
     tip: 'idampi(이것도) + ratanaṃ(보배) + paṇītaṃ(뛰어난) — 삼보 각각에 대해 이 구문이 반복됩니다.',
   },
   {
@@ -254,7 +254,7 @@ export const METTA_GRAMMAR: TeachGrammarStep[] = [
     description: '자비경의 첫 단어 karanīyam이 의무분사입니다. karoti(하다)에서 파생된 "해야 할 것"이라는 의미입니다.',
     examples: [
       { pali: 'karanīyaṃ', breakdown: 'karoti(하다) + anīya(의무) + ṃ(중성 목적격)', meaning: '행해야 할 것은', highlight: '-anīya' },
-      { pali: 'atthakusalena', breakdown: 'attha + kusala + ena (조격)', meaning: '선에 능숙한 자에 의해', highlight: '-ena' },
+      { pali: 'atthakusalena', breakdown: 'attha + kusala + ena (구격)', meaning: '선에 능숙한 자에 의해', highlight: '-ena' },
     ],
     table: {
       label: '의무분사 접미사 비교',
