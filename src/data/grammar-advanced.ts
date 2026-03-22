@@ -10,22 +10,22 @@ export const GRAMMAR_ADVANCED: TeachGrammarStep[] = [
     description: 'a-어간 다음으로 자주 나오는 패턴입니다. aggi(불), muni(성자), bhikkhu(비구)의 -i 어간과 구분합니다.',
     examples: [
       { pali: 'aggi', breakdown: 'aggi (남성 i-어간 주격)', meaning: '불이', highlight: '-i' },
-      { pali: 'aggiṃ', breakdown: 'aggi + ṃ (대격)', meaning: '불을', highlight: '-iṃ' },
-      { pali: 'agginā', breakdown: 'aggi + nā (구격)', meaning: '불에 의해', highlight: '-inā' },
+      { pali: 'aggiṃ', breakdown: 'aggi + ṃ (목적격)', meaning: '불을', highlight: '-iṃ' },
+      { pali: 'agginā', breakdown: 'aggi + nā (도구격)', meaning: '불에 의해', highlight: '-inā' },
       { pali: 'aggismṃ', breakdown: 'aggi + smiṃ (처격)', meaning: '불에서', highlight: '-ismiṃ' },
     ],
     table: {
       label: 'i-어간 남성 (aggi 불)',
       rows: [
         { case: '주격', ending: '-i / -ī, -ayo', example: 'aggi / aggī', meaning: '불이 / 불들이' },
-        { case: '대격', ending: '-iṃ / -ī, -ayo', example: 'aggiṃ / aggī', meaning: '불을 / 불들을' },
-        { case: '구격', ending: '-inā / -īhi', example: 'agginā / aggīhi', meaning: '불에 의해' },
-        { case: '속격', ending: '-ino / -īnaṃ', example: 'aggino / aggīnaṃ', meaning: '불의' },
+        { case: '목적격', ending: '-iṃ / -ī, -ayo', example: 'aggiṃ / aggī', meaning: '불을 / 불들을' },
+        { case: '도구격', ending: '-inā / -īhi', example: 'agginā / aggīhi', meaning: '불에 의해' },
+        { case: '소유격', ending: '-ino / -īnaṃ', example: 'aggino / aggīnaṃ', meaning: '불의' },
         { case: '처격', ending: '-ismiṃ / -īsu', example: 'aggismiṃ / aggīsu', meaning: '불에서' },
       ],
     },
     relatedLesson: '행복경의 muni(성자)가 i-어간 남성 명사입니다.',
-    tip: 'i-어간은 a-어간과 어미가 다르지만 구조는 동일합니다. 핵심: -inā(구격), -ino(속격), -ismiṃ(처격)',
+    tip: 'i-어간은 a-어간과 어미가 다르지만 구조는 동일합니다. 핵심: -inā(도구격), -ino(소유격), -ismiṃ(처격)',
   },
 
   // 2. u-어간 격변화
@@ -35,17 +35,17 @@ export const GRAMMAR_ADVANCED: TeachGrammarStep[] = [
     description: 'bhikkhu(비구), dhātu(요소), cakkhu(눈) 등이 u-어간입니다. i-어간과 패턴이 유사합니다.',
     examples: [
       { pali: 'bhikkhu', breakdown: 'bhikkhu (남성 u-어간 주격)', meaning: '비구가', highlight: '-u' },
-      { pali: 'bhikkhuṃ', breakdown: 'bhikkhu + ṃ (대격)', meaning: '비구를', highlight: '-uṃ' },
-      { pali: 'bhikkhunā', breakdown: 'bhikkhu + nā (구격)', meaning: '비구에 의해', highlight: '-unā' },
-      { pali: 'bhikkhūnaṃ', breakdown: 'bhikkhu + naṃ (속격 복수)', meaning: '비구들의', highlight: '-ūnaṃ' },
+      { pali: 'bhikkhuṃ', breakdown: 'bhikkhu + ṃ (목적격)', meaning: '비구를', highlight: '-uṃ' },
+      { pali: 'bhikkhunā', breakdown: 'bhikkhu + nā (도구격)', meaning: '비구에 의해', highlight: '-unā' },
+      { pali: 'bhikkhūnaṃ', breakdown: 'bhikkhu + naṃ (소유격 복수)', meaning: '비구들의', highlight: '-ūnaṃ' },
     ],
     table: {
       label: 'u-어간 남성 (bhikkhu 비구)',
       rows: [
         { case: '주격', ending: '-u / -ū, -avo', example: 'bhikkhu / bhikkhū', meaning: '비구가 / 비구들이' },
-        { case: '대격', ending: '-uṃ / -ū, -avo', example: 'bhikkhuṃ / bhikkhū', meaning: '비구를' },
-        { case: '구격', ending: '-unā / -ūhi', example: 'bhikkhunā / bhikkhūhi', meaning: '비구에 의해' },
-        { case: '속격', ending: '-uno / -ūnaṃ', example: 'bhikkhuno / bhikkhūnaṃ', meaning: '비구의' },
+        { case: '목적격', ending: '-uṃ / -ū, -avo', example: 'bhikkhuṃ / bhikkhū', meaning: '비구를' },
+        { case: '도구격', ending: '-unā / -ūhi', example: 'bhikkhunā / bhikkhūhi', meaning: '비구에 의해' },
+        { case: '소유격', ending: '-uno / -ūnaṃ', example: 'bhikkhuno / bhikkhūnaṃ', meaning: '비구의' },
         { case: '처격', ending: '-usmiṃ / -ūsu', example: 'bhikkhusmiṃ / bhikkhūsu', meaning: '비구에서' },
       ],
     },

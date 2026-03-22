@@ -13,22 +13,22 @@ export const VERSE_0 = {
   grammarNotes: [
     '문장 구조: "Evaṃ me sutaṃ"(정형 도입구) + 주어(bhagavā) + 동사(viharati) + 장소(처격 3연속)',
     '처격(-yaṃ, -e): Sāvatthiyaṃ, Jetavane, ārāme — 장소를 나타내는 처격이 3개 연속하여 큰 장소→작은 장소로 좁혀감',
-    '속격(-ssa): Anāthapiṇḍikassa — "아나타삔디까의", 소유를 나타내는 속격',
-    '"Evaṃ me sutaṃ"은 경전 시작의 정형구. me는 구격(나에 의해) 또는 여격, sutaṃ은 과거수동분사(들려진 것)',
+    '소유격(-ssa): Anāthapiṇḍikassa — "아나타삔디까의", 소유를 나타내는 소유격',
+    '"Evaṃ me sutaṃ"은 경전 시작의 정형구. me는 도구격(나에 의해) 또는 간접목적격, sutaṃ은 과거수동분사(들려진 것)',
   ],
 }
 
 export const VERSE_0_WORDS: VerseWord[] = [
   { pali: 'Evaṃ', pronKo: '에왕', meaning: '이와 같이', grammar: '불변어(부사)' },
-  { pali: 'me', pronKo: '메', meaning: '나는/나에게', grammar: '1인칭 단수 주격/여격' },
+  { pali: 'me', pronKo: '메', meaning: '나는/나에게', grammar: '1인칭 단수 주격/간접목적격' },
   { pali: 'sutaṃ', pronKo: '수땅', meaning: '들은 것', grammar: '과거분사 중성 단수 주격 (su + ta)' },
-  { pali: 'ekaṃ', pronKo: '에깡', meaning: '하나의/한', grammar: '수사 중성 단수 대격' },
-  { pali: 'samayaṃ', pronKo: '사마양', meaning: '때/시기', grammar: '남성 단수 대격' },
+  { pali: 'ekaṃ', pronKo: '에깡', meaning: '하나의/한', grammar: '수사 중성 단수 목적격' },
+  { pali: 'samayaṃ', pronKo: '사마양', meaning: '때/시기', grammar: '남성 단수 목적격' },
   { pali: 'bhagavā', pronKo: '바가와-', meaning: '세존(부처님)', grammar: '남성 단수 주격' },
   { pali: 'Sāvatthiyaṃ', pronKo: '사-왓티양', meaning: '사왓티에서', grammar: '여성 단수 처격 (지명)' },
   { pali: 'viharati', pronKo: '위하라띠', meaning: '머무시다', grammar: '현재 3인칭 단수 (vi + harati)' },
   { pali: 'Jetavane', pronKo: '제따와네', meaning: '제따와나에서', grammar: '중성 단수 처격 (지명)' },
-  { pali: 'Anāthapiṇḍikassa', pronKo: '아나-타삔디깟사', meaning: '아나타삔디까의', grammar: '남성 단수 속격 (인명)' },
+  { pali: 'Anāthapiṇḍikassa', pronKo: '아나-타삔디깟사', meaning: '아나타삔디까의', grammar: '남성 단수 소유격 (인명)' },
   { pali: 'ārāme', pronKo: '아-라-메', meaning: '동산/정원에서', grammar: '남성 단수 처격' },
 ]
 
@@ -50,12 +50,12 @@ export const VERSE_1_WORDS: VerseWord[] = [
   { pali: 'devā', pronKo: '데와-', meaning: '천신들', grammar: '남성 복수 주격' },
   { pali: 'manussā', pronKo: '마눗사-', meaning: '인간들', grammar: '남성 복수 주격' },
   { pali: 'ca', pronKo: '짜', meaning: '~과/그리고', grammar: '불변어(접속사)' },
-  { pali: 'maṅgalāni', pronKo: '망갈라-니', meaning: '행복들을/길상들을', grammar: '중성 복수 대격' },
+  { pali: 'maṅgalāni', pronKo: '망갈라-니', meaning: '행복들을/길상들을', grammar: '중성 복수 목적격' },
   { pali: 'acintayuṃ', pronKo: '아찐따융', meaning: '생각했다', grammar: '과거 3인칭 복수 (cinteti)' },
   { pali: 'ākaṅkhamānā', pronKo: '아-깡카마-나-', meaning: '바라면서/원하면서', grammar: '현재분사 남성 복수 주격' },
-  { pali: 'sotthānaṃ', pronKo: '솟타-낭', meaning: '안녕을/행복을', grammar: '중성 단수 대격' },
+  { pali: 'sotthānaṃ', pronKo: '솟타-낭', meaning: '안녕을/행복을', grammar: '중성 단수 목적격' },
   { pali: 'brūhi', pronKo: '브루-히', meaning: '말씀해 주소서', grammar: '명령형 2인칭 단수 (brūti)' },
-  { pali: 'maṅgalamuttamaṃ', pronKo: '망갈라뭇따망', meaning: '최상의 행복을', grammar: '중성 단수 대격 (maṅgala + uttama 연성)' },
+  { pali: 'maṅgalamuttamaṃ', pronKo: '망갈라뭇따망', meaning: '최상의 행복을', grammar: '중성 단수 목적격 (maṅgala + uttama 연성)' },
 ]
 
 /** 제2게송 */
@@ -67,17 +67,17 @@ export const VERSE_2 = {
     '문장 구조: 명사 나열(asevanā, sevanā, pūjā) + 판정문(etaṃ maṅgalamuttamaṃ). 동사 없는 명사문',
     '접두사 a-: asevanā = a(부정) + sevanā(가까이함) → "가까이하지 않음". 빠알리어 부정 접두사의 전형적 용법',
     '연성(sandhi): paṇḍitānañca = paṇḍitānaṃ + ca. 비음(-ṃ) 뒤에 ca가 올 때 ñca로 변환',
-    '의무분사(-nīya): pūjanīyānaṃ — pūjeti(공양하다) + nīya → "공양받아야 할 이들의". 속격 복수',
+    '의무분사(-nīya): pūjanīyānaṃ — pūjeti(공양하다) + nīya → "공양받아야 할 이들의". 소유격 복수',
   ],
 }
 
 export const VERSE_2_WORDS: VerseWord[] = [
   { pali: 'Asevanā', pronKo: '아세와나-', meaning: '가까이하지 않음', grammar: '여성 단수 주격 (a + sevanā)' },
-  { pali: 'bālānaṃ', pronKo: '바-라-낭', meaning: '어리석은 이들의/을', grammar: '남성 복수 속격' },
-  { pali: 'paṇḍitānañca', pronKo: '빤디따-난짜', meaning: '현명한 이들의 + 그리고', grammar: '남성 복수 속격 + ca (연성)' },
+  { pali: 'bālānaṃ', pronKo: '바-라-낭', meaning: '어리석은 이들의/을', grammar: '남성 복수 소유격' },
+  { pali: 'paṇḍitānañca', pronKo: '빤디따-난짜', meaning: '현명한 이들의 + 그리고', grammar: '남성 복수 소유격 + ca (연성)' },
   { pali: 'sevanā', pronKo: '세와나-', meaning: '가까이함/섬김', grammar: '여성 단수 주격' },
   { pali: 'pūjā', pronKo: '뿌-자-', meaning: '공양/존경', grammar: '여성 단수 주격' },
-  { pali: 'pūjanīyānaṃ', pronKo: '뿌-자니-야-낭', meaning: '공양받을 이들의/을', grammar: '남성 복수 속격 (pūjanīya: 의무분사)' },
+  { pali: 'pūjanīyānaṃ', pronKo: '뿌-자니-야-낭', meaning: '공양받을 이들의/을', grammar: '남성 복수 소유격 (pūjanīya: 의무분사)' },
   { pali: 'etaṃ', pronKo: '에땅', meaning: '이것이', grammar: '지시대명사 중성 단수 주격' },
 ]
 
@@ -130,17 +130,17 @@ export const VERSE_5 = {
   pronKo: '마-따-삐뚜 우빳타-낭, 뿟따다-랏사 상가호;\n아나-꿀라- 짜 깜만따-, 에땅 망갈라뭇따망.',
   translation: '어머니와 아버지를 봉양함, 아내와 자녀를 보살핌,\n혼란 없는 생업, 이것이 최상의 행복이니라.',
   grammarNotes: [
-    '문장 구조: 속격(대상) + 주격(행위명사) 쌍이 반복 — mātāpitu upaṭṭhānaṃ, puttadārassa saṅgaho',
-    '복합어: mātāpitu = mātā(어머니) + pitu(아버지). 드반다(dvanda) 복합어, 속격 복수형',
-    '복합어: puttadārassa = putta(아들) + dāra(아내)의 드반다 복합어. 속격 단수 -assa',
+    '문장 구조: 소유격(대상) + 주격(행위명사) 쌍이 반복 — mātāpitu upaṭṭhānaṃ, puttadārassa saṅgaho',
+    '복합어: mātāpitu = mātā(어머니) + pitu(아버지). 드반다(dvanda) 복합어, 소유격 복수형',
+    '복합어: puttadārassa = putta(아들) + dāra(아내)의 드반다 복합어. 소유격 단수 -assa',
     '접두사 a-: anākulā = a(부정) + ākula(혼란된) → "혼란 없는". 형용사가 kammantā(생업들)를 수식',
   ],
 }
 
 export const VERSE_5_WORDS: VerseWord[] = [
-  { pali: 'Mātāpitu', pronKo: '마-따-삐뚜', meaning: '어머니와 아버지의', grammar: '남성 복수 속격 (mātā + pitu)' },
+  { pali: 'Mātāpitu', pronKo: '마-따-삐뚜', meaning: '어머니와 아버지의', grammar: '남성 복수 소유격 (mātā + pitu)' },
   { pali: 'upaṭṭhānaṃ', pronKo: '우빳타-낭', meaning: '봉양/시중듦', grammar: '중성 단수 주격' },
-  { pali: 'puttadārassa', pronKo: '뿟따다-랏사', meaning: '자녀와 아내의', grammar: '남성 단수 속격 (putta + dāra)' },
+  { pali: 'puttadārassa', pronKo: '뿟따다-랏사', meaning: '자녀와 아내의', grammar: '남성 단수 소유격 (putta + dāra)' },
   { pali: 'saṅgaho', pronKo: '상가호', meaning: '보살핌/돌봄', grammar: '남성 단수 주격' },
   { pali: 'anākulā', pronKo: '아나-꿀라-', meaning: '혼란 없는', grammar: '형용사 남성 복수 주격 (a + nākula)' },
   { pali: 'kammantā', pronKo: '깜만따-', meaning: '생업들/일들', grammar: '남성 복수 주격' },
@@ -152,7 +152,7 @@ export const VERSE_6 = {
   pronKo: '다-난짜 담마짜리야- 짜, 냐-따까-난짜 상가호;\n아나왓자-니 깜마-니, 에땅 망갈라뭇따망.',
   translation: '보시와 법다운 행동, 친족을 보살핌,\n허물없는 행위, 이것이 최상의 행복이니라.',
   grammarNotes: [
-    '문장 구조: 명사 나열(dāna, dhammacariyā, saṅgaho, kammāni) + 판정문. 속격(ñātakānaṃ)은 saṅgaho의 대상',
+    '문장 구조: 명사 나열(dāna, dhammacariyā, saṅgaho, kammāni) + 판정문. 소유격(ñātakānaṃ)은 saṅgaho의 대상',
     '연성(sandhi): dānañca = dānaṃ + ca, ñātakānañca = ñātakānaṃ + ca. 비음+ca → ñca',
     '복합어: dhammacariyā = dhamma(법) + cariyā(행동/실천) → "법다운 행동". 여성 명사',
     '접두사 a-: anavajjāni = a(부정) + navajja(비난할 만한) → "허물없는". 중성 복수 주격으로 kammāni 수식',
@@ -162,7 +162,7 @@ export const VERSE_6 = {
 export const VERSE_6_WORDS: VerseWord[] = [
   { pali: 'Dānañca', pronKo: '다-난짜', meaning: '보시 + 그리고', grammar: '중성 단수 주격 + ca' },
   { pali: 'dhammacariyā', pronKo: '담마짜리야-', meaning: '법다운 행동', grammar: '여성 단수 주격 (dhamma + cariyā)' },
-  { pali: 'ñātakānañca', pronKo: '냐-따까-난짜', meaning: '친족들의 + 그리고', grammar: '남성 복수 속격 + ca' },
+  { pali: 'ñātakānañca', pronKo: '냐-따까-난짜', meaning: '친족들의 + 그리고', grammar: '남성 복수 소유격 + ca' },
   { pali: 'anavajjāni', pronKo: '아나왓자-니', meaning: '허물없는', grammar: '형용사 중성 복수 주격 (a + navajja)' },
   { pali: 'kammāni', pronKo: '깜마-니', meaning: '행위들', grammar: '중성 복수 주격' },
 ]
@@ -173,8 +173,8 @@ export const VERSE_7 = {
   pronKo: '아-라띠- 위라띠- 빠-빠-, 맛자빠-나- 짜 상야모;\n앞빠마-도 짜 담메수, 에땅 망갈라뭇따망.',
   translation: '악으로부터 멀리함과 삼감, 음주를 절제함,\n법에 대한 방일하지 않음, 이것이 최상의 행복이니라.',
   grammarNotes: [
-    '문장 구조: 명사(āratī, viratī, saṃyamo, appamādo) 나열 + 탈격(pāpā, majjapānā)으로 대상 표시 + 판정문',
-    '탈격(-ā): pāpā(악으로부터), majjapānā(음주로부터) — "~로부터 떨어짐"을 나타내는 탈격. āratī/viratī와 함께 사용',
+    '문장 구조: 명사(āratī, viratī, saṃyamo, appamādo) 나열 + 분리격(pāpā, majjapānā)으로 대상 표시 + 판정문',
+    '분리격(-ā): pāpā(악으로부터), majjapānā(음주로부터) — "~로부터 떨어짐"을 나타내는 분리격. āratī/viratī와 함께 사용',
     '처격(-esu): dhammesu — "법들에 있어서/법에 대해". appamādo(방일하지 않음)의 영역을 나타냄',
     '접두사 a-: appamādo = a + pamāda(방일) → "방일하지 않음". p 앞에서 a→ap 동화(assimilation)',
   ],
@@ -183,8 +183,8 @@ export const VERSE_7 = {
 export const VERSE_7_WORDS: VerseWord[] = [
   { pali: 'Āratī', pronKo: '아-라띠-', meaning: '멀리함', grammar: '여성 단수 주격' },
   { pali: 'viratī', pronKo: '위라띠-', meaning: '삼감/절제', grammar: '여성 단수 주격' },
-  { pali: 'pāpā', pronKo: '빠-빠-', meaning: '악으로부터', grammar: '중성 단수 탈격' },
-  { pali: 'majjapānā', pronKo: '맛자빠-나-', meaning: '음주로부터', grammar: '중성 단수 탈격 (majja + pāna)' },
+  { pali: 'pāpā', pronKo: '빠-빠-', meaning: '악으로부터', grammar: '중성 단수 분리격' },
+  { pali: 'majjapānā', pronKo: '맛자빠-나-', meaning: '음주로부터', grammar: '중성 단수 분리격 (majja + pāna)' },
   { pali: 'saṃyamo', pronKo: '상야모', meaning: '절제/자제', grammar: '남성 단수 주격' },
   { pali: 'appamādo', pronKo: '앞빠마-도', meaning: '방일하지 않음', grammar: '남성 단수 주격 (a + pamāda)' },
   { pali: 'dhammesu', pronKo: '담메수', meaning: '법들에 대해', grammar: '남성 복수 처격' },
@@ -196,8 +196,8 @@ export const VERSE_8 = {
   pronKo: '가-라워 짜 니와-또 짜, 산뚯티- 짜 까딴누따-;\n까-레나 담마사와낭, 에땅 망갈라뭇따망.',
   translation: '존경과 겸손, 만족과 감사함,\n때맞추어 법을 들음, 이것이 최상의 행복이니라.',
   grammarNotes: [
-    '문장 구조: 4개 덕목 명사(gāravo, nivāto, santuṭṭhī, kataññutā) + 구격 부사구(kālena) + 복합명사(dhammasavanaṃ)',
-    '구격(-ena): kālena — "때에 맞추어/적절한 때에". 수단/방법을 나타내는 구격의 부사적 용법',
+    '문장 구조: 4개 덕목 명사(gāravo, nivāto, santuṭṭhī, kataññutā) + 도구격 부사구(kālena) + 복합명사(dhammasavanaṃ)',
+    '도구격(-ena): kālena — "때에 맞추어/적절한 때에". 수단/방법을 나타내는 도구격의 부사적 용법',
     '추상명사 -tā: kataññutā = kata(행해진) + aññu(아는) + tā → "행해진 것을 아는 상태" = 감사함',
     '복합어: dhammasavanaṃ = dhamma(법) + savana(들음) → "법을 들음". 목적격 관계 복합어(tappurisa)',
   ],
@@ -208,7 +208,7 @@ export const VERSE_8_WORDS: VerseWord[] = [
   { pali: 'nivāto', pronKo: '니와-또', meaning: '겸손', grammar: '남성 단수 주격' },
   { pali: 'santuṭṭhī', pronKo: '산뚯티-', meaning: '만족', grammar: '여성 단수 주격' },
   { pali: 'kataññutā', pronKo: '까딴누따-', meaning: '감사함/은혜를 앎', grammar: '여성 단수 주격 (kata + aññu + tā)' },
-  { pali: 'kālena', pronKo: '까-레나', meaning: '때에 맞추어', grammar: '남성 단수 구격' },
+  { pali: 'kālena', pronKo: '까-레나', meaning: '때에 맞추어', grammar: '남성 단수 도구격' },
   { pali: 'dhammasavanaṃ', pronKo: '담마사와낭', meaning: '법을 들음', grammar: '중성 단수 주격 (dhamma + savana)' },
 ]
 
@@ -218,9 +218,9 @@ export const VERSE_9 = {
   pronKo: '칸띠- 짜 소와짯사따-, 사마나-난짜 닷사낭;\n까-레나 담마사-깟차-, 에땅 망갈라뭇따망.',
   translation: '인내와 유순함, 수행자들을 만남,\n때맞추어 법에 대해 논의함, 이것이 최상의 행복이니라.',
   grammarNotes: [
-    '문장 구조: 명사(khantī, sovacassatā) + 속격(samaṇānaṃ)+명사(dassanaṃ) + 구격부사(kālena)+명사(dhammasākacchā)',
+    '문장 구조: 명사(khantī, sovacassatā) + 소유격(samaṇānaṃ)+명사(dassanaṃ) + 도구격부사(kālena)+명사(dhammasākacchā)',
     '추상명사 -tā: sovacassatā = su(잘) + vacassa(말 듣는) + tā → "말 잘 듣는 상태" = 유순함',
-    '연성(sandhi): samaṇānañca = samaṇānaṃ + ca. 속격 복수 어미 -ānaṃ에 ca가 결합하여 -ānañca',
+    '연성(sandhi): samaṇānañca = samaṇānaṃ + ca. 소유격 복수 어미 -ānaṃ에 ca가 결합하여 -ānañca',
     '복합어: dhammasākacchā = dhamma(법) + sākacchā(논의) → "법에 대한 논의". 여성 명사 단수 주격',
   ],
 }
@@ -228,7 +228,7 @@ export const VERSE_9 = {
 export const VERSE_9_WORDS: VerseWord[] = [
   { pali: 'Khantī', pronKo: '칸띠-', meaning: '인내', grammar: '여성 단수 주격' },
   { pali: 'sovacassatā', pronKo: '소와짯사따-', meaning: '유순함/말 잘 들음', grammar: '여성 단수 주격 (su + vacassa + tā)' },
-  { pali: 'samaṇānañca', pronKo: '사마나-난짜', meaning: '수행자들의 + 그리고', grammar: '남성 복수 속격 + ca' },
+  { pali: 'samaṇānañca', pronKo: '사마나-난짜', meaning: '수행자들의 + 그리고', grammar: '남성 복수 소유격 + ca' },
   { pali: 'dassanaṃ', pronKo: '닷사낭', meaning: '만남/봄', grammar: '중성 단수 주격' },
   { pali: 'dhammasākacchā', pronKo: '담마사-깟차-', meaning: '법에 대한 논의', grammar: '여성 단수 주격 (dhamma + sākacchā)' },
 ]
@@ -239,9 +239,9 @@ export const VERSE_10 = {
   pronKo: '따뽀 짜 브라흐마짜리얀짜, 아리야삿짜-나 닷사낭;\n닙바-나삿치끼리야- 짜, 에땅 망갈라뭇따망.',
   translation: '고행과 청정한 삶, 성스러운 진리를 봄,\n열반의 실현, 이것이 최상의 행복이니라.',
   grammarNotes: [
-    '문장 구조: 명사(tapo, brahmacariya) + 속격(ariyasaccāna)+명사(dassanaṃ) + 복합명사(nibbānasacchikiriyā)',
+    '문장 구조: 명사(tapo, brahmacariya) + 소유격(ariyasaccāna)+명사(dassanaṃ) + 복합명사(nibbānasacchikiriyā)',
     '복합어: brahmacariyañca = brahma(청정한/숭고한) + cariya(삶/행) + ca. 연성으로 ñca가 됨',
-    '속격 복수: ariyasaccāna = ariya(성스러운) + sacca(진리)의 속격 복수. -ānaṃ에서 ṃ 탈락한 운율적 형태',
+    '소유격 복수: ariyasaccāna = ariya(성스러운) + sacca(진리)의 소유격 복수. -ānaṃ에서 ṃ 탈락한 운율적 형태',
     '복합어: nibbānasacchikiriyā = nibbāna(열반) + sacchikiriyā(실현/직접 경험함) → "열반의 실현". sacchi = sakkhi(눈앞에서)',
   ],
 }
@@ -249,7 +249,7 @@ export const VERSE_10 = {
 export const VERSE_10_WORDS: VerseWord[] = [
   { pali: 'Tapo', pronKo: '따뽀', meaning: '고행/수행', grammar: '중성 단수 주격' },
   { pali: 'brahmacariyañca', pronKo: '브라흐마짜리얀짜', meaning: '청정한 삶 + 그리고', grammar: '중성 단수 주격 + ca (brahma + cariya)' },
-  { pali: 'ariyasaccāna', pronKo: '아리야삿짜-나', meaning: '성스러운 진리들의', grammar: '중성 복수 속격 (ariya + sacca)' },
+  { pali: 'ariyasaccāna', pronKo: '아리야삿짜-나', meaning: '성스러운 진리들의', grammar: '중성 복수 소유격 (ariya + sacca)' },
   { pali: 'nibbānasacchikiriyā', pronKo: '닙바-나삿치끼리야-', meaning: '열반의 실현', grammar: '여성 단수 주격 (nibbāna + sacchikiriyā)' },
 ]
 
@@ -260,17 +260,17 @@ export const VERSE_11 = {
   translation: '세상의 법에 부딪혀도, 마음이 흔들리지 않는,\n슬픔 없고 티끌 없고 평안한, 이것이 최상의 행복이니라.',
   grammarNotes: [
     '문장 구조: 관계절(yassa cittaṃ na kampati) + 분사구(phuṭṭhassa lokadhammehi) + 형용사 나열 + 판정문',
-    '관계대명사: yassa — "그의(~인 자의)". 속격. cittaṃ(마음이) na kampati(흔들리지 않는) 자의 마음',
-    '과거분사+구격: phuṭṭhassa(접촉된 자의, 속격) + lokadhammehi(세상법들에 의해, 구격) → "세상법에 부딪힌 자의"',
+    '관계대명사: yassa — "그의(~인 자의)". 소유격. cittaṃ(마음이) na kampati(흔들리지 않는) 자의 마음',
+    '과거분사+도구격: phuṭṭhassa(접촉된 자의, 소유격) + lokadhammehi(세상법들에 의해, 도구격) → "세상법에 부딪힌 자의"',
     '접두사 a-/vi-: asokaṃ = a+soka(슬픔 없는), virajaṃ = vi+raja(티끌 없는). 중성 주격으로 cittaṃ의 상태 서술',
   ],
 }
 
 export const VERSE_11_WORDS: VerseWord[] = [
-  { pali: 'Phuṭṭhassa', pronKo: '풋탓사', meaning: '부딪힌 자의', grammar: '과거분사 남성 단수 속격 (phusati)' },
-  { pali: 'lokadhammehi', pronKo: '로까담메히', meaning: '세상의 법들에 의해', grammar: '남성 복수 구격 (loka + dhamma)' },
+  { pali: 'Phuṭṭhassa', pronKo: '풋탓사', meaning: '부딪힌 자의', grammar: '과거분사 남성 단수 소유격 (phusati)' },
+  { pali: 'lokadhammehi', pronKo: '로까담메히', meaning: '세상의 법들에 의해', grammar: '남성 복수 도구격 (loka + dhamma)' },
   { pali: 'cittaṃ', pronKo: '찟땅', meaning: '마음이', grammar: '중성 단수 주격' },
-  { pali: 'yassa', pronKo: '얏사', meaning: '~의 (그의)', grammar: '관계대명사 남성 단수 속격' },
+  { pali: 'yassa', pronKo: '얏사', meaning: '~의 (그의)', grammar: '관계대명사 남성 단수 소유격' },
   { pali: 'na', pronKo: '나', meaning: '~않다', grammar: '불변어(부정사)' },
   { pali: 'kampati', pronKo: '깜빠띠', meaning: '흔들리다', grammar: '현재 3인칭 단수' },
   { pali: 'asokaṃ', pronKo: '아소깡', meaning: '슬픔 없는', grammar: '형용사 중성 단수 주격 (a + soka)' },
@@ -292,14 +292,14 @@ export const VERSE_12 = {
 }
 
 export const VERSE_12_WORDS: VerseWord[] = [
-  { pali: 'Etādisāni', pronKo: '에따-디사-니', meaning: '이러한 것들을', grammar: '지시대명사 중성 복수 대격' },
+  { pali: 'Etādisāni', pronKo: '에따-디사-니', meaning: '이러한 것들을', grammar: '지시대명사 중성 복수 목적격' },
   { pali: 'katvāna', pronKo: '깟와-나', meaning: '행하여/하고서', grammar: '절대분사 (karoti의)' },
   { pali: 'sabbatthamaparājitā', pronKo: '삽밧타마빠라-지따-', meaning: '어디서나 패하지 않은', grammar: '형용사 남성 복수 주격 (sabbattha + a + parājita)' },
   { pali: 'sabbattha', pronKo: '삽밧타', meaning: '어디서나/모든 곳에서', grammar: '불변어(부사)' },
-  { pali: 'sotthiṃ', pronKo: '솟팅', meaning: '안녕을/행복을', grammar: '여성 단수 대격' },
+  { pali: 'sotthiṃ', pronKo: '솟팅', meaning: '안녕을/행복을', grammar: '여성 단수 목적격' },
   { pali: 'gacchanti', pronKo: '갓찬띠', meaning: '간다/가게 된다', grammar: '현재 3인칭 복수' },
   { pali: 'taṃ', pronKo: '땅', meaning: '그것이', grammar: '지시대명사 중성 단수 주격' },
-  { pali: 'tesaṃ', pronKo: '떼상', meaning: '그들에게', grammar: '3인칭 남성 복수 속격/여격' },
+  { pali: 'tesaṃ', pronKo: '떼상', meaning: '그들에게', grammar: '3인칭 남성 복수 소유격/간접목적격' },
   { pali: 'maṅgalamuttamanti', pronKo: '망갈라뭇따만띠', meaning: '최상의 행복이니라', grammar: '중성 단수 주격 + iti (연성: uttamaṃ + iti)' },
 ]
 

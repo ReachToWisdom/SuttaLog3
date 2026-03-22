@@ -40,20 +40,20 @@ export const MANGALA_GRAMMAR: TeachGrammarStep[] = [
       { pali: 'bhagavā', breakdown: 'bhagavant + ā (주격)', meaning: '세존께서 (주어)', highlight: '-ā' },
       { pali: 'Sāvatthiyaṃ', breakdown: 'Sāvatthī + yaṃ (처격)', meaning: '사왓티에서 (장소)', highlight: '-yaṃ' },
       { pali: 'ārāme', breakdown: 'ārāma + e (처격)', meaning: '동산에서 (장소)', highlight: '-e' },
-      { pali: 'Anāthapiṇḍikassa', breakdown: 'Anāthapiṇḍika + ssa (속격)', meaning: '아나타삔디까의 (소유)', highlight: '-ssa' },
+      { pali: 'Anāthapiṇḍikassa', breakdown: 'Anāthapiṇḍika + ssa (소유격)', meaning: '아나타삔디까의 (소유)', highlight: '-ssa' },
     ],
     table: {
       label: '격변화 기본 (a 어간 남성)',
       rows: [
         { case: '주격 (~이/가)', ending: '-o / -ā', example: 'dhammo / dhammā', meaning: '법이 / 법들이' },
-        { case: '대격 (~을/를)', ending: '-aṃ / -e', example: 'dhammaṃ / dhamme', meaning: '법을 / 법들을' },
-        { case: '구격 (~에 의해)', ending: '-ena / -ehi', example: 'dhammena / dhammehi', meaning: '법에 의해' },
-        { case: '속격 (~의)', ending: '-assa / -ānaṃ', example: 'dhammassa / dhammānaṃ', meaning: '법의 / 법들의' },
+        { case: '목적격 (~을/를)', ending: '-aṃ / -e', example: 'dhammaṃ / dhamme', meaning: '법을 / 법들을' },
+        { case: '도구격 (~에 의해)', ending: '-ena / -ehi', example: 'dhammena / dhammehi', meaning: '법에 의해' },
+        { case: '소유격 (~의)', ending: '-assa / -ānaṃ', example: 'dhammassa / dhammānaṃ', meaning: '법의 / 법들의' },
         { case: '처격 (~에서)', ending: '-e / -esu', example: 'dhamme / dhammesu', meaning: '법에서 / 법들에서' },
       ],
     },
     tip: '처음엔 주격(~이)과 처격(~에서)만 구분해도 충분합니다. 나머지는 경전을 읽으면서 자연스럽게 배웁니다.',
-    relatedLesson: '보배경에서 구격(-ena)이 핵심 역할을 하고, 전법륜경에서 중성 주격(-aṃ)이 반복됩니다.',
+    relatedLesson: '보배경에서 도구격(-ena)이 핵심 역할을 하고, 전법륜경에서 중성 주격(-aṃ)이 반복됩니다.',
   },
 ]
 
@@ -143,7 +143,7 @@ export const ANATTA_GRAMMAR: TeachGrammarStep[] = [
     description: '무아경에서 "만약 ~라면"이라는 가정법(조건문)이 등장합니다. 빠알리어에서 조건문은 ce(만약)를 쓰기도 하지만, 이 경전에서는 ce가 직접 나오지 않고 "ca hi"(실로 ~이) + 가정법 동사(-ssa, -eyya)로 조건을 표현합니다.',
     examples: [
       { pali: 'Rūpañca hidaṃ attā abhavissa', breakdown: 'rūpaṃ + ca + hi + idaṃ = "실로 이 물질이" + abhavissa(가정법: ~였을 것이다). ca hi가 "만약 ~라면"의 역할. 본문에 ce는 나오지 않지만 ca hi + 가정법 동사가 같은 기능', meaning: '만약 물질이 자아라면 (= 자아였을 것이라면)', highlight: 'ca hi ... abhavissa' },
-      { pali: 'nayidaṃ rūpaṃ ābādhāya saṃvatteyya', breakdown: 'na + ayidaṃ(= ayaṃ + idaṃ 연성) + rūpaṃ + ābādhāya(병들기 위해, 여격) + saṃvatteyya(가정법: ~해야 할 것이다)', meaning: '(그렇다면) 물질이 병들지 않아야 할 것이다', highlight: 'saṃvatteyya' },
+      { pali: 'nayidaṃ rūpaṃ ābādhāya saṃvatteyya', breakdown: 'na + ayidaṃ(= ayaṃ + idaṃ 연성) + rūpaṃ + ābādhāya(병들기 위해, 간접목적격) + saṃvatteyya(가정법: ~해야 할 것이다)', meaning: '(그렇다면) 물질이 병들지 않아야 할 것이다', highlight: 'saṃvatteyya' },
       { pali: 'labbhetha ca rūpe', breakdown: 'labbhetha(가정법 수동: 얻어질 것이다) + ca + rūpe(처격: 물질에 대해)', meaning: '(그렇다면) 물질에 대해 이렇게 할 수 있어야 할 것이다', highlight: 'labbhetha' },
     ],
     table: {
@@ -210,13 +210,13 @@ export const RATANA_GRAMMAR: TeachGrammarStep[] = [
     title: '반복 구문: etena saccena suvatthi hotu',
     description: '보배경의 거의 모든 게송이 이 구절로 끝납니다. "이 진리로 안녕이 있기를"이라는 축원문입니다.',
     examples: [
-      { pali: 'etena', breakdown: 'eta + ena (구격 단수)', meaning: '이것에 의해', highlight: '-ena' },
-      { pali: 'saccena', breakdown: 'sacca + ena (구격 단수)', meaning: '진리에 의해', highlight: '-ena' },
+      { pali: 'etena', breakdown: 'eta + ena (도구격 단수)', meaning: '이것에 의해', highlight: '-ena' },
+      { pali: 'saccena', breakdown: 'sacca + ena (도구격 단수)', meaning: '진리에 의해', highlight: '-ena' },
       { pali: 'suvatthi', breakdown: 'su + atthi (불변어)', meaning: '안녕이', highlight: 'suvatthi' },
       { pali: 'hotu', breakdown: 'hoti의 명령형 3인칭 단수', meaning: '있기를', highlight: 'hotu' },
     ],
-    relatedLesson: '행복경의 격변화에서 배운 구격(-ena)이 여기서 핵심 역할을 합니다.',
-    tip: '구격(~에 의해)이 도구/수단을 나타냅니다. "진리라는 수단에 의해 안녕이 있기를"이라는 구조입니다.',
+    relatedLesson: '행복경의 격변화에서 배운 도구격(-ena)이 여기서 핵심 역할을 합니다.',
+    tip: '도구격(~에 의해)이 도구/수단을 나타냅니다. "진리라는 수단에 의해 안녕이 있기를"이라는 구조입니다.',
   },
   {
     type: 'teach-grammar',
@@ -234,11 +234,11 @@ export const RATANA_GRAMMAR: TeachGrammarStep[] = [
   {
     type: 'teach-grammar',
     title: 'khayaṃ virāgaṃ amataṃ: 열반의 동의어',
-    description: '보배경에서 열반을 가리키는 세 가지 동의어가 나옵니다. 모두 중성 대격(-aṃ)으로 같은 형태입니다.',
+    description: '보배경에서 열반을 가리키는 세 가지 동의어가 나옵니다. 모두 중성 목적격(-aṃ)으로 같은 형태입니다.',
     examples: [
-      { pali: 'khayaṃ', breakdown: 'khaya + ṃ (중성 대격)', meaning: '소멸을', highlight: 'khaya' },
-      { pali: 'virāgaṃ', breakdown: 'virāga + ṃ (중성 대격)', meaning: '이욕을', highlight: 'virāga' },
-      { pali: 'amataṃ', breakdown: 'amata + ṃ (중성 대격)', meaning: '불사를', highlight: 'amata' },
+      { pali: 'khayaṃ', breakdown: 'khaya + ṃ (중성 목적격)', meaning: '소멸을', highlight: 'khaya' },
+      { pali: 'virāgaṃ', breakdown: 'virāga + ṃ (중성 목적격)', meaning: '이욕을', highlight: 'virāga' },
+      { pali: 'amataṃ', breakdown: 'amata + ṃ (중성 목적격)', meaning: '불사를', highlight: 'amata' },
     ],
     relatedLesson: '전법륜경의 dukkhanirodhaṃ(괴로움의 소멸)과 같은 열반 관련 어휘입니다.',
     tip: 'khaya(소멸), virāga(이욕), amata(불사) — 세 가지 모두 열반을 가리킵니다. 경전에서 자주 나오는 동의어입니다.',
@@ -253,8 +253,8 @@ export const METTA_GRAMMAR: TeachGrammarStep[] = [
     title: '의무분사: karanīya (-anīya)',
     description: '자비경의 첫 단어 karanīyam이 의무분사입니다. karoti(하다)에서 파생된 "해야 할 것"이라는 의미입니다.',
     examples: [
-      { pali: 'karanīyaṃ', breakdown: 'karoti(하다) + anīya(의무) + ṃ(중성 대격)', meaning: '행해야 할 것은', highlight: '-anīya' },
-      { pali: 'atthakusalena', breakdown: 'attha + kusala + ena (구격)', meaning: '선에 능숙한 자에 의해', highlight: '-ena' },
+      { pali: 'karanīyaṃ', breakdown: 'karoti(하다) + anīya(의무) + ṃ(중성 목적격)', meaning: '행해야 할 것은', highlight: '-anīya' },
+      { pali: 'atthakusalena', breakdown: 'attha + kusala + ena (도구격)', meaning: '선에 능숙한 자에 의해', highlight: '-ena' },
     ],
     table: {
       label: '의무분사 접미사 비교',
@@ -285,7 +285,7 @@ export const METTA_GRAMMAR: TeachGrammarStep[] = [
     description: '자비경의 수행 구문에서 희구법(bhāvaye)과 한량없음(aparimāṇaṃ)이 나옵니다. 비유 구문(mātā yathā)도 중요합니다.',
     examples: [
       { pali: 'bhāvaye', breakdown: 'bhāveti의 희구법 3인칭 단수', meaning: '닦을지어다', highlight: '-aye' },
-      { pali: 'aparimāṇaṃ', breakdown: 'a + parimāṇa + ṃ (중성 대격)', meaning: '한량없는', highlight: 'a-' },
+      { pali: 'aparimāṇaṃ', breakdown: 'a + parimāṇa + ṃ (중성 목적격)', meaning: '한량없는', highlight: 'a-' },
       { pali: 'mātā yathā niyaṃ puttaṃ', breakdown: 'mātā(어머니가) yathā(마치) niyaṃ(자기의) puttaṃ(아들을)', meaning: '마치 어머니가 자기 아들을', highlight: 'yathā' },
     ],
     relatedLesson: '전법륜경의 동사 활용에서 배운 명령형(-tu)과 비슷한 희구법(-eyya/-aye) 구문입니다.',

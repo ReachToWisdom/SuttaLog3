@@ -38,7 +38,7 @@ export const MANGALA_SANDHI_NOTES: TeachGrammarStep[] = [
       { pali: 'yā vācā', breakdown: 'yā(관계대명사 여성 주격) + vācā(말)', meaning: '어떤 말이든' },
       { pali: 'etaṃ', breakdown: '지시대명사 중성 단수 주격', meaning: '이것이 (=이것은)' },
       { pali: 'taṃ tesaṃ', breakdown: 'taṃ(그것이) + tesaṃ(그들에게)', meaning: '그것이 그들에게' },
-      { pali: 'yassa na kampati', breakdown: 'yassa(관계대명사 속격 "~의")', meaning: '~인 자의 (마음이) 흔들리지 않는' },
+      { pali: 'yassa na kampati', breakdown: 'yassa(관계대명사 소유격 "~의")', meaning: '~인 자의 (마음이) 흔들리지 않는' },
     ],
     tip: '행복경에서 etaṃ maṅgalamuttamaṃ("이것이 최상의 행복")은 10번 반복됩니다. etaṃ은 꼭 기억하세요.',
   },
@@ -47,10 +47,10 @@ export const MANGALA_SANDHI_NOTES: TeachGrammarStep[] = [
     title: '본문 변형: bhagavā — ant-어간 불규칙 주격',
     description:
       '문법 테이블에서 배운 a-어간(-o 주격)과 달리, bhagavā(세존)는 ant-어간 명사로 ' +
-      '주격이 -ā, 속격이 -ato, 구격이 -atā 형태입니다. bhagavant에서 ant가 탈락합니다.',
+      '주격이 -ā, 소유격이 -ato, 도구격이 -atā 형태입니다. bhagavant에서 ant가 탈락합니다.',
     examples: [
       { pali: 'bhagavā', breakdown: 'bhagavant + ā (주격: ant 탈락)', meaning: '세존께서' },
-      { pali: 'bhagavato', breakdown: 'bhagavant + o (속격)', meaning: '세존의' },
+      { pali: 'bhagavato', breakdown: 'bhagavant + o (소유격)', meaning: '세존의' },
       { pali: 'satimā', breakdown: 'satimant + ā (주격: ant→ā)', meaning: '마음챙기는 (소유형용사)' },
     ],
     table: {

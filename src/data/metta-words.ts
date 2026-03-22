@@ -11,7 +11,7 @@ export const VERSE_1 = {
   pronKo: '까라니-야맛타꾸살레나, 얀땅 산땅 빠당 아비사멧짜;\n삭꼬 우주- 짜 수후주- 짜, 수-와쪼 짯사 무두 아나띠마-니-.',
   translation: '선을 아는 자가 적멸의 경지를 완전히 이해하고 행할 것은,\n유능하고 곧고 매우 곧으며, 말 잘 듣고 부드럽고 교만하지 않는 것이다.',
   grammarNotes: [
-    '문장 구조: 주어(atthakusalena, 구격=행위자) + 목적어(santaṃ padaṃ) + 절대분사(abhisamecca) + 술어(karanīyaṃ, 의무분사). 후반부는 sakko~anatimānī가 karanīyaṃ의 보어 역할',
+    '문장 구조: 주어(atthakusalena, 도구격=행위자) + 목적어(santaṃ padaṃ) + 절대분사(abhisamecca) + 술어(karanīyaṃ, 의무분사). 후반부는 sakko~anatimānī가 karanīyaṃ의 보어 역할',
     '핵심 문법: karanīyam은 의무분사(-anīya 접미사, ~해야 할 것). cassa는 ca+assa의 연성(sandhi)으로 assa는 atthi의 원망법(optative) 3인칭 단수',
     '복합어: attha-kusalena(목적격 한정복합어, 이익에 능숙한 자), su-hujū(접두사 su-로 강조, 매우 곧은), su-vaco(su+vaca, 말 잘 듣는), an-atimānī(부정접두사 an-+과도한 자만)',
     '연성법: karanīyam+atthakusalena → karanīyamatthakusalena (m+a → ma 연성). yaṃ+taṃ → yantaṃ (관계대명사+지시대명사 결합)',
@@ -20,10 +20,10 @@ export const VERSE_1 = {
 
 export const VERSE_1_WORDS: VerseWord[] = [
   { pali: 'Karanīyam', pronKo: '까라니-양', meaning: '행해야 할 것', grammar: '의무분사 중성 단수 주격 (karoti + anīya)' },
-  { pali: 'atthakusalena', pronKo: '앗타꾸살레나', meaning: '선을 아는 자에 의해', grammar: '남성 단수 구격 (attha + kusala)' },
-  { pali: 'yantaṃ', pronKo: '얀땅', meaning: '그것을 (관계대명사)', grammar: '관계대명사 중성 단수 대격 (yaṃ + taṃ)' },
-  { pali: 'santaṃ', pronKo: '산땅', meaning: '적멸의/고요한', grammar: '형용사 중성 단수 대격' },
-  { pali: 'padaṃ', pronKo: '빠당', meaning: '경지/자리', grammar: '중성 단수 대격' },
+  { pali: 'atthakusalena', pronKo: '앗타꾸살레나', meaning: '선을 아는 자에 의해', grammar: '남성 단수 도구격 (attha + kusala)' },
+  { pali: 'yantaṃ', pronKo: '얀땅', meaning: '그것을 (관계대명사)', grammar: '관계대명사 중성 단수 목적격 (yaṃ + taṃ)' },
+  { pali: 'santaṃ', pronKo: '산땅', meaning: '적멸의/고요한', grammar: '형용사 중성 단수 목적격' },
+  { pali: 'padaṃ', pronKo: '빠당', meaning: '경지/자리', grammar: '중성 단수 목적격' },
   { pali: 'abhisamecca', pronKo: '아비사멧짜', meaning: '완전히 이해하고', grammar: '절대분사 (abhi + sam + eti)' },
   { pali: 'sakko', pronKo: '삭꼬', meaning: '유능한', grammar: '형용사 남성 단수 주격' },
   { pali: 'ujū', pronKo: '우주-', meaning: '곧은/정직한', grammar: '형용사 남성 단수 주격' },
@@ -66,7 +66,7 @@ export const VERSE_3 = {
   pronKo: '나 짜 쿳당 사마-짜레 낀찌, 예나 윈뉴- 빠레 우빠와뎃융;\n수키노 와- 케미노 혼뚜, 삽베 삿따- 바완뚜 수키딷따-.',
   translation: '현자들이 비난할 만한 사소한 것도 행하지 말라.\n모든 존재가 행복하고 안온하기를, 모든 존재가 행복한 자가 되기를.',
   grammarNotes: [
-    '문장 구조: 전반부 — na+samācare(원망법 부정, 금지). yena(관계대명사 구격)가 이끄는 관계절이 부연. 후반부 — hontu/bhavantu(명령법 3인칭 복수, 기원문)',
+    '문장 구조: 전반부 — na+samācare(원망법 부정, 금지). yena(관계대명사 도구격)가 이끄는 관계절이 부연. 후반부 — hontu/bhavantu(명령법 3인칭 복수, 기원문)',
     '핵심 문법: samācare·upavadeyyuṃ은 원망법(optative). hontu(hoti의 명령법)와 bhavantu(bhavati의 명령법)는 3인칭 복수로 기원("~이기를") 표현',
     '복합어: sukhita-attā(행복한+자아, 소유복합어 bahubbīhi, "행복한 자아를 가진 자들"). viññū는 vi+ñā(알다)에서 파생된 형용사(현명한 자)',
     '연성법: kiñci는 kiṃ+ci(부정대명사, 무엇이든). upavadeyyuṃ에서 upa+vadati의 원망법 3인칭 복수형',
@@ -75,12 +75,12 @@ export const VERSE_3 = {
 
 export const VERSE_3_WORDS: VerseWord[] = [
   { pali: 'Na', pronKo: '나', meaning: '~않다', grammar: '불변어(부정사)' },
-  { pali: 'khuddaṃ', pronKo: '쿳당', meaning: '사소한 것을', grammar: '형용사 중성 단수 대격' },
+  { pali: 'khuddaṃ', pronKo: '쿳당', meaning: '사소한 것을', grammar: '형용사 중성 단수 목적격' },
   { pali: 'samācare', pronKo: '사마-짜레', meaning: '행하다', grammar: '원망법 3인칭 단수 (sam + ācarati)' },
-  { pali: 'kiñci', pronKo: '낀찌', meaning: '어떤 것이라도', grammar: '부정대명사 중성 단수 대격' },
-  { pali: 'yena', pronKo: '예나', meaning: '그것에 의해', grammar: '관계대명사 중성 단수 구격' },
+  { pali: 'kiñci', pronKo: '낀찌', meaning: '어떤 것이라도', grammar: '부정대명사 중성 단수 목적격' },
+  { pali: 'yena', pronKo: '예나', meaning: '그것에 의해', grammar: '관계대명사 중성 단수 도구격' },
   { pali: 'viññū', pronKo: '윈뉴-', meaning: '현자들이', grammar: '남성 복수 주격' },
-  { pali: 'pare', pronKo: '빠레', meaning: '다른 사람들을', grammar: '남성 복수 대격' },
+  { pali: 'pare', pronKo: '빠레', meaning: '다른 사람들을', grammar: '남성 복수 목적격' },
   { pali: 'upavadeyyuṃ', pronKo: '우빠와뎃융', meaning: '비난할 것이다', grammar: '원망법 3인칭 복수 (upa + vadati)' },
   { pali: 'sukhino', pronKo: '수키노', meaning: '행복한 자들이', grammar: '형용사 남성 복수 주격 (sukhin)' },
   { pali: 'vā', pronKo: '와-', meaning: '또는', grammar: '불변어(접속사)' },
@@ -146,8 +146,8 @@ export const VERSE_6 = {
   pronKo: '나 빠로 빠랑 니꿉베타, 나-띠만녜타 깟타찌 낭 낀찌;\n뱌-로사나- 빠띠가산냐-, 나-ㄴ냐만냐ㅅ사 둑카밋쩨ㅇ야.',
   translation: '남을 속이지 말라, 어디서든 누구도 멸시하지 말라,\n분노와 적의의 생각으로 서로에게 괴로움을 바라지 말라.',
   grammarNotes: [
-    '문장 구조: 세 개의 금지문(na+원망법). 1) na nikubbetha(속이지 말라), 2) na atimaññetha(멸시하지 말라), 3) na iccheyya(바라지 말라). 후반부 byārosanā paṭighasaññā는 구격으로 수단/원인',
-    '핵심 문법: nikubbetha·atimaññetha·iccheyya 모두 원망법(optative) 3인칭 단수로 금지/당위 표현. aññamaññassa는 상호대명사 aññamañña의 속격(서로에게)',
+    '문장 구조: 세 개의 금지문(na+원망법). 1) na nikubbetha(속이지 말라), 2) na atimaññetha(멸시하지 말라), 3) na iccheyya(바라지 말라). 후반부 byārosanā paṭighasaññā는 도구격으로 수단/원인',
+    '핵심 문법: nikubbetha·atimaññetha·iccheyya 모두 원망법(optative) 3인칭 단수로 금지/당위 표현. aññamaññassa는 상호대명사 aññamañña의 소유격(서로에게)',
     '복합어: byārosanā(vi+ā+rosanā, 분노/적의). paṭigha-saññā(적의+인식, 의존복합어 tappurisa). dukkham+iccheyya → dukkhamiccheyya(고통을+바라다)',
     '연성법: na+atimaññetha → nātimaññetha (a+a → ā 모음연성). na+aññamaññassa → nāññamaññassa. dukkhaṃ+iccheyya → dukkhamiccheyya (ṃ→m 자음 앞)',
   ],
@@ -155,14 +155,14 @@ export const VERSE_6 = {
 
 export const VERSE_6_WORDS: VerseWord[] = [
   { pali: 'paro', pronKo: '빠로', meaning: '남이/다른 사람이', grammar: '대명사 남성 단수 주격' },
-  { pali: 'paraṃ', pronKo: '빠랑', meaning: '다른 사람을', grammar: '대명사 남성 단수 대격' },
+  { pali: 'paraṃ', pronKo: '빠랑', meaning: '다른 사람을', grammar: '대명사 남성 단수 목적격' },
   { pali: 'nikubbetha', pronKo: '니꿉베타', meaning: '속이다', grammar: '원망법 3인칭 단수 (ni + kubbati)' },
   { pali: 'nātimaññetha', pronKo: '나-띠만녜타', meaning: '멸시하지 말라', grammar: 'na + atimaññetha, 원망법 3인칭 단수' },
   { pali: 'katthaci', pronKo: '깟타찌', meaning: '어디서든', grammar: '불변어(부사)' },
-  { pali: 'naṃ', pronKo: '낭', meaning: '그를', grammar: '대명사 남성 단수 대격' },
-  { pali: 'byārosanā', pronKo: '뱌-로사나-', meaning: '분노로', grammar: '여성 단수 탈격 (vi + ārosanā)' },
-  { pali: 'paṭighasaññā', pronKo: '빠띠가산냐-', meaning: '적의의 인식으로', grammar: '여성 단수 구격 (paṭigha + saññā)' },
-  { pali: 'nāññamaññassa', pronKo: '나-ㄴ냐만냐ㅅ사', meaning: '서로에게 ~않다', grammar: 'na + aññamañña 속격' },
+  { pali: 'naṃ', pronKo: '낭', meaning: '그를', grammar: '대명사 남성 단수 목적격' },
+  { pali: 'byārosanā', pronKo: '뱌-로사나-', meaning: '분노로', grammar: '여성 단수 분리격 (vi + ārosanā)' },
+  { pali: 'paṭighasaññā', pronKo: '빠띠가산냐-', meaning: '적의의 인식으로', grammar: '여성 단수 도구격 (paṭigha + saññā)' },
+  { pali: 'nāññamaññassa', pronKo: '나-ㄴ냐만냐ㅅ사', meaning: '서로에게 ~않다', grammar: 'na + aññamañña 소유격' },
   { pali: 'dukkhamiccheyya', pronKo: '둑카밋쩨ㅇ야', meaning: '괴로움을 바라다', grammar: '원망법 3인칭 단수 (dukkhaṃ + iccheyya)' },
 ]
 
@@ -173,7 +173,7 @@ export const VERSE_7 = {
   translation: '마치 어머니가 목숨을 다하여 하나뿐인 자식을 보호하듯,\n그와 같이 모든 존재에게 한량없는 마음을 닦을지어다.',
   grammarNotes: [
     '문장 구조: yathā~evaṃ(~와 같이~그와 같이) 비유 구문. 전반부: mātā(주어)+puttaṃ(목적어)+anurakkhe(원망법, 보호하다). 후반부: mānasaṃ(목적어)+bhāvaye(원망법, 닦다)',
-    '핵심 문법: anurakkhe·bhāvaye 모두 원망법(optative) 3인칭 단수로 당위/기원 표현. āyusā는 āyu(목숨)의 구격으로 수단("목숨을 바쳐"). niyaṃ은 "자기 자신의"(반사대명사)',
+    '핵심 문법: anurakkhe·bhāvaye 모두 원망법(optative) 3인칭 단수로 당위/기원 표현. āyusā는 āyu(목숨)의 도구격으로 수단("목숨을 바쳐"). niyaṃ은 "자기 자신의"(반사대명사)',
     '복합어: eka-puttam(하나+아들, 의존복합어 tappurisa, 하나뿐인 아들). sabba-bhūtesu(모든+존재들, 처격). a-parimāṇaṃ(부정접두사+한량, 헤아릴 수 없는)',
     '연성법: ekaputtam+anurakkhe → ekaputtamanurakkhe (m+a 결합). evaṃ+pi → evampi (ṃ→m 자음 앞)',
   ],
@@ -182,16 +182,16 @@ export const VERSE_7 = {
 export const VERSE_7_WORDS: VerseWord[] = [
   { pali: 'Mātā', pronKo: '마-따-', meaning: '어머니가', grammar: '여성 단수 주격' },
   { pali: 'yathā', pronKo: '야타-', meaning: '~와 같이', grammar: '불변어(부사)' },
-  { pali: 'niyaṃ', pronKo: '니양', meaning: '자기의', grammar: '형용사 남성 단수 대격' },
-  { pali: 'puttaṃ', pronKo: '뿟땅', meaning: '아들을', grammar: '남성 단수 대격' },
-  { pali: 'āyusā', pronKo: '아-유사-', meaning: '목숨으로', grammar: '중성 단수 구격 (āyu)' },
-  { pali: 'ekaputtam', pronKo: '에까뿟땅', meaning: '하나뿐인 아들을', grammar: '남성 단수 대격 (eka + putta)' },
+  { pali: 'niyaṃ', pronKo: '니양', meaning: '자기의', grammar: '형용사 남성 단수 목적격' },
+  { pali: 'puttaṃ', pronKo: '뿟땅', meaning: '아들을', grammar: '남성 단수 목적격' },
+  { pali: 'āyusā', pronKo: '아-유사-', meaning: '목숨으로', grammar: '중성 단수 도구격 (āyu)' },
+  { pali: 'ekaputtam', pronKo: '에까뿟땅', meaning: '하나뿐인 아들을', grammar: '남성 단수 목적격 (eka + putta)' },
   { pali: 'anurakkhe', pronKo: '아누락케', meaning: '보호하다', grammar: '원망법 3인칭 단수 (anu + rakkhati)' },
   { pali: 'evampi', pronKo: '에왐삐', meaning: '그와 같이', grammar: '불변어(부사) (evaṃ + pi)' },
   { pali: 'sabbabhūtesu', pronKo: '삽바부-떼수', meaning: '모든 존재들에게', grammar: '남성 복수 처격 (sabba + bhūta)' },
-  { pali: 'mānasaṃ', pronKo: '마-나상', meaning: '마음을', grammar: '중성 단수 대격' },
+  { pali: 'mānasaṃ', pronKo: '마-나상', meaning: '마음을', grammar: '중성 단수 목적격' },
   { pali: 'bhāvaye', pronKo: '바-와예', meaning: '닦다/수행하다', grammar: '원망법 3인칭 단수 (bhāveti)' },
-  { pali: 'aparimāṇaṃ', pronKo: '아빠리마-낭', meaning: '한량없는', grammar: '형용사 중성 단수 대격 (a + parimāṇa)' },
+  { pali: 'aparimāṇaṃ', pronKo: '아빠리마-낭', meaning: '한량없는', grammar: '형용사 중성 단수 목적격 (a + parimāṇa)' },
 ]
 
 /** 제8게송 */
@@ -200,22 +200,22 @@ export const VERSE_8 = {
   pronKo: '멧딴짜 삽바로까스밍, 마-나상 바-와예 아빠리마-낭;\n웃당 아토 짜 띠리얀짜, 아삼바-당 아웨랑 아사빳땅.',
   translation: '자비로써 온 세상에 한량없는 마음을 닦을지어다,\n위로 아래로 옆으로, 장애 없이 원한 없이 적의 없이.',
   grammarNotes: [
-    '문장 구조: mettaṃ(대격, 자비를)+mānasaṃ(대격, 마음을)+bhāvaye(원망법). uddhaṃ adho tiriyañca(방향 부사 3개로 공간적 편재성 표현). asambādhaṃ~asapattaṃ(세 형용사가 mānasaṃ 수식)',
-    '핵심 문법: bhāvaye는 bhāveti(사역동사, 닦다/수행하다)의 원망법 3인칭 단수. asambādhaṃ·averaṃ·asapattaṃ은 모두 부정접두사 a-가 붙은 중성 단수 대격 형용사로 mānasaṃ을 수식',
+    '문장 구조: mettaṃ(목적격, 자비를)+mānasaṃ(목적격, 마음을)+bhāvaye(원망법). uddhaṃ adho tiriyañca(방향 부사 3개로 공간적 편재성 표현). asambādhaṃ~asapattaṃ(세 형용사가 mānasaṃ 수식)',
+    '핵심 문법: bhāvaye는 bhāveti(사역동사, 닦다/수행하다)의 원망법 3인칭 단수. asambādhaṃ·averaṃ·asapattaṃ은 모두 부정접두사 a-가 붙은 중성 단수 목적격 형용사로 mānasaṃ을 수식',
     '복합어: sabba-lokasmiṃ(모든+세계, 처격 단수). a-sambādhaṃ(부정+장애, 장애 없는). a-veraṃ(부정+원한). a-sapattaṃ(부정+적, 적 없는)',
     '연성법: mettaṃ+ca → mettañca (ṃ+c → ñc 비음동화). tiriyaṃ+ca → tiriyañca (동일한 비음동화)',
   ],
 }
 
 export const VERSE_8_WORDS: VerseWord[] = [
-  { pali: 'Mettañca', pronKo: '멧딴짜', meaning: '자비 + 그리고', grammar: '여성 단수 대격 + ca (mettā)' },
+  { pali: 'Mettañca', pronKo: '멧딴짜', meaning: '자비 + 그리고', grammar: '여성 단수 목적격 + ca (mettā)' },
   { pali: 'sabbalokasmiṃ', pronKo: '삽바로까스밍', meaning: '온 세상에', grammar: '남성 단수 처격 (sabba + loka)' },
   { pali: 'uddhaṃ', pronKo: '웃당', meaning: '위로', grammar: '불변어(부사)' },
   { pali: 'adho', pronKo: '아토', meaning: '아래로', grammar: '불변어(부사)' },
   { pali: 'tiriyañca', pronKo: '띠리얀짜', meaning: '옆으로 + 그리고', grammar: '불변어(부사) + ca' },
-  { pali: 'asambādhaṃ', pronKo: '아삼바-당', meaning: '장애 없는', grammar: '형용사 중성 단수 대격 (a + sambādha)' },
-  { pali: 'averaṃ', pronKo: '아웨랑', meaning: '원한 없는', grammar: '형용사 중성 단수 대격 (a + vera)' },
-  { pali: 'asapattaṃ', pronKo: '아사빳땅', meaning: '적의 없는', grammar: '형용사 중성 단수 대격 (a + sapatta)' },
+  { pali: 'asambādhaṃ', pronKo: '아삼바-당', meaning: '장애 없는', grammar: '형용사 중성 단수 목적격 (a + sambādha)' },
+  { pali: 'averaṃ', pronKo: '아웨랑', meaning: '원한 없는', grammar: '형용사 중성 단수 목적격 (a + vera)' },
+  { pali: 'asapattaṃ', pronKo: '아사빳땅', meaning: '적의 없는', grammar: '형용사 중성 단수 목적격 (a + sapatta)' },
 ]
 
 /** 제9게송 */
@@ -238,12 +238,12 @@ export const VERSE_9_WORDS: VerseWord[] = [
   { pali: 'sayāno', pronKo: '사야-노', meaning: '누워 있는', grammar: '현재분사 남성 단수 주격 (sayati)' },
   { pali: 'yāvatassa', pronKo: '야-왓딷사', meaning: '~하는 한', grammar: '불변어 yāvat + assa' },
   { pali: 'vigatamiddho', pronKo: '위가따밋토', meaning: '잠에서 벗어난', grammar: '형용사 남성 단수 주격 (vigata + middha)' },
-  { pali: 'etaṃ', pronKo: '에땅', meaning: '이것을', grammar: '지시대명사 중성 단수 대격' },
-  { pali: 'satiṃ', pronKo: '사띵', meaning: '마음챙김을', grammar: '여성 단수 대격' },
+  { pali: 'etaṃ', pronKo: '에땅', meaning: '이것을', grammar: '지시대명사 중성 단수 목적격' },
+  { pali: 'satiṃ', pronKo: '사띵', meaning: '마음챙김을', grammar: '여성 단수 목적격' },
   { pali: 'adhiṭṭheyya', pronKo: '아딧테ㅇ야', meaning: '확립하다', grammar: '원망법 3인칭 단수 (adhitiṭṭhati)' },
-  { pali: 'brahmam', pronKo: '브라흐망', meaning: '숭고한', grammar: '형용사 남성 단수 대격' },
-  { pali: 'vihāraṃ', pronKo: '위하-랑', meaning: '삶/머무름을', grammar: '남성 단수 대격' },
-  { pali: 'idham', pronKo: '이당', meaning: '이것을', grammar: '지시대명사 중성 단수 대격' },
+  { pali: 'brahmam', pronKo: '브라흐망', meaning: '숭고한', grammar: '형용사 남성 단수 목적격' },
+  { pali: 'vihāraṃ', pronKo: '위하-랑', meaning: '삶/머무름을', grammar: '남성 단수 목적격' },
+  { pali: 'idham', pronKo: '이당', meaning: '이것을', grammar: '지시대명사 중성 단수 목적격' },
   { pali: 'āhu', pronKo: '아-후', meaning: '~라고 부른다', grammar: '과거 3인칭 복수 (āha)' },
 ]
 
@@ -261,18 +261,18 @@ export const VERSE_10 = {
 }
 
 export const VERSE_10_WORDS: VerseWord[] = [
-  { pali: 'Diṭṭhiñca', pronKo: '딧틴짜', meaning: '견해를 + 그리고', grammar: '여성 단수 대격 + ca (diṭṭhi)' },
+  { pali: 'Diṭṭhiñca', pronKo: '딧틴짜', meaning: '견해를 + 그리고', grammar: '여성 단수 목적격 + ca (diṭṭhi)' },
   { pali: 'anupagamma', pronKo: '아누빠감마', meaning: '빠지지 않고/취하지 않고', grammar: '절대분사 (an + upagacchati)' },
   { pali: 'sīlavā', pronKo: '시-라와-', meaning: '계행을 갖춘 자', grammar: '형용사 남성 단수 주격 (sīla + vant)' },
-  { pali: 'dassanena', pronKo: '닷사네나', meaning: '바른 견해로', grammar: '중성 단수 구격' },
+  { pali: 'dassanena', pronKo: '닷사네나', meaning: '바른 견해로', grammar: '중성 단수 도구격' },
   { pali: 'sampanno', pronKo: '삼빤노', meaning: '성취한/갖춘', grammar: '과거분사 남성 단수 주격 (sam + pāpuṇāti)' },
   { pali: 'kāmesu', pronKo: '까-메수', meaning: '감각적 욕망들에서', grammar: '남성 복수 처격' },
   { pali: 'vineyya', pronKo: '위넷야', meaning: '버리고/제거하고', grammar: '절대분사 (vineti)' },
-  { pali: 'gedhaṃ', pronKo: '게당', meaning: '탐욕을', grammar: '남성 단수 대격' },
+  { pali: 'gedhaṃ', pronKo: '게당', meaning: '탐욕을', grammar: '남성 단수 목적격' },
   { pali: 'na', pronKo: '나', meaning: '~않다', grammar: '불변어(부정사)' },
   { pali: 'hi', pronKo: '히', meaning: '실로/참으로', grammar: '불변어(강조사)' },
   { pali: 'jātu', pronKo: '자-뚜', meaning: '결코', grammar: '불변어(부사)' },
-  { pali: 'gabbhaseyyaṃ', pronKo: '갑바셋양', meaning: '태에 드는 것을', grammar: '여성 단수 대격 (gabbha + seyyā)' },
+  { pali: 'gabbhaseyyaṃ', pronKo: '갑바셋양', meaning: '태에 드는 것을', grammar: '여성 단수 목적격 (gabbha + seyyā)' },
   { pali: 'punaretīti', pronKo: '뿌나레띠-띠', meaning: '다시 가다 + ~라고', grammar: 'puna + eti + iti' },
 ]
 

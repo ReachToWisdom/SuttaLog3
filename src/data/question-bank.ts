@@ -113,8 +113,8 @@ export const QUESTION_BANK: {
         options: ['bālānaṃ', 'bālā', 'bālaṃ', 'bālena'],
         answer: 0,
         explanation: {
-          correct: '"어리석은 이들의"라는 소유/관계를 나타내는 속격 bālānaṃ이 맞습니다.',
-          detail: 'bālā는 주격 복수, bālaṃ은 대격 단수입니다.',
+          correct: '"어리석은 이들의"라는 소유/관계를 나타내는 소유격 bālānaṃ이 맞습니다.',
+          detail: 'bālā는 주격 복수, bālaṃ은 목적격 단수입니다.',
         },
       },
       {
@@ -138,7 +138,7 @@ export const QUESTION_BANK: {
         answer: 0,
         explanation: {
           correct: 'pūjā는 명사 주격 "공경(함)"입니다.',
-          detail: 'pūjeti는 동사 "공경하다", pūjāya는 여격입니다.',
+          detail: 'pūjeti는 동사 "공경하다", pūjāya는 간접목적격입니다.',
         },
       },
       {
@@ -258,7 +258,7 @@ export const QUESTION_BANK: {
         ],
         answer: 0,
         explanation: {
-          correct: '-ānaṃ은 "~들의"를 나타내는 복수 속격 어미입니다.',
+          correct: '-ānaṃ은 "~들의"를 나타내는 복수 소유격 어미입니다.',
           tip: '-ānaṃ = "~들의"로 기억하세요.',
         },
       },
@@ -273,7 +273,7 @@ export const QUESTION_BANK: {
         ],
         answer: 0,
         explanation: {
-          correct: 'etaṃ은 중성 주격/대격이며, 여기서는 주어 역할입니다.',
+          correct: 'etaṃ은 중성 주격/목적격이며, 여기서는 주어 역할입니다.',
         },
       },
       {
@@ -1353,7 +1353,7 @@ export const QUESTION_BANK: {
         options: ['pabbajitena', 'gahaṭṭhena', 'bhikkhunā', 'sāvakena'],
         answer: 0,
         explanation: {
-          correct: 'pabbajitena는 "출가자에 의해"라는 뜻의 조격(구격)입니다.',
+          correct: 'pabbajitena는 "출가자에 의해"라는 뜻의 조격(도구격)입니다.',
           detail: 'pabbajita(출가자) — 재가자(gahaṭṭha)의 반대. 집을 떠난 수행자를 뜻합니다.',
         },
       },
@@ -2508,8 +2508,8 @@ export const QUESTION_BANK: {
         options: [
           '몸에(처격)',
           '몸이(주격)',
-          '몸을(대격)',
-          '몸의(속격)',
+          '몸을(목적격)',
+          '몸의(소유격)',
         ],
         answer: 0,
         explanation: {
@@ -4433,7 +4433,7 @@ export const QUESTION_BANK: {
         ],
         answer: 0,
         explanation: {
-          correct: 'satta(7) + vassa(우기, 해) + naṃ(~의, 속격) = 7년의',
+          correct: 'satta(7) + vassa(우기, 해) + naṃ(~의, 소유격) = 7년의',
           detail: '사념처경에서 최장 수행 기간입니다. 최단은 "sattāhaṃ(7일)"입니다.',
         },
       },

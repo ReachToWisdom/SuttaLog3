@@ -67,11 +67,12 @@ export default function Settings() {
       return
     }
     // 모든 suttalog3- 키 삭제
-    const keys = Object.keys(localStorage).filter(k => k.startsWith(STORAGE_PREFIX))
-    keys.forEach(k => localStorage.removeItem(k))
-    // 캐시 관련 키도 삭제
-    localStorage.removeItem('suttalog3-cache-v2')
-    location.reload()
+    Object.keys(localStorage).forEach(k => {
+      if (k.startsWith('suttalog3')) localStorage.removeItem(k)
+    })
+    // 홈으로 이동 후 새로고침
+    window.location.href = window.location.pathname + '#/'
+    window.location.reload()
   }
 
   return (

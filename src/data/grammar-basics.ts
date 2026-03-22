@@ -33,24 +33,24 @@ export const GRAMMAR_BASICS: TeachGrammarStep[] = [
     description: '빠알리어는 명사 어미가 바뀌어 문장에서의 역할을 나타냅니다. 한국어의 조사(은/는/이/가/을/를/의/에/에서)와 비슷한 기능입니다. 총 8가지 격이 있으며, 단수와 복수 형태가 각각 있습니다.',
     examples: [
       { pali: 'Buddho deseti', breakdown: 'Buddho (주격) + deseti (가르치다)', meaning: '붓다께서 가르치신다', highlight: '주격 = ~이/가' },
-      { pali: 'dhammaṃ deseti', breakdown: 'dhammaṃ (대격) + deseti', meaning: '법을 가르치신다', highlight: '대격 = ~을/를' },
-      { pali: 'buddhassa dhammo', breakdown: 'buddhassa (속격) + dhammo', meaning: '붓다의 법', highlight: '속격 = ~의' },
+      { pali: 'dhammaṃ deseti', breakdown: 'dhammaṃ (목적격) + deseti', meaning: '법을 가르치신다', highlight: '목적격 = ~을/를' },
+      { pali: 'buddhassa dhammo', breakdown: 'buddhassa (소유격) + dhammo', meaning: '붓다의 법', highlight: '소유격 = ~의' },
       { pali: 'ārāme viharati', breakdown: 'ārāme (처격) + viharati', meaning: '동산에서 머문다', highlight: '처격 = ~에서' },
     ],
     table: {
       label: '8격 전체 조감도',
       rows: [
         { case: '① 주격 (Nominative)', ending: '~이/가', example: 'buddho', meaning: '주어' },
-        { case: '② 대격 (Accusative)', ending: '~을/를', example: 'dhammaṃ', meaning: '목적어' },
-        { case: '③ 구격 (Instrumental)', ending: '~에 의해, ~(으)로', example: 'dhammena', meaning: '수단/도구' },
-        { case: '④ 여격 (Dative)', ending: '~에게', example: 'buddhāya', meaning: '간접 목적어' },
-        { case: '⑤ 탈격 (Ablative)', ending: '~에서, ~(으)로부터', example: 'dhammā', meaning: '출발점/원인' },
-        { case: '⑥ 속격 (Genitive)', ending: '~의', example: 'dhammassa', meaning: '소유' },
+        { case: '② 목적격 (Accusative)', ending: '~을/를', example: 'dhammaṃ', meaning: '목적어' },
+        { case: '③ 도구격 (Instrumental)', ending: '~에 의해, ~(으)로', example: 'dhammena', meaning: '수단/도구' },
+        { case: '④ 간접목적격 (Dative)', ending: '~에게', example: 'buddhāya', meaning: '간접 목적어' },
+        { case: '⑤ 분리격 (Ablative)', ending: '~에서, ~(으)로부터', example: 'dhammā', meaning: '출발점/원인' },
+        { case: '⑥ 소유격 (Genitive)', ending: '~의', example: 'dhammassa', meaning: '소유' },
         { case: '⑦ 처격 (Locative)', ending: '~에서, ~에', example: 'dhamme', meaning: '장소/때' },
-        { case: '⑧ 호격 (Vocative)', ending: '~이여!', example: 'bhikkhu!', meaning: '부름' },
+        { case: '⑧ 부름격 (Vocative)', ending: '~이여!', example: 'bhikkhu!', meaning: '부름' },
       ],
     },
-    tip: '처음에는 주격(~이), 대격(~을), 처격(~에서), 속격(~의) 4가지만 구분해도 경전의 80%를 이해할 수 있습니다!',
+    tip: '처음에는 주격(~이), 목적격(~을), 처격(~에서), 소유격(~의) 4가지만 구분해도 경전의 80%를 이해할 수 있습니다!',
   },
 
   // 3. a-어간 남성 격변화
@@ -60,45 +60,45 @@ export const GRAMMAR_BASICS: TeachGrammarStep[] = [
     description: '빠알리어에서 가장 흔한 명사 패턴입니다. dhamma(법), deva(신), buddha(붓다) 등 수많은 단어가 이 패턴을 따릅니다. 이것 하나만 외우면 경전 명사의 절반 이상을 이해할 수 있습니다.',
     examples: [
       { pali: 'dhammo', breakdown: 'dhamma + o', meaning: '법이 (주격 단수)', highlight: '-o' },
-      { pali: 'dhammaṃ', breakdown: 'dhamma + ṃ', meaning: '법을 (대격 단수)', highlight: '-aṃ' },
-      { pali: 'dhammassa', breakdown: 'dhamma + ssa', meaning: '법의 (속격 단수)', highlight: '-assa' },
+      { pali: 'dhammaṃ', breakdown: 'dhamma + ṃ', meaning: '법을 (목적격 단수)', highlight: '-aṃ' },
+      { pali: 'dhammassa', breakdown: 'dhamma + ssa', meaning: '법의 (소유격 단수)', highlight: '-assa' },
       { pali: 'dhamme', breakdown: 'dhamma + e', meaning: '법에서 (처격 단수)', highlight: '-e' },
     ],
     table: {
       label: 'a-어간 남성 (dhamma 법)',
       rows: [
         { case: '주격 (~이/가)', ending: '-o / -ā', example: 'dhammo / dhammā', meaning: '법이 / 법들이' },
-        { case: '대격 (~을/를)', ending: '-aṃ / -e', example: 'dhammaṃ / dhamme', meaning: '법을 / 법들을' },
-        { case: '구격 (~에 의해)', ending: '-ena / -ehi', example: 'dhammena / dhammehi', meaning: '법에 의해' },
-        { case: '여격 (~에게)', ending: '-āya / -ānaṃ', example: 'dhammāya / dhammānaṃ', meaning: '법에게' },
-        { case: '탈격 (~로부터)', ending: '-ā, -smā / -ehi', example: 'dhammā / dhammehi', meaning: '법으로부터' },
-        { case: '속격 (~의)', ending: '-assa / -ānaṃ', example: 'dhammassa / dhammānaṃ', meaning: '법의 / 법들의' },
+        { case: '목적격 (~을/를)', ending: '-aṃ / -e', example: 'dhammaṃ / dhamme', meaning: '법을 / 법들을' },
+        { case: '도구격 (~에 의해)', ending: '-ena / -ehi', example: 'dhammena / dhammehi', meaning: '법에 의해' },
+        { case: '간접목적격 (~에게)', ending: '-āya / -ānaṃ', example: 'dhammāya / dhammānaṃ', meaning: '법에게' },
+        { case: '분리격 (~로부터)', ending: '-ā, -smā / -ehi', example: 'dhammā / dhammehi', meaning: '법으로부터' },
+        { case: '소유격 (~의)', ending: '-assa / -ānaṃ', example: 'dhammassa / dhammānaṃ', meaning: '법의 / 법들의' },
         { case: '처격 (~에서)', ending: '-e, -smiṃ / -esu', example: 'dhamme / dhammesu', meaning: '법에서' },
-        { case: '호격 (~이여)', ending: '-a / -ā', example: 'dhamma! / dhammā!', meaning: '법이여!' },
+        { case: '부름격 (~이여)', ending: '-a / -ā', example: 'dhamma! / dhammā!', meaning: '법이여!' },
       ],
     },
-    tip: '남성 주격 단수 -o와 복수 -ā가 같은 글자(ā)로 끝나지만, 주격 복수의 -ā와 탈격 단수의 -ā는 형태가 같습니다. 문맥으로 구분합니다!',
+    tip: '남성 주격 단수 -o와 복수 -ā가 같은 글자(ā)로 끝나지만, 주격 복수의 -ā와 분리격 단수의 -ā는 형태가 같습니다. 문맥으로 구분합니다!',
   },
 
   // 4. a-어간 중성 격변화
   {
     type: 'teach-grammar',
     title: 'a-어간 중성 격변화',
-    description: '중성 명사는 남성과 거의 같지만 주격과 대격이 다릅니다. rūpa(물질), citta(마음), dukkha(괴로움), sukha(행복) 등 추상적인 개념에 많습니다.',
+    description: '중성 명사는 남성과 거의 같지만 주격과 목적격이 다릅니다. rūpa(물질), citta(마음), dukkha(괴로움), sukha(행복) 등 추상적인 개념에 많습니다.',
     examples: [
-      { pali: 'rūpaṃ', breakdown: 'rūpa + ṃ', meaning: '물질이/물질을 (주격=대격)', highlight: '-aṃ' },
+      { pali: 'rūpaṃ', breakdown: 'rūpa + ṃ', meaning: '물질이/물질을 (주격=목적격)', highlight: '-aṃ' },
       { pali: 'rūpāni', breakdown: 'rūpa + āni', meaning: '물질들이/물질들을 (복수)', highlight: '-āni' },
-      { pali: 'cittassa', breakdown: 'citta + ssa', meaning: '마음의 (속격)', highlight: '-assa' },
+      { pali: 'cittassa', breakdown: 'citta + ssa', meaning: '마음의 (소유격)', highlight: '-assa' },
     ],
     table: {
       label: 'a-어간 중성 (rūpa 물질) — 남성과 다른 부분만',
       rows: [
         { case: '주격 (~이/가)', ending: '-aṃ / -āni', example: 'rūpaṃ / rūpāni', meaning: '물질이 / 물질들이' },
-        { case: '대격 (~을/를)', ending: '-aṃ / -āni', example: 'rūpaṃ / rūpāni', meaning: '물질을 / 물질들을' },
+        { case: '목적격 (~을/를)', ending: '-aṃ / -āni', example: 'rūpaṃ / rūpāni', meaning: '물질을 / 물질들을' },
         { case: '나머지 격', ending: '남성과 동일', example: 'rūpassa, rūpe...', meaning: '물질의, 물질에서...' },
       ],
     },
-    tip: '중성의 핵심: 주격 = 대격! 즉, "~이"와 "~을"이 같은 형태(-aṃ)입니다. 남성(-o/-aṃ)과 달리 구분이 없습니다.',
+    tip: '중성의 핵심: 주격 = 목적격! 즉, "~이"와 "~을"이 같은 형태(-aṃ)입니다. 남성(-o/-aṃ)과 달리 구분이 없습니다.',
   },
 
   // 5. ā-어간 여성 격변화
@@ -108,20 +108,20 @@ export const GRAMMAR_BASICS: TeachGrammarStep[] = [
     description: '여성 명사 중 가장 흔한 패턴입니다. paññā(지혜), vedanā(느낌), saddhā(믿음), mettā(자비) 등 추상 덕목에 많습니다.',
     examples: [
       { pali: 'paññā', breakdown: 'paññā (여성 주격)', meaning: '지혜가', highlight: '-ā' },
-      { pali: 'paññaṃ', breakdown: 'paññā → paññaṃ (대격)', meaning: '지혜를', highlight: '-aṃ' },
-      { pali: 'paññāya', breakdown: 'paññā + ya (구격/여격/탈격)', meaning: '지혜에 의해/에게/로부터', highlight: '-āya' },
+      { pali: 'paññaṃ', breakdown: 'paññā → paññaṃ (목적격)', meaning: '지혜를', highlight: '-aṃ' },
+      { pali: 'paññāya', breakdown: 'paññā + ya (도구격/간접목적격/분리격)', meaning: '지혜에 의해/에게/로부터', highlight: '-āya' },
     ],
     table: {
       label: 'ā-어간 여성 (paññā 지혜)',
       rows: [
         { case: '주격 (~이/가)', ending: '-ā / -ā, -āyo', example: 'paññā / paññā', meaning: '지혜가' },
-        { case: '대격 (~을/를)', ending: '-aṃ / -ā, -āyo', example: 'paññaṃ / paññā', meaning: '지혜를' },
-        { case: '구격 (~에 의해)', ending: '-āya / -āhi', example: 'paññāya / paññāhi', meaning: '지혜에 의해' },
-        { case: '속격 (~의)', ending: '-āya / -ānaṃ', example: 'paññāya / paññānaṃ', meaning: '지혜의' },
+        { case: '목적격 (~을/를)', ending: '-aṃ / -ā, -āyo', example: 'paññaṃ / paññā', meaning: '지혜를' },
+        { case: '도구격 (~에 의해)', ending: '-āya / -āhi', example: 'paññāya / paññāhi', meaning: '지혜에 의해' },
+        { case: '소유격 (~의)', ending: '-āya / -ānaṃ', example: 'paññāya / paññānaṃ', meaning: '지혜의' },
         { case: '처격 (~에서)', ending: '-āya, -āyaṃ / -āsu', example: 'paññāya / paññāsu', meaning: '지혜에서' },
       ],
     },
-    tip: '여성의 핵심: -āya가 구격·여격·탈격·속격·처격에 모두 쓰입니다. 만능 어미! 문맥으로 어떤 격인지 판단합니다.',
+    tip: '여성의 핵심: -āya가 도구격·간접목적격·분리격·소유격·처격에 모두 쓰입니다. 만능 어미! 문맥으로 어떤 격인지 판단합니다.',
   },
 
   // 6. 동사 기초
@@ -212,18 +212,18 @@ export function generateGrammarBasicsQuizzes(): QuizStep[] {
     {
       type: 'quiz',
       question: '"dhammassa"는 어떤 격인가요?',
-      options: shuffle(['속격 (~의)', '주격 (~이)', '대격 (~을)', '처격 (~에서)']),
+      options: shuffle(['소유격 (~의)', '주격 (~이)', '목적격 (~을)', '처격 (~에서)']),
       answer: -1,
       explanation: {
-        correct: '-assa는 a-어간 남성/중성의 속격 단수 어미입니다.',
+        correct: '-assa는 a-어간 남성/중성의 소유격 단수 어미입니다.',
         detail: 'dhamma + ssa → dhammassa = "법의"',
-        tip: '속격은 소유를 나타냅니다: buddhassa dhammo = 붓다의 법',
+        tip: '소유격은 소유를 나타냅니다: buddhassa dhammo = 붓다의 법',
       },
     },
     {
       type: 'quiz',
       question: '"dhamme"는 어떤 격인가요?',
-      options: shuffle(['처격 (~에서)', '주격 (~이)', '속격 (~의)', '대격 (~을)']),
+      options: shuffle(['처격 (~에서)', '주격 (~이)', '소유격 (~의)', '목적격 (~을)']),
       answer: -1,
       explanation: {
         correct: '-e는 a-어간의 처격 단수 어미입니다.',
@@ -244,21 +244,21 @@ export function generateGrammarBasicsQuizzes(): QuizStep[] {
     {
       type: 'quiz',
       question: '중성 명사의 특징은?',
-      options: shuffle(['주격과 대격이 같다', '격변화가 없다', '주격이 -o로 끝난다', '복수형이 없다']),
+      options: shuffle(['주격과 목적격이 같다', '격변화가 없다', '주격이 -o로 끝난다', '복수형이 없다']),
       answer: -1,
       explanation: {
-        correct: '중성 명사는 주격과 대격이 동일한 형태(-aṃ)입니다.',
-        detail: 'rūpaṃ은 "물질이"(주격)와 "물질을"(대격) 모두 가능',
+        correct: '중성 명사는 주격과 목적격이 동일한 형태(-aṃ)입니다.',
+        detail: 'rūpaṃ은 "물질이"(주격)와 "물질을"(목적격) 모두 가능',
       },
     },
     {
       type: 'quiz',
       question: '"paññāya"는 여성 명사의 어떤 격에 쓰이나요?',
-      options: shuffle(['구격/여격/탈격/속격/처격 (여러 격)', '주격만', '대격만', '호격만']),
+      options: shuffle(['도구격/간접목적격/분리격/소유격/처격 (여러 격)', '주격만', '목적격만', '부름격만']),
       answer: -1,
       explanation: {
         correct: '-āya는 여성 명사의 만능 어미로, 여러 격에 쓰입니다.',
-        detail: '구격(~에 의해), 여격(~에게), 탈격(~으로부터), 속격(~의), 처격(~에서)',
+        detail: '도구격(~에 의해), 간접목적격(~에게), 분리격(~으로부터), 소유격(~의), 처격(~에서)',
         tip: '문맥을 통해 어떤 격인지 판단합니다.',
       },
     },
@@ -269,11 +269,11 @@ export function generateGrammarBasicsQuizzes(): QuizStep[] {
     const correctText = q.explanation.correct.includes('-o') ? '남성'
       : q.explanation.correct.includes('-aṃ으로') ? '중성'
       : q.explanation.correct.includes('-ā로') ? '여성'
-      : q.explanation.correct.includes('-assa') ? '속격 (~의)'
+      : q.explanation.correct.includes('-assa') ? '소유격 (~의)'
       : q.explanation.correct.includes('-e는') ? '처격 (~에서)'
       : q.explanation.correct.includes('-ti는') ? '현재 3인칭 단수'
-      : q.explanation.correct.includes('주격과 대격') ? '주격과 대격이 같다'
-      : q.explanation.correct.includes('-āya') ? '구격/여격/탈격/속격/처격 (여러 격)'
+      : q.explanation.correct.includes('주격과 목적격') ? '주격과 목적격이 같다'
+      : q.explanation.correct.includes('-āya') ? '도구격/간접목적격/분리격/소유격/처격 (여러 격)'
       : q.options[0]
 
     return {
