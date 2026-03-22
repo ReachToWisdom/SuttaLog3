@@ -314,7 +314,7 @@ export const PRIMER_GRAMMAR_3: TeachGrammarStep[] = [
         { case: '과거형', ending: '-i', example: 'agacchi', meaning: '갔다' },
         { case: '미래형', ending: '-ssati', example: 'gamissati', meaning: '갈 것이다' },
         { case: '명령형', ending: '-tu', example: 'gacchatu', meaning: '가라' },
-        { case: '희구법', ending: '-eyya', example: 'gaccheyya', meaning: '갈 수 있다/가야 한다' },
+        { case: '원망형', ending: '-eyya', example: 'gaccheyya', meaning: '갈 수 있다/가야 한다' },
         { case: '수동태', ending: '-iyati', example: 'gamiyati', meaning: '가게 된다' },
         { case: '사역형', ending: '-āpeti', example: 'gamāpeti', meaning: '가게 한다' },
         { case: '현재분사', ending: '-anto', example: 'gacchanto', meaning: '가는 (자)' },

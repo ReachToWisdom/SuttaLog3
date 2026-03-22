@@ -176,7 +176,7 @@ function buildGrammarExtra2Steps(): Step[] {
     type: 'intro',
     title: '추가학습: 미래형 · 수동 · 절대분사',
     subtitle: '독해 심화 준비',
-    description: '미래형, 명령형, 희구법, 사역형, 수동태, 절대분사, 자음어간 명사를 배웁니다.',
+    description: '미래형, 명령형, 원망형, 사역형, 수동태, 절대분사, 자음어간 명사를 배웁니다.',
     icon: '📐',
   })
   steps.push(...PRIMER_GRAMMAR_2.slice(7)) // L16~22

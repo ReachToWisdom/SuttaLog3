@@ -155,7 +155,7 @@ export const ANATTA_GRAMMAR: TeachGrammarStep[] = [
       ],
     },
     tip: '본문에서 ce(만약)가 직접 나오지 않아도, 가정법 동사 어미(-ssa, -eyya)가 보이면 조건문입니다. "만약 A라면 B일 것이다" 구조를 파악하세요.',
-    relatedLesson: '자비경의 bhāvaye(희구법)도 가정법과 같은 -eyya 계열 동사 어미입니다.',
+    relatedLesson: '자비경의 bhāvaye(원망형)도 가정법과 같은 -eyya 계열 동사 어미입니다.',
   },
   // 본문 변형 보충 (연성 축약, 미래수동분사 daṭṭhabbaṃ, 11종 분류)
   ...ANATTA_SANDHI_NOTES,
@@ -282,13 +282,13 @@ export const METTA_GRAMMAR: TeachGrammarStep[] = [
   {
     type: 'teach-grammar',
     title: '자비 수행 구문: mānasaṃ bhāvaye aparimāṇaṃ',
-    description: '자비경의 수행 구문에서 희구법(bhāvaye)과 한량없음(aparimāṇaṃ)이 나옵니다. 비유 구문(mātā yathā)도 중요합니다.',
+    description: '자비경의 수행 구문에서 원망형(bhāvaye)과 한량없음(aparimāṇaṃ)이 나옵니다. 비유 구문(mātā yathā)도 중요합니다.',
     examples: [
-      { pali: 'bhāvaye', breakdown: 'bhāveti의 희구법 3인칭 단수', meaning: '닦을지어다', highlight: '-aye' },
+      { pali: 'bhāvaye', breakdown: 'bhāveti의 원망형 3인칭 단수', meaning: '닦을지어다', highlight: '-aye' },
       { pali: 'aparimāṇaṃ', breakdown: 'a + parimāṇa + ṃ (중성 목적격)', meaning: '한량없는', highlight: 'a-' },
       { pali: 'mātā yathā niyaṃ puttaṃ', breakdown: 'mātā(어머니가) yathā(마치) niyaṃ(자기의) puttaṃ(아들을)', meaning: '마치 어머니가 자기 아들을', highlight: 'yathā' },
     ],
-    relatedLesson: '전법륜경의 동사 활용에서 배운 명령형(-tu)과 비슷한 희구법(-eyya/-aye) 구문입니다.',
+    relatedLesson: '전법륜경의 동사 활용에서 배운 명령형(-tu)과 비슷한 원망형(-eyya/-aye) 구문입니다.',
     tip: 'a- 접두사는 부정을 나타냅니다. aparimāṇa = a(부정) + parimāṇa(한량) = 한량없는. anatta(무아)와 같은 패턴!',
   },
 ]

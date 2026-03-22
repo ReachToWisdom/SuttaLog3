@@ -115,7 +115,7 @@ const GRAMMAR_SECTIONS = [
     color: '#5B21B6',
     icon: '📐',
     items: [
-      { label: '미래형 · 명령형 · 희구법', lesson: 'grammar-extra2', status: '추가학습' },
+      { label: '미래형 · 명령형 · 원망형', lesson: 'grammar-extra2', status: '추가학습' },
       { label: '사역 · 수동 · 절대분사', lesson: 'grammar-extra2', status: '추가학습' },
       { label: '자음어간 명사', lesson: 'grammar-extra2', status: '추가학습' },
     ],

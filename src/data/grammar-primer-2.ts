@@ -190,7 +190,7 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
     relatedLesson: '전법륜경의 sevitabba가 미래수동분사입니다.',
   },
 
-  // ── Lesson 16-17: 미래형/명령형/희구법 ──
+  // ── Lesson 16-17: 미래형/명령형/원망형 ──
 
   // 스텝1: 미래형
   {
@@ -243,15 +243,15 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
     relatedLesson: '행복경의 brūhi(말씀해 주소서)가 명령형입니다.',
   },
 
-  // 스텝3: 희구법/조건법
+  // 스텝3: 원망형/조건법
   {
     type: 'teach-grammar',
-    title: '희구법/조건법 (-eyya)',
+    title: '원망형/조건법 (-eyya)',
     description:
-      '희구법은 "~할 수 있다, ~해야 한다"를, 조건법은 "~했을 것이다"를 뜻합니다. ' +
+      '원망형은 "~할 수 있다, ~해야 한다"를, 조건법은 "~했을 것이다"를 뜻합니다. ' +
       '어근 + eyya로 만듭니다.',
     table: {
-      label: '희구법 인칭 변화',
+      label: '원망형 인칭 변화',
       rows: [
         { case: '3인칭 단수', ending: '-eyya', example: 'gaccheyya', meaning: '갈 수 있다/가야 한다' },
         { case: '3인칭 복수', ending: '-eyyuṃ', example: 'gaccheyyuṃ', meaning: '갈 수 있다 (복수)' },
