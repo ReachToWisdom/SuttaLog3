@@ -14,6 +14,7 @@ import QuizView from '../../components/steps/QuizView'
 import MatchReverseView from '../../components/steps/MatchReverseView'
 import ArrangeView from '../../components/steps/ArrangeView'
 import VerseView from '../../components/steps/VerseView'
+import VocabListView from '../../components/steps/VocabListView'
 import CompletionView from './CompletionView'
 import { debouncedPush } from '../../utils/sync'
 
@@ -206,6 +207,8 @@ function renderStep(
       return <ArrangeView step={step} onCorrect={onCorrect} onWrong={onWrong} onBack={onBack} onSkip={onSkip} />
     case 'verse':
       return <VerseView step={step} onNext={onNext} onBack={onBack} />
+    case 'vocab-list':
+      return <VocabListView step={step} onNext={onNext} onBack={onBack} />
     case 'match-listen':
       return <QuizView step={step as any} onCorrect={onCorrect} onWrong={onWrong} onBack={onBack} onSkip={onSkip} />
     default:

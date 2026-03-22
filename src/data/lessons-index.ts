@@ -8,7 +8,7 @@ import { ALL_VERSES as METTA_VERSES, ALL_METTA_WORDS } from './metta-words'
 import { ALL_VERSES as DHAMMACAKKA_VERSES, ALL_DHAMMACAKKA_WORDS } from './dhammacakka-words'
 import { ALL_VERSES as ANATTA_VERSES, ALL_ANATTA_WORDS } from './anatta-words'
 import { ALL_VERSES as SATIPATTHANA_VERSES, ALL_SATIPATTHANA_WORDS } from './satipatthana-words'
-import { generateMixedQuizzes } from './quiz-generator'
+import { generateMixedQuizzes, generateGrammarQuizzes } from './quiz-generator'
 import { ALL_ARRANGE_QUIZZES } from './mangala-arrange'
 import { MANGALA_GRAMMAR, DHAMMACAKKA_GRAMMAR, ANATTA_GRAMMAR, SATIPATTHANA_GRAMMAR } from './grammar-steps'
 import { GRAMMAR_BASICS, generateGrammarBasicsQuizzes } from './grammar-basics'
@@ -173,6 +173,9 @@ function buildGrammarAdvancedSteps(): Step[] {
   // 심화 문법 설명
   steps.push(...GRAMMAR_ADVANCED)
 
+  // 이해도 확인 퀴즈 (기초 문법과 동일한 패턴)
+  steps.push(...generateGrammarQuizzes(GRAMMAR_ADVANCED))
+
   return steps
 }
 
@@ -189,7 +192,14 @@ function buildMangalaSteps(): Step[] {
     icon: '🪷',
   })
 
-  // 게송별: 원문 표시 → 단어 학습
+  // 1단계: 핵심 단어 한눈에 보기
+  const mangalaWords = collectUniqueWords(ALL_MANGALA_WORDS)
+  steps.push({ type: 'vocab-list', title: '핵심 단어', words: mangalaWords })
+
+  // 2단계: 문법 설명
+  steps.push(...MANGALA_GRAMMAR)
+
+  // 3단계: 게송 원문 (단어 터치로 의미 확인)
   for (const verse of ALL_VERSES) {
     steps.push({
       type: 'verse',
@@ -198,23 +208,7 @@ function buildMangalaSteps(): Step[] {
       translation: verse.translation,
       words: verse.words,
     })
-
-    for (const word of verse.words) {
-      steps.push({
-        type: 'teach',
-        word: word.pali,
-        pronKo: word.pronKo,
-        meaning: word.meaning,
-        grammar: word.grammar,
-        icon: '📖',
-        verseLine: verse.pali.split('\n')[0],
-        verseLineKo: verse.translation.split('\n')[0],
-      })
-    }
   }
-
-  // 문법 설명 스텝
-  steps.push(...MANGALA_GRAMMAR)
 
   // 전체 단어 퀴즈 (무작위 혼합, 모든 단어 빠짐없이)
   steps.push(...generateMixedQuizzes(ALL_MANGALA_WORDS))
@@ -237,6 +231,11 @@ function buildRatanaSteps(): Step[] {
     icon: '💎',
   })
 
+  // 핵심 단어 한눈에 보기
+  const ratanaWords = collectUniqueWords(ALL_RATANA_WORDS)
+  steps.push({ type: 'vocab-list', title: '핵심 단어', words: ratanaWords })
+
+  // 게송 원문 (단어 터치로 의미 확인)
   for (const verse of RATANA_VERSES) {
     steps.push({
       type: 'verse',
@@ -245,19 +244,6 @@ function buildRatanaSteps(): Step[] {
       translation: verse.translation,
       words: verse.words,
     })
-
-    for (const word of verse.words) {
-      steps.push({
-        type: 'teach',
-        word: word.pali,
-        pronKo: word.pronKo,
-        meaning: word.meaning,
-        grammar: word.grammar,
-        icon: '📖',
-        verseLine: verse.pali.split('\n')[0],
-        verseLineKo: verse.translation.split('\n')[0],
-      })
-    }
   }
 
   steps.push(...generateMixedQuizzes(ALL_RATANA_WORDS))
@@ -276,6 +262,11 @@ function buildMettaSteps(): Step[] {
     icon: '💛',
   })
 
+  // 핵심 단어 한눈에 보기
+  const mettaWords = collectUniqueWords(ALL_METTA_WORDS)
+  steps.push({ type: 'vocab-list', title: '핵심 단어', words: mettaWords })
+
+  // 게송 원문 (단어 터치로 의미 확인)
   for (const verse of METTA_VERSES) {
     steps.push({
       type: 'verse',
@@ -284,19 +275,6 @@ function buildMettaSteps(): Step[] {
       translation: verse.translation,
       words: verse.words,
     })
-
-    for (const word of verse.words) {
-      steps.push({
-        type: 'teach',
-        word: word.pali,
-        pronKo: word.pronKo,
-        meaning: word.meaning,
-        grammar: word.grammar,
-        icon: '📖',
-        verseLine: verse.pali.split('\n')[0],
-        verseLineKo: verse.translation.split('\n')[0],
-      })
-    }
   }
 
   steps.push(...generateMixedQuizzes(ALL_METTA_WORDS))
@@ -315,18 +293,9 @@ function buildDhammacakkaSteps(): Step[] {
     icon: '☸️',
   })
 
-  // 1단계: 새 단어 일괄 학습 (핵심 단어만 배치로)
+  // 1단계: 새 단어 한눈에 보기 (탭으로 자율 학습)
   const newWords = collectUniqueWords(ALL_DHAMMACAKKA_WORDS)
-  for (const word of newWords) {
-    steps.push({
-      type: 'teach',
-      word: word.pali,
-      pronKo: word.pronKo,
-      meaning: word.meaning,
-      grammar: word.grammar,
-      icon: '📝',
-    })
-  }
+  steps.push({ type: 'vocab-list', title: '핵심 단어', words: newWords })
 
   // 2단계: 문법 설명 (메인 콘텐츠!)
   steps.push(...DHAMMACAKKA_GRAMMAR)
@@ -342,8 +311,8 @@ function buildDhammacakkaSteps(): Step[] {
     })
   }
 
-  // 4단계: 퀴즈
-  steps.push(...generateMixedQuizzes(ALL_DHAMMACAKKA_WORDS))
+  // 4단계: 문법 퀴즈 (문법 내용 기반)
+  steps.push(...generateGrammarQuizzes(DHAMMACAKKA_GRAMMAR))
   return steps
 }
 
@@ -359,18 +328,9 @@ function buildAnattaSteps(): Step[] {
     icon: '🔍',
   })
 
-  // 1단계: 새 단어 일괄 학습
+  // 1단계: 새 단어 한눈에 보기 (탭으로 자율 학습)
   const newWords = collectUniqueWords(ALL_ANATTA_WORDS)
-  for (const word of newWords) {
-    steps.push({
-      type: 'teach',
-      word: word.pali,
-      pronKo: word.pronKo,
-      meaning: word.meaning,
-      grammar: word.grammar,
-      icon: '📝',
-    })
-  }
+  steps.push({ type: 'vocab-list', title: '핵심 단어', words: newWords })
 
   // 2단계: 문법 설명 (메인 콘텐츠!)
   steps.push(...ANATTA_GRAMMAR)
@@ -386,8 +346,8 @@ function buildAnattaSteps(): Step[] {
     })
   }
 
-  // 4단계: 퀴즈
-  steps.push(...generateMixedQuizzes(ALL_ANATTA_WORDS))
+  // 4단계: 문법 퀴즈 (문법 내용 기반)
+  steps.push(...generateGrammarQuizzes(ANATTA_GRAMMAR))
   return steps
 }
 
@@ -403,18 +363,9 @@ function buildSatipatthanaSteps(): Step[] {
     icon: '🧘',
   })
 
-  // 1단계: 새 단어 일괄 학습
+  // 1단계: 새 단어 한눈에 보기 (탭으로 자율 학습)
   const newWords = collectUniqueWords(ALL_SATIPATTHANA_WORDS)
-  for (const word of newWords) {
-    steps.push({
-      type: 'teach',
-      word: word.pali,
-      pronKo: word.pronKo,
-      meaning: word.meaning,
-      grammar: word.grammar,
-      icon: '📝',
-    })
-  }
+  steps.push({ type: 'vocab-list', title: '핵심 단어', words: newWords })
 
   // 2단계: 문법 설명 (메인 콘텐츠!)
   steps.push(...SATIPATTHANA_GRAMMAR)
@@ -430,8 +381,8 @@ function buildSatipatthanaSteps(): Step[] {
     })
   }
 
-  // 4단계: 퀴즈
-  steps.push(...generateMixedQuizzes(ALL_SATIPATTHANA_WORDS))
+  // 4단계: 문법 퀴즈 (문법 내용 기반)
+  steps.push(...generateGrammarQuizzes(SATIPATTHANA_GRAMMAR))
   return steps
 }
 

@@ -185,6 +185,158 @@ export function genWritingArrange(
   }
 }
 
+// ── 문법 퀴즈 생성 (산문 경전용) ──
+
+/** TeachGrammarStep의 예시/테이블에서 문법+문장구성 퀴즈 자동 생성 */
+export function generateGrammarQuizzes(
+  grammarSteps: import('./types').TeachGrammarStep[],
+): (QuizStep | ArrangeReadingStep | ArrangeWritingStep)[] {
+  const quizzes: (QuizStep | ArrangeReadingStep | ArrangeWritingStep)[] = []
+
+  for (const step of grammarSteps) {
+    // 예시에서 퀴즈: 빠알리 → 의미 매칭
+    if (step.examples.length >= 4) {
+      const target = step.examples[Math.floor(Math.random() * step.examples.length)]
+      const wrongs = shuffle(step.examples.filter(e => e !== target))
+        .slice(0, 3)
+        .map(e => e.meaning)
+      const options = shuffle([target.meaning, ...wrongs])
+      quizzes.push({
+        type: 'quiz',
+        question: `"${target.pali}"의 문법적 의미는?`,
+        options,
+        answer: options.indexOf(target.meaning),
+        explanation: {
+          correct: `${target.pali} = ${target.breakdown}`,
+          detail: `${target.meaning}`,
+          tip: step.tip,
+        },
+      })
+    }
+
+    // 테이블에서 퀴즈: 격/형태 → 어미 매칭
+    if (step.table && step.table.rows.length >= 4) {
+      const row = step.table.rows[Math.floor(Math.random() * step.table.rows.length)]
+      const wrongEndings = shuffle(step.table.rows.filter(r => r !== row))
+        .slice(0, 3)
+        .map(r => r.ending)
+      const options = shuffle([row.ending, ...wrongEndings])
+      quizzes.push({
+        type: 'quiz',
+        question: `${step.table.label}에서 ${row.case}의 어미는?`,
+        options,
+        answer: options.indexOf(row.ending),
+        explanation: {
+          correct: `${row.case}: ${row.ending} (예: ${row.example} = ${row.meaning})`,
+          tip: step.tip,
+        },
+      })
+
+      // 예시 → 격 판별 퀴즈
+      const row2 = step.table.rows[Math.floor(Math.random() * step.table.rows.length)]
+      const wrongCases = shuffle(step.table.rows.filter(r => r !== row2))
+        .slice(0, 3)
+        .map(r => r.case)
+      const caseOptions = shuffle([row2.case, ...wrongCases])
+      quizzes.push({
+        type: 'quiz',
+        question: `"${row2.example}"은(는) 어떤 형태입니까?`,
+        options: caseOptions,
+        answer: caseOptions.indexOf(row2.case),
+        explanation: {
+          correct: `${row2.example} = ${row2.meaning} (${row2.case}, 어미: ${row2.ending})`,
+        },
+      })
+    }
+
+    // 분해(breakdown) 퀴즈
+    if (step.examples.length >= 3) {
+      const ex = step.examples[Math.floor(Math.random() * step.examples.length)]
+      const wrongBreakdowns = shuffle(step.examples.filter(e => e !== ex))
+        .slice(0, 3)
+        .map(e => e.breakdown)
+      const bdOptions = shuffle([ex.breakdown, ...wrongBreakdowns])
+      quizzes.push({
+        type: 'quiz',
+        question: `"${ex.pali}"의 문법적 분해는?`,
+        options: bdOptions,
+        answer: bdOptions.indexOf(ex.breakdown),
+        explanation: {
+          correct: `${ex.pali} = ${ex.breakdown} → "${ex.meaning}"`,
+        },
+      })
+    }
+
+    // 문장 구성 퀴즈: 테이블 데이터로 문법 함정 포함
+    // 같은 단어의 다른 격/형태를 함정으로 → 문법 이해 없이 못 풀게
+    if (step.table && step.table.rows.length >= 3) {
+      const rows = step.table.rows
+      // 2~3개 행을 정답으로 선택
+      const correctRows = shuffle(rows).slice(0, Math.min(3, rows.length))
+      // 나머지 행에서 함정 추출 (같은 단어의 다른 격/형태)
+      const trapRows = rows.filter(r => !correctRows.includes(r))
+
+      // 작문 조립: 한글 뜻 보고 → 올바른 빠알리 형태 배열
+      // 예: "법이, 법을, 법에서" → [dhammo, dhammaṃ, dhamme]
+      // 함정: dhammassa(속격), dhammehi(구격) 등
+      quizzes.push({
+        type: 'arrange-writing',
+        korean: correctRows.map(r => `${r.meaning} (${r.case})`).join(' / '),
+        pieces: correctRows.map(r => r.example),
+        distractors: trapRows.slice(0, 2).map(r => ({
+          text: r.example,
+          why: `"${r.example}"은 ${r.case}(${r.ending}) 형태이므로 문맥에 맞지 않습니다`,
+        })),
+        explanation: {
+          correct: correctRows.map(r => `${r.case}: ${r.example} (${r.ending})`).join(' / '),
+          detail: `${step.table.label}\n${rows.map(r => `• ${r.case}: ${r.example} = ${r.meaning}`).join('\n')}`,
+          tip: '격변화 어미에 주의하세요. 같은 단어라도 문법적 역할에 따라 형태가 달라집니다.',
+        },
+      })
+
+      // 독해 조립: 빠알리 형태 보고 → 올바른 한글 뜻 순서 배열
+      const readRows = shuffle(rows).slice(0, Math.min(3, rows.length))
+      const readTraps = rows.filter(r => !readRows.includes(r))
+      quizzes.push({
+        type: 'arrange-reading',
+        pali: readRows.map(r => r.example).join(' / '),
+        pieces: readRows.map(r => `${r.meaning} (${r.case})`),
+        distractors: readTraps.slice(0, 2).map(r => ({
+          text: `${r.meaning} (${r.case})`,
+          why: `"${r.example}"(${r.ending})은 ${r.case}이므로 여기에 해당하지 않습니다`,
+        })),
+        explanation: {
+          correct: readRows.map(r => `${r.example} → ${r.meaning}`).join(' / '),
+          detail: readRows.map(r => `• ${r.example}: ${r.case}, 어미 ${r.ending}`).join('\n'),
+        },
+      })
+    }
+
+    // 예시 기반 작문 조립: 분해 구조 이해 테스트
+    if (step.examples.length >= 3) {
+      const exs = shuffle(step.examples).slice(0, 3)
+      // 빠알리 분해 보고 → 올바른 빠알리 원형 배열
+      const otherExs = step.examples.filter(e => !exs.includes(e))
+      quizzes.push({
+        type: 'arrange-writing',
+        korean: exs.map(e => `${e.meaning}`).join(', '),
+        pieces: exs.map(e => e.pali),
+        distractors: otherExs.slice(0, 2).map(e => ({
+          text: e.pali,
+          why: `"${e.pali}"(${e.breakdown})는 "${e.meaning}"이므로 이 문맥의 답이 아닙니다`,
+        })),
+        explanation: {
+          correct: exs.map(e => `${e.meaning} → ${e.pali}`).join(' / '),
+          detail: exs.map(e => `• ${e.pali} = ${e.breakdown}`).join('\n'),
+          tip: step.tip,
+        },
+      })
+    }
+  }
+
+  return shuffle(quizzes)
+}
+
 // ── 단원 전체 퀴즈 세트 생성 ──
 
 export interface QuizSet {

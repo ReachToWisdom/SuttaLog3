@@ -7,5 +7,5 @@ setting/
 Thumbs.db
 uploads/
 test-results/
-data/
+/data/
 e2e/screenshots/

@@ -127,6 +127,13 @@ export interface GrammarTable {
   rows: { case: string; ending: string; example: string; meaning: string }[]
 }
 
+/** 단어 목록 — 한 화면에 모아 보기, 탭하여 자율 학습 */
+export interface VocabListStep {
+  type: 'vocab-list'
+  title: string            // 예: "핵심 단어"
+  words: VerseWord[]       // 단어 목록
+}
+
 // ── 유니온 타입 ──
 export type Step =
   | IntroStep
@@ -138,6 +145,7 @@ export type Step =
   | ArrangeReadingStep
   | ArrangeWritingStep
   | VerseStep
+  | VocabListStep
 
 // ── 단원 메타데이터 ──
 export interface LessonInfo {
