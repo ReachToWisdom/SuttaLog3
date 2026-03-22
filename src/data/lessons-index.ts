@@ -7,7 +7,6 @@ import { ALL_VERSES as RATANA_VERSES, ALL_RATANA_WORDS } from './ratana-words'
 import { ALL_VERSES as METTA_VERSES, ALL_METTA_WORDS } from './metta-words'
 import { ALL_VERSES as DHAMMACAKKA_VERSES } from './dhammacakka-words'
 import { ALL_VERSES as ANATTA_VERSES } from './anatta-words'
-import { ALL_VERSES as SATIPATTHANA_VERSES } from './satipatthana-words'
 import { KAYA_VERSES } from './satipatthana-kaya'
 import { DHAMMA_VERSES } from './satipatthana-dhamma'
 import { generateMixedQuizzes, generateGrammarQuizzes, generateFillBlankQuizzes, generateSentenceQuizzes } from './quiz-generator'
@@ -364,6 +363,14 @@ function buildAnattaSteps(): Step[] {
   return steps
 }
 
+/** 중첩 구조 verses를 VerseData[]로 변환 */
+function toVerseData(verses: any[]): import('./quiz-generator').VerseData[] {
+  return verses.map(entry => {
+    const v = 'verse' in entry ? entry.verse : entry
+    return { pali: v.pali, translation: v.translation, words: entry.words }
+  })
+}
+
 // ── 사념처경 공통: verse 삽입 헬퍼 ──
 function pushVerseEntries(steps: Step[], verses: any[]) {
   for (const entry of verses) {
@@ -400,8 +407,8 @@ function buildSatipatthana1Steps(): Step[] {
 
   // 문법 퀴즈 + 빈칸 + 문장
   steps.push(...generateGrammarQuizzes(SATIPATTHANA_GRAMMAR))
-  steps.push(...generateFillBlankQuizzes(KAYA_VERSES))
-  steps.push(...generateSentenceQuizzes(KAYA_VERSES))
+  steps.push(...generateFillBlankQuizzes(toVerseData(KAYA_VERSES)))
+  steps.push(...generateSentenceQuizzes(toVerseData(KAYA_VERSES)))
   return steps
 }
 
@@ -421,8 +428,8 @@ function buildSatipatthana2Steps(): Step[] {
   pushVerseEntries(steps, DHAMMA_VERSES)
 
   // 빈칸 + 문장
-  steps.push(...generateFillBlankQuizzes(DHAMMA_VERSES))
-  steps.push(...generateSentenceQuizzes(DHAMMA_VERSES))
+  steps.push(...generateFillBlankQuizzes(toVerseData(DHAMMA_VERSES)))
+  steps.push(...generateSentenceQuizzes(toVerseData(DHAMMA_VERSES)))
   return steps
 }
 
