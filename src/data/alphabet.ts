@@ -7,12 +7,12 @@ import type { PaliLetter } from './types'
 export const VOWELS: PaliLetter[] = [
   { roman: 'a', pronKo: '아', pronDesc: '짧은 "아"', example: 'acintayuṃ', examplePronKo: '아찐따융', exampleMeaning: '생각했다 (행복경)' },
   { roman: 'ā', pronKo: '아-', pronDesc: '긴 "아" (두 배 길게)', example: 'ārāme', examplePronKo: '아-라-메', exampleMeaning: '동산에서 (행복경)' },
-  { roman: 'i', pronKo: '이', pronDesc: '짧은 "이"', example: 'isipatane', examplePronKo: '이시빠따네', exampleMeaning: '이시빠따나에서 (행복경)' },
-  { roman: 'ī', pronKo: '이-', pronDesc: '긴 "이" (두 배 길게)', example: 'sotthīṃ', examplePronKo: '솟티-응', exampleMeaning: '안녕을 (행복경)' },
+  { roman: 'i', pronKo: '이', pronDesc: '짧은 "이"', example: 'iti', examplePronKo: '이띠', exampleMeaning: '이와 같이' },
+  { roman: 'ī', pronKo: '이-', pronDesc: '긴 "이" (두 배 길게)', example: 'sīla', examplePronKo: '시-라', exampleMeaning: '계율' },
   { roman: 'u', pronKo: '우', pronDesc: '짧은 "우"', example: 'uttamaṃ', examplePronKo: '욷따망', exampleMeaning: '최상의 (행복경)' },
   { roman: 'ū', pronKo: '우-', pronDesc: '긴 "우" (두 배 길게)', example: 'pūjā', examplePronKo: '뿌-자-', exampleMeaning: '공양 (행복경)' },
   { roman: 'e', pronKo: '에', pronDesc: '항상 긴 "에"', example: 'evaṃ', examplePronKo: '에왕', exampleMeaning: '이와 같이 (행복경)' },
-  { roman: 'o', pronKo: '오', pronDesc: '항상 긴 "오"', example: 'sotthānaṃ', examplePronKo: '솟타-낭', exampleMeaning: '안녕을 (행복경)' },
+  { roman: 'o', pronKo: '오', pronDesc: '항상 긴 "오"', example: 'okāsa', examplePronKo: '오까-사', exampleMeaning: '기회/허락' },
 ]
 
 // ── 자음 33자 (예시 모두 행복경 원문) ──
