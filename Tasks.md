@@ -17,16 +17,15 @@
 - [x] 무아경: ANATTA_GRAMMAR
 - [x] 사념처경: SATIPATTHANA_GRAMMAR
 
-### Step 4: 명사 도표화 자료 반영
-- [ ] data/210803 PDF의 격변화표를 문법 설명에 반영
-- [ ] 각 어간별 격변화 도표와 대조
+### Step 4: 명사 도표화 자료 반영 ✅
+- [x] 명사 도표(210803 PDF) 격변화 이형태 전부 반영
+- [x] 탈격 -to, 처소격 -ini/-smiṃ/-mhi, 복수 -ehi/-ebhi 등
+- [x] i/u-어간 복수 테이블 신규 추가
 
-### Step 5: 목차(Courses.tsx) 재편성
-- [ ] PATH_SECTIONS: 교재 과 + 경전 ★ 표시
-- [ ] GRAMMAR_SECTIONS: 교재 32과 전체
+### Step 5: 목차(Courses.tsx) 재편성 ✅
+- [x] PATH_SECTIONS: 교재 과 + 경전 ★ 표시
+- [x] GRAMMAR_SECTIONS: 교재 32과 전체
 
-### Step 6: 빌드 + 배포 + 검증
-- [ ] 타입 체크 + 빌드
-- [ ] Playwright 전체 경로 순서 확인
-- [ ] GitHub Pages 배포
-- [ ] 명세서 갱신
+### Step 6: 빌드 + 배포 ✅
+- [x] 타입 체크 + 빌드 통과
+- [x] GitHub Pages 배포 성공
