@@ -96,6 +96,60 @@ const CASE_DISTRACTORS: Record<string, { text: string; why: string }[]> = {
     { text: 'bhikkhunaṃ', why: 'bhikkhunaṃ은 속격(비구들의)입니다' },
     { text: 'bhikkhūhi', why: 'bhikkhūhi는 구격(비구들에 의해)입니다' },
   ],
+
+  // ── 무아경 핵심 단어 ──
+  'rūpaṃ': [
+    { text: 'rūpassa', why: 'rūpassa는 속격(물질의)이지 주격이 아닙니다' },
+    { text: 'rūpena', why: 'rūpena는 구격(물질에 의해)입니다' },
+    { text: 'rūpe', why: 'rūpe는 처격(물질에서)입니다' },
+  ],
+  'vedanā': [
+    { text: 'vedanāya', why: 'vedanāya는 여격/처격(느낌에/느낌에서)입니다' },
+    { text: 'vedanaṃ', why: 'vedanaṃ은 대격(느낌을)입니다' },
+    { text: 'vedanāsu', why: 'vedanāsu는 복수 처격(느낌들에서)입니다' },
+  ],
+  'saññā': [
+    { text: 'saññāya', why: 'saññāya는 여격/처격(인식에서)입니다' },
+    { text: 'saññaṃ', why: 'saññaṃ은 대격(인식을)입니다' },
+    { text: 'saññāsu', why: 'saññāsu는 복수 처격(인식들에서)입니다' },
+  ],
+  'saṅkhārā': [
+    { text: 'saṅkhāre', why: 'saṅkhāre는 대격 복수(형성들을)입니다' },
+    { text: 'saṅkhāresu', why: 'saṅkhāresu는 처격 복수(형성들에서)입니다' },
+    { text: 'saṅkhārehi', why: 'saṅkhārehi는 구격 복수(형성들에 의해)입니다' },
+  ],
+  'viññāṇaṃ': [
+    { text: 'viññāṇassa', why: 'viññāṇassa는 속격(의식의)입니다' },
+    { text: 'viññāṇena', why: 'viññāṇena는 구격(의식에 의해)입니다' },
+    { text: 'viññāṇe', why: 'viññāṇe는 처격(의식에서)입니다' },
+  ],
+  'anattā': [
+    { text: 'attā', why: 'attā는 "자아"이고, anattā는 "무아(자아가 아닌)"입니다 — 정반대!' },
+    { text: 'anattaṃ', why: 'anattaṃ은 대격(무아를)이지 주격이 아닙니다' },
+    { text: 'anattatā', why: 'anattatā는 추상명사(무아성)입니다' },
+  ],
+  'aniccaṃ': [
+    { text: 'niccaṃ', why: 'niccaṃ은 "영원한"이고, aniccaṃ은 "무상한"입니다 — 정반대!' },
+    { text: 'aniccā', why: 'aniccā는 여성/복수형이지 중성 단수가 아닙니다' },
+    { text: 'aniccena', why: 'aniccena는 구격(무상한 것에 의해)입니다' },
+  ],
+
+  // ── 사념처경 핵심 단어 ──
+  'kāye': [
+    { text: 'kāyo', why: 'kāyo는 주격(몸이)이지 처격(몸에서)이 아닙니다' },
+    { text: 'kāyaṃ', why: 'kāyaṃ은 대격(몸을)입니다' },
+    { text: 'kāyassa', why: 'kāyassa는 속격(몸의)입니다' },
+  ],
+  'satiṃ': [
+    { text: 'sati', why: 'sati는 주격(새김이)이지 대격(새김을)이 아닙니다' },
+    { text: 'satiyā', why: 'satiyā는 구격/여격(새김에 의해/새김을 위해)입니다' },
+    { text: 'satimā', why: 'satimā는 "새김을 가진"이라는 형용사입니다' },
+  ],
+  'taṇhā': [
+    { text: 'taṇhaṃ', why: 'taṇhaṃ은 대격(갈애를)입니다' },
+    { text: 'taṇhāya', why: 'taṇhāya는 여격/구격(갈애에 의해)입니다' },
+    { text: 'taṇhāsu', why: 'taṇhāsu는 복수 처격(갈애들에서)입니다' },
+  ],
 }
 
 // ── 유틸리티 ──
