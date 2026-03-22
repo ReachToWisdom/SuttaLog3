@@ -43,9 +43,38 @@ const V_REPLACE: Record<string, Record<string, string>> = {
   'o': { '까': '꼬', '카': '코', '가': '고', '짜': '쪼', '차': '초', '자': '조', '따': '또', '타': '토', '다': '도', '빠': '뽀', '파': '포', '바': '보', '마': '모', '나': '노', '응': '옹', '냐': '뇨', '야': '요', '라': '로', '와': '워', '사': '소', '하': '호' },
 }
 
+// 겹자음 앞 자음 → 받침 표기 (완성형 한글)
+const BATCHIM: Record<string, string> = {
+  '까': '끄', '카': '크', '가': '그',
+  '짜': '쯔', '차': '츠', '자': '즈',
+  '따': '뜨', '타': '트', '다': '드',
+  '빠': '쁘', '파': '프', '바': '브',
+  '마': 'ㅁ', '나': 'ㄴ', '응': '응',
+  '냐': 'ㄴ', '라': '르', '사': '스',
+  '와': '', '야': '', '하': '',
+}
+
+// 자주 나오는 겹자음 패턴 → 받침 표기
+const GEMINATE_FIX: [RegExp, string][] = [
+  [/뜨따/g, '따'], [/끄까/g, '까'], [/쁘빠/g, '빠'],
+  [/브바/g, '바'], [/ㅁ마/g, 'ㅁ마'], [/ㄴ나/g, 'ㄴ나'],
+  [/스사/g, '싸'], [/르라/g, '르라'],
+  [/뜨타/g, '따'], [/끄카/g, '까'],
+  [/쯔짜/g, '짜'], [/츠차/g, '차'],
+]
+
 /** 빠알리 로마자 → 한글 발음 자동 변환 */
 export function autoPronoKo(pali: string): string {
-  return pali.split(/\s+/).map(w => convertWord(w.toLowerCase().replace(/[.,;:!?'"()—–\-]/g, ''))).join(' ')
+  return pali.split(/\s+/).map(w => {
+    let result = convertWord(w.toLowerCase().replace(/[.,;:!?'"()—–\-]/g, ''))
+    // 겹자음 후처리
+    for (const [pattern, replacement] of GEMINATE_FIX) {
+      result = result.replace(pattern, replacement)
+    }
+    // ṃ 어말 → 응 대신 ㅇ받침 느낌
+    result = result.replace(/응$/, '앙')
+    return result
+  }).join(' ')
 }
 
 function convertWord(word: string): string {
@@ -71,8 +100,14 @@ function convertWord(word: string): string {
           }
         }
         if (!vMatched) {
-          // 자음만 (어말 겹자음)
-          result += ko
+          // 자음만 (어말 또는 겹자음 앞)
+          // 겹자음: 같은 자음이 연속 → 받침 처리 (예: tt→ㅌ+따)
+          const b = BATCHIM[ko]
+          if (b && result.length > 0) {
+            result += b
+          } else {
+            result += ko
+          }
           i = afterC
         }
         cMatched = true
