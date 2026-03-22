@@ -59,10 +59,18 @@ export default function Settings() {
     }
   }
 
+  const [confirmReset, setConfirmReset] = useState(false)
+
   const handleReset = () => {
-    if (!confirm('모든 학습 진도를 초기화하시겠습니까?')) return
+    if (!confirmReset) {
+      setConfirmReset(true)
+      return
+    }
+    // 모든 suttalog3- 키 삭제
     const keys = Object.keys(localStorage).filter(k => k.startsWith(STORAGE_PREFIX))
     keys.forEach(k => localStorage.removeItem(k))
+    // 캐시 관련 키도 삭제
+    localStorage.removeItem('suttalog3-cache-v2')
     location.reload()
   }
 
@@ -117,9 +125,20 @@ export default function Settings() {
       {/* 초기화 */}
       <div className="mt-8">
         <button onClick={handleReset} className="w-full p-3 rounded-xl border text-center"
-          style={{ borderColor: 'var(--color-error)', color: 'var(--color-error)' }}>
-          진도 초기화
+          style={{
+            borderColor: 'var(--color-error)',
+            color: confirmReset ? '#fff' : 'var(--color-error)',
+            background: confirmReset ? 'var(--color-error)' : 'transparent',
+          }}>
+          {confirmReset ? '정말 초기화하시겠습니까? (다시 누르면 실행)' : '진도 초기화'}
         </button>
+        {confirmReset && (
+          <button onClick={() => setConfirmReset(false)}
+            className="w-full mt-2 p-2 text-sm text-center"
+            style={{ color: 'var(--color-text-tertiary)' }}>
+            취소
+          </button>
+        )}
       </div>
 
       {/* 앱 정보 */}

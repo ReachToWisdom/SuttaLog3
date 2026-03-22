@@ -481,19 +481,33 @@ export function generateFillBlankQuizzes(verses: VerseData[]): FillBlankStep[] {
 
 // ── 문장 작문 퀴즈 생성 (verse 기반) ──
 
-/** 짧은 구절만 선택하여 한글→빠알리 문장 작문 퀴즈 생성 */
+/** 본문에서 핵심 구절을 추출하여 한글→빠알리 문장 작문 퀴즈 생성 */
 export function generateSentenceQuizzes(verses: VerseData[]): ArrangeWritingStep[] {
   const quizzes: ArrangeWritingStep[] = []
 
-  // 실제 pali 텍스트 단어 수로 필터 (3~8단어, 번역 50자 이하)
-  const shortVerses = verses.filter(v => {
-    const paliWordCount = v.pali.split(/\s+/).length
-    return paliWordCount >= 3 && paliWordCount <= 8 && v.translation.length <= 50
-  })
+  for (const verse of verses) {
+    // 본문을 구두점으로 쪼개서 짧은 구절 추출
+    const segments = verse.pali
+      .split(/[.,;:—–]/)
+      .map(s => s.trim())
+      .filter(s => {
+        const wc = s.split(/\s+/).length
+        return wc >= 3 && wc <= 8
+      })
 
-  for (const verse of shortVerses) {
-    // 실제 pali 단어를 조각으로 사용 (WORDS 배열이 아닌 본문 기준)
-    const pieces = verse.pali.split(/\s+/).filter(w => w.length > 0)
+    if (segments.length === 0) continue
+
+    // 첫 번째 짧은 구절로 퀴즈 생성
+    const segment = segments[0]
+    const pieces = segment.split(/\s+/).filter(w => w.length > 0)
+    if (pieces.length < 3) continue
+
+    // 해당 구절의 뜻 (WORDS에서 매칭)
+    const meanings = pieces.map(p => {
+      const w = verse.words.find(vw => vw.pali.toLowerCase() === p.toLowerCase())
+      return w ? w.meaning : p
+    })
+    const korean = meanings.join(' ')
 
     // CASE_DISTRACTORS에서 함정 수집
     const allDistractors: Distractor[] = []
@@ -510,7 +524,7 @@ export function generateSentenceQuizzes(verses: VerseData[]): ArrangeWritingStep
 
     quizzes.push({
       type: 'arrange-writing',
-      korean: verse.translation,
+      korean,
       pieces,
       distractors: allDistractors.slice(0, 3),
       explanation: {
