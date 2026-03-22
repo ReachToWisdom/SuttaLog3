@@ -1,5 +1,5 @@
 // 퀴즈 자동 생성 — 모든 단어 빠짐없이, 무작위, 격변화 함정
-import type { QuizStep, MatchReverseStep, ArrangeReadingStep, ArrangeWritingStep, Explanation, Distractor } from './types'
+import type { QuizStep, MatchReverseStep, ArrangeReadingStep, ArrangeWritingStep, FillBlankStep, Explanation, Distractor } from './types'
 import type { VerseWord } from './types'
 
 // ── 격변화 함정 사전 ──
@@ -49,6 +49,52 @@ const CASE_DISTRACTORS: Record<string, { text: string; why: string }[]> = {
     { text: 'kammaṃ', why: 'kammaṃ은 단수(행위를), kammāni는 복수(행위들)입니다' },
     { text: 'kammassa', why: 'kammassa는 단수 속격(행위의)입니다' },
     { text: 'kammehi', why: 'kammehi는 복수 구격(행위들에 의해)입니다' },
+  ],
+  // 동사 인칭 변화
+  'viharati': [
+    { text: 'viharanti', why: 'viharanti는 복수(~들이 머무시다)이지 단수가 아닙니다' },
+    { text: 'vihari', why: 'vihari는 과거형(머무셨다)이지 현재형이 아닙니다' },
+    { text: 'viharāma', why: 'viharāma는 1인칭 복수(우리는 머문다)입니다' },
+  ],
+  // a-어간 남성 전체 (dhamma)
+  'dhammo': [
+    { text: 'dhammaṃ', why: 'dhammaṃ은 대격(법을)이지 주격(법이)이 아닙니다' },
+    { text: 'dhammena', why: 'dhammena는 구격(법에 의해)입니다' },
+    { text: 'dhammassa', why: 'dhammassa는 속격(법의)입니다' },
+  ],
+  'dhammaṃ': [
+    { text: 'dhammo', why: 'dhammo는 주격(법이)이지 대격(법을)이 아닙니다' },
+    { text: 'dhamme', why: 'dhamme는 처격(법에서)입니다' },
+    { text: 'dhammena', why: 'dhammena는 구격(법에 의해)입니다' },
+  ],
+  // tathāgata 격변화
+  'tathāgatena': [
+    { text: 'tathāgato', why: 'tathāgato는 주격(여래가)이지 구격이 아닙니다' },
+    { text: 'tathāgatassa', why: 'tathāgatassa는 속격(여래의)입니다' },
+    { text: 'tathāgataṃ', why: 'tathāgataṃ은 대격(여래를)입니다' },
+  ],
+  'tathāgato': [
+    { text: 'tathāgatena', why: 'tathāgatena는 구격(여래에 의해)입니다' },
+    { text: 'tathāgatassa', why: 'tathāgatassa는 속격(여래의)입니다' },
+    { text: 'tathāgataṃ', why: 'tathāgataṃ은 대격(여래를)입니다' },
+  ],
+  // dukkha 격변화
+  'dukkhaṃ': [
+    { text: 'dukkhassa', why: 'dukkhassa는 속격(고통의)입니다' },
+    { text: 'dukkhena', why: 'dukkhena는 구격(고통에 의해)입니다' },
+    { text: 'dukkhe', why: 'dukkhe는 처격(고통에서)입니다' },
+  ],
+  // magga (도)
+  'maggo': [
+    { text: 'maggaṃ', why: 'maggaṃ은 대격(길을)이지 주격(길이)이 아닙니다' },
+    { text: 'maggena', why: 'maggena는 구격(길에 의해)입니다' },
+    { text: 'maggassa', why: 'maggassa는 속격(길의)입니다' },
+  ],
+  // bhikkhu 호격/주격
+  'bhikkhave': [
+    { text: 'bhikkhū', why: 'bhikkhū는 주격(비구들이)이지 호격이 아닙니다' },
+    { text: 'bhikkhunaṃ', why: 'bhikkhunaṃ은 속격(비구들의)입니다' },
+    { text: 'bhikkhūhi', why: 'bhikkhūhi는 구격(비구들에 의해)입니다' },
   ],
 }
 
@@ -267,71 +313,7 @@ export function generateGrammarQuizzes(
       })
     }
 
-    // 문장 구성 퀴즈: 테이블 데이터로 문법 함정 포함
-    // 같은 단어의 다른 격/형태를 함정으로 → 문법 이해 없이 못 풀게
-    if (step.table && step.table.rows.length >= 3) {
-      const rows = step.table.rows
-      // 2~3개 행을 정답으로 선택
-      const correctRows = shuffle(rows).slice(0, Math.min(3, rows.length))
-      // 나머지 행에서 함정 추출 (같은 단어의 다른 격/형태)
-      const trapRows = rows.filter(r => !correctRows.includes(r))
-
-      // 작문 조립: 한글 뜻 보고 → 올바른 빠알리 형태 배열
-      // 예: "법이, 법을, 법에서" → [dhammo, dhammaṃ, dhamme]
-      // 함정: dhammassa(속격), dhammehi(구격) 등
-      quizzes.push({
-        type: 'arrange-writing',
-        korean: correctRows.map(r => `${r.meaning} (${r.case})`).join(' / '),
-        pieces: correctRows.map(r => r.example),
-        distractors: trapRows.slice(0, 2).map(r => ({
-          text: r.example,
-          why: `"${r.example}"은 ${r.case}(${r.ending}) 형태이므로 문맥에 맞지 않습니다`,
-        })),
-        explanation: {
-          correct: correctRows.map(r => `${r.case}: ${r.example} (${r.ending})`).join(' / '),
-          detail: `${step.table.label}\n${rows.map(r => `• ${r.case}: ${r.example} = ${r.meaning}`).join('\n')}`,
-          tip: '격변화 어미에 주의하세요. 같은 단어라도 문법적 역할에 따라 형태가 달라집니다.',
-        },
-      })
-
-      // 독해 조립: 빠알리 형태 보고 → 올바른 한글 뜻 순서 배열
-      const readRows = shuffle(rows).slice(0, Math.min(3, rows.length))
-      const readTraps = rows.filter(r => !readRows.includes(r))
-      quizzes.push({
-        type: 'arrange-reading',
-        pali: readRows.map(r => r.example).join(' / '),
-        pieces: readRows.map(r => `${r.meaning} (${r.case})`),
-        distractors: readTraps.slice(0, 2).map(r => ({
-          text: `${r.meaning} (${r.case})`,
-          why: `"${r.example}"(${r.ending})은 ${r.case}이므로 여기에 해당하지 않습니다`,
-        })),
-        explanation: {
-          correct: readRows.map(r => `${r.example} → ${r.meaning}`).join(' / '),
-          detail: readRows.map(r => `• ${r.example}: ${r.case}, 어미 ${r.ending}`).join('\n'),
-        },
-      })
-    }
-
-    // 예시 기반 작문 조립: 분해 구조 이해 테스트
-    if (step.examples.length >= 3) {
-      const exs = shuffle(step.examples).slice(0, 3)
-      // 빠알리 분해 보고 → 올바른 빠알리 원형 배열
-      const otherExs = step.examples.filter(e => !exs.includes(e))
-      quizzes.push({
-        type: 'arrange-writing',
-        korean: exs.map(e => `${e.meaning}`).join(', '),
-        pieces: exs.map(e => e.pali),
-        distractors: otherExs.slice(0, 2).map(e => ({
-          text: e.pali,
-          why: `"${e.pali}"(${e.breakdown})는 "${e.meaning}"이므로 이 문맥의 답이 아닙니다`,
-        })),
-        explanation: {
-          correct: exs.map(e => `${e.meaning} → ${e.pali}`).join(' / '),
-          detail: exs.map(e => `• ${e.pali} = ${e.breakdown}`).join('\n'),
-          tip: step.tip,
-        },
-      })
-    }
+    // (테이블/예시 기반 arrange 퀴즈는 fill-blank로 대체됨)
   }
 
   return shuffle(quizzes)
@@ -352,6 +334,92 @@ export function generateFullQuizSet(words: VerseWord[]): QuizSet {
     meaningQuizzes: words.map(w => genMeaningQuiz(w, words)),
     reverseQuizzes: words.map(w => genReverseQuiz(w, words)),
   }
+}
+
+// ── verse 데이터 타입 ──
+export interface VerseData {
+  pali: string
+  translation: string
+  words: VerseWord[]
+}
+
+// ── 빈칸 채우기 퀴즈 생성 ──
+
+/** verse에서 CASE_DISTRACTORS에 해당하는 단어를 빈칸으로 만든 퀴즈 생성 */
+export function generateFillBlankQuizzes(verses: VerseData[]): FillBlankStep[] {
+  const quizzes: FillBlankStep[] = []
+
+  for (const verse of verses) {
+    for (const word of verse.words) {
+      const distractors = CASE_DISTRACTORS[word.pali]
+      if (!distractors || distractors.length < 3) continue
+
+      // 문장에서 해당 단어를 ___로 대체
+      const sentence = verse.pali.replace(word.pali, '___')
+      // 단어가 문장에 실제로 있는지 확인
+      if (sentence === verse.pali) continue
+
+      // 정답 + 오답 3개
+      const wrongOptions = shuffle(distractors).slice(0, 3).map(d => d.text)
+      const options = shuffle([word.pali, ...wrongOptions])
+
+      quizzes.push({
+        type: 'fill-blank',
+        sentence,
+        translation: verse.translation,
+        blank: word.pali,
+        options,
+        answer: options.indexOf(word.pali),
+        explanation: {
+          correct: `정답: "${word.pali}" (${word.grammar ?? ''})`,
+          detail: distractors.slice(0, 3).map(d => `• ${d.text}: ${d.why}`).join('\n'),
+          tip: '같은 어근이라도 격에 따라 형태가 달라집니다. 문맥을 보고 판단하세요.',
+        },
+      })
+    }
+  }
+
+  return shuffle(quizzes)
+}
+
+// ── 문장 작문 퀴즈 생성 (verse 기반) ──
+
+/** 짧은 verse를 선택하여 한글→빠알리 문장 작문 퀴즈 생성 */
+export function generateSentenceQuizzes(verses: VerseData[]): ArrangeWritingStep[] {
+  const quizzes: ArrangeWritingStep[] = []
+  // 짧은 verse만 선택 (단어 8개 이하)
+  const shortVerses = verses.filter(v => v.words.length <= 8 && v.words.length >= 3)
+
+  for (const verse of shortVerses) {
+    const pieces = verse.words.map(w => w.pali)
+
+    // CASE_DISTRACTORS에서 함정 수집
+    const allDistractors: Distractor[] = []
+    for (const word of verse.words) {
+      const traps = CASE_DISTRACTORS[word.pali]
+      if (traps) {
+        // 이미 정답에 있는 단어는 제외
+        const filtered = traps.filter(t => !pieces.includes(t.text))
+        for (const trap of filtered.slice(0, 1)) {
+          allDistractors.push({ text: trap.text, why: trap.why })
+        }
+      }
+    }
+
+    quizzes.push({
+      type: 'arrange-writing',
+      korean: verse.translation,
+      pieces,
+      distractors: allDistractors.slice(0, 3),
+      explanation: {
+        correct: `올바른 순서: ${pieces.join(' ')}`,
+        detail: verse.words.map(w => `• ${w.pali} (${w.pronKo}) = ${w.meaning}`).join('\n'),
+        tip: '격변화와 어순에 주의하세요.',
+      },
+    })
+  }
+
+  return shuffle(quizzes)
 }
 
 /** 무작위 혼합 퀴즈 (발음+뜻+역방향 랜덤 섞기, 모든 단어 1번 이상) */

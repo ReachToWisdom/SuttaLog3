@@ -8,7 +8,7 @@ import { ALL_VERSES as METTA_VERSES, ALL_METTA_WORDS } from './metta-words'
 import { ALL_VERSES as DHAMMACAKKA_VERSES } from './dhammacakka-words'
 import { ALL_VERSES as ANATTA_VERSES } from './anatta-words'
 import { ALL_VERSES as SATIPATTHANA_VERSES } from './satipatthana-words'
-import { generateMixedQuizzes, generateGrammarQuizzes } from './quiz-generator'
+import { generateMixedQuizzes, generateGrammarQuizzes, generateFillBlankQuizzes, generateSentenceQuizzes } from './quiz-generator'
 import { ALL_ARRANGE_QUIZZES } from './mangala-arrange'
 import { MANGALA_GRAMMAR, DHAMMACAKKA_GRAMMAR, ANATTA_GRAMMAR, SATIPATTHANA_GRAMMAR } from './grammar-steps'
 import { GRAMMAR_BASICS, generateGrammarBasicsQuizzes } from './grammar-basics'
@@ -287,6 +287,10 @@ function buildDhammacakkaSteps(): Step[] {
 
   // 4단계: 문법 퀴즈 (문법 내용 기반)
   steps.push(...generateGrammarQuizzes(DHAMMACAKKA_GRAMMAR))
+
+  // 5단계: 빈칸 채우기 + 문장 작문 (경전 문장 기반)
+  steps.push(...generateFillBlankQuizzes(DHAMMACAKKA_VERSES))
+  steps.push(...generateSentenceQuizzes(DHAMMACAKKA_VERSES))
   return steps
 }
 
@@ -319,6 +323,10 @@ function buildAnattaSteps(): Step[] {
 
   // 4단계: 문법 퀴즈 (문법 내용 기반)
   steps.push(...generateGrammarQuizzes(ANATTA_GRAMMAR))
+
+  // 5단계: 빈칸 채우기 + 문장 작문 (경전 문장 기반)
+  steps.push(...generateFillBlankQuizzes(ANATTA_VERSES))
+  steps.push(...generateSentenceQuizzes(ANATTA_VERSES))
   return steps
 }
 
@@ -351,6 +359,10 @@ function buildSatipatthanaSteps(): Step[] {
 
   // 4단계: 문법 퀴즈 (문법 내용 기반)
   steps.push(...generateGrammarQuizzes(SATIPATTHANA_GRAMMAR))
+
+  // 5단계: 빈칸 채우기 + 문장 작문 (경전 문장 기반)
+  steps.push(...generateFillBlankQuizzes(SATIPATTHANA_VERSES))
+  steps.push(...generateSentenceQuizzes(SATIPATTHANA_VERSES))
   return steps
 }
 

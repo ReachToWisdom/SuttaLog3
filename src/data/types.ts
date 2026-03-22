@@ -128,6 +128,17 @@ export interface GrammarTable {
   rows: { case: string; ending: string; example: string; meaning: string }[]
 }
 
+/** 빈칸 채우기 — 문장에서 빈칸에 알맞은 격 형태 선택 */
+export interface FillBlankStep {
+  type: 'fill-blank'
+  sentence: string         // 빈칸이 있는 빠알리 문장 ("Ekaṃ samayaṃ ___ bārāṇasiyaṃ viharati")
+  translation: string      // 한글 번역 (맥락 제공)
+  blank: string            // 빈칸의 정답 ("bhagavā")
+  options: string[]         // 4개 선택지 (정답 + 오답 3개)
+  answer: number           // 정답 인덱스
+  explanation: Explanation
+}
+
 /** 단어 목록 — 한 화면에 모아 보기, 탭하여 자율 학습 */
 export interface VocabListStep {
   type: 'vocab-list'
@@ -145,6 +156,7 @@ export type Step =
   | MatchReverseStep
   | ArrangeReadingStep
   | ArrangeWritingStep
+  | FillBlankStep
   | VerseStep
   | VocabListStep
 

@@ -13,6 +13,7 @@ import TeachView from '../../components/steps/TeachView'
 import QuizView from '../../components/steps/QuizView'
 import MatchReverseView from '../../components/steps/MatchReverseView'
 import ArrangeView from '../../components/steps/ArrangeView'
+import FillBlankView from '../../components/steps/FillBlankView'
 import VerseView from '../../components/steps/VerseView'
 import VocabListView from '../../components/steps/VocabListView'
 import CompletionView from './CompletionView'
@@ -147,7 +148,7 @@ export default function LearnEngine({ reviewMode = false }: LearnEngineProps) {
         totalQuizzes={steps.filter(s =>
           s.type === 'quiz' || s.type === 'match-reverse' ||
           s.type === 'arrange-reading' || s.type === 'arrange-writing' ||
-          s.type === 'match-listen'
+          s.type === 'fill-blank' || s.type === 'match-listen'
         ).length}
         hearts={hearts}
         elapsed={Math.floor((Date.now() - startTime) / 1000)}
@@ -205,6 +206,8 @@ function renderStep(
     case 'arrange-reading':
     case 'arrange-writing':
       return <ArrangeView step={step} onCorrect={onCorrect} onWrong={onWrong} onBack={onBack} onSkip={onSkip} />
+    case 'fill-blank':
+      return <FillBlankView step={step} onCorrect={onCorrect} onWrong={onWrong} onBack={onBack} onSkip={onSkip} />
     case 'verse':
       return <VerseView step={step} onNext={onNext} onBack={onBack} />
     case 'vocab-list':

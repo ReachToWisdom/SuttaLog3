@@ -160,6 +160,38 @@ export default function ArrangeView({ step, onCorrect, onWrong, onBack, onSkip }
         ))}
       </div>
 
+      {/* 오답 시 정답 문장 표시 */}
+      {showResult && !isCorrect && (
+        <div
+          className="reveal-down p-3.5 rounded-2xl mb-5 flex flex-wrap gap-2 items-start"
+          style={{
+            background: 'rgba(46, 125, 50, 0.05)',
+            border: '2px solid var(--color-accent)',
+          }}
+        >
+          <span
+            className="text-xs font-bold mr-1 self-center"
+            style={{ color: 'var(--color-accent)' }}
+          >
+            정답:
+          </span>
+          {correctPieces.map((piece, idx) => (
+            <span
+              key={`correct-${idx}`}
+              className={`px-3.5 py-2 rounded-full text-sm font-semibold
+                         ${isReading ? '' : 'pali-text'}`}
+              style={{
+                background: 'rgba(46, 125, 50, 0.1)',
+                border: '1.5px solid var(--color-accent)',
+                color: 'var(--color-accent)',
+              }}
+            >
+              {piece}
+            </span>
+          ))}
+        </div>
+      )}
+
       {/* 선택 가능한 조각들: 필 형태 */}
       <div className="flex flex-wrap gap-2.5">
         {available.map((piece, idx) => {
