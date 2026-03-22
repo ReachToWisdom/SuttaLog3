@@ -64,80 +64,114 @@ const PATH_SECTIONS = [
   },
 ]
 
-// ── 문법 학습 경로 (Primer 순서, 경전과 매칭) ──
+// ── 문법 학습 경로 (교재 32과 전체, 경전과 매칭) ──
 const GRAMMAR_SECTIONS = [
   {
-    title: '1단계 · 발음',
+    title: '발음 · 연성법',
     color: '#6B7280',
     icon: '🔤',
     items: [
-      { label: '모음 8자 + 자음 33자', lesson: 'alphabet', status: '자모와 발음' },
+      { label: '1과: 자모와 발음 (모음 8 + 자음 33)', lesson: 'alphabet', status: '자모와 발음' },
+      { label: '연성법 (모음/자음/억제음)', lesson: 'grammar-basics', status: '기초 문법' },
     ],
   },
   {
-    title: '2단계 · 기초 문법 (L2~6)',
+    title: 'a-어간 명사 격변화 (1~8과)',
     color: '#5B21B6',
     icon: '📐',
     items: [
-      { label: '3성 · 8격 개념', lesson: 'grammar-basics', status: '기초 문법' },
-      { label: 'a-어간 남/중/여 격변화', lesson: 'grammar-basics', status: '기초 문법' },
-      { label: '동사 현재형 · 형용사', lesson: 'grammar-basics', status: '기초 문법' },
+      { label: '2~3과: a-어간 남성 주격·목적격', lesson: 'grammar-basics', status: '기초 문법' },
+      { label: '4~5과: a-어간 남성 구격·여격·탈격', lesson: 'grammar-basics', status: '기초 문법' },
+      { label: '6~7과: a-어간 남성 소유격·처소격·호격', lesson: 'grammar-basics', status: '기초 문법' },
+      { label: '8과: a-어간 남성 전체 격변화 정리', lesson: 'grammar-basics', status: '기초 문법' },
     ],
   },
   {
-    title: '3단계 · 연성법 실전',
+    title: '절대분사 · 부정사 · 중성 (9~11과)',
+    color: '#5B21B6',
+    icon: '📐',
+    items: [
+      { label: '9과: 절대분사 (-tvā/-tvāna)', lesson: 'grammar-basics', status: '기초 문법' },
+      { label: '10과: 부정사 (-tuṃ)', lesson: 'grammar-basics', status: '기초 문법' },
+      { label: '11과: a-어간 중성명사 격변화', lesson: 'grammar-basics', status: '기초 문법' },
+    ],
+  },
+  {
+    title: '동사 활용 (12~17과)',
+    color: '#5B21B6',
+    icon: '📐',
+    items: [
+      { label: '12~13과: 동사 현재형 활용', lesson: 'grammar-basics', status: '기초 문법' },
+      { label: '14과: 미래형 (-ssa-)', lesson: 'grammar-extra1', status: '추가학습' },
+      { label: '15과: 원망형 (-eyya)', lesson: 'grammar-extra1', status: '추가학습' },
+      { label: '16과: 명령형 (-tu/-hi)', lesson: 'grammar-extra1', status: '추가학습' },
+      { label: '17과: 과거형 (Aorist)', lesson: 'grammar-basics', status: '기초 문법' },
+    ],
+  },
+  {
+    title: '여성명사 · 분사 (18~22과)',
+    color: '#5B21B6',
+    icon: '📐',
+    items: [
+      { label: '18과: ā-어간 여성명사 격변화', lesson: 'grammar-basics', status: '기초 문법' },
+      { label: '19과: 과거분사 (-ta/-na)', lesson: 'grammar-extra1', status: '추가학습' },
+      { label: '20과: i-어간 여성명사 격변화', lesson: 'grammar-extra1', status: '추가학습' },
+      { label: '21과: 현재분사 (-anta/-māna)', lesson: 'grammar-extra1', status: '추가학습' },
+      { label: '22과: 미래수동분사 (-tabba/-anīya)', lesson: 'grammar-extra1', status: '추가학습' },
+    ],
+  },
+  {
+    title: '경전 실전 · 연성법',
     color: 'var(--color-primary)',
     icon: '🔗',
     items: [
-      { label: '연성법 16가지 + 불변어', lesson: 'mangala', status: '행복경' },
+      { label: '연성법 16가지 실전', lesson: 'mangala', status: '행복경' },
+      { label: '사성제 · 팔정도', lesson: 'dhammacakka', status: '전법륜경' },
+      { label: '오온 · 삼상', lesson: 'anatta', status: '무아경' },
     ],
   },
   {
-    title: '4단계 · 추가학습 1 (L11~15)',
+    title: '사역 · 수동 · i/u-어간 (23~29과)',
     color: '#5B21B6',
     icon: '📐',
     items: [
-      { label: '인칭/지시/관계 대명사', lesson: 'grammar-extra1', status: '추가학습' },
-      { label: '현재/과거/미래수동 분사', lesson: 'grammar-extra1', status: '추가학습' },
+      { label: '23과: 사역형 (-āpeti/-eti)', lesson: 'grammar-extra2', status: '추가학습' },
+      { label: '24과: u-어간 여성명사', lesson: 'grammar-extra2', status: '추가학습' },
+      { label: '25과: i-어간 남성명사', lesson: 'grammar-extra2', status: '추가학습' },
+      { label: '26과: ī-어간 남성명사', lesson: 'grammar-extra2', status: '추가학습' },
+      { label: '27과: u-어간 남성명사', lesson: 'grammar-extra2', status: '추가학습' },
+      { label: '28과: u/ar-어간 남성명사', lesson: 'grammar-extra2', status: '추가학습' },
+      { label: '29과: i-어간 중성명사', lesson: 'grammar-extra2', status: '추가학습' },
     ],
   },
   {
-    title: '5단계 · 전법륜경 독해',
-    color: '#7C3AED',
-    icon: '☸️',
-    items: [
-      { label: '사성제 · 팔정도 용어', lesson: 'dhammacakka', status: '전법륜경' },
-      { label: '산문 문장 구조', lesson: 'dhammacakka', status: '전법륜경' },
-    ],
-  },
-  {
-    title: '6단계 · 추가학습 2 (L16~22)',
+    title: '형용사 · 대명사 · 복합어 (30~32과)',
     color: '#5B21B6',
     icon: '📐',
     items: [
-      { label: '미래형 · 명령형 · 원망형', lesson: 'grammar-extra2', status: '추가학습' },
-      { label: '사역 · 수동 · 절대분사', lesson: 'grammar-extra2', status: '추가학습' },
-      { label: '자음어간 명사', lesson: 'grammar-extra2', status: '추가학습' },
+      { label: '30과: -vantu/-mantu 형용사 격변화', lesson: 'grammar-extra3', status: '추가학습' },
+      { label: '31과: 대명사 격변화 (인칭/지시)', lesson: 'grammar-extra3', status: '추가학습' },
+      { label: '32과: 대명사 격변화 (관계/의문)', lesson: 'grammar-extra3', status: '추가학습' },
+      { label: '복합어 · 접두사 · 접미사', lesson: 'grammar-extra3', status: '추가학습' },
+      { label: '수사 · 비교급 · 최상급', lesson: 'grammar-extra3', status: '추가학습' },
     ],
   },
   {
-    title: '7단계 · 무아경 · 사념처경 독해',
+    title: '사념처경 독해',
     color: 'var(--color-accent)',
     icon: '📖',
     items: [
-      { label: '오온 분석 반복 구문', lesson: 'anatta', status: '무아경' },
       { label: '신념처 (몸 관찰)', lesson: 'satipatthana-1', status: '사념처경 1부' },
       { label: '수심법념처 + 팔정도', lesson: 'satipatthana-2', status: '사념처경 2부' },
     ],
   },
   {
-    title: '8단계 · 문법 완성 (L23~32)',
+    title: '문법 총정리',
     color: '#5B21B6',
     icon: '📐',
     items: [
-      { label: '복합어 · 연성법 상세', lesson: 'grammar-extra3', status: '추가학습' },
-      { label: '접두사/접미사 · 수사', lesson: 'grammar-extra3', status: '추가학습' },
-      { label: '격변화/동사 총정리', lesson: 'grammar-extra3', status: '추가학습' },
+      { label: '명사 격변화 총정리 (어간별 비교)', lesson: 'grammar-extra3', status: '추가학습' },
+      { label: '동사 활용 총정리 (시제별 비교)', lesson: 'grammar-extra3', status: '추가학습' },
     ],
   },
 ]
