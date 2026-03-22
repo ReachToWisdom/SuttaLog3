@@ -14,19 +14,19 @@ function getProgress(lessonId: string): number {
 // ── 학습 경로 (문법 + 경전 통합) ──
 const PATH_SECTIONS = [
   {
-    title: '빠알리 발음',
+    title: '🔤 빠알리 발음',
     color: '#6B7280',
     subtitle: '모음 8자 · 자음 33자 · 장단모음',
     lessons: ['primer-01'],
   },
   {
-    title: '남성명사 격변화',
+    title: '📐 남성명사 격변화',
     color: '#5B21B6',
     subtitle: '~이/가, ~을/를, ~에 의해, ~에게, ~로부터, ~의, ~에서, ~이여',
     lessons: ['primer-02-08'],
   },
   {
-    title: '문장 만들기',
+    title: '📐 문장 만들기',
     color: '#5B21B6',
     subtitle: '절대분사(~하고 나서) · 부정사(~하기 위해) · 중성명사 · 동사 현재형',
     lessons: ['primer-09', 'primer-10', 'primer-11', 'primer-12-13'],
@@ -38,13 +38,13 @@ const PATH_SECTIONS = [
     lessons: ['mangala'],
   },
   {
-    title: '동사 시제 변화',
+    title: '📐 동사 시제 변화',
     color: '#5B21B6',
     subtitle: '미래형(~할 것이다) · 원망형(~해야 한다) · 명령형(~하라) · 과거형(~했다)',
     lessons: ['primer-14', 'primer-15', 'primer-16', 'primer-17'],
   },
   {
-    title: '여성명사 격변화',
+    title: '📐 여성명사 격변화',
     color: '#5B21B6',
     subtitle: 'ā-어간 여성명사 (~이/가, ~을/를, ~의 ...)',
     lessons: ['primer-18'],
@@ -56,7 +56,7 @@ const PATH_SECTIONS = [
     lessons: ['ratana', 'metta'],
   },
   {
-    title: '분사 (동사에서 파생된 형용사)',
+    title: '📐 분사 (동사에서 파생된 형용사)',
     color: '#5B21B6',
     subtitle: '과거분사(~된) · 현재분사(~하는) · 미래수동분사(~해야 할)',
     lessons: ['primer-19', 'primer-20', 'primer-21', 'primer-22'],
@@ -68,7 +68,7 @@ const PATH_SECTIONS = [
     lessons: ['dhammacakka'],
   },
   {
-    title: '사역형 · 다양한 명사 격변화',
+    title: '📐 사역형 · 다양한 명사 격변화',
     color: '#5B21B6',
     subtitle: '사역형(~하게 하다) · i-어간 · u-어간 명사',
     lessons: ['primer-23', 'primer-24-29'],
@@ -80,7 +80,7 @@ const PATH_SECTIONS = [
     lessons: ['anatta'],
   },
   {
-    title: '형용사 · 대명사 · 복합어 · 총정리',
+    title: '📐 형용사 · 대명사 · 복합어 · 총정리',
     color: '#5B21B6',
     subtitle: '형용사 격변화 · 대명사 · 복합어 · 접두사 · 수사 · 문법 총정리',
     lessons: ['primer-30-32'],
