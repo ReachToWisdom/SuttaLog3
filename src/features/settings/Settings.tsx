@@ -66,13 +66,16 @@ export default function Settings() {
       setConfirmReset(true)
       return
     }
-    // 모든 suttalog3- 키 삭제
-    Object.keys(localStorage).forEach(k => {
-      if (k.startsWith('suttalog3')) localStorage.removeItem(k)
-    })
-    // 홈으로 이동 후 새로고침
-    window.location.href = window.location.pathname + '#/'
-    window.location.reload()
+    // suttalog3-로 시작하는 모든 키 삭제 (하나씩)
+    const keysToDelete = []
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i)
+      if (key && key.startsWith('suttalog3')) keysToDelete.push(key)
+    }
+    keysToDelete.forEach(k => localStorage.removeItem(k))
+
+    // 홈으로 이동
+    window.location.replace(window.location.pathname + '#/')
   }
 
   return (
