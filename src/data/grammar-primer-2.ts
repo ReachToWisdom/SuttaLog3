@@ -210,11 +210,11 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
       ],
     },
     examples: [
-      { pali: 'nayidaṃ rūpaṃ ābādhāya saṃvatteyya', breakdown: 'na(~않다) + ayidaṃ(이것은) + rūpaṃ(물질이) + ābādhāya(병듦에) + saṃvatteyya(이끌 것이다)', meaning: '이 물질은 병듦에 이끌리지 않을 것이다', highlight: 'saṃvatteyya', source: '무아경(SN 22.59) 제2단락 — 반사실 조건문의 귀결절' },
-      { pali: 'upasamāya abhiññāya sambodhāya nibbānāya saṃvattati', breakdown: 'upasamāya(고요함으로) + abhiññāya(뛰어난 앎으로) + sambodhāya(깨달음으로) + nibbānāya(열반으로) + saṃvattati(이끈다)', meaning: '고요함, 뛰어난 앎, 깨달음, 열반으로 이끈다', highlight: 'saṃvattati', source: '전법륜경(SN 56.11) 단락3' },
-      { pali: 'cakkhuṃ udapādi ñāṇaṃ udapādi', breakdown: 'cakkhuṃ(눈이) + udapādi(생겨났다) + ñāṇaṃ(지혜가) + udapādi(생겨났다)', meaning: '눈이 생겼고 지혜가 생겼다', highlight: 'udapādi', source: '전법륜경(SN 56.11) 단락9' },
+      { pali: 'gamissati', breakdown: 'gam + issa + ti (미래형 3인칭 단수)', meaning: '(그가) 갈 것이다', highlight: 'issati' },
+      { pali: 'gamissāmi', breakdown: 'gam + issā + mi (미래형 1인칭 단수)', meaning: '(내가) 갈 것이다', highlight: 'issāmi' },
+      { pali: 'karissati', breakdown: 'kar + issa + ti (미래형 3인칭 단수)', meaning: '(그가) 할 것이다', highlight: 'issati' },
     ],
-    tip: 'saṃvattati/saṃvatteyya(이끌다)는 전법륜경·무아경에서 매우 자주 나옵니다. udapādi(생겨났다)는 ud+ā+pad의 과거형입니다.',
+    tip: '미래형은 어근 + ssa + 인칭어미. 현재형 gacchati → 미래형 gamissati, karoti → karissati로 변합니다.',
   },
 
   // 스텝2: 명령형
