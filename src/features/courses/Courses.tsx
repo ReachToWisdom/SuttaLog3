@@ -11,44 +11,60 @@ function getProgress(lessonId: string): number {
   return parseFloat(val ?? '0') || 0
 }
 
-// ── 경전 학습 경로 (경전 순서) ──
+// ── 경전 학습 경로 (경전 순서 + 추가학습 분산) ──
 const PATH_SECTIONS = [
   {
-    title: 'Part 0 · 기초 도구',
+    title: 'Part 0 · 기초',
     color: '#6B7280',
-    lessons: ['alphabet'],
+    lessons: ['alphabet', 'grammar-basics'],
   },
   {
-    title: '기초 문법',
-    color: '#5B21B6',
-    subtitle: '경전 학습 전 전체 지도: 3성·8격·격변화·동사',
-    lessons: ['grammar-basics'],
-  },
-  {
-    title: 'Part 1 · 게송 경전 (기초)',
+    title: 'Part 1 · 게송 경전',
     color: 'var(--color-primary)',
     lessons: ['mangala'],
   },
   {
     title: '추가 게송 (선택)',
     color: '#D97706',
-    subtitle: '행복경 완료 후 기초를 더 다지고 싶을 때',
+    subtitle: '기초를 더 다지고 싶을 때',
     lessons: ['ratana', 'metta'],
   },
   {
-    title: '심화 문법',
+    title: '추가학습 · 전법륜경 준비',
     color: '#5B21B6',
-    subtitle: '산문 경전 독해에 필요한 추가 문법',
-    lessons: ['grammar-advanced'],
+    subtitle: '대명사 · 분사',
+    lessons: ['grammar-extra1'],
   },
   {
-    title: 'Part 2 · 산문 경전 (독해)',
+    title: 'Part 2 · 전법륜경',
     color: '#7C3AED',
-    lessons: ['dhammacakka', 'anatta', 'satipatthana'],
+    lessons: ['dhammacakka'],
+  },
+  {
+    title: '추가학습 · 무아경 준비',
+    color: '#5B21B6',
+    subtitle: '미래형 · 수동 · 절대분사',
+    lessons: ['grammar-extra2'],
+  },
+  {
+    title: 'Part 3 · 무아경',
+    color: '#7C3AED',
+    lessons: ['anatta'],
+  },
+  {
+    title: 'Part 4 · 사념처경',
+    color: '#7C3AED',
+    lessons: ['satipatthana'],
+  },
+  {
+    title: '추가학습 · 문법 완성',
+    color: '#5B21B6',
+    subtitle: '복합어 · 연성법 · 총정리',
+    lessons: ['grammar-extra3'],
   },
 ]
 
-// ── 문법 학습 경로 (문법 순서) ──
+// ── 문법 학습 경로 (Primer 순서, 경전과 매칭) ──
 const GRAMMAR_SECTIONS = [
   {
     title: '1단계 · 발음',
@@ -56,48 +72,71 @@ const GRAMMAR_SECTIONS = [
     icon: '🔤',
     items: [
       { label: '모음 8자 + 자음 33자', lesson: 'alphabet', status: '자모와 발음' },
-      { label: '장단모음, 기식음/무기식음', lesson: 'alphabet', status: '자모와 발음' },
     ],
   },
   {
-    title: '2단계 · 기초 문법 (전체 지도)',
+    title: '2단계 · 기초 문법 (L2~6)',
     color: '#5B21B6',
     icon: '📐',
     items: [
-      { label: '3성 개념 (남성/중성/여성)', lesson: 'grammar-basics', status: '기초 문법' },
-      { label: '8격 전체 조감도', lesson: 'grammar-basics', status: '기초 문법' },
-      { label: 'a-어간 남성/중성/여성 격변화표', lesson: 'grammar-basics', status: '기초 문법' },
-      { label: '동사 현재형 + 연성법 기초', lesson: 'grammar-basics', status: '기초 문법' },
+      { label: '3성 · 8격 개념', lesson: 'grammar-basics', status: '기초 문법' },
+      { label: 'a-어간 남/중/여 격변화', lesson: 'grammar-basics', status: '기초 문법' },
+      { label: '동사 현재형 · 형용사', lesson: 'grammar-basics', status: '기초 문법' },
     ],
   },
   {
-    title: '3단계 · 경전 실전 (연성법)',
+    title: '3단계 · 연성법 실전',
     color: 'var(--color-primary)',
     icon: '🔗',
     items: [
-      { label: '연성법 16가지 패턴', lesson: 'mangala', status: '행복경에서 실전' },
-      { label: '불변어 (부사/접속사)', lesson: 'mangala', status: '행복경에서 실전' },
+      { label: '연성법 16가지 + 불변어', lesson: 'mangala', status: '행복경' },
     ],
   },
   {
-    title: '4단계 · 심화 문법',
-    color: '#7C3AED',
+    title: '4단계 · 추가학습 1 (L11~15)',
+    color: '#5B21B6',
     icon: '📐',
     items: [
-      { label: 'i-어간, u-어간 격변화', lesson: 'grammar-advanced', status: '심화 문법' },
-      { label: '동사 과거형, 분사', lesson: 'grammar-advanced', status: '심화 문법' },
-      { label: '복합어 구조', lesson: 'grammar-advanced', status: '심화 문법' },
+      { label: '인칭/지시/관계 대명사', lesson: 'grammar-extra1', status: '추가학습' },
+      { label: '현재/과거/미래수동 분사', lesson: 'grammar-extra1', status: '추가학습' },
     ],
   },
   {
-    title: '5단계 · 독해',
+    title: '5단계 · 전법륜경 독해',
+    color: '#7C3AED',
+    icon: '☸️',
+    items: [
+      { label: '사성제 · 팔정도 용어', lesson: 'dhammacakka', status: '전법륜경' },
+      { label: '산문 문장 구조', lesson: 'dhammacakka', status: '전법륜경' },
+    ],
+  },
+  {
+    title: '6단계 · 추가학습 2 (L16~22)',
+    color: '#5B21B6',
+    icon: '📐',
+    items: [
+      { label: '미래형 · 명령형 · 희구법', lesson: 'grammar-extra2', status: '추가학습' },
+      { label: '사역 · 수동 · 절대분사', lesson: 'grammar-extra2', status: '추가학습' },
+      { label: '자음어간 명사', lesson: 'grammar-extra2', status: '추가학습' },
+    ],
+  },
+  {
+    title: '7단계 · 무아경 · 사념처경 독해',
     color: 'var(--color-accent)',
     icon: '📖',
     items: [
-      { label: '산문 문장 구조 + 동사활용', lesson: 'dhammacakka', status: '전법륜경' },
       { label: '오온 분석 반복 구문', lesson: 'anatta', status: '무아경' },
       { label: '수행 관찰 정형문', lesson: 'satipatthana', status: '사념처경' },
-      { label: '사성제·팔정도 용어', lesson: 'dhammacakka', status: '전법륜경' },
+    ],
+  },
+  {
+    title: '8단계 · 문법 완성 (L23~32)',
+    color: '#5B21B6',
+    icon: '📐',
+    items: [
+      { label: '복합어 · 연성법 상세', lesson: 'grammar-extra3', status: '추가학습' },
+      { label: '접두사/접미사 · 수사', lesson: 'grammar-extra3', status: '추가학습' },
+      { label: '격변화/동사 총정리', lesson: 'grammar-extra3', status: '추가학습' },
     ],
   },
 ]

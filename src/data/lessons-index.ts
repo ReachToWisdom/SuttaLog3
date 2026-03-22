@@ -11,8 +11,10 @@ import { ALL_VERSES as SATIPATTHANA_VERSES } from './satipatthana-words'
 import { generateMixedQuizzes, generateGrammarQuizzes, generateFillBlankQuizzes, generateSentenceQuizzes } from './quiz-generator'
 import { ALL_ARRANGE_QUIZZES } from './mangala-arrange'
 import { MANGALA_GRAMMAR, DHAMMACAKKA_GRAMMAR, ANATTA_GRAMMAR, SATIPATTHANA_GRAMMAR } from './grammar-steps'
-import { GRAMMAR_BASICS, generateGrammarBasicsQuizzes } from './grammar-basics'
-import { GRAMMAR_ADVANCED } from './grammar-advanced'
+import { generateGrammarBasicsQuizzes } from './grammar-basics'
+import { PRIMER_GRAMMAR } from './grammar-primer'
+import { PRIMER_GRAMMAR_2 } from './grammar-primer-2'
+import { PRIMER_GRAMMAR_3 } from './grammar-primer-3'
 
 /** 배열 셔플 */
 function shuffle<T>(arr: T[]): T[] {
@@ -123,47 +125,69 @@ function buildAlphabetSteps(): Step[] {
   return steps
 }
 
-// ── 기초 문법 개론 (경전 전 전체 지도) ──
+// ── 기초 문법 (L2~6: 행복경 전) ──
 function buildGrammarBasicsSteps(): Step[] {
   const steps: Step[] = []
-
   steps.push({
     type: 'intro',
-    title: '기초 문법 개론',
-    subtitle: '3성 · 8격 · 격변화 · 동사',
-    description: '경전을 읽기 전에 빠알리어 문법의 전체 지도를 한 눈에 봅니다. 3가지 성별, 8가지 격, 기본 격변화표를 먼저 익히면 경전 학습이 훨씬 수월합니다.',
+    title: '기초 문법',
+    subtitle: '3성 · 8격 · 격변화 · 동사 현재형',
+    description: '경전을 읽기 위한 기본 문법입니다. 명사의 성별과 격변화, 동사 현재형을 배웁니다.',
     icon: '📐',
   })
-
-  // 문법 설명 스텝 (메인)
-  steps.push(...GRAMMAR_BASICS)
-
-  // 이해도 확인 퀴즈
+  // Primer L2~6만
+  steps.push(...PRIMER_GRAMMAR)
   steps.push(...generateGrammarBasicsQuizzes())
-
   return steps
 }
 
-// ── 심화 문법 (게송 후, 산문 전) ──
-function buildGrammarAdvancedSteps(): Step[] {
+// ── 추가학습 1 (L7~12: 전법륜경 전) ──
+function buildGrammarExtra1Steps(): Step[] {
   const steps: Step[] = []
-
   steps.push({
     type: 'intro',
-    title: '심화 문법',
-    subtitle: 'i/u-어간 · 과거형 · 분사 · 복합어',
-    description: '게송 경전에서 기초를 다졌으니, 산문 경전 독해에 필요한 추가 문법을 배웁니다. i-어간, u-어간 격변화와 동사 과거형, 분사, 복합어를 학습합니다.',
+    title: '추가학습: 과거형 · i/u-어간',
+    subtitle: '산문 경전 준비',
+    description: '과거형(Aorist)과 i-어간, u-어간 명사를 배웁니다. 전법륜경 독해에 필요한 문법입니다.',
     icon: '📐',
   })
-
-  // 심화 문법 설명
-  steps.push(...GRAMMAR_ADVANCED)
-
-  // 이해도 확인 퀴즈 (기초 문법과 동일한 패턴)
-  steps.push(...generateGrammarQuizzes(GRAMMAR_ADVANCED))
-
+  // Primer L7~12 (grammar-primer-2.ts 전반부가 아니라, primer에서 L7~10까지)
+  // PRIMER_GRAMMAR에 L2~10이 있고, PRIMER_GRAMMAR_2에 L11~22가 있음
+  // L7~10은 PRIMER_GRAMMAR의 후반부 (과거형, i-어간, u-어간)
+  // 이미 PRIMER_GRAMMAR에 다 포함되어 있으므로 별도 분리 불필요
+  // 대신 PRIMER_GRAMMAR_2의 전반부(L11~15: 대명사, 분사)를 여기 배치
+  steps.push(...PRIMER_GRAMMAR_2.slice(0, 7)) // 대명사 3 + 분사 3 + 의문대명사 1
   return steps
 }
+
+// ── 추가학습 2 (L16~22: 무아경 전) ──
+function buildGrammarExtra2Steps(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '추가학습: 미래형 · 수동 · 절대분사',
+    subtitle: '독해 심화 준비',
+    description: '미래형, 명령형, 희구법, 사역형, 수동태, 절대분사, 자음어간 명사를 배웁니다.',
+    icon: '📐',
+  })
+  steps.push(...PRIMER_GRAMMAR_2.slice(7)) // L16~22
+  return steps
+}
+
+// ── 추가학습 3 (L23~32: 사념처경 후) ──
+function buildGrammarExtra3Steps(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '추가학습: 복합어 · 연성법 · 총정리',
+    subtitle: '문법 완성',
+    description: '복합어(Samāsa), 연성법 상세, 접두사/접미사, 수사, 문법 총정리입니다.',
+    icon: '📐',
+  })
+  steps.push(...PRIMER_GRAMMAR_3)
+  return steps
+}
+
 
 // ── Part 1: 행복경 단원 (매번 새로 생성) ──
 function buildMangalaSteps(): Step[] {
@@ -368,26 +392,32 @@ function buildSatipatthanaSteps(): Step[] {
 
 // ── 단원 메타 (steps는 학습 시작 시 생성) ──
 const LESSON_META = [
-  // Part 0: 기초 도구
+  // Part 0: 기초
   { id: 'alphabet', title: '자모와 발음', subtitle: '모음 8 · 자음 33', icon: '🔤', category: 'basic' as const, builder: buildAlphabetSteps },
+  { id: 'grammar-basics', title: '기초 문법', subtitle: '3성 · 8격 · 격변화 · 동사', icon: '📐', category: 'grammar' as const, builder: buildGrammarBasicsSteps },
 
-  // 기초 문법 (경전 전 전체 지도)
-  { id: 'grammar-basics', title: '기초 문법 개론', subtitle: '3성 · 8격 · 격변화 · 동사', icon: '📐', category: 'grammar' as const, builder: buildGrammarBasicsSteps },
-
-  // Part 1: 기초 경전
+  // Part 1: 게송 경전
   { id: 'mangala', title: 'Maṅgala Sutta', subtitle: '행복경', icon: '🪷', category: 'gatha' as const, builder: buildMangalaSteps },
+  { id: 'ratana', title: 'Ratana Sutta', subtitle: '보배경 (선택)', icon: '💎', category: 'gatha-extra' as const, builder: buildRatanaSteps },
+  { id: 'metta', title: 'Metta Sutta', subtitle: '자비경 (선택)', icon: '💛', category: 'gatha-extra' as const, builder: buildMettaSteps },
 
-  // 선택: 추가 게송 (행복경 완료 후 분기점에서 선택 가능)
-  { id: 'ratana', title: 'Ratana Sutta', subtitle: '보배경', icon: '💎', category: 'gatha-extra' as const, builder: buildRatanaSteps },
-  { id: 'metta', title: 'Metta Sutta', subtitle: '자비경', icon: '💛', category: 'gatha-extra' as const, builder: buildMettaSteps },
+  // 추가학습 1: 전법륜경 준비
+  { id: 'grammar-extra1', title: '추가학습: 대명사 · 분사', subtitle: '전법륜경 준비', icon: '📐', category: 'grammar' as const, builder: buildGrammarExtra1Steps },
 
-  // 심화 문법 (게송 후, 산문 전)
-  { id: 'grammar-advanced', title: '심화 문법', subtitle: 'i/u-어간 · 과거형 · 분사', icon: '📐', category: 'grammar' as const, builder: buildGrammarAdvancedSteps },
-
-  // Part 2: 산문 경전 (독해)
+  // Part 2: 전법륜경
   { id: 'dhammacakka', title: 'Dhammacakkappavattana Sutta', subtitle: '전법륜경', icon: '☸️', category: 'prose' as const, builder: buildDhammacakkaSteps },
+
+  // 추가학습 2: 무아경 준비
+  { id: 'grammar-extra2', title: '추가학습: 미래형 · 수동 · 절대분사', subtitle: '무아경 준비', icon: '📐', category: 'grammar' as const, builder: buildGrammarExtra2Steps },
+
+  // Part 3: 무아경
   { id: 'anatta', title: 'Anattalakkhaṇa Sutta', subtitle: '무아경', icon: '🔍', category: 'prose' as const, builder: buildAnattaSteps },
+
+  // Part 4: 사념처경
   { id: 'satipatthana', title: 'Mahāsatipaṭṭhāna Sutta', subtitle: '사념처경 발췌', icon: '🧘', category: 'prose' as const, builder: buildSatipatthanaSteps },
+
+  // 추가학습 3: 문법 완성
+  { id: 'grammar-extra3', title: '추가학습: 복합어 · 연성법 · 총정리', subtitle: '문법 완성', icon: '📐', category: 'grammar' as const, builder: buildGrammarExtra3Steps },
 ]
 
 // 단원 목록 (steps는 빈 배열 — getLessonById에서 실시간 생성)
