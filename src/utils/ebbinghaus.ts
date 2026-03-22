@@ -3,18 +3,31 @@ import { STORAGE_PREFIX, EBBINGHAUS_REPEAT_COUNT } from '../config'
 
 // ── 단원 순서 (SSOT: lessons-index.ts LESSON_META 순서) ──
 const LESSON_ORDER = [
-  'alphabet',
-  'grammar-basics',
+  'primer-01',
+  'primer-02-08',
+  'primer-09',
+  'primer-10',
+  'primer-11',
+  'primer-12-13',
   'mangala',
+  'primer-14',
+  'primer-15',
+  'primer-16',
+  'primer-17',
+  'primer-18',
   'ratana',
   'metta',
-  'grammar-extra1',
+  'primer-19',
+  'primer-20',
+  'primer-21',
+  'primer-22',
   'dhammacakka',
-  'grammar-extra2',
+  'primer-23',
+  'primer-24-29',
   'anatta',
+  'primer-30-32',
   'satipatthana-1',
   'satipatthana-2',
-  'grammar-extra3',
 ] as const
 
 /** localStorage 키 생성 */

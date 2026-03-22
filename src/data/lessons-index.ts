@@ -1,5 +1,6 @@
 // 단원 목록 + 스텝 데이터 조합
 // 퀴즈는 학습 시작 시마다 새로 셔플 (랜덤)
+// 교재(빠알리 프라이머 2024) 과 순서 기준 재편성
 import type { LessonInfo, Step } from './types'
 import { VOWELS, ALL_CONSONANTS } from './alphabet'
 import { ALL_VERSES, ALL_MANGALA_WORDS } from './mangala-words'
@@ -35,14 +36,15 @@ function pickBankQuestions(lessonId: string, count = 10): Step[] {
   return shuffle(bank.questions).slice(0, count) as Step[]
 }
 
-// ── Part 0: 자모 발음 단원 (매번 새로 생성) ──
-function buildAlphabetSteps(): Step[] {
+// ══════════════════════════════════════════
+// 교재 1과: 자모와 발음
+// ══════════════════════════════════════════
+function buildLesson01(): Step[] {
   const steps: Step[] = []
 
-  // 소개
   steps.push({
     type: 'intro',
-    title: '빠알리 자모와 발음',
+    title: '1과: 빠알리 자모와 발음',
     subtitle: '모음 8자 + 자음 33자',
     description: '빠알리어의 각 글자가 어떻게 발음되는지 배웁니다. 음성학 이론 없이, 글자와 발음 매칭에 집중합니다.',
     icon: '🔤',
@@ -96,7 +98,6 @@ function buildAlphabetSteps(): Step[] {
   ]
 
   for (const group of consonantGroups) {
-    // 학습
     for (const c of group) {
       steps.push({
         type: 'teach',
@@ -111,7 +112,6 @@ function buildAlphabetSteps(): Step[] {
       })
     }
 
-    // 그룹별 퀴즈 (셔플)
     const groupQuizzes: Step[] = group.map(c => {
       const wrongOptions = shuffle(ALL_CONSONANTS.filter(w => w.roman !== c.roman))
         .slice(0, 3)
@@ -134,75 +134,103 @@ function buildAlphabetSteps(): Step[] {
   return steps
 }
 
-// ── 기초 문법 (L2~6: 행복경 전) ──
-function buildGrammarBasicsSteps(): Step[] {
+// ══════════════════════════════════════════
+// 교재 2~8과: a-어간 남성 격변화
+// PRIMER_GRAMMAR[0-1]: a-어간 남성 단수/복수
+// ══════════════════════════════════════════
+function buildLesson0208(): Step[] {
   const steps: Step[] = []
   steps.push({
     type: 'intro',
-    title: '기초 문법',
-    subtitle: '3성 · 8격 · 격변화 · 동사 현재형',
-    description: '경전을 읽기 위한 기본 문법입니다. 명사의 성별과 격변화, 동사 현재형을 배웁니다.',
+    title: '2~8과: a-어간 남성 격변화',
+    subtitle: '주격부터 전체 격변화 정리',
+    description: '빠알리어에서 가장 흔한 명사 유형인 a-어간 남성 명사의 8격 단수·복수를 배웁니다.',
     icon: '📐',
   })
-  // Primer L2~6만
-  steps.push(...PRIMER_GRAMMAR)
+  // a-어간 남성 단수/복수
+  steps.push(...PRIMER_GRAMMAR.slice(0, 2))
   steps.push(...generateGrammarBasicsQuizzes())
   return steps
 }
 
-// ── 추가학습 1 (L7~12: 전법륜경 전) ──
-function buildGrammarExtra1Steps(): Step[] {
+// ══════════════════════════════════════════
+// 교재 9과: 절대분사
+// PRIMER_GRAMMAR_2[12]: 절대분사 (-tvā/-ya)
+// ══════════════════════════════════════════
+function buildLesson09(): Step[] {
   const steps: Step[] = []
   steps.push({
     type: 'intro',
-    title: '추가학습: 과거형 · i/u-어간',
-    subtitle: '산문 경전 준비',
-    description: '과거형(Aorist)과 i-어간, u-어간 명사를 배웁니다. 전법륜경 독해에 필요한 문법입니다.',
+    title: '9과: 절대분사',
+    subtitle: '-tvā/-tvāna: ~하고 나서',
+    description: '두 동작을 연결하는 절대분사를 배웁니다. "법을 듣고 나서 기뻐했다"처럼 동작의 선후를 표현합니다.',
     icon: '📐',
   })
-  // Primer L7~12 (grammar-primer-2.ts 전반부가 아니라, primer에서 L7~10까지)
-  // PRIMER_GRAMMAR에 L2~10이 있고, PRIMER_GRAMMAR_2에 L11~22가 있음
-  // L7~10은 PRIMER_GRAMMAR의 후반부 (과거형, i-어간, u-어간)
-  // 이미 PRIMER_GRAMMAR에 다 포함되어 있으므로 별도 분리 불필요
-  // 대신 PRIMER_GRAMMAR_2의 전반부(L11~15: 대명사, 분사)를 여기 배치
-  steps.push(...PRIMER_GRAMMAR_2.slice(0, 7)) // 대명사 3 + 분사 3 + 의문대명사 1
+  steps.push(PRIMER_GRAMMAR_2[12])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR_2[12]]))
   return steps
 }
 
-// ── 추가학습 2 (L16~22: 무아경 전) ──
-function buildGrammarExtra2Steps(): Step[] {
+// ══════════════════════════════════════════
+// 교재 10과: 부정사
+// PRIMER_GRAMMAR_2[13]: 부정사 (-tuṃ)
+// ══════════════════════════════════════════
+function buildLesson10(): Step[] {
   const steps: Step[] = []
   steps.push({
     type: 'intro',
-    title: '추가학습: 미래형 · 수동 · 절대분사',
-    subtitle: '독해 심화 준비',
-    description: '미래형, 명령형, 원망형, 사역형, 수동태, 절대분사, 자음어간 명사를 배웁니다.',
+    title: '10과: 부정사',
+    subtitle: '-tuṃ: ~하기 위해',
+    description: '"~하기 위해, ~하려고"를 뜻하는 부정사를 배웁니다.',
     icon: '📐',
   })
-  steps.push(...PRIMER_GRAMMAR_2.slice(7)) // L16~22
+  steps.push(PRIMER_GRAMMAR_2[13])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR_2[13]]))
   return steps
 }
 
-// ── 추가학습 3 (L23~32: 사념처경 후) ──
-function buildGrammarExtra3Steps(): Step[] {
+// ══════════════════════════════════════════
+// 교재 11과: a-어간 중성명사
+// PRIMER_GRAMMAR[4-5]: a-어간 중성 단수/복수
+// ══════════════════════════════════════════
+function buildLesson11(): Step[] {
   const steps: Step[] = []
   steps.push({
     type: 'intro',
-    title: '추가학습: 복합어 · 연성법 · 총정리',
-    subtitle: '문법 완성',
-    description: '복합어(Samāsa), 연성법 상세, 접두사/접미사, 수사, 문법 총정리입니다.',
+    title: '11과: a-어간 중성명사',
+    subtitle: '중성 격변화 (주격 = 목적격)',
+    description: 'a-어간 중성명사는 남성과 거의 같지만, 주격·목적격·호격만 다릅니다. dukkhaṃ, sukhaṃ, cittaṃ 등이 대표적입니다.',
     icon: '📐',
   })
-  steps.push(...PRIMER_GRAMMAR_3)
+  steps.push(...PRIMER_GRAMMAR.slice(4, 6))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(4, 6)))
   return steps
 }
 
+// ══════════════════════════════════════════
+// 교재 12~13과: 동사 현재형
+// PRIMER_GRAMMAR[2-3]: 동사 현재형 기본/10선
+// ══════════════════════════════════════════
+function buildLesson1213(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '12~13과: 동사 현재형',
+    subtitle: '인칭·수에 따른 활용변화',
+    description: '빠알리어 동사 현재형의 인칭·수별 활용을 배우고, 경전에서 가장 자주 나오는 동사 10개를 익힙니다.',
+    icon: '📐',
+  })
+  steps.push(...PRIMER_GRAMMAR.slice(2, 4))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(2, 4)))
+  return steps
+}
 
-// ── Part 1: 행복경 단원 (매번 새로 생성) ──
+// ══════════════════════════════════════════
+// ★ 행복경 삽입 (+ 연성법 보충설명)
+// ══════════════════════════════════════════
 function buildMangalaSteps(): Step[] {
   const steps: Step[] = []
 
-  // 소개
   steps.push({
     type: 'intro',
     title: 'Maṅgala Sutta',
@@ -211,10 +239,10 @@ function buildMangalaSteps(): Step[] {
     icon: '🪷',
   })
 
-  // 1단계: 문법 설명
+  // 보충 문법 설명 (연성법 등)
   steps.push(...MANGALA_GRAMMAR)
 
-  // 2단계: 게송 원문 (문법 글로서리 기본 표시)
+  // 게송 원문
   for (const verse of ALL_VERSES) {
     steps.push({
       type: 'verse',
@@ -226,23 +254,109 @@ function buildMangalaSteps(): Step[] {
     })
   }
 
-  // 전체 단어 퀴즈 (무작위 혼합, 모든 단어 빠짐없이)
+  // 퀴즈
   steps.push(...generateMixedQuizzes(ALL_MANGALA_WORDS))
-
-  // 독해/작문 조립 퀴즈 (셔플)
   steps.push(...shuffle(ALL_ARRANGE_QUIZZES))
-
-  // 빈칸 채우기 + 문장 완성
   steps.push(...generateFillBlankQuizzes(ALL_VERSES))
   steps.push(...generateSentenceQuizzes(ALL_VERSES))
-
-  // 문제은행 (독해 문법 문제 랜덤 10개)
   steps.push(...pickBankQuestions('mangala', 10))
 
   return steps
 }
 
-// ── 추가 게송: 보배경 ──
+// ══════════════════════════════════════════
+// 교재 14과: 미래형
+// PRIMER_GRAMMAR_2[7]: 미래형 (-ssa-)
+// ══════════════════════════════════════════
+function buildLesson14(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '14과: 미래형',
+    subtitle: '-ssa-: ~할 것이다',
+    description: '미래형은 어근에 -ssa-를 삽입하여 "~할 것이다"를 나타냅니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR_2[7])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR_2[7]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 15과: 원망형
+// PRIMER_GRAMMAR_2[9]: 원망형/조건법 (-eyya)
+// ══════════════════════════════════════════
+function buildLesson15(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '15과: 원망형',
+    subtitle: '-eyya: ~할 수 있다/~해야 한다',
+    description: '원망형은 소망·가능·의무를, 조건법은 반사실적 가정을 나타냅니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR_2[9])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR_2[9]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 16과: 명령형
+// PRIMER_GRAMMAR_2[8]: 명령형 (-tu/-hi)
+// ══════════════════════════════════════════
+function buildLesson16(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '16과: 명령형',
+    subtitle: '-tu/-hi: ~하라, ~하시오',
+    description: '명령형은 명령·요청·기원을 표현합니다. ehi bhikkhu(오라, 비구여)가 대표적입니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR_2[8])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR_2[8]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 17과: 과거형
+// PRIMER_GRAMMAR[9-10]: 과거형 Aorist 기본/불규칙
+// ══════════════════════════════════════════
+function buildLesson17(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '17과: 과거형',
+    subtitle: 'Aorist: 과거를 나타내는 동사',
+    description: '과거를 나타내는 Aorist 형태와 경전에서 자주 나오는 불규칙 과거형을 배웁니다.',
+    icon: '📐',
+  })
+  steps.push(...PRIMER_GRAMMAR.slice(9, 11))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(9, 11)))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 18과: ā-어간 여성명사
+// PRIMER_GRAMMAR[6-7]: ā-어간 여성 단수/복수
+// ══════════════════════════════════════════
+function buildLesson18(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '18과: ā-어간 여성명사',
+    subtitle: '여성 격변화 (-ā)',
+    description: '-ā로 끝나는 여성 명사의 격변화를 배웁니다. paññā(지혜), saddhā(믿음) 등이 대표적입니다.',
+    icon: '📐',
+  })
+  steps.push(...PRIMER_GRAMMAR.slice(6, 8))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(6, 8)))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// ★ 보배경 삽입 (선택)
+// ══════════════════════════════════════════
 function buildRatanaSteps(): Step[] {
   const steps: Step[] = []
 
@@ -254,10 +368,9 @@ function buildRatanaSteps(): Step[] {
     icon: '💎',
   })
 
-  // 1단계: 문법 설명
+  // 보충 문법 설명
   steps.push(...RATANA_GRAMMAR)
 
-  // 2단계: 게송 원문 (문법 글로서리 기본 표시)
   for (const verse of RATANA_VERSES) {
     steps.push({
       type: 'verse',
@@ -275,7 +388,9 @@ function buildRatanaSteps(): Step[] {
   return steps
 }
 
-// ── 추가 게송: 자비경 ──
+// ══════════════════════════════════════════
+// ★ 자비경 삽입 (선택)
+// ══════════════════════════════════════════
 function buildMettaSteps(): Step[] {
   const steps: Step[] = []
 
@@ -287,10 +402,9 @@ function buildMettaSteps(): Step[] {
     icon: '💛',
   })
 
-  // 1단계: 문법 설명
+  // 보충 문법 설명
   steps.push(...METTA_GRAMMAR)
 
-  // 2단계: 게송 원문 (문법 글로서리 기본 표시)
   for (const verse of METTA_VERSES) {
     steps.push({
       type: 'verse',
@@ -308,7 +422,81 @@ function buildMettaSteps(): Step[] {
   return steps
 }
 
-// ── Part 2: 전법륜경 (문법 중심 구조) ──
+// ══════════════════════════════════════════
+// 교재 19과: 과거분사
+// PRIMER_GRAMMAR_2[5]: 과거분사 (-ta/-na)
+// ══════════════════════════════════════════
+function buildLesson19(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '19과: 과거분사',
+    subtitle: '-ta/-na: ~된, ~한',
+    description: '과거분사는 수동적 완료를 나타내며 형용사처럼 명사를 수식합니다. evaṃ me sutaṃ의 sutaṃ이 대표적입니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR_2[5])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR_2[5]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 20과: i-어간 여성명사
+// PRIMER_GRAMMAR[12]: i-어간 여성 명사
+// ══════════════════════════════════════════
+function buildLesson20(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '20과: i-어간 여성명사',
+    subtitle: 'i-여성 격변화 (-iyā)',
+    description: '-i로 끝나는 여성 명사의 격변화를 배웁니다. bhūmi(땅), ratti(밤) 등이 대표적입니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR[12])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR[12]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 21과: 현재분사
+// PRIMER_GRAMMAR_2[4]: 현재분사 (-anta/-māna)
+// ══════════════════════════════════════════
+function buildLesson21(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '21과: 현재분사',
+    subtitle: '-anta/-māna: ~하고 있는',
+    description: '현재분사는 "~하고 있는"이라는 형용사 역할을 합니다. 수식하는 명사와 성·수·격이 일치합니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR_2[4])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR_2[4]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 22과: 미래수동분사
+// PRIMER_GRAMMAR_2[6]: 미래수동분사 (-tabba/-anīya)
+// ══════════════════════════════════════════
+function buildLesson22(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '22과: 미래수동분사',
+    subtitle: '-tabba/-anīya: ~되어야 할',
+    description: '"~되어야 할, ~할 만한"을 뜻하는 미래수동분사를 배웁니다. 전법륜경의 sevitabba가 대표적입니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR_2[6])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR_2[6]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// ★ 전법륜경 삽입 (+ 보충설명)
+// ══════════════════════════════════════════
 function buildDhammacakkaSteps(): Step[] {
   const steps: Step[] = []
 
@@ -320,10 +508,9 @@ function buildDhammacakkaSteps(): Step[] {
     icon: '☸️',
   })
 
-  // 1단계: 문법 설명 (메인 콘텐츠!)
+  // 보충 문법 설명
   steps.push(...DHAMMACAKKA_GRAMMAR)
 
-  // 2단계: 경전 원문 (문법 글로서리 기본 표시)
   for (const verse of DHAMMACAKKA_VERSES) {
     steps.push({
       type: 'verse',
@@ -335,17 +522,63 @@ function buildDhammacakkaSteps(): Step[] {
     })
   }
 
-  // 4단계: 문법 퀴즈 (문법 내용 기반)
   steps.push(...generateGrammarQuizzes(DHAMMACAKKA_GRAMMAR))
-
-  // 5단계: 빈칸 채우기 + 문장 작문 (경전 문장 기반)
   steps.push(...generateFillBlankQuizzes(DHAMMACAKKA_VERSES))
   steps.push(...generateSentenceQuizzes(DHAMMACAKKA_VERSES))
   steps.push(...pickBankQuestions('dhammacakka', 10))
   return steps
 }
 
-// ── Part 2: 무아경 (문법 중심 구조) ──
+// ══════════════════════════════════════════
+// 교재 23과: 사역형 + 수동태
+// PRIMER_GRAMMAR_2[10-11]: 사역형/수동태
+// ══════════════════════════════════════════
+function buildLesson23(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '23과: 사역형과 수동태',
+    subtitle: '-āpeti/-eti · -iya-/-ya-',
+    description: '사역형("~하게 하다")과 수동태("~되다")를 배웁니다.',
+    icon: '📐',
+  })
+  steps.push(...PRIMER_GRAMMAR_2.slice(10, 12))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR_2.slice(10, 12)))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 24~29과: i/u-어간 격변화 + 자음어간
+// PRIMER_GRAMMAR[11]: i-어간 남성/중성
+// PRIMER_GRAMMAR[13-14]: u-어간 남성/여성
+// PRIMER_GRAMMAR_2[14-15]: 자음어간 명사
+// ══════════════════════════════════════════
+function buildLesson2429(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '24~29과: i/u-어간 · 자음어간 격변화',
+    subtitle: '다양한 어간의 명사',
+    description: 'i-어간(남성/중성), u-어간(남성/여성), 자음어간(-ant/-mant/-vant, -in/-ar) 명사의 격변화를 배웁니다.',
+    icon: '📐',
+  })
+  // i-어간 남성/중성
+  steps.push(PRIMER_GRAMMAR[11])
+  // u-어간 남성, u-어간 여성
+  steps.push(...PRIMER_GRAMMAR.slice(13, 15))
+  // 자음어간 명사 2스텝
+  steps.push(...PRIMER_GRAMMAR_2.slice(14, 16))
+  steps.push(...generateGrammarQuizzes([
+    PRIMER_GRAMMAR[11],
+    ...PRIMER_GRAMMAR.slice(13, 15),
+    ...PRIMER_GRAMMAR_2.slice(14, 16),
+  ]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// ★ 무아경 삽입 (+ 보충설명)
+// ══════════════════════════════════════════
 function buildAnattaSteps(): Step[] {
   const steps: Step[] = []
 
@@ -357,10 +590,9 @@ function buildAnattaSteps(): Step[] {
     icon: '🔍',
   })
 
-  // 1단계: 문법 설명 (메인 콘텐츠!)
+  // 보충 문법 설명
   steps.push(...ANATTA_GRAMMAR)
 
-  // 2단계: 경전 원문 (문법 글로서리 기본 표시)
   for (const verse of ANATTA_VERSES) {
     steps.push({
       type: 'verse',
@@ -372,13 +604,39 @@ function buildAnattaSteps(): Step[] {
     })
   }
 
-  // 4단계: 문법 퀴즈 (문법 내용 기반)
   steps.push(...generateGrammarQuizzes(ANATTA_GRAMMAR))
-
-  // 5단계: 빈칸 채우기 + 문장 작문 (경전 문장 기반)
   steps.push(...generateFillBlankQuizzes(ANATTA_VERSES))
   steps.push(...generateSentenceQuizzes(ANATTA_VERSES))
   steps.push(...pickBankQuestions('anatta', 10))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 30~32과: 형용사·대명사·복합어·연성법·총정리
+// PRIMER_GRAMMAR[8]: 형용사
+// PRIMER_GRAMMAR_2[0-3]: 대명사 4종
+// PRIMER_GRAMMAR_3 전체: 복합어~총정리
+// ══════════════════════════════════════════
+function buildLesson3032(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '30~32과: 형용사·대명사·복합어·총정리',
+    subtitle: '문법 완성',
+    description: '형용사, 대명사(인칭/지시/관계/의문), 복합어, 연성법, 접두사/접미사, 수사, 비교급, 불변어, 문법 총정리입니다.',
+    icon: '📐',
+  })
+  // 형용사
+  steps.push(PRIMER_GRAMMAR[8])
+  // 대명사 4종 (인칭/지시/관계/의문)
+  steps.push(...PRIMER_GRAMMAR_2.slice(0, 4))
+  // 복합어, 연성법, 접두사/접미사, 수사/비교/불변어, 총정리
+  steps.push(...PRIMER_GRAMMAR_3)
+  steps.push(...generateGrammarQuizzes([
+    PRIMER_GRAMMAR[8],
+    ...PRIMER_GRAMMAR_2.slice(0, 4),
+    ...PRIMER_GRAMMAR_3,
+  ]))
   return steps
 }
 
@@ -406,7 +664,9 @@ function pushVerseEntries(steps: Step[], verses: any[]) {
   }
 }
 
-// ── Part 4-1: 사념처경 1부 — 신념처 (서문 + 몸 관찰) ──
+// ══════════════════════════════════════════
+// ★ 사념처경 1부 — 신념처 (서문 + 몸 관찰)
+// ══════════════════════════════════════════
 function buildSatipatthana1Steps(): Step[] {
   const steps: Step[] = []
 
@@ -418,13 +678,11 @@ function buildSatipatthana1Steps(): Step[] {
     icon: '🧘',
   })
 
-  // 문법 설명
+  // 보충 문법 설명
   steps.push(...SATIPATTHANA_GRAMMAR)
 
-  // 신념처 원문 (KAYA_VERSES)
   pushVerseEntries(steps, KAYA_VERSES)
 
-  // 문법 퀴즈 + 빈칸 + 문장
   steps.push(...generateGrammarQuizzes(SATIPATTHANA_GRAMMAR))
   steps.push(...generateFillBlankQuizzes(toVerseData(KAYA_VERSES)))
   steps.push(...generateSentenceQuizzes(toVerseData(KAYA_VERSES)))
@@ -432,7 +690,9 @@ function buildSatipatthana1Steps(): Step[] {
   return steps
 }
 
-// ── Part 4-2: 사념처경 2부 — 수/심/법념처 + 결론 ──
+// ══════════════════════════════════════════
+// ★ 사념처경 2부 — 수/심/법념처 + 결론
+// ══════════════════════════════════════════
 function buildSatipatthana2Steps(): Step[] {
   const steps: Step[] = []
 
@@ -444,45 +704,88 @@ function buildSatipatthana2Steps(): Step[] {
     icon: '🧘',
   })
 
-  // 수/심/법념처 원문 (DHAMMA_VERSES)
   pushVerseEntries(steps, DHAMMA_VERSES)
 
-  // 빈칸 + 문장
   steps.push(...generateFillBlankQuizzes(toVerseData(DHAMMA_VERSES)))
   steps.push(...generateSentenceQuizzes(toVerseData(DHAMMA_VERSES)))
   steps.push(...pickBankQuestions('satipatthana-2', 10))
   return steps
 }
 
-// ── 단원 메타 (steps는 학습 시작 시 생성) ──
+// ══════════════════════════════════════════
+// 단원 메타 — 교재 과 순서 기준
+// ══════════════════════════════════════════
 const LESSON_META = [
-  // Part 0: 기초
-  { id: 'alphabet', title: '자모와 발음', subtitle: '모음 8 · 자음 33', icon: '🔤', category: 'basic' as const, builder: buildAlphabetSteps },
-  { id: 'grammar-basics', title: '기초 문법', subtitle: '3성 · 8격 · 격변화 · 동사', icon: '📐', category: 'grammar' as const, builder: buildGrammarBasicsSteps },
+  // 교재 1과
+  { id: 'primer-01', title: '1과: 자모와 발음', subtitle: '모음 8 · 자음 33', icon: '🔤', category: 'grammar' as const, builder: buildLesson01 },
 
-  // Part 1: 게송 경전
+  // 교재 2~8과
+  { id: 'primer-02-08', title: '2~8과: a-어간 남성 격변화', subtitle: '주격→전체 정리', icon: '📐', category: 'grammar' as const, builder: buildLesson0208 },
+
+  // 교재 9과
+  { id: 'primer-09', title: '9과: 절대분사', subtitle: '-tvā/-tvāna', icon: '📐', category: 'grammar' as const, builder: buildLesson09 },
+
+  // 교재 10과
+  { id: 'primer-10', title: '10과: 부정사', subtitle: '-tuṃ', icon: '📐', category: 'grammar' as const, builder: buildLesson10 },
+
+  // 교재 11과
+  { id: 'primer-11', title: '11과: a-어간 중성명사', subtitle: '중성 격변화', icon: '📐', category: 'grammar' as const, builder: buildLesson11 },
+
+  // 교재 12~13과
+  { id: 'primer-12-13', title: '12~13과: 동사 현재형', subtitle: '활용변화', icon: '📐', category: 'grammar' as const, builder: buildLesson1213 },
+
+  // ★ 행복경 삽입 (+ 연성법 보충설명)
   { id: 'mangala', title: 'Maṅgala Sutta', subtitle: '행복경', icon: '🪷', category: 'gatha' as const, builder: buildMangalaSteps },
+
+  // 교재 14과
+  { id: 'primer-14', title: '14과: 미래형', subtitle: '-ssa-', icon: '📐', category: 'grammar' as const, builder: buildLesson14 },
+
+  // 교재 15과
+  { id: 'primer-15', title: '15과: 원망형', subtitle: '-eyya', icon: '📐', category: 'grammar' as const, builder: buildLesson15 },
+
+  // 교재 16과
+  { id: 'primer-16', title: '16과: 명령형', subtitle: '-tu/-hi', icon: '📐', category: 'grammar' as const, builder: buildLesson16 },
+
+  // 교재 17과
+  { id: 'primer-17', title: '17과: 과거형', subtitle: 'Aorist', icon: '📐', category: 'grammar' as const, builder: buildLesson17 },
+
+  // 교재 18과
+  { id: 'primer-18', title: '18과: ā-어간 여성명사', subtitle: '여성 격변화', icon: '📐', category: 'grammar' as const, builder: buildLesson18 },
+
+  // ★ 보배경/자비경 삽입 (선택)
   { id: 'ratana', title: 'Ratana Sutta', subtitle: '보배경 (선택)', icon: '💎', category: 'gatha-extra' as const, builder: buildRatanaSteps },
   { id: 'metta', title: 'Metta Sutta', subtitle: '자비경 (선택)', icon: '💛', category: 'gatha-extra' as const, builder: buildMettaSteps },
 
-  // 추가학습 1: 전법륜경 준비
-  { id: 'grammar-extra1', title: '추가학습: 대명사 · 분사', subtitle: '전법륜경 준비', icon: '📐', category: 'grammar' as const, builder: buildGrammarExtra1Steps },
+  // 교재 19과
+  { id: 'primer-19', title: '19과: 과거분사', subtitle: '-ta/-na', icon: '📐', category: 'grammar' as const, builder: buildLesson19 },
 
-  // Part 2: 전법륜경
+  // 교재 20과
+  { id: 'primer-20', title: '20과: i-어간 여성명사', subtitle: 'i-여성 격변화', icon: '📐', category: 'grammar' as const, builder: buildLesson20 },
+
+  // 교재 21과
+  { id: 'primer-21', title: '21과: 현재분사', subtitle: '-anta/-māna', icon: '📐', category: 'grammar' as const, builder: buildLesson21 },
+
+  // 교재 22과
+  { id: 'primer-22', title: '22과: 미래수동분사', subtitle: '-tabba/-anīya', icon: '📐', category: 'grammar' as const, builder: buildLesson22 },
+
+  // ★ 전법륜경 삽입 (+ 보충설명)
   { id: 'dhammacakka', title: 'Dhammacakkappavattana Sutta', subtitle: '전법륜경', icon: '☸️', category: 'prose' as const, builder: buildDhammacakkaSteps },
 
-  // 추가학습 2: 무아경 준비
-  { id: 'grammar-extra2', title: '추가학습: 미래형 · 수동 · 절대분사', subtitle: '무아경 준비', icon: '📐', category: 'grammar' as const, builder: buildGrammarExtra2Steps },
+  // 교재 23과
+  { id: 'primer-23', title: '23과: 사역형', subtitle: '-āpeti/-eti', icon: '📐', category: 'grammar' as const, builder: buildLesson23 },
 
-  // Part 3: 무아경
+  // 교재 24~29과
+  { id: 'primer-24-29', title: '24~29과: i/u-어간 격변화', subtitle: '다양한 어간', icon: '📐', category: 'grammar' as const, builder: buildLesson2429 },
+
+  // ★ 무아경 삽입
   { id: 'anatta', title: 'Anattalakkhaṇa Sutta', subtitle: '무아경', icon: '🔍', category: 'prose' as const, builder: buildAnattaSteps },
 
-  // Part 4: 사념처경 (2분할)
+  // 교재 30~32과 + 복합어 + 수사 + 연성법 + 총정리
+  { id: 'primer-30-32', title: '30~32과: 형용사·대명사·복합어·총정리', subtitle: '문법 완성', icon: '📐', category: 'grammar' as const, builder: buildLesson3032 },
+
+  // ★ 사념처경 1부/2부 삽입
   { id: 'satipatthana-1', title: 'Mahāsatipaṭṭhāna Sutta (1부)', subtitle: '사념처경 · 신념처', icon: '🧘', category: 'prose' as const, builder: buildSatipatthana1Steps },
   { id: 'satipatthana-2', title: 'Mahāsatipaṭṭhāna Sutta (2부)', subtitle: '사념처경 · 수심법념처', icon: '🧘', category: 'prose' as const, builder: buildSatipatthana2Steps },
-
-  // 추가학습 3: 문법 완성
-  { id: 'grammar-extra3', title: '추가학습: 복합어 · 연성법 · 총정리', subtitle: '문법 완성', icon: '📐', category: 'grammar' as const, builder: buildGrammarExtra3Steps },
 ]
 
 // 단원 목록 (steps는 빈 배열 — getLessonById에서 실시간 생성)

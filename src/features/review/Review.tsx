@@ -23,7 +23,7 @@ export default function Review() {
 
   const wrongAnswers = getWrongAnswers()
   const weakWords = getWeakWords(15)
-  const hasLearned = getProgress('alphabet') > 0 || getProgress('mangala') > 0
+  const hasLearned = getProgress('primer-01') > 0 || getProgress('mangala') > 0
 
   // 메뉴 화면
   if (mode === 'menu') {
