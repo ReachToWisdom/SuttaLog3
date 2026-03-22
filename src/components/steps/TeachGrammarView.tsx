@@ -96,17 +96,17 @@ export default function TeachGrammarView({ step, onNext, onBack }: Props) {
         ))}
       </div>
 
-      {/* 격변화 테이블 — 예시 터치 시 발음 */}
+      {/* 격변화 테이블 — 가로 스크롤 + 터치 시 발음 */}
       {step.table && (
         <div className="intro-fade-up-delay2">
           <h3 className="text-sm font-bold mb-2" style={{ color: 'var(--color-text-secondary)' }}>
             {step.table.label}
           </h3>
           <div
-            className="rounded-xl overflow-hidden border"
-            style={{ borderColor: 'var(--color-border-light)' }}
+            className="rounded-xl overflow-x-auto border"
+            style={{ borderColor: 'var(--color-border-light)', WebkitOverflowScrolling: 'touch' }}
           >
-            <table className="w-full text-sm">
+            <table className="w-full text-sm" style={{ minWidth: '320px' }}>
               <thead>
                 <tr style={{ background: 'var(--color-surface-elevated)' }}>
                   <th className="text-left px-3 py-2 font-semibold" style={{ color: 'var(--color-text-secondary)' }}>격</th>

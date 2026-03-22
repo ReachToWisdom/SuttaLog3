@@ -251,6 +251,8 @@ function buildRatanaSteps(): Step[] {
   }
 
   steps.push(...generateMixedQuizzes(ALL_RATANA_WORDS))
+  steps.push(...generateFillBlankQuizzes(RATANA_VERSES))
+  steps.push(...generateSentenceQuizzes(RATANA_VERSES))
   return steps
 }
 
@@ -279,6 +281,8 @@ function buildMettaSteps(): Step[] {
   }
 
   steps.push(...generateMixedQuizzes(ALL_METTA_WORDS))
+  steps.push(...generateFillBlankQuizzes(METTA_VERSES))
+  steps.push(...generateSentenceQuizzes(METTA_VERSES))
   return steps
 }
 
@@ -354,14 +358,14 @@ function buildAnattaSteps(): Step[] {
   return steps
 }
 
-// ── Part 2: 사념처경 발췌 (문법 중심 구조) ──
+// ── Part 2: 사념처경 (문법 중심 구조) ──
 function buildSatipatthanaSteps(): Step[] {
   const steps: Step[] = []
 
   steps.push({
     type: 'intro',
     title: 'Mahāsatipaṭṭhāna Sutta',
-    subtitle: '사념처경 발췌',
+    subtitle: '사념처경',
     description: '몸·느낌·마음·법 네 가지 관찰을 설한 수행 경전. 정형문 패턴과 긴 텍스트 독해를 학습합니다.',
     icon: '🧘',
   })
@@ -413,7 +417,7 @@ const LESSON_META = [
   { id: 'anatta', title: 'Anattalakkhaṇa Sutta', subtitle: '무아경', icon: '🔍', category: 'prose' as const, builder: buildAnattaSteps },
 
   // Part 4: 사념처경
-  { id: 'satipatthana', title: 'Mahāsatipaṭṭhāna Sutta', subtitle: '사념처경 발췌', icon: '🧘', category: 'prose' as const, builder: buildSatipatthanaSteps },
+  { id: 'satipatthana', title: 'Mahāsatipaṭṭhāna Sutta', subtitle: '사념처경', icon: '🧘', category: 'prose' as const, builder: buildSatipatthanaSteps },
 
   // 추가학습 3: 문법 완성
   { id: 'grammar-extra3', title: '추가학습: 복합어 · 연성법 · 총정리', subtitle: '문법 완성', icon: '📐', category: 'grammar' as const, builder: buildGrammarExtra3Steps },
