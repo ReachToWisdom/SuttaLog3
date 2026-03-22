@@ -23,6 +23,11 @@ export const SYNC_EXTRA_KEYS = [
   'suttalog3-pron-en',
 ] as const
 
+// 동기화 시 prefix 기반으로 동적 수집되는 키 패턴 (에빙하우스 반복 횟수)
+export const SYNC_PREFIX_PATTERNS = [
+  `${STORAGE_PREFIX}repeat-`,
+] as const
+
 // ── 학습 설정 ──
 export const HEARTS_MAX = 3
 export const SYNC_DEBOUNCE_MS = 3000

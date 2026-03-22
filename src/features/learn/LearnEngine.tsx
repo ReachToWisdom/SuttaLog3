@@ -1,11 +1,13 @@
-// 학습 엔진 — 스텝 순회 + 하트 + 진도 저장 + 이어하기 + 건너뛰기
+// 학습 엔진 — 스텝 순회 + 하트 + 진도 저장 + 이어하기 + 건너뛰기 + 에빙하우스 복습
 import { useState, useCallback, useMemo, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { HEARTS_MAX, STORAGE_PREFIX } from '../../config'
 import { getLessonById } from '../../data/lessons-index'
-import type { Step } from '../../data/types'
+import type { Step, VerseWord } from '../../data/types'
 import { addWrongAnswer, recordCorrect, recordWrong } from '../../utils/wrong-tracker'
 import { recordStudyTime } from '../../utils/study-tracker'
+import { incrementRepeat, getReviewTargets, getRepeatStatus } from '../../utils/ebbinghaus'
+import { genMeaningQuiz, genReverseQuiz } from '../../data/quiz-generator'
 import ProgressBar from '../../components/ProgressBar'
 import IntroView from '../../components/steps/IntroView'
 import TeachGrammarView from '../../components/steps/TeachGrammarView'
@@ -40,14 +42,20 @@ export default function LearnEngine({ reviewMode = false }: LearnEngineProps) {
 
   const lesson = useMemo(() => getLessonById(lessonId ?? ''), [lessonId])
 
+  // 에빙하우스 복습 퀴즈를 현재 단원 스텝에 삽입
+  const stepsWithReview = useMemo(() => {
+    if (!lesson || reviewMode) return lesson?.steps ?? []
+    return insertReviewQuizzes(lesson.steps, lessonId ?? '')
+  }, [lesson, lessonId, reviewMode])
+
   // 이어하기: 리뷰 모드에서는 항상 처음부터
   // 저장된 스텝이 현재 스텝 수를 초과하면 0으로 리셋 (버전 업데이트 대비)
   const savedStep = useMemo(() => {
     if (reviewMode) return 0
     const saved = getSavedStep(lessonId ?? '')
-    const total = lesson?.steps?.length ?? 0
+    const total = stepsWithReview.length
     return (total > 0 && saved >= total) ? 0 : saved
-  }, [lessonId, reviewMode, lesson])
+  }, [lessonId, reviewMode, stepsWithReview])
 
   const [currentStep, setCurrentStep] = useState(savedStep)
   const [hearts, setHearts] = useState(HEARTS_MAX)
@@ -74,7 +82,7 @@ export default function LearnEngine({ reviewMode = false }: LearnEngineProps) {
     )
   }
 
-  const steps = lesson.steps
+  const steps = stepsWithReview
   const total = steps.length
 
   const handleClose = () => navigate(-1)
@@ -94,6 +102,8 @@ export default function LearnEngine({ reviewMode = false }: LearnEngineProps) {
         const key = `${STORAGE_PREFIX}lesson-${lessonId}`
         localStorage.setItem(key, '100')
         localStorage.removeItem(resumeKey(lessonId ?? ''))
+        // 에빙하우스 반복 횟수 증가
+        incrementRepeat(lessonId ?? '')
         const elapsed = Math.floor((Date.now() - startTime) / 60000)
         recordStudyTime(Math.max(1, elapsed))
         debouncedPush()
@@ -158,6 +168,7 @@ export default function LearnEngine({ reviewMode = false }: LearnEngineProps) {
         ).length}
         hearts={hearts}
         elapsed={Math.floor((Date.now() - startTime) / 1000)}
+        repeatStatus={getRepeatStatus(lessonId ?? '')}
         onHome={() => navigate('/')}
         onNext={() => navigate('/courses')}
       />
@@ -204,6 +215,70 @@ export default function LearnEngine({ reviewMode = false }: LearnEngineProps) {
 function extractWordFromQuestion(question: string): string | null {
   const match = question.match(/"([^"]+)"/)
   return match ? match[1] : null
+}
+
+/** 배열 셔플 (Fisher-Yates) */
+function shuffle<T>(arr: T[]): T[] {
+  const r = [...arr]
+  for (let i = r.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[r[i], r[j]] = [r[j], r[i]]
+  }
+  return r
+}
+
+/**
+ * 이전 단원의 important 단어로 복습 퀴즈 생성 후
+ * 현재 단원 스텝 사이사이에 삽입 (10스텝마다 1개)
+ */
+function insertReviewQuizzes(originalSteps: Step[], currentLessonId: string): Step[] {
+  const reviewTargets = getReviewTargets(currentLessonId)
+  if (reviewTargets.length === 0) return originalSteps
+
+  // 복습 대상 단원들의 important 단어 수집
+  const reviewWords: VerseWord[] = []
+  for (const targetId of reviewTargets) {
+    const targetLesson = getLessonById(targetId)
+    if (!targetLesson) continue
+    for (const step of targetLesson.steps) {
+      if (step.type === 'verse' && step.words) {
+        for (const w of step.words) {
+          if (w.important) reviewWords.push(w)
+        }
+      }
+    }
+  }
+
+  if (reviewWords.length === 0) return originalSteps
+
+  // 복습 퀴즈 생성 (뜻 퀴즈 + 역방향 퀴즈 혼합, 최대 10개)
+  const reviewQuizzes: Step[] = []
+  const shuffled = shuffle(reviewWords)
+  const maxReview = Math.min(shuffled.length, 10)
+  for (let i = 0; i < maxReview; i++) {
+    const word = shuffled[i]
+    // 뜻 퀴즈와 역방향 퀴즈를 번갈아 생성
+    if (i % 2 === 0) {
+      reviewQuizzes.push(genMeaningQuiz(word, reviewWords))
+    } else {
+      reviewQuizzes.push(genReverseQuiz(word, reviewWords))
+    }
+  }
+
+  // 10스텝마다 복습 퀴즈 1개 삽입
+  const REVIEW_INTERVAL = 10
+  const result: Step[] = []
+  let reviewIdx = 0
+  for (let i = 0; i < originalSteps.length; i++) {
+    result.push(originalSteps[i])
+    // 10스텝마다 + 아직 복습 퀴즈 남아있으면 삽입
+    if ((i + 1) % REVIEW_INTERVAL === 0 && reviewIdx < reviewQuizzes.length) {
+      result.push(reviewQuizzes[reviewIdx])
+      reviewIdx++
+    }
+  }
+
+  return result
 }
 
 /** 스텝 타입별 렌더링 분기 */

@@ -11,7 +11,7 @@ import { KAYA_VERSES } from './satipatthana-kaya'
 import { DHAMMA_VERSES } from './satipatthana-dhamma'
 import { generateMixedQuizzes, generateGrammarQuizzes, generateFillBlankQuizzes, generateSentenceQuizzes } from './quiz-generator'
 import { ALL_ARRANGE_QUIZZES } from './mangala-arrange'
-import { MANGALA_GRAMMAR, DHAMMACAKKA_GRAMMAR, ANATTA_GRAMMAR, SATIPATTHANA_GRAMMAR } from './grammar-steps'
+import { MANGALA_GRAMMAR, DHAMMACAKKA_GRAMMAR, ANATTA_GRAMMAR, SATIPATTHANA_GRAMMAR, RATANA_GRAMMAR, METTA_GRAMMAR } from './grammar-steps'
 import { generateGrammarBasicsQuizzes } from './grammar-basics'
 import { PRIMER_GRAMMAR } from './grammar-primer'
 import { PRIMER_GRAMMAR_2 } from './grammar-primer-2'
@@ -254,7 +254,10 @@ function buildRatanaSteps(): Step[] {
     icon: '💎',
   })
 
-  // 게송 원문 (문법 글로서리 기본 표시)
+  // 1단계: 문법 설명
+  steps.push(...RATANA_GRAMMAR)
+
+  // 2단계: 게송 원문 (문법 글로서리 기본 표시)
   for (const verse of RATANA_VERSES) {
     steps.push({
       type: 'verse',
@@ -284,7 +287,10 @@ function buildMettaSteps(): Step[] {
     icon: '💛',
   })
 
-  // 게송 원문 (문법 글로서리 기본 표시)
+  // 1단계: 문법 설명
+  steps.push(...METTA_GRAMMAR)
+
+  // 2단계: 게송 원문 (문법 글로서리 기본 표시)
   for (const verse of METTA_VERSES) {
     steps.push({
       type: 'verse',

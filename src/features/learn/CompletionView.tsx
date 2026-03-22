@@ -1,16 +1,32 @@
-// 단원 완료 화면 — 축하 프리미엄 UI
+// 단원 완료 화면 — 축하 프리미엄 UI + 에빙하우스 반복 현황
+import { LESSONS } from '../../data/lessons-index'
+
+/** 반복 현황 아이템 타입 */
+interface RepeatItem {
+  lessonId: string
+  count: number
+  max: number
+  done: boolean
+}
 
 interface Props {
   correctCount: number
   totalQuizzes: number
   hearts: number
   elapsed: number
+  repeatStatus?: RepeatItem[]
   onHome: () => void
   onNext: () => void
 }
 
+/** 단원 ID → 짧은 제목 */
+function getLessonTitle(lessonId: string): string {
+  const lesson = LESSONS.find(l => l.id === lessonId)
+  return lesson?.subtitle ?? lesson?.title ?? lessonId
+}
+
 export default function CompletionView({
-  correctCount, totalQuizzes, hearts, elapsed, onHome, onNext,
+  correctCount, totalQuizzes, hearts, elapsed, repeatStatus, onHome, onNext,
 }: Props) {
   const mins = Math.floor(elapsed / 60)
   const secs = elapsed % 60
@@ -57,7 +73,7 @@ export default function CompletionView({
       </p>
 
       {/* 통계 카드 — 3열 그리드 */}
-      <div className="w-full max-w-sm grid grid-cols-3 gap-3 mb-10 intro-fade-up-delay2">
+      <div className="w-full max-w-sm grid grid-cols-3 gap-3 mb-6 intro-fade-up-delay2">
         <StatCard
           icon="✅"
           value={`${correctCount}/${totalQuizzes}`}
@@ -78,6 +94,50 @@ export default function CompletionView({
           color="var(--color-text-secondary)"
         />
       </div>
+
+      {/* 에빙하우스 반복 현황 */}
+      {repeatStatus && repeatStatus.length > 0 && (
+        <div className="w-full max-w-sm mb-8 intro-fade-up-delay2">
+          <p className="text-xs font-semibold mb-2 px-1"
+            style={{ color: 'var(--color-text-secondary)' }}>
+            이전 단원 반복 현황
+          </p>
+          <div
+            className="rounded-xl p-3 space-y-2"
+            style={{
+              background: 'var(--color-surface)',
+              border: '1px solid var(--color-border-light)',
+            }}
+          >
+            {repeatStatus.map(item => (
+              <div key={item.lessonId} className="flex items-center justify-between">
+                <span className="text-xs truncate flex-1 mr-2"
+                  style={{ color: item.done ? 'var(--color-accent)' : 'var(--color-text)' }}>
+                  {item.done ? '✓ ' : ''}{getLessonTitle(item.lessonId)}
+                </span>
+                <div className="flex items-center gap-1">
+                  {/* 반복 횟수 도트 표시 */}
+                  {Array.from({ length: item.max }, (_, i) => (
+                    <div
+                      key={i}
+                      className="w-2.5 h-2.5 rounded-full"
+                      style={{
+                        background: i < item.count
+                          ? 'var(--color-primary)'
+                          : 'var(--color-border-light)',
+                      }}
+                    />
+                  ))}
+                  <span className="text-[10px] ml-1 tabular-nums"
+                    style={{ color: 'var(--color-text-tertiary)' }}>
+                    {item.count}/{item.max}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* 버튼 영역 */}
       <div className="flex gap-3 w-full max-w-sm intro-fade-up-delay2">

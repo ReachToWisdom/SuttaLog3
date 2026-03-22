@@ -16,6 +16,7 @@ export const MANGALA_GRAMMAR: TeachGrammarStep[] = [
       { pali: 'na', breakdown: '변화 없음 (부정사)', meaning: '~않다', highlight: 'na' },
     ],
     tip: '불변어는 격변화를 외울 필요가 없어서 가장 쉬운 단어들입니다!',
+    relatedLesson: '전법륜경·무아경·사념처경에서도 ca, na 등 불변어가 계속 등장합니다.',
   },
   {
     type: 'teach-grammar',
@@ -27,6 +28,7 @@ export const MANGALA_GRAMMAR: TeachGrammarStep[] = [
       { pali: 'Dānañca', breakdown: 'Dānaṃ + ca → Dānañ-ca', meaning: '보시 + 그리고', highlight: 'ṃ + c' },
     ],
     tip: '연성법은 규칙을 외우기보다, 많이 읽으면 자연스럽게 익숙해집니다. 분해해서 원래 형태를 찾는 연습이 중요합니다.',
+    relatedLesson: '보배경·자비경에서도 동일한 연성법이 자주 나옵니다. 전법륜경에서는 더 긴 복합어에서 연성법을 만납니다.',
   },
   // 본문 변형 보충 (연성법 상세, 관계/지시대명사, ant-어간)
   ...MANGALA_SANDHI_NOTES,
@@ -51,6 +53,7 @@ export const MANGALA_GRAMMAR: TeachGrammarStep[] = [
       ],
     },
     tip: '처음엔 주격(~이)과 처격(~에서)만 구분해도 충분합니다. 나머지는 경전을 읽으면서 자연스럽게 배웁니다.',
+    relatedLesson: '보배경에서 구격(-ena)이 핵심 역할을 하고, 전법륜경에서 중성 주격(-aṃ)이 반복됩니다.',
   },
 ]
 
@@ -90,6 +93,7 @@ export const DHAMMACAKKA_GRAMMAR: TeachGrammarStep[] = [
       { pali: 'dukkhanirodhagāminī paṭipadā', breakdown: 'dukkha + nirodha + gāminī + paṭipadā', meaning: '괴로움의 소멸로 이끄는 도', highlight: 'gāminī' },
     ],
     tip: '사성제는 dukkha(괴로움)에 다른 단어가 붙는 복합어입니다. dukkha 하나만 알면 4개를 이해할 수 있습니다.',
+    relatedLesson: '행복경에서 배운 중성 주격(-aṃ)이 사성제 4항목 모두에 사용됩니다. 사념처경 법념처에서 사성제가 다시 나옵니다.',
   },
   {
     type: 'teach-grammar',
@@ -102,6 +106,7 @@ export const DHAMMACAKKA_GRAMMAR: TeachGrammarStep[] = [
       { pali: 'sammāsamādhi', breakdown: 'sammā + samādhi', meaning: '바른 삼매', highlight: 'sammā' },
     ],
     tip: 'sammā(바른) ↔ micchā(잘못된). 이 대비를 기억하면 많은 빠알리 단어를 이해할 수 있습니다.',
+    relatedLesson: '사념처경 법념처에서 팔정도가 다시 등장합니다. sammādiṭṭhi(바른 견해)가 수행의 출발점입니다.',
   },
   // 본문 변형 보충 (미래수동분사, 불규칙 과거형, 축약, 절대분사)
   ...DHAMMACAKKA_SANDHI_NOTES,
@@ -150,6 +155,7 @@ export const ANATTA_GRAMMAR: TeachGrammarStep[] = [
       ],
     },
     tip: '본문에서 ce(만약)가 직접 나오지 않아도, 가정법 동사 어미(-ssa, -eyya)가 보이면 조건문입니다. "만약 A라면 B일 것이다" 구조를 파악하세요.',
+    relatedLesson: '자비경의 bhāvaye(희구법)도 가정법과 같은 -eyya 계열 동사 어미입니다.',
   },
   // 본문 변형 보충 (연성 축약, 미래수동분사 daṭṭhabbaṃ, 11종 분류)
   ...ANATTA_SANDHI_NOTES,
@@ -190,7 +196,99 @@ export const SATIPATTHANA_GRAMMAR: TeachGrammarStep[] = [
       { pali: 'satimā', breakdown: 'sati + mant + ā (소유 접미사)', meaning: '마음챙기는', highlight: 'satimā' },
     ],
     tip: '-ī, -mā(mant)는 "~을 가진"이라는 소유 접미사입니다. ātāpī = 열정을 가진, satimā = 새김을 가진.',
+    relatedLesson: '자비경의 santussako(-ko 소유접미사)도 같은 패턴입니다. 행복경의 bhagavā(-vant 소유접미사)도 동일 원리!',
   },
   // 본문 변형 보충 (정형문 구조, 절대분사/축약, 처격 다양한 형태)
   ...SATIPATTHANA_SANDHI_NOTES,
+]
+
+// ── 보배경 문법 ──
+
+export const RATANA_GRAMMAR: TeachGrammarStep[] = [
+  {
+    type: 'teach-grammar',
+    title: '반복 구문: etena saccena suvatthi hotu',
+    description: '보배경의 거의 모든 게송이 이 구절로 끝납니다. "이 진리로 안녕이 있기를"이라는 축원문입니다.',
+    examples: [
+      { pali: 'etena', breakdown: 'eta + ena (구격 단수)', meaning: '이것에 의해', highlight: '-ena' },
+      { pali: 'saccena', breakdown: 'sacca + ena (구격 단수)', meaning: '진리에 의해', highlight: '-ena' },
+      { pali: 'suvatthi', breakdown: 'su + atthi (불변어)', meaning: '안녕이', highlight: 'suvatthi' },
+      { pali: 'hotu', breakdown: 'hoti의 명령형 3인칭 단수', meaning: '있기를', highlight: 'hotu' },
+    ],
+    relatedLesson: '행복경의 격변화에서 배운 구격(-ena)이 여기서 핵심 역할을 합니다.',
+    tip: '구격(~에 의해)이 도구/수단을 나타냅니다. "진리라는 수단에 의해 안녕이 있기를"이라는 구조입니다.',
+  },
+  {
+    type: 'teach-grammar',
+    title: '삼보 찬탄 구조: idampi ... ratanaṃ paṇītaṃ',
+    description: '보배경에서 삼보(불·법·승)를 찬탄할 때 동일한 정형문이 반복됩니다. buddhe/dhamme/saṅghe는 처격(~안에)입니다.',
+    examples: [
+      { pali: 'buddhe', breakdown: 'buddha + e (처격 단수)', meaning: '부처님 안에', highlight: '-e' },
+      { pali: 'dhamme', breakdown: 'dhamma + e (처격 단수)', meaning: '법 안에', highlight: '-e' },
+      { pali: 'saṅghe', breakdown: 'saṅgha + e (처격 단수)', meaning: '승가 안에', highlight: '-e' },
+      { pali: 'ratanaṃ paṇītaṃ', breakdown: 'ratana + ṃ + paṇīta + ṃ (중성 주격)', meaning: '뛰어난 보배', highlight: '-aṃ' },
+    ],
+    relatedLesson: '행복경의 처격(-e, -esu)이 여기서도 "~안에"의 의미로 사용됩니다.',
+    tip: 'idampi(이것도) + ratanaṃ(보배) + paṇītaṃ(뛰어난) — 삼보 각각에 대해 이 구문이 반복됩니다.',
+  },
+  {
+    type: 'teach-grammar',
+    title: 'khayaṃ virāgaṃ amataṃ: 열반의 동의어',
+    description: '보배경에서 열반을 가리키는 세 가지 동의어가 나옵니다. 모두 중성 대격(-aṃ)으로 같은 형태입니다.',
+    examples: [
+      { pali: 'khayaṃ', breakdown: 'khaya + ṃ (중성 대격)', meaning: '소멸을', highlight: 'khaya' },
+      { pali: 'virāgaṃ', breakdown: 'virāga + ṃ (중성 대격)', meaning: '이욕을', highlight: 'virāga' },
+      { pali: 'amataṃ', breakdown: 'amata + ṃ (중성 대격)', meaning: '불사를', highlight: 'amata' },
+    ],
+    relatedLesson: '전법륜경의 dukkhanirodhaṃ(괴로움의 소멸)과 같은 열반 관련 어휘입니다.',
+    tip: 'khaya(소멸), virāga(이욕), amata(불사) — 세 가지 모두 열반을 가리킵니다. 경전에서 자주 나오는 동의어입니다.',
+  },
+]
+
+// ── 자비경 문법 ──
+
+export const METTA_GRAMMAR: TeachGrammarStep[] = [
+  {
+    type: 'teach-grammar',
+    title: '의무분사: karanīya (-anīya)',
+    description: '자비경의 첫 단어 karanīyam이 의무분사입니다. karoti(하다)에서 파생된 "해야 할 것"이라는 의미입니다.',
+    examples: [
+      { pali: 'karanīyaṃ', breakdown: 'karoti(하다) + anīya(의무) + ṃ(중성 대격)', meaning: '행해야 할 것은', highlight: '-anīya' },
+      { pali: 'atthakusalena', breakdown: 'attha + kusala + ena (구격)', meaning: '선에 능숙한 자에 의해', highlight: '-ena' },
+    ],
+    table: {
+      label: '의무분사 접미사 비교',
+      rows: [
+        { case: '-anīya', ending: '동사어근 + anīya', example: 'karanīya', meaning: '해야 할 것' },
+        { case: '-tabba', ending: '동사어근 + tabba', example: 'daṭṭhabba', meaning: '보아야 할 것' },
+        { case: '-ya', ending: '동사어근 + ya', example: 'pūjiya', meaning: '공양해야 할' },
+      ],
+    },
+    relatedLesson: '무아경의 daṭṭhabbaṃ(보아야 할 것)도 의무분사(-tabba)입니다.',
+    tip: '-anīya/-tabba는 "~해야 할"이라는 의무를 나타냅니다. 영어 -able/-ible와 비슷합니다.',
+  },
+  {
+    type: 'teach-grammar',
+    title: '소유 접미사: -ko/-ka',
+    description: '자비경에는 -ko/-ka로 끝나는 형용사가 많이 나옵니다. 명사에 소유 접미사를 붙여 "~을 가진, ~한"이라는 뜻을 만듭니다.',
+    examples: [
+      { pali: 'santussako', breakdown: 'santussa + ko (소유)', meaning: '만족한 자', highlight: '-ko' },
+      { pali: 'appakicco', breakdown: 'appa + kicca + o', meaning: '할 일이 적은', highlight: 'appa-' },
+      { pali: 'sallahukavutti', breakdown: 'sallahuka + vutti', meaning: '가벼운 생활의', highlight: 'sallahuka' },
+    ],
+    relatedLesson: '사념처경의 ātāpī(-ī 소유접미사), satimā(-mant 소유접미사)와 같은 패턴입니다.',
+    tip: '-ko/-ka, -ī, -mant/-vant 모두 "~을 가진"이라는 소유 접미사입니다. 형용사처럼 명사를 수식합니다.',
+  },
+  {
+    type: 'teach-grammar',
+    title: '자비 수행 구문: mānasaṃ bhāvaye aparimāṇaṃ',
+    description: '자비경의 수행 구문에서 희구법(bhāvaye)과 한량없음(aparimāṇaṃ)이 나옵니다. 비유 구문(mātā yathā)도 중요합니다.',
+    examples: [
+      { pali: 'bhāvaye', breakdown: 'bhāveti의 희구법 3인칭 단수', meaning: '닦을지어다', highlight: '-aye' },
+      { pali: 'aparimāṇaṃ', breakdown: 'a + parimāṇa + ṃ (중성 대격)', meaning: '한량없는', highlight: 'a-' },
+      { pali: 'mātā yathā niyaṃ puttaṃ', breakdown: 'mātā(어머니가) yathā(마치) niyaṃ(자기의) puttaṃ(아들을)', meaning: '마치 어머니가 자기 아들을', highlight: 'yathā' },
+    ],
+    relatedLesson: '전법륜경의 동사 활용에서 배운 명령형(-tu)과 비슷한 희구법(-eyya/-aye) 구문입니다.',
+    tip: 'a- 접두사는 부정을 나타냅니다. aparimāṇa = a(부정) + parimāṇa(한량) = 한량없는. anatta(무아)와 같은 패턴!',
+  },
 ]
