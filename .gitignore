@@ -1,0 +1,11 @@
+node_modules
+dist
+.vite
+*.local
+setting/
+.DS_Store
+Thumbs.db
+uploads/
+test-results/
+data/
+e2e/screenshots/
