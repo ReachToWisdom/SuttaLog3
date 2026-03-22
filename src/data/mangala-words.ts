@@ -14,13 +14,13 @@ export const VERSE_0 = {
     '문장 구조: "Evaṃ me sutaṃ"(정형 도입구) + 주어(bhagavā) + 동사(viharati) + 장소(처격 3연속)',
     '처격(-yaṃ, -e): Sāvatthiyaṃ, Jetavane, ārāme — 장소를 나타내는 처격이 3개 연속하여 큰 장소→작은 장소로 좁혀감',
     '소유격(-ssa): Anāthapiṇḍikassa — "아나타삔디까의", 소유를 나타내는 소유격',
-    '"Evaṃ me sutaṃ"은 경전 시작의 정형구. me는 도구격(나에 의해) 또는 간접목적격, sutaṃ은 과거수동분사(들려진 것)',
+    '"Evaṃ me sutaṃ"은 경전 시작의 정형구. me는 도구격(나에 의해) 또는 여격, sutaṃ은 과거수동분사(들려진 것)',
   ],
 }
 
 export const VERSE_0_WORDS: VerseWord[] = [
   { pali: 'Evaṃ', pronKo: '에왕', meaning: '이와 같이', grammar: '불변어(부사)' },
-  { pali: 'me', pronKo: '메', meaning: '나는/나에게', grammar: '1인칭 단수 주격/간접목적격' },
+  { pali: 'me', pronKo: '메', meaning: '나는/나에게', grammar: '1인칭 단수 주격/여격' },
   { pali: 'sutaṃ', pronKo: '수땅', meaning: '들은 것', grammar: '과거분사 중성 단수 주격 (su + ta)' },
   { pali: 'ekaṃ', pronKo: '에깡', meaning: '하나의/한', grammar: '수사 중성 단수 목적격' },
   { pali: 'samayaṃ', pronKo: '사마양', meaning: '때/시기', grammar: '남성 단수 목적격' },
@@ -173,8 +173,8 @@ export const VERSE_7 = {
   pronKo: '아-라띠- 위라띠- 빠-빠-, 맛자빠-나- 짜 상야모;\n앞빠마-도 짜 담메수, 에땅 망갈라뭇따망.',
   translation: '악으로부터 멀리함과 삼감, 음주를 절제함,\n법에 대한 방일하지 않음, 이것이 최상의 행복이니라.',
   grammarNotes: [
-    '문장 구조: 명사(āratī, viratī, saṃyamo, appamādo) 나열 + 분리격(pāpā, majjapānā)으로 대상 표시 + 판정문',
-    '분리격(-ā): pāpā(악으로부터), majjapānā(음주로부터) — "~로부터 떨어짐"을 나타내는 분리격. āratī/viratī와 함께 사용',
+    '문장 구조: 명사(āratī, viratī, saṃyamo, appamādo) 나열 + 탈격(pāpā, majjapānā)으로 대상 표시 + 판정문',
+    '탈격(-ā): pāpā(악으로부터), majjapānā(음주로부터) — "~로부터 떨어짐"을 나타내는 탈격. āratī/viratī와 함께 사용',
     '처격(-esu): dhammesu — "법들에 있어서/법에 대해". appamādo(방일하지 않음)의 영역을 나타냄',
     '접두사 a-: appamādo = a + pamāda(방일) → "방일하지 않음". p 앞에서 a→ap 동화(assimilation)',
   ],
@@ -183,8 +183,8 @@ export const VERSE_7 = {
 export const VERSE_7_WORDS: VerseWord[] = [
   { pali: 'Āratī', pronKo: '아-라띠-', meaning: '멀리함', grammar: '여성 단수 주격' },
   { pali: 'viratī', pronKo: '위라띠-', meaning: '삼감/절제', grammar: '여성 단수 주격' },
-  { pali: 'pāpā', pronKo: '빠-빠-', meaning: '악으로부터', grammar: '중성 단수 분리격' },
-  { pali: 'majjapānā', pronKo: '맛자빠-나-', meaning: '음주로부터', grammar: '중성 단수 분리격 (majja + pāna)' },
+  { pali: 'pāpā', pronKo: '빠-빠-', meaning: '악으로부터', grammar: '중성 단수 탈격' },
+  { pali: 'majjapānā', pronKo: '맛자빠-나-', meaning: '음주로부터', grammar: '중성 단수 탈격 (majja + pāna)' },
   { pali: 'saṃyamo', pronKo: '상야모', meaning: '절제/자제', grammar: '남성 단수 주격' },
   { pali: 'appamādo', pronKo: '앞빠마-도', meaning: '방일하지 않음', grammar: '남성 단수 주격 (a + pamāda)' },
   { pali: 'dhammesu', pronKo: '담메수', meaning: '법들에 대해', grammar: '남성 복수 처격' },
@@ -299,7 +299,7 @@ export const VERSE_12_WORDS: VerseWord[] = [
   { pali: 'sotthiṃ', pronKo: '솟팅', meaning: '안녕을/행복을', grammar: '여성 단수 목적격' },
   { pali: 'gacchanti', pronKo: '갓찬띠', meaning: '간다/가게 된다', grammar: '현재 3인칭 복수' },
   { pali: 'taṃ', pronKo: '땅', meaning: '그것이', grammar: '지시대명사 중성 단수 주격' },
-  { pali: 'tesaṃ', pronKo: '떼상', meaning: '그들에게', grammar: '3인칭 남성 복수 소유격/간접목적격' },
+  { pali: 'tesaṃ', pronKo: '떼상', meaning: '그들에게', grammar: '3인칭 남성 복수 소유격/여격' },
   { pali: 'maṅgalamuttamanti', pronKo: '망갈라뭇따만띠', meaning: '최상의 행복이니라', grammar: '중성 단수 주격 + iti (연성: uttamaṃ + iti)' },
 ]
 

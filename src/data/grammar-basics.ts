@@ -43,11 +43,11 @@ export const GRAMMAR_BASICS: TeachGrammarStep[] = [
         { case: '① 주격 (Nominative)', ending: '~이/가', example: 'buddho', meaning: '주어' },
         { case: '② 목적격 (Accusative)', ending: '~을/를', example: 'dhammaṃ', meaning: '목적어' },
         { case: '③ 도구격 (Instrumental)', ending: '~에 의해, ~(으)로', example: 'dhammena', meaning: '수단/도구' },
-        { case: '④ 간접목적격 (Dative)', ending: '~에게', example: 'buddhāya', meaning: '간접 목적어' },
-        { case: '⑤ 분리격 (Ablative)', ending: '~에서, ~(으)로부터', example: 'dhammā', meaning: '출발점/원인' },
+        { case: '④ 여격 (Dative)', ending: '~에게', example: 'buddhāya', meaning: '간접 목적어' },
+        { case: '⑤ 탈격 (Ablative)', ending: '~에서, ~(으)로부터', example: 'dhammā', meaning: '출발점/원인' },
         { case: '⑥ 소유격 (Genitive)', ending: '~의', example: 'dhammassa', meaning: '소유' },
         { case: '⑦ 처격 (Locative)', ending: '~에서, ~에', example: 'dhamme', meaning: '장소/때' },
-        { case: '⑧ 부름격 (Vocative)', ending: '~이여!', example: 'bhikkhu!', meaning: '부름' },
+        { case: '⑧ 호격 (Vocative)', ending: '~이여!', example: 'bhikkhu!', meaning: '부름' },
       ],
     },
     tip: '처음에는 주격(~이), 목적격(~을), 처격(~에서), 소유격(~의) 4가지만 구분해도 경전의 80%를 이해할 수 있습니다!',
@@ -70,14 +70,14 @@ export const GRAMMAR_BASICS: TeachGrammarStep[] = [
         { case: '주격 (~이/가)', ending: '-o / -ā', example: 'dhammo / dhammā', meaning: '법이 / 법들이' },
         { case: '목적격 (~을/를)', ending: '-aṃ / -e', example: 'dhammaṃ / dhamme', meaning: '법을 / 법들을' },
         { case: '도구격 (~에 의해)', ending: '-ena / -ehi', example: 'dhammena / dhammehi', meaning: '법에 의해' },
-        { case: '간접목적격 (~에게)', ending: '-āya / -ānaṃ', example: 'dhammāya / dhammānaṃ', meaning: '법에게' },
-        { case: '분리격 (~로부터)', ending: '-ā, -smā / -ehi', example: 'dhammā / dhammehi', meaning: '법으로부터' },
+        { case: '여격 (~에게)', ending: '-āya / -ānaṃ', example: 'dhammāya / dhammānaṃ', meaning: '법에게' },
+        { case: '탈격 (~로부터)', ending: '-ā, -smā / -ehi', example: 'dhammā / dhammehi', meaning: '법으로부터' },
         { case: '소유격 (~의)', ending: '-assa / -ānaṃ', example: 'dhammassa / dhammānaṃ', meaning: '법의 / 법들의' },
         { case: '처격 (~에서)', ending: '-e, -smiṃ / -esu', example: 'dhamme / dhammesu', meaning: '법에서' },
-        { case: '부름격 (~이여)', ending: '-a / -ā', example: 'dhamma! / dhammā!', meaning: '법이여!' },
+        { case: '호격 (~이여)', ending: '-a / -ā', example: 'dhamma! / dhammā!', meaning: '법이여!' },
       ],
     },
-    tip: '남성 주격 단수 -o와 복수 -ā가 같은 글자(ā)로 끝나지만, 주격 복수의 -ā와 분리격 단수의 -ā는 형태가 같습니다. 문맥으로 구분합니다!',
+    tip: '남성 주격 단수 -o와 복수 -ā가 같은 글자(ā)로 끝나지만, 주격 복수의 -ā와 탈격 단수의 -ā는 형태가 같습니다. 문맥으로 구분합니다!',
   },
 
   // 4. a-어간 중성 격변화
@@ -109,7 +109,7 @@ export const GRAMMAR_BASICS: TeachGrammarStep[] = [
     examples: [
       { pali: 'paññā', breakdown: 'paññā (여성 주격)', meaning: '지혜가', highlight: '-ā' },
       { pali: 'paññaṃ', breakdown: 'paññā → paññaṃ (목적격)', meaning: '지혜를', highlight: '-aṃ' },
-      { pali: 'paññāya', breakdown: 'paññā + ya (도구격/간접목적격/분리격)', meaning: '지혜에 의해/에게/로부터', highlight: '-āya' },
+      { pali: 'paññāya', breakdown: 'paññā + ya (도구격/여격/탈격)', meaning: '지혜에 의해/에게/로부터', highlight: '-āya' },
     ],
     table: {
       label: 'ā-어간 여성 (paññā 지혜)',
@@ -121,7 +121,7 @@ export const GRAMMAR_BASICS: TeachGrammarStep[] = [
         { case: '처격 (~에서)', ending: '-āya, -āyaṃ / -āsu', example: 'paññāya / paññāsu', meaning: '지혜에서' },
       ],
     },
-    tip: '여성의 핵심: -āya가 도구격·간접목적격·분리격·소유격·처격에 모두 쓰입니다. 만능 어미! 문맥으로 어떤 격인지 판단합니다.',
+    tip: '여성의 핵심: -āya가 도구격·여격·탈격·소유격·처격에 모두 쓰입니다. 만능 어미! 문맥으로 어떤 격인지 판단합니다.',
   },
 
   // 6. 동사 기초
@@ -254,11 +254,11 @@ export function generateGrammarBasicsQuizzes(): QuizStep[] {
     {
       type: 'quiz',
       question: '"paññāya"는 여성 명사의 어떤 격에 쓰이나요?',
-      options: shuffle(['도구격/간접목적격/분리격/소유격/처격 (여러 격)', '주격만', '목적격만', '부름격만']),
+      options: shuffle(['도구격/여격/탈격/소유격/처격 (여러 격)', '주격만', '목적격만', '호격만']),
       answer: -1,
       explanation: {
         correct: '-āya는 여성 명사의 만능 어미로, 여러 격에 쓰입니다.',
-        detail: '도구격(~에 의해), 간접목적격(~에게), 분리격(~으로부터), 소유격(~의), 처격(~에서)',
+        detail: '도구격(~에 의해), 여격(~에게), 탈격(~으로부터), 소유격(~의), 처격(~에서)',
         tip: '문맥을 통해 어떤 격인지 판단합니다.',
       },
     },
@@ -273,7 +273,7 @@ export function generateGrammarBasicsQuizzes(): QuizStep[] {
       : q.explanation.correct.includes('-e는') ? '처격 (~에서)'
       : q.explanation.correct.includes('-ti는') ? '현재 3인칭 단수'
       : q.explanation.correct.includes('주격과 목적격') ? '주격과 목적격이 같다'
-      : q.explanation.correct.includes('-āya') ? '도구격/간접목적격/분리격/소유격/처격 (여러 격)'
+      : q.explanation.correct.includes('-āya') ? '도구격/여격/탈격/소유격/처격 (여러 격)'
       : q.options[0]
 
     return {

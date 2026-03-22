@@ -44,7 +44,7 @@ export const VERSE_2 = {
   grammarNotes: [
     '문장 구조: 명령절(nisāmetha + karotha) + 관계절(ye...baliṃ) + 명령절(rakkhatha). 3개 명령형이 연속',
     '핵심 문법: nisāmetha(명령형 2인칭 복수)는 "들으시라". karotha(명령형 2인칭 복수)는 "행하라". rakkhatha(명령형 2인칭 복수)는 "보호하라"',
-    '복합어: appamattā = a(부정) + pamatta(방일한), "방일하지 않는". mānusiyā pajāya(간접목적격)는 "인간의 자손에게"',
+    '복합어: appamattā = a(부정) + pamatta(방일한), "방일하지 않는". mānusiyā pajāya(여격)는 "인간의 자손에게"',
   ],
 }
 
@@ -56,8 +56,8 @@ export const VERSE_2_WORDS: VerseWord[] = [
   { pali: 'sabbe', pronKo: '삽베', meaning: '모든', grammar: '형용사 남성 복수 주격' },
   { pali: 'mettaṃ', pronKo: '멧땅', meaning: '자비를/자애를', grammar: '여성 단수 목적격' },
   { pali: 'karotha', pronKo: '까로타', meaning: '행하라/베풀라', grammar: '명령형 2인칭 복수 (karoti)' },
-  { pali: 'mānusiyā', pronKo: '마-누시야-', meaning: '인간의', grammar: '형용사 여성 단수 간접목적격' },
-  { pali: 'pajāya', pronKo: '빠자-야', meaning: '자손에게/백성에게', grammar: '여성 단수 간접목적격' },
+  { pali: 'mānusiyā', pronKo: '마-누시야-', meaning: '인간의', grammar: '형용사 여성 단수 여격' },
+  { pali: 'pajāya', pronKo: '빠자-야', meaning: '자손에게/백성에게', grammar: '여성 단수 여격' },
   { pali: 'divā', pronKo: '디와-', meaning: '낮에', grammar: '불변어(부사)' },
   { pali: 'ca', pronKo: '짜', meaning: '그리고/~와', grammar: '불변어(접속사)' },
   { pali: 'ratto', pronKo: '랏또', meaning: '밤에', grammar: '불변어(부사, rattiṃ의 변형)' },
@@ -321,7 +321,7 @@ export const VERSE_11 = {
 }
 
 export const VERSE_11_WORDS: VerseWord[] = [
-  { pali: 'Catūhapāyehi', pronKo: '짜뚜-하빠-예히', meaning: '네 가지 악처에서', grammar: 'catūhi + apāyehi (연성), 남성 복수 분리격' },
+  { pali: 'Catūhapāyehi', pronKo: '짜뚜-하빠-예히', meaning: '네 가지 악처에서', grammar: 'catūhi + apāyehi (연성), 남성 복수 탈격' },
   { pali: 'vippamutto', pronKo: '윕빠뭇또', meaning: '벗어난/해탈한', grammar: '과거분사 남성 단수 주격 (vippamuccati)' },
   { pali: 'cha', pronKo: '차', meaning: '여섯', grammar: '수사' },
   { pali: 'cābhiṭhānāni', pronKo: '짜-비탄나-니', meaning: '그리고 중죄들을', grammar: 'ca + abhiṭhānāni (연성), 중성 복수 목적격' },
@@ -337,7 +337,7 @@ export const VERSE_12 = {
   translation: '설령 그가 몸이나 말이나 마음으로 나쁜 업을 짓더라도,\n그것을 숨길 수 없으니, 도를 본 자에게는 불가능하다고 설해졌다.\n이것이 승가의 뛰어난 보배이니라.',
   grammarNotes: [
     '문장 구조: 양보절(Kiñcāpi...vā) + 주절(abhabbo...paṭicchādāya) + 인용절(abhabbatā...vuttā)',
-    '핵심 문법: paṭicchādāya(간접목적격 부정사)는 "숨기기 위해/숨기는 것에". vuttā(vacati의 과거분사)는 "말해진"',
+    '핵심 문법: paṭicchādāya(여격 부정사)는 "숨기기 위해/숨기는 것에". vuttā(vacati의 과거분사)는 "말해진"',
     '복합어: diṭṭhapadassa = diṭṭha(본) + pada(도/경지), "도를 본 자의"',
   ],
 }
@@ -354,7 +354,7 @@ export const VERSE_12_WORDS: VerseWord[] = [
   { pali: 'cetasā', pronKo: '쩨따사-', meaning: '마음으로', grammar: '중성 단수 도구격 (cetas)' },
   { pali: 'abhabbo', pronKo: '아밥보', meaning: '불가능한/~할 수 없는', grammar: '형용사 남성 단수 주격' },
   { pali: 'tassa', pronKo: '땃사', meaning: '그것의/그에 대해', grammar: '지시대명사 중성 단수 소유격' },
-  { pali: 'paṭicchādāya', pronKo: '빠띳차-다-야', meaning: '숨기기 위해', grammar: '간접목적격 부정사 (paṭicchādeti)' },
+  { pali: 'paṭicchādāya', pronKo: '빠띳차-다-야', meaning: '숨기기 위해', grammar: '여격 부정사 (paṭicchādeti)' },
   { pali: 'abhabbatā', pronKo: '아밥바따-', meaning: '불가능함이', grammar: '여성 단수 주격 (abhabba + tā)' },
   { pali: 'diṭṭhapadassa', pronKo: '딧타빠닷사', meaning: '도를 본 자의', grammar: '남성 단수 소유격 (diṭṭha + pada)' },
   { pali: 'vuttā', pronKo: '웃따-', meaning: '말해진/설해진', grammar: '과거분사 여성 단수 주격 (vacati)' },
@@ -368,7 +368,7 @@ export const VERSE_13 = {
   translation: '숲속의 나무가 여름 첫 달에 꽃을 피우듯,\n열반으로 이끄는 최상의 법을 최상의 이익을 위해 가르치셨다.\n이것이 부처님의 뛰어난 보배이니라.',
   grammarNotes: [
     '문장 구조: 비유절(yathā...gimhe) + 주절(tathūpamaṃ...hitāya). yathā...tathā 비유 구문',
-    '핵심 문법: adesayi(ādeseti의 과거형)는 "가르치셨다". hitāya(간접목적격)는 목적 — "이익을 위해"',
+    '핵심 문법: adesayi(ādeseti의 과거형)는 "가르치셨다". hitāya(여격)는 목적 — "이익을 위해"',
     '복합어: vanappagumbe = vana(숲) + pagumba(덤불). phussitagge = phussita(꽃 핀) + agga(꼭대기)',
     '복합어: nibbānagāmiṃ = nibbāna(열반) + gāmin(이끄는). dhammavaraṃ = dhamma + vara(뛰어난)',
   ],
@@ -386,7 +386,7 @@ export const VERSE_13_WORDS: VerseWord[] = [
   { pali: 'adesayi', pronKo: '아데사이', meaning: '가르치셨다/보여주셨다', grammar: '과거 3인칭 단수 (ādeseti)' },
   { pali: 'nibbānagāmiṃ', pronKo: '닙바-나가-밍', meaning: '열반으로 이끄는', grammar: '형용사 남성 단수 목적격 (nibbāna + gāmin)' },
   { pali: 'paramaṃ', pronKo: '빠라망', meaning: '최상의/최고의', grammar: '형용사 중성 단수 목적격' },
-  { pali: 'hitāya', pronKo: '히따-야', meaning: '이익을 위해', grammar: '중성 단수 간접목적격 (hita)' },
+  { pali: 'hitāya', pronKo: '히따-야', meaning: '이익을 위해', grammar: '중성 단수 여격 (hita)' },
 ]
 
 // ── 제14게송: 부처님의 보배 — 뛰어난 분 ──
@@ -449,7 +449,7 @@ export const VERSE_16 = {
   pronKo: '야-니-다 부-따-니 사마-가따-니, 붐마-니 와- 야-니 와 안딸릭케;\n따타-가땅 데와마눗사뿌-지땅, 붓당 나맛사-마 수왓티 호뚜.',
   translation: '이 자리에 모인 존재들이여, 땅 위든 하늘이든,\n천신과 인간이 공양하는 여래, 부처님께 예배하오니 안녕이 있기를.',
   grammarNotes: [
-    '문장 구조: 부름격절(Yānīdha...antalikkhe) + 주절(tathāgataṃ...namassāma) + 축원(suvatthi hotu)',
+    '문장 구조: 호격절(Yānīdha...antalikkhe) + 주절(tathāgataṃ...namassāma) + 축원(suvatthi hotu)',
     '핵심 문법: namassāma(명령/원망형 1인칭 복수)는 "예배하자/예배합니다". 제1게송과 대구',
     '복합어: devamanussapūjitaṃ = deva(천신) + manussa(인간) + pūjita(공양받은)',
   ],

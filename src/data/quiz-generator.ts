@@ -16,7 +16,7 @@ const CASE_DISTRACTORS: Record<string, { text: string; why: string }[]> = {
     { text: 'suttaṃ', why: 'suttaṃ은 경전(sutta)의 목적격이지, 듣다(suṇāti)의 분사가 아닙니다' },
   ],
   'bhagavā': [
-    { text: 'bhagavato', why: 'bhagavato는 소유격/간접목적격(세존의/세존에게)입니다' },
+    { text: 'bhagavato', why: 'bhagavato는 소유격/여격(세존의/세존에게)입니다' },
     { text: 'bhagavantaṃ', why: 'bhagavantaṃ은 목적격(세존을)입니다' },
     { text: 'bhagavatā', why: 'bhagavatā는 도구격(세존에 의해)입니다' },
   ],
@@ -90,9 +90,9 @@ const CASE_DISTRACTORS: Record<string, { text: string; why: string }[]> = {
     { text: 'maggena', why: 'maggena는 도구격(길에 의해)입니다' },
     { text: 'maggassa', why: 'maggassa는 소유격(길의)입니다' },
   ],
-  // bhikkhu 부름격/주격
+  // bhikkhu 호격/주격
   'bhikkhave': [
-    { text: 'bhikkhū', why: 'bhikkhū는 주격(비구들이)이지 부름격이 아닙니다' },
+    { text: 'bhikkhū', why: 'bhikkhū는 주격(비구들이)이지 호격이 아닙니다' },
     { text: 'bhikkhunaṃ', why: 'bhikkhunaṃ은 소유격(비구들의)입니다' },
     { text: 'bhikkhūhi', why: 'bhikkhūhi는 도구격(비구들에 의해)입니다' },
   ],
@@ -104,12 +104,12 @@ const CASE_DISTRACTORS: Record<string, { text: string; why: string }[]> = {
     { text: 'rūpe', why: 'rūpe는 처격(물질에서)입니다' },
   ],
   'vedanā': [
-    { text: 'vedanāya', why: 'vedanāya는 간접목적격/처격(느낌에/느낌에서)입니다' },
+    { text: 'vedanāya', why: 'vedanāya는 여격/처격(느낌에/느낌에서)입니다' },
     { text: 'vedanaṃ', why: 'vedanaṃ은 목적격(느낌을)입니다' },
     { text: 'vedanāsu', why: 'vedanāsu는 복수 처격(느낌들에서)입니다' },
   ],
   'saññā': [
-    { text: 'saññāya', why: 'saññāya는 간접목적격/처격(인식에서)입니다' },
+    { text: 'saññāya', why: 'saññāya는 여격/처격(인식에서)입니다' },
     { text: 'saññaṃ', why: 'saññaṃ은 목적격(인식을)입니다' },
     { text: 'saññāsu', why: 'saññāsu는 복수 처격(인식들에서)입니다' },
   ],
@@ -142,12 +142,12 @@ const CASE_DISTRACTORS: Record<string, { text: string; why: string }[]> = {
   ],
   'satiṃ': [
     { text: 'sati', why: 'sati는 주격(새김이)이지 목적격(새김을)이 아닙니다' },
-    { text: 'satiyā', why: 'satiyā는 도구격/간접목적격(새김에 의해/새김을 위해)입니다' },
+    { text: 'satiyā', why: 'satiyā는 도구격/여격(새김에 의해/새김을 위해)입니다' },
     { text: 'satimā', why: 'satimā는 "새김을 가진"이라는 형용사입니다' },
   ],
   'taṇhā': [
     { text: 'taṇhaṃ', why: 'taṇhaṃ은 목적격(갈애를)입니다' },
-    { text: 'taṇhāya', why: 'taṇhāya는 간접목적격/도구격(갈애에 의해)입니다' },
+    { text: 'taṇhāya', why: 'taṇhāya는 여격/도구격(갈애에 의해)입니다' },
     { text: 'taṇhāsu', why: 'taṇhāsu는 복수 처격(갈애들에서)입니다' },
   ],
 }

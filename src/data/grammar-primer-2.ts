@@ -389,7 +389,7 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
         { case: '도구격 단수', ending: '-vatā', example: 'bhagavatā', meaning: '세존에 의해' },
         { case: '소유격 단수', ending: '-vato', example: 'bhagavato', meaning: '세존의' },
         { case: '처격 단수', ending: '-vati', example: 'bhagavati', meaning: '세존에게서' },
-        { case: '부름격 단수', ending: '-vaṃ/-vā', example: 'bhagavā', meaning: '세존이시여' },
+        { case: '호격 단수', ending: '-vaṃ/-vā', example: 'bhagavā', meaning: '세존이시여' },
       ],
     },
     examples: [
@@ -414,7 +414,7 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
         { case: '목적격 단수', ending: '-tāraṃ', example: 'satthāraṃ', meaning: '스승을' },
         { case: '도구격 단수', ending: '-tārā', example: 'satthārā', meaning: '스승에 의해' },
         { case: '소유격 단수', ending: '-tu', example: 'satthu', meaning: '스승의' },
-        { case: '부름격 단수', ending: '-tā', example: 'satthā', meaning: '스승이시여' },
+        { case: '호격 단수', ending: '-tā', example: 'satthā', meaning: '스승이시여' },
         { case: '주격 복수', ending: '-tāro', example: 'satthāro', meaning: '스승들은' },
       ],
     },

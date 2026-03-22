@@ -7,7 +7,7 @@ export const ARRANGE_V0_READING = genReadingArrange(
   'Evaṃ me sutaṃ',
   ['이와 같이', '나는', '들었다'],
   [
-    { text: '나에게', why: 'me는 여기서 주격(나는)이지 간접목적격(나에게)이 아닙니다' },
+    { text: '나에게', why: 'me는 여기서 주격(나는)이지 여격(나에게)이 아닙니다' },
     { text: '나의', why: 'me의 소유격 해석이지만, 이 문장에서는 주격입니다' },
     { text: '들은 것을', why: 'sutaṃ은 여기서 주격(들은 것)이지 목적격(들은 것을)이 아닙니다' },
   ],
@@ -63,7 +63,7 @@ export const ARRANGE_V2_WRITING = genWritingArrange(
   [
     { text: 'bālā', why: 'bālā는 주격(어리석은 이들이)이지만, 여기서는 소유격 bālānaṃ이 맞습니다' },
     { text: 'paṇḍitā', why: 'paṇḍitā는 주격이지만, 여기서는 소유격이 필요합니다' },
-    { text: 'sevanāya', why: 'sevanāya는 간접목적격(가까이함을 위해)이지 주격이 아닙니다' },
+    { text: 'sevanāya', why: 'sevanāya는 여격(가까이함을 위해)이지 주격이 아닙니다' },
   ],
 )
 

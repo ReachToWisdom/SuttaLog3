@@ -160,7 +160,7 @@ export const VERSE_6_WORDS: VerseWord[] = [
   { pali: 'nātimaññetha', pronKo: '나-띠만녜타', meaning: '멸시하지 말라', grammar: 'na + atimaññetha, 원망법 3인칭 단수' },
   { pali: 'katthaci', pronKo: '깟타찌', meaning: '어디서든', grammar: '불변어(부사)' },
   { pali: 'naṃ', pronKo: '낭', meaning: '그를', grammar: '대명사 남성 단수 목적격' },
-  { pali: 'byārosanā', pronKo: '뱌-로사나-', meaning: '분노로', grammar: '여성 단수 분리격 (vi + ārosanā)' },
+  { pali: 'byārosanā', pronKo: '뱌-로사나-', meaning: '분노로', grammar: '여성 단수 탈격 (vi + ārosanā)' },
   { pali: 'paṭighasaññā', pronKo: '빠띠가산냐-', meaning: '적의의 인식으로', grammar: '여성 단수 도구격 (paṭigha + saññā)' },
   { pali: 'nāññamaññassa', pronKo: '나-ㄴ냐만냐ㅅ사', meaning: '서로에게 ~않다', grammar: 'na + aññamañña 소유격' },
   { pali: 'dukkhamiccheyya', pronKo: '둑카밋쩨ㅇ야', meaning: '괴로움을 바라다', grammar: '원망법 3인칭 단수 (dukkhaṃ + iccheyya)' },

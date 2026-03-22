@@ -226,7 +226,7 @@ export const PRIMER_GRAMMAR_3: TeachGrammarStep[] = [
       { pali: 'sundaratara', breakdown: 'sundara + tara (비교급)', meaning: '더 아름다운', highlight: '-tara' },
       { pali: 'sundaratama', breakdown: 'sundara + tama (최상급)', meaning: '가장 아름다운', highlight: '-tama' },
       { pali: 'etaṃ maṅgalamuttamaṃ', breakdown: 'etaṃ + maṅgalaṃ + uttamaṃ', meaning: '이것이 최상의 행복', highlight: 'uttama' },
-      { pali: 'buddho garuṃ sundarataro', breakdown: 'buddho + garuṃ(분리격) + sundarataro', meaning: '붓다는 스승보다 더 아름답다', highlight: '분리격 비교' },
+      { pali: 'buddho garuṃ sundarataro', breakdown: 'buddho + garuṃ(탈격) + sundarataro', meaning: '붓다는 스승보다 더 아름답다', highlight: '탈격 비교' },
     ],
     table: {
       label: '비교급/최상급 형성',
@@ -237,7 +237,7 @@ export const PRIMER_GRAMMAR_3: TeachGrammarStep[] = [
         { case: '최고 (seṭṭha)', ending: '최고의', example: 'seṭṭho dhammo', meaning: '최고의 법' },
       ],
     },
-    tip: '비교 대상은 분리격으로 표현합니다. "A는 B보다 더~" = "A + B(분리격) + 비교급"',
+    tip: '비교 대상은 탈격으로 표현합니다. "A는 B보다 더~" = "A + B(탈격) + 비교급"',
   },
 
   {

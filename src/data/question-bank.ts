@@ -138,7 +138,7 @@ export const QUESTION_BANK: {
         answer: 0,
         explanation: {
           correct: 'pūjā는 명사 주격 "공경(함)"입니다.',
-          detail: 'pūjeti는 동사 "공경하다", pūjāya는 간접목적격입니다.',
+          detail: 'pūjeti는 동사 "공경하다", pūjāya는 여격입니다.',
         },
       },
       {

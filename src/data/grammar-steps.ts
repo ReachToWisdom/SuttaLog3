@@ -143,7 +143,7 @@ export const ANATTA_GRAMMAR: TeachGrammarStep[] = [
     description: '무아경에서 "만약 ~라면"이라는 가정법(조건문)이 등장합니다. 빠알리어에서 조건문은 ce(만약)를 쓰기도 하지만, 이 경전에서는 ce가 직접 나오지 않고 "ca hi"(실로 ~이) + 가정법 동사(-ssa, -eyya)로 조건을 표현합니다.',
     examples: [
       { pali: 'Rūpañca hidaṃ attā abhavissa', breakdown: 'rūpaṃ + ca + hi + idaṃ = "실로 이 물질이" + abhavissa(가정법: ~였을 것이다). ca hi가 "만약 ~라면"의 역할. 본문에 ce는 나오지 않지만 ca hi + 가정법 동사가 같은 기능', meaning: '만약 물질이 자아라면 (= 자아였을 것이라면)', highlight: 'ca hi ... abhavissa' },
-      { pali: 'nayidaṃ rūpaṃ ābādhāya saṃvatteyya', breakdown: 'na + ayidaṃ(= ayaṃ + idaṃ 연성) + rūpaṃ + ābādhāya(병들기 위해, 간접목적격) + saṃvatteyya(가정법: ~해야 할 것이다)', meaning: '(그렇다면) 물질이 병들지 않아야 할 것이다', highlight: 'saṃvatteyya' },
+      { pali: 'nayidaṃ rūpaṃ ābādhāya saṃvatteyya', breakdown: 'na + ayidaṃ(= ayaṃ + idaṃ 연성) + rūpaṃ + ābādhāya(병들기 위해, 여격) + saṃvatteyya(가정법: ~해야 할 것이다)', meaning: '(그렇다면) 물질이 병들지 않아야 할 것이다', highlight: 'saṃvatteyya' },
       { pali: 'labbhetha ca rūpe', breakdown: 'labbhetha(가정법 수동: 얻어질 것이다) + ca + rūpe(처격: 물질에 대해)', meaning: '(그렇다면) 물질에 대해 이렇게 할 수 있어야 할 것이다', highlight: 'labbhetha' },
     ],
     table: {

@@ -255,7 +255,7 @@ export const VERSE_10 = {
     '직접인용: sabbe saṅkhārā aniccā+iti → aniccāti — iti(~라고)가 인용절을 마감. 인용 내부는 주어(saṅkhārā)+서술어(aniccā) 명사문',
     '시간절+주절: yadā...passati(~할 때 본다) → atha nibbindati(그러면 염오한다) — yadā...atha 상관 부사쌍이 조건-결과를 연결',
     '도구격(paññāya): paññā(지혜)의 여성 단수 도구격 — 수단/도구의 도구격 "지혜로써". 처격(dukkhe): dukkha의 중성 단수 처격 — "괴로움에 대해" 대상의 처격',
-    '2행 명사문: esa maggo visuddhiyā "이것이 청정을 위한 길이다". visuddhiyā는 간접목적격(~을 위한) 또는 소유격(~의) — 목적/귀착의 간접목적격 용법',
+    '2행 명사문: esa maggo visuddhiyā "이것이 청정을 위한 길이다". visuddhiyā는 여격(~을 위한) 또는 소유격(~의) — 목적/귀착의 여격 용법',
   ],
 }
 
@@ -270,7 +270,7 @@ export const VERSE_10_WORDS: VerseWord[] = [
   { pali: 'nibbindati', pronKo: '닙빈다띠', meaning: '염오하다/싫어지다', grammar: '현재 3인칭 단수' },
   { pali: 'dukkhe', pronKo: '둑케', meaning: '괴로움에 대해', grammar: '중성 단수 처격' },
   { pali: 'maggo', pronKo: '맛고', meaning: '길/도', grammar: '남성 단수 주격' },
-  { pali: 'visuddhiyā', pronKo: '위숫디야-', meaning: '청정의', grammar: '여성 단수 소유격/간접목적격 (visuddhi)' },
+  { pali: 'visuddhiyā', pronKo: '위숫디야-', meaning: '청정의', grammar: '여성 단수 소유격/여격 (visuddhi)' },
 ]
 
 // ── 전체 게송 배열 ──
