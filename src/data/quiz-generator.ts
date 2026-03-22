@@ -422,14 +422,19 @@ export function generateFillBlankQuizzes(verses: VerseData[]): FillBlankStep[] {
 
 // ── 문장 작문 퀴즈 생성 (verse 기반) ──
 
-/** 짧은 verse를 선택하여 한글→빠알리 문장 작문 퀴즈 생성 */
+/** 짧은 구절만 선택하여 한글→빠알리 문장 작문 퀴즈 생성 */
 export function generateSentenceQuizzes(verses: VerseData[]): ArrangeWritingStep[] {
   const quizzes: ArrangeWritingStep[] = []
-  // 짧은 verse만 선택 (단어 8개 이하)
-  const shortVerses = verses.filter(v => v.words.length <= 8 && v.words.length >= 3)
+
+  // 실제 pali 텍스트 단어 수로 필터 (3~8단어, 번역 50자 이하)
+  const shortVerses = verses.filter(v => {
+    const paliWordCount = v.pali.split(/\s+/).length
+    return paliWordCount >= 3 && paliWordCount <= 8 && v.translation.length <= 50
+  })
 
   for (const verse of shortVerses) {
-    const pieces = verse.words.map(w => w.pali)
+    // 실제 pali 단어를 조각으로 사용 (WORDS 배열이 아닌 본문 기준)
+    const pieces = verse.pali.split(/\s+/).filter(w => w.length > 0)
 
     // CASE_DISTRACTORS에서 함정 수집
     const allDistractors: Distractor[] = []
@@ -451,7 +456,7 @@ export function generateSentenceQuizzes(verses: VerseData[]): ArrangeWritingStep
       distractors: allDistractors.slice(0, 3),
       explanation: {
         correct: `올바른 순서: ${pieces.join(' ')}`,
-        detail: verse.words.map(w => `• ${w.pali} (${w.pronKo}) = ${w.meaning}`).join('\n'),
+        detail: verse.words.slice(0, 8).map(w => `• ${w.pali} = ${w.meaning}`).join('\n'),
         tip: '격변화와 어순에 주의하세요.',
       },
     })
