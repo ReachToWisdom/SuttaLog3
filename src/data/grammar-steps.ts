@@ -129,13 +129,22 @@ export const ANATTA_GRAMMAR: TeachGrammarStep[] = [
   },
   {
     type: 'teach-grammar',
-    title: '조건문: ce (만약 ~라면)',
-    description: '무아경에서 "만약 ~라면"이라는 가정법 구문이 등장합니다. ce는 영어 if에 해당합니다.',
+    title: '가정법 구문: ca hi + 가정법 동사',
+    description: '무아경에서 "만약 ~라면"이라는 가정법(조건문)이 등장합니다. 빠알리어에서 조건문은 ce(만약)를 쓰기도 하지만, 이 경전에서는 ce가 직접 나오지 않고 "ca hi"(실로 ~이) + 가정법 동사(-ssa, -eyya)로 조건을 표현합니다.',
     examples: [
-      { pali: 'Rūpañca hidaṃ attā abhavissa', breakdown: 'rūpaṃ + ca + hi + idaṃ + attā + abhavissa', meaning: '만약 물질이 자아라면', highlight: 'abhavissa' },
-      { pali: 'nayidaṃ rūpaṃ ābādhāya saṃvatteyya', breakdown: 'na + ayaṃ + idaṃ + rūpaṃ + ābādhāya + saṃvatteyya', meaning: '물질이 병들지 않아야 할 것이다', highlight: 'saṃvatteyya' },
+      { pali: 'Rūpañca hidaṃ attā abhavissa', breakdown: 'rūpaṃ + ca + hi + idaṃ = "실로 이 물질이" + abhavissa(가정법: ~였을 것이다). ca hi가 "만약 ~라면"의 역할. 본문에 ce는 나오지 않지만 ca hi + 가정법 동사가 같은 기능', meaning: '만약 물질이 자아라면 (= 자아였을 것이라면)', highlight: 'ca hi ... abhavissa' },
+      { pali: 'nayidaṃ rūpaṃ ābādhāya saṃvatteyya', breakdown: 'na + ayidaṃ(= ayaṃ + idaṃ 연성) + rūpaṃ + ābādhāya(병들기 위해, 여격) + saṃvatteyya(가정법: ~해야 할 것이다)', meaning: '(그렇다면) 물질이 병들지 않아야 할 것이다', highlight: 'saṃvatteyya' },
+      { pali: 'labbhetha ca rūpe', breakdown: 'labbhetha(가정법 수동: 얻어질 것이다) + ca + rūpe(처격: 물질에 대해)', meaning: '(그렇다면) 물질에 대해 이렇게 할 수 있어야 할 것이다', highlight: 'labbhetha' },
     ],
-    tip: 'abhavissa(-었을 것이다), saṃvatteyya(-해야 할 것이다)는 가정법 동사 어미입니다. 현실과 반대되는 상황을 표현합니다.',
+    table: {
+      label: '조건문 표현 비교',
+      rows: [
+        { case: 'ce 사용', ending: 'ce + 동사', example: 'sace attā abhavissa', meaning: '만약 자아였다면 (직접 ce)' },
+        { case: '본문 표현', ending: 'ca hi + 가정법', example: 'rūpañca hidaṃ attā abhavissa', meaning: '실로 물질이 자아였다면 (ca hi)' },
+        { case: '가정법 동사', ending: '-ssa / -eyya', example: 'abhavissa, saṃvatteyya', meaning: '~였을 것이다, ~해야 할 것이다' },
+      ],
+    },
+    tip: '본문에서 ce(만약)가 직접 나오지 않아도, 가정법 동사 어미(-ssa, -eyya)가 보이면 조건문입니다. "만약 A라면 B일 것이다" 구조를 파악하세요.',
   },
 ]
 
