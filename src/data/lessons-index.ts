@@ -16,6 +16,7 @@ import { generateGrammarBasicsQuizzes } from './grammar-basics'
 import { PRIMER_GRAMMAR } from './grammar-primer'
 import { PRIMER_GRAMMAR_2 } from './grammar-primer-2'
 import { PRIMER_GRAMMAR_3 } from './grammar-primer-3'
+import { QUESTION_BANK } from './question-bank'
 
 /** 배열 셔플 */
 function shuffle<T>(arr: T[]): T[] {
@@ -25,6 +26,13 @@ function shuffle<T>(arr: T[]): T[] {
     ;[r[i], r[j]] = [r[j], r[i]]
   }
   return r
+}
+
+/** 문제은행에서 해당 단원의 랜덤 N문제 추출 */
+function pickBankQuestions(lessonId: string, count = 10): Step[] {
+  const bank = QUESTION_BANK.find(b => b.lessonId === lessonId)
+  if (!bank) return []
+  return shuffle(bank.questions).slice(0, count) as Step[]
 }
 
 // ── Part 0: 자모 발음 단원 (매번 새로 생성) ──
@@ -228,6 +236,9 @@ function buildMangalaSteps(): Step[] {
   steps.push(...generateFillBlankQuizzes(ALL_VERSES))
   steps.push(...generateSentenceQuizzes(ALL_VERSES))
 
+  // 문제은행 (독해 문법 문제 랜덤 10개)
+  steps.push(...pickBankQuestions('mangala', 10))
+
   return steps
 }
 
@@ -324,6 +335,7 @@ function buildDhammacakkaSteps(): Step[] {
   // 5단계: 빈칸 채우기 + 문장 작문 (경전 문장 기반)
   steps.push(...generateFillBlankQuizzes(DHAMMACAKKA_VERSES))
   steps.push(...generateSentenceQuizzes(DHAMMACAKKA_VERSES))
+  steps.push(...pickBankQuestions('dhammacakka', 10))
   return steps
 }
 
@@ -360,6 +372,7 @@ function buildAnattaSteps(): Step[] {
   // 5단계: 빈칸 채우기 + 문장 작문 (경전 문장 기반)
   steps.push(...generateFillBlankQuizzes(ANATTA_VERSES))
   steps.push(...generateSentenceQuizzes(ANATTA_VERSES))
+  steps.push(...pickBankQuestions('anatta', 10))
   return steps
 }
 
@@ -409,6 +422,7 @@ function buildSatipatthana1Steps(): Step[] {
   steps.push(...generateGrammarQuizzes(SATIPATTHANA_GRAMMAR))
   steps.push(...generateFillBlankQuizzes(toVerseData(KAYA_VERSES)))
   steps.push(...generateSentenceQuizzes(toVerseData(KAYA_VERSES)))
+  steps.push(...pickBankQuestions('satipatthana-1', 10))
   return steps
 }
 
@@ -430,6 +444,7 @@ function buildSatipatthana2Steps(): Step[] {
   // 빈칸 + 문장
   steps.push(...generateFillBlankQuizzes(toVerseData(DHAMMA_VERSES)))
   steps.push(...generateSentenceQuizzes(toVerseData(DHAMMA_VERSES)))
+  steps.push(...pickBankQuestions('satipatthana-2', 10))
   return steps
 }
 
