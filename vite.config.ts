@@ -10,11 +10,24 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
-        // 새 버전 배포 시 즉시 활성화
         skipWaiting: true,
         clientsClaim: true,
-        // 캐시 대상
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        // Network First: 온라인 시 항상 서버에서 최신 가져옴
+        // 오프라인 시에만 캐시 사용
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/reachtowisdom\.github\.io\/SuttaLog3\/.*/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'suttalog3-app',
+              expiration: { maxEntries: 50, maxAgeSeconds: 86400 },
+              networkTimeoutSeconds: 3,
+            },
+          },
+        ],
+        // 정적 파일도 Network First
+        navigateFallback: null,
+        globPatterns: [],
       },
       manifest: {
         name: '빠알리 경전 학습',
