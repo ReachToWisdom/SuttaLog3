@@ -10,6 +10,11 @@ export const VERSE_1 = {
   pali: 'Ekaṃ samayaṃ bhagavā bārāṇasiyaṃ viharati isipatane migadāye. Tatra kho bhagavā pañcavaggiye bhikkhū āmantesi.',
   pronKo: '에깡 사마양 바가와- 바-라-나시양 위하라띠 이시빠따네 미가다-예. 따뜨라 코 바가와- 빤짜왁기예 빅쿠- 아-만떼시.',
   translation: '한 때 세존께서 바라나시의 이시빠따나 녹야원에 머무셨다. 거기서 세존께서 다섯 비구에게 말씀하셨다.',
+  grammarNotes: [
+    '문장 구조: 두 문장으로 구성. ①「Ekaṃ samayaṃ(시간 부사구) + bhagavā(주어) + viharati(동사) + 처격 장소구」 ②「Tatra + bhagavā(주어) + bhikkhū(목적어) + āmantesi(동사)」',
+    '핵심 문법: "Ekaṃ samayaṃ"은 대격의 시간 부사적 용법(경전 정형 서두). 처격 bārāṇasiyaṃ/isipatane/migadāye가 장소를 나타냄',
+    '복합어: pañcavaggiye = pañca(다섯) + vaggiya(무리의), migadāye = miga(사슴) + dāya(동산). 두 문장의 시제가 다름 — viharati(현재, 역사적 현재) vs āmantesi(과거, 아오리스트)',
+  ],
 }
 
 export const VERSE_1_WORDS: VerseWord[] = [
@@ -32,6 +37,12 @@ export const VERSE_2 = {
   pali: 'Rūpaṃ bhikkhave anattā. Rūpañca hidaṃ bhikkhave attā abhavissa, nayidaṃ rūpaṃ ābādhāya saṃvatteyya, labbhetha ca rūpe — evaṃ me rūpaṃ hotu, evaṃ me rūpaṃ mā ahosīti.',
   pronKo: '루-빵 빅카웨 아낫따-. 루-빤짜 히당 빅카웨 앗따- 아바윗사, 나이당 루-빵 아-바-다-야 상왓떼이야, 랍베타 짜 루-뻬 — 에왕 메 루-빵 호뚜, 에왕 메 루-빵 마- 아호시-띠.',
   translation: '비구들이여, 물질은 자아가 아니다. 만약 물질이 자아라면 물질이 병들지 않아야 할 것이며, 물질에 대해 "나의 물질이 이렇게 되어라, 이렇게 되지 말라"고 할 수 있어야 한다.',
+  grammarNotes: [
+    '문장 구조: ① 주절「Rūpaṃ anattā」(물질은 무아) ② 반사실 조건문「Rūpañca hidaṃ attā abhavissa(조건절) → nayidaṃ rūpaṃ saṃvatteyya / labbhetha ca(귀결절)」',
+    '핵심 문법: 가정법(optative) abhavissa/saṃvatteyya/labbhetha가 반사실 조건문을 형성. "~이었다면 ~하지 않았을 것이다" 구문. labbhetha는 labhati의 수동 가정법',
+    '정형구 분석: "evaṃ me rūpaṃ hotu, evaṃ me rūpaṃ mā ahosī"는 명령법(hotu)과 금지형(mā + ahosī)의 대조. 자아의 통제력 부재를 논증하는 핵심 정형구',
+    '연성(sandhi): Rūpañca = Rūpaṃ + ca, hidaṃ = hi + idaṃ, nayidaṃ = na + ayidaṃ, ahosīti = ahosī + iti. 연성 규칙이 집중적으로 적용된 단락',
+  ],
 }
 
 export const VERSE_2_WORDS: VerseWord[] = [
@@ -60,6 +71,11 @@ export const VERSE_3 = {
   pali: 'Vedanā anattā... saññā anattā... saṅkhārā anattā... viññāṇaṃ anattā.',
   pronKo: '웨다나- 아낫따-... 산냐- 아낫따-... 상카-라- 아낫따-... 윈냐-낭 아낫따-.',
   translation: '느낌도 자아가 아니고... 인식도... 형성도... 의식도 자아가 아니다.',
+  grammarNotes: [
+    '문장 구조: 제2단락(색온)의 동일 논증을 나머지 4온(수·상·행·식)에 반복 적용하는 정형 반복구(peyyāla). 각각 「X + anattā」 술어 구문',
+    '핵심 문법: 각 온의 성(gender)이 다름 — vedanā/saññā(여성 주격), saṅkhārā(남성 복수 주격), viññāṇaṃ(중성 주격). 그러나 술어 anattā는 성·수 불변',
+    '정형 반복(peyyāla): 경전에서 "..."으로 축약되는 부분은 제2단락의 전체 논증(조건문+명령법 포함)이 각 온에 동일하게 적용됨을 의미',
+  ],
 }
 
 export const VERSE_3_WORDS: VerseWord[] = [
@@ -74,6 +90,12 @@ export const VERSE_4 = {
   pali: 'Taṃ kiṃ maññatha bhikkhave, rūpaṃ niccaṃ vā aniccaṃ vā ti? Aniccaṃ bhante. Yaṃ panāniccaṃ dukkhaṃ vā taṃ sukhaṃ vā ti? Dukkhaṃ bhante. Yaṃ panāniccaṃ dukkhaṃ vipariṇāmadhammaṃ, kallaṃ nu taṃ samanupassituṃ — etaṃ mama, esohamasmi, eso me attāti?',
   pronKo: '땅 낑 만냐타 빅카웨, 루-빵 닛짱 와- 아닛짱 와- 띠? 아닛짱 반떼. 양 빠나닛짱 둑캉 와- 땅 수캉 와- 띠? 둑캉 반떼. 양 빠나닛짱 둑캉 위빠리나-마담망, 깔랑 누 땅 사마누빳시뚱 — 에땅 마마, 에소하맛미, 에소 메 앗따-띠?',
   translation: '비구들이여, 어떻게 생각하느냐, 물질은 영원하냐 무상하냐? 무상합니다. 무상한 것은 괴로운가 즐거운가? 괴로움입니다. 무상하고 괴롭고 변하는 것을 "이것은 나의 것, 이것은 나, 이것은 나의 자아"라고 보는 것이 합당하냐?',
+  grammarNotes: [
+    '문장 구조: 문답 형식의 3단 논증. ①「niccaṃ vā aniccaṃ vā」(상/무상 택일) ②「dukkhaṃ vā sukhaṃ vā」(고/락 택일) ③ 결론 — samanupassituṃ(부정사)으로 "보는 것이 합당한가" 수사 의문',
+    '핵심 문법: "Taṃ kiṃ maññatha"는 경전 정형 의문구(어떻게 생각하느냐). 관계대명사 Yaṃ이 조건절을 이끌며, kallaṃ nu는 수사 의문("합당한가"→"합당하지 않다" 함의)',
+    '복합어: vipariṇāmadhammaṃ = vipariṇāma(변화) + dhamma(성질/법칙), "변하는 성질의". samanupassituṃ = sam + anu + passati의 부정사, "관찰하기에"',
+    '삼상 정형구: "etaṃ mama(이것은 나의 것 — 갈애), esohamasmi(이것은 나 — 만), eso me attā(이것은 나의 자아 — 사견)"는 세 가지 집착 방식을 나타내는 핵심 정형구',
+  ],
 }
 
 export const VERSE_4_WORDS: VerseWord[] = [
@@ -105,6 +127,12 @@ export const VERSE_5 = {
   pali: 'Evaṃ passaṃ bhikkhave sutavā ariyasāvako rūpasmimpi nibbindati, vedanāyapi nibbindati, saññāyapi nibbindati, saṅkhāresupi nibbindati, viññāṇasmimpi nibbindati. Nibbindaṃ virajjati; virāgā vimuccati.',
   pronKo: '에왕 빳상 빅카웨 수따와- 아리야사-와꼬 루-빠스밈삐 닙빈다띠, 웨다나-야삐 닙빈다띠, 산냐-야삐 닙빈다띠, 상카-레수삐 닙빈다띠, 윈냐-나스밈삐 닙빈다띠. 닙빈당 위랏자띠; 위라-가- 위뭇짜띠.',
   translation: '이와 같이 보는 비구들이여, 배운 성스러운 제자는 물질에도 염오하고, 느낌에도, 인식에도, 형성에도, 의식에도 염오한다. 염오하여 이욕하고, 이욕으로 해탈한다.',
+  grammarNotes: [
+    '문장 구조: 분사구문 + 주절. 「Evaṃ passaṃ(현재분사, ~이와 같이 보면서) → sutavā ariyasāvako(주어) → nibbindati(동사)」 이후 「Nibbindaṃ(분사) → virajjati → virāgā → vimuccati」의 연쇄 인과 구조',
+    '핵심 문법: 처격의 5온 표현 — rūpasmim(중성 처격), vedanāya(여성 처격), saññāya(여성 처격), saṅkhāresu(남성 복수 처격), viññāṇasmim(중성 처격). 각 온의 성·수에 따라 처격 어미가 다름',
+    '해탈 연쇄 정형구: nibbindati(염오) → virajjati(이욕) → vimuccati(해탈)는 경전 전체에 반복되는 해탈 3단계 정형구. virāgā(탈격)는 원인/이유를 나타냄 — "이욕으로 인해"',
+    '접미사 -pi: rūpasmimpi, vedanāyapi 등에서 api(~도)가 처격 명사에 연결되어 "~에서도" 의미. 5온 각각에 대한 포괄적 적용을 강조',
+  ],
 }
 
 export const VERSE_5_WORDS: VerseWord[] = [

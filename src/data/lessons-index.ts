@@ -189,6 +189,7 @@ function buildMangalaSteps(): Step[] {
       pronKo: verse.pronKo,
       translation: verse.translation,
       words: verse.words,
+      grammarNotes: verse.grammarNotes,
     })
   }
 
@@ -221,6 +222,7 @@ function buildRatanaSteps(): Step[] {
       pronKo: verse.pronKo,
       translation: verse.translation,
       words: verse.words,
+      grammarNotes: verse.grammarNotes,
     })
   }
 
@@ -248,6 +250,7 @@ function buildMettaSteps(): Step[] {
       pronKo: verse.pronKo,
       translation: verse.translation,
       words: verse.words,
+      grammarNotes: verse.grammarNotes,
     })
   }
 
@@ -278,6 +281,7 @@ function buildDhammacakkaSteps(): Step[] {
       pronKo: verse.pronKo,
       translation: verse.translation,
       words: verse.words,
+      grammarNotes: verse.grammarNotes,
     })
   }
 
@@ -309,6 +313,7 @@ function buildAnattaSteps(): Step[] {
       pronKo: verse.pronKo,
       translation: verse.translation,
       words: verse.words,
+      grammarNotes: verse.grammarNotes,
     })
   }
 
@@ -340,6 +345,7 @@ function buildSatipatthanaSteps(): Step[] {
       pronKo: verse.pronKo,
       translation: verse.translation,
       words: verse.words,
+      grammarNotes: verse.grammarNotes,
     })
   }
 

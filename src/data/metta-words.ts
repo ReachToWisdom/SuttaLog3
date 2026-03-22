@@ -10,6 +10,12 @@ export const VERSE_1 = {
   pali: 'Karanīyamatthakusalena, yantaṃ santaṃ padaṃ abhisamecca;\nsakko ujū ca suhujū ca, sūvaco cassa mudu anatimānī.',
   pronKo: '까라니-야맛타꾸살레나, 얀땅 산땅 빠당 아비사멧짜;\n삭꼬 우주- 짜 수후주- 짜, 수-와쪼 짯사 무두 아나띠마-니-.',
   translation: '선을 아는 자가 적멸의 경지를 완전히 이해하고 행할 것은,\n유능하고 곧고 매우 곧으며, 말 잘 듣고 부드럽고 교만하지 않는 것이다.',
+  grammarNotes: [
+    '문장 구조: 주어(atthakusalena, 구격=행위자) + 목적어(santaṃ padaṃ) + 절대분사(abhisamecca) + 술어(karanīyaṃ, 의무분사). 후반부는 sakko~anatimānī가 karanīyaṃ의 보어 역할',
+    '핵심 문법: karanīyam은 의무분사(-anīya 접미사, ~해야 할 것). cassa는 ca+assa의 연성(sandhi)으로 assa는 atthi의 원망법(optative) 3인칭 단수',
+    '복합어: attha-kusalena(목적격 한정복합어, 이익에 능숙한 자), su-hujū(접두사 su-로 강조, 매우 곧은), su-vaco(su+vaca, 말 잘 듣는), an-atimānī(부정접두사 an-+과도한 자만)',
+    '연성법: karanīyam+atthakusalena → karanīyamatthakusalena (m+a → ma 연성). yaṃ+taṃ → yantaṃ (관계대명사+지시대명사 결합)',
+  ],
 }
 
 export const VERSE_1_WORDS: VerseWord[] = [
@@ -34,6 +40,12 @@ export const VERSE_2 = {
   pali: 'Santussako ca subharo ca, appakicco ca sallahukavutti;\nsantindriyo ca nipako ca, appagabbho kulesu ananugiddho.',
   pronKo: '산뚯사꼬 짜 수바로 짜, 앞빠끼쪼 짜 살라후까붓띠;\n산띤드리요 짜 니빠꼬 짜, 앞빠갑보 꿀레수 아나누깃토.',
   translation: '만족하고 봉양하기 쉬우며, 할 일 적고 생활이 가벼우며,\n감관이 고요하고 슬기로우며, 건방지지 않고 가문에 탐착하지 않는다.',
+  grammarNotes: [
+    '문장 구조: 제1게송의 보어 나열이 계속됨. 모두 남성 단수 주격 형용사로 수행자의 자질을 설명. ca(그리고)가 반복되어 병렬 연결',
+    '핵심 문법: ananugiddho는 과거분사(giddha, 탐착된)에 부정접두사 an-과 접두사 anu-가 결합. kulesu는 kula(가문)의 복수 처격으로 "가문들에서"',
+    '복합어: san-tussako(sam+tussa, 만족한), su-bharo(su+bhara, 쉽게 부양되는), appa-kicco(적은+할 일), sallahuka-vutti(가벼운+생활), sant-indriyo(고요한+감관), appa-gabbho(적은+건방짐)',
+    '연성법: sant+indriyo → santindriyo (t+i 결합). an+anu+giddho → ananugiddho (부정접두사와 접두사 이중 결합)',
+  ],
 }
 
 export const VERSE_2_WORDS: VerseWord[] = [
@@ -53,6 +65,12 @@ export const VERSE_3 = {
   pali: 'Na ca khuddaṃ samācare kiñci, yena viññū pare upavadeyyuṃ;\nsukhino vā khemino hontu, sabbe sattā bhavantu sukhitattā.',
   pronKo: '나 짜 쿳당 사마-짜레 낀찌, 예나 윈뉴- 빠레 우빠와뎃융;\n수키노 와- 케미노 혼뚜, 삽베 삿따- 바완뚜 수키딷따-.',
   translation: '현자들이 비난할 만한 사소한 것도 행하지 말라.\n모든 존재가 행복하고 안온하기를, 모든 존재가 행복한 자가 되기를.',
+  grammarNotes: [
+    '문장 구조: 전반부 — na+samācare(원망법 부정, 금지). yena(관계대명사 구격)가 이끄는 관계절이 부연. 후반부 — hontu/bhavantu(명령법 3인칭 복수, 기원문)',
+    '핵심 문법: samācare·upavadeyyuṃ은 원망법(optative). hontu(hoti의 명령법)와 bhavantu(bhavati의 명령법)는 3인칭 복수로 기원("~이기를") 표현',
+    '복합어: sukhita-attā(행복한+자아, 소유복합어 bahubbīhi, "행복한 자아를 가진 자들"). viññū는 vi+ñā(알다)에서 파생된 형용사(현명한 자)',
+    '연성법: kiñci는 kiṃ+ci(부정대명사, 무엇이든). upavadeyyuṃ에서 upa+vadati의 원망법 3인칭 복수형',
+  ],
 }
 
 export const VERSE_3_WORDS: VerseWord[] = [
@@ -79,6 +97,12 @@ export const VERSE_4 = {
   pali: 'Ye keci pāṇabhūtatthi, tasā vā thāvarā vā anavasesā;\ndīghā vā ye mahantā vā, majjhimā rassakāṇukathūlā.',
   pronKo: '예 게찌 빠-나부-땃티, 따사- 와- 타-와라- 와- 아나와세사-;\n디-가- 와- 예 마한따- 와-, 맛지마- 랏사까-누까투-라-.',
   translation: '살아있는 존재 어떤 것이든, 떨리는 것이든 흔들리지 않는 것이든 남김없이,\n긴 것이든 큰 것이든, 중간이든 짧은 것이든 미세한 것이든 거친 것이든.',
+  grammarNotes: [
+    '문장 구조: ye keci(관계대명사+부정대명사, "어떤 ~이든")로 시작하는 열거 구문. vā(또는)로 대비쌍을 나열: tasā/thāvarā, dīghā/mahantā 등. 독립절 없이 제5게송으로 이어짐',
+    '핵심 문법: 모든 형용사가 남성 복수 주격으로 sattā(존재들)를 수식. keci는 부정대명사 ki의 복수 주격+ci(어떤 ~이든). atthi는 존재동사 현재 3인칭 단수',
+    '복합어: pāṇa-bhūta(생명+존재, 동격복합어 dvanda). rassa-kāṇuka-thūlā(짧은+미세한+거친, 동격복합어 dvanda, 세 형용사 병렬). an-avasesā(부정접두사+남은 것, 남김없는)',
+    '연성법: pāṇabhūta+atthi → pāṇabhūtatthi (a+a → a, t+a → tt 중자음화)',
+  ],
 }
 
 export const VERSE_4_WORDS: VerseWord[] = [
@@ -99,6 +123,11 @@ export const VERSE_5 = {
   pali: 'Diṭṭhā vā ye ca adiṭṭhā, ye ca dūre vasanti avidūre;\nbhūtā vā sambhavesī vā, sabbe sattā bhavantu sukhitattā.',
   pronKo: '딧타- 와- 예 짜 아딧타-, 예 짜 두-레 와산띠 아위두-레;\n부-따- 와- 삼바웨시- 와-, 삽베 삿따- 바완뚜 수키딷따-.',
   translation: '보이는 것이든 보이지 않는 것이든, 멀리 사는 것이든 가까이 사는 것이든,\n이미 태어난 것이든 태어날 것이든, 모든 존재가 행복하기를.',
+  grammarNotes: [
+    '문장 구조: 제4게송의 열거가 계속됨. 대비쌍 구문(diṭṭhā/adiṭṭhā, dūre/avidūre, bhūtā/sambhavesī)으로 모든 존재를 망라. 마지막에 bhavantu sukhitattā로 기원문 완결',
+    '핵심 문법: diṭṭhā는 passati(보다)의 과거분사 diṭṭha의 남성 복수 주격. vasanti는 vasati(살다)의 현재 3인칭 복수. bhavantu는 bhavati의 명령법 3인칭 복수(기원)',
+    '복합어: a-diṭṭhā(부정접두사 a-+과거분사, 보이지 않는). a-vidūre(부정접두사 a-+멀리, 가까이). sam-bhavesī(sam+bhava+esī, 존재를 구하는 자, 태어나려는 자)',
+  ],
 }
 
 export const VERSE_5_WORDS: VerseWord[] = [
@@ -116,6 +145,12 @@ export const VERSE_6 = {
   pali: 'Na paro paraṃ nikubbetha, nātimaññetha katthaci naṃ kiñci;\nbyārosanā paṭighasaññā, nāññamaññassa dukkhamiccheyya.',
   pronKo: '나 빠로 빠랑 니꿉베타, 나-띠만녜타 깟타찌 낭 낀찌;\n뱌-로사나- 빠띠가산냐-, 나-ㄴ냐만냐ㅅ사 둑카밋쩨ㅇ야.',
   translation: '남을 속이지 말라, 어디서든 누구도 멸시하지 말라,\n분노와 적의의 생각으로 서로에게 괴로움을 바라지 말라.',
+  grammarNotes: [
+    '문장 구조: 세 개의 금지문(na+원망법). 1) na nikubbetha(속이지 말라), 2) na atimaññetha(멸시하지 말라), 3) na iccheyya(바라지 말라). 후반부 byārosanā paṭighasaññā는 구격으로 수단/원인',
+    '핵심 문법: nikubbetha·atimaññetha·iccheyya 모두 원망법(optative) 3인칭 단수로 금지/당위 표현. aññamaññassa는 상호대명사 aññamañña의 속격(서로에게)',
+    '복합어: byārosanā(vi+ā+rosanā, 분노/적의). paṭigha-saññā(적의+인식, 의존복합어 tappurisa). dukkham+iccheyya → dukkhamiccheyya(고통을+바라다)',
+    '연성법: na+atimaññetha → nātimaññetha (a+a → ā 모음연성). na+aññamaññassa → nāññamaññassa. dukkhaṃ+iccheyya → dukkhamiccheyya (ṃ→m 자음 앞)',
+  ],
 }
 
 export const VERSE_6_WORDS: VerseWord[] = [
@@ -136,6 +171,12 @@ export const VERSE_7 = {
   pali: 'Mātā yathā niyaṃ puttaṃ, āyusā ekaputtamanurakkhe;\nevampi sabbabhūtesu, mānasaṃ bhāvaye aparimāṇaṃ.',
   pronKo: '마-따- 야타- 니양 뿟땅, 아-유사- 에까뿟따마누락케;\n에왐삐 삽바부-떼수, 마-나상 바-와예 아빠리마-낭.',
   translation: '마치 어머니가 목숨을 다하여 하나뿐인 자식을 보호하듯,\n그와 같이 모든 존재에게 한량없는 마음을 닦을지어다.',
+  grammarNotes: [
+    '문장 구조: yathā~evaṃ(~와 같이~그와 같이) 비유 구문. 전반부: mātā(주어)+puttaṃ(목적어)+anurakkhe(원망법, 보호하다). 후반부: mānasaṃ(목적어)+bhāvaye(원망법, 닦다)',
+    '핵심 문법: anurakkhe·bhāvaye 모두 원망법(optative) 3인칭 단수로 당위/기원 표현. āyusā는 āyu(목숨)의 구격으로 수단("목숨을 바쳐"). niyaṃ은 "자기 자신의"(반사대명사)',
+    '복합어: eka-puttam(하나+아들, 의존복합어 tappurisa, 하나뿐인 아들). sabba-bhūtesu(모든+존재들, 처격). a-parimāṇaṃ(부정접두사+한량, 헤아릴 수 없는)',
+    '연성법: ekaputtam+anurakkhe → ekaputtamanurakkhe (m+a 결합). evaṃ+pi → evampi (ṃ→m 자음 앞)',
+  ],
 }
 
 export const VERSE_7_WORDS: VerseWord[] = [
@@ -158,6 +199,12 @@ export const VERSE_8 = {
   pali: 'Mettañca sabbalokasmiṃ, mānasaṃ bhāvaye aparimāṇaṃ;\nuddhaṃ adho ca tiriyañca, asambādhaṃ averaṃ asapattaṃ.',
   pronKo: '멧딴짜 삽바로까스밍, 마-나상 바-와예 아빠리마-낭;\n웃당 아토 짜 띠리얀짜, 아삼바-당 아웨랑 아사빳땅.',
   translation: '자비로써 온 세상에 한량없는 마음을 닦을지어다,\n위로 아래로 옆으로, 장애 없이 원한 없이 적의 없이.',
+  grammarNotes: [
+    '문장 구조: mettaṃ(대격, 자비를)+mānasaṃ(대격, 마음을)+bhāvaye(원망법). uddhaṃ adho tiriyañca(방향 부사 3개로 공간적 편재성 표현). asambādhaṃ~asapattaṃ(세 형용사가 mānasaṃ 수식)',
+    '핵심 문법: bhāvaye는 bhāveti(사역동사, 닦다/수행하다)의 원망법 3인칭 단수. asambādhaṃ·averaṃ·asapattaṃ은 모두 부정접두사 a-가 붙은 중성 단수 대격 형용사로 mānasaṃ을 수식',
+    '복합어: sabba-lokasmiṃ(모든+세계, 처격 단수). a-sambādhaṃ(부정+장애, 장애 없는). a-veraṃ(부정+원한). a-sapattaṃ(부정+적, 적 없는)',
+    '연성법: mettaṃ+ca → mettañca (ṃ+c → ñc 비음동화). tiriyaṃ+ca → tiriyañca (동일한 비음동화)',
+  ],
 }
 
 export const VERSE_8_WORDS: VerseWord[] = [
@@ -176,6 +223,12 @@ export const VERSE_9 = {
   pali: 'Tiṭṭhañcaraṃ nisinno vā, sayāno vā yāvatassa vigatamiddho;\netaṃ satiṃ adhiṭṭheyya, brahmametaṃ vihāraṃ idhamāhu.',
   pronKo: '띳탄짜랑 니신노 와-, 사야-노 와- 야-왓딷사 위가따밋토;\n에땅 사띵 아딧테ㅇ야, 브라흐마메땅 위하-랑 이다마-후.',
   translation: '서 있을 때나 걸을 때나 앉아 있을 때나,\n누워 있을 때나 잠들지 않는 한, 이 마음챙김을 확립할지니, 이것을 숭고한 삶이라 부른다.',
+  grammarNotes: [
+    '문장 구조: 네 가지 자세(iriyāpatha)를 현재분사/과거분사로 열거(tiṭṭhaṃ, caraṃ, nisinno, sayāno) + 조건절(yāvat+assa vigatamiddho). 주절: etaṃ satiṃ adhiṭṭheyya(원망법)',
+    '핵심 문법: tiṭṭhaṃ·caraṃ은 현재분사 남성 단수 주격, nisinno는 과거분사(nisīdati), sayāno는 현재분사(sayati). adhiṭṭheyya는 원망법 3인칭 단수. āhu는 āha(말하다)의 과거형 3인칭 복수(~라고 부른다)',
+    '복합어: vigata-middho(떠난+졸음, 의존복합어 tappurisa, 졸음이 떠난). brahma-m-etaṃ(숭고한+이것을, m은 연음 삽입자음)',
+    '연성법: tiṭṭhaṃ+caraṃ → tiṭṭhañcaraṃ (ṃ+c → ñc 비음동화). yāvat+assa → yāvatassa. idha+m+āhu → idhamāhu (연음 m 삽입)',
+  ],
 }
 
 export const VERSE_9_WORDS: VerseWord[] = [
@@ -199,6 +252,12 @@ export const VERSE_10 = {
   pali: 'Diṭṭhiñca anupagamma sīlavā, dassanena sampanno;\nkāmesu vineyya gedhaṃ, na hi jātu gabbhaseyyaṃ punaretīti.',
   pronKo: '딧틴짜 아누빠감마 시-라와-, 닷사네나 삼빤노;\n까-메수 위넷야 게당, 나 히 자-뚜 갑바셋양 뿌나레띠-띠.',
   translation: '견해에 빠지지 않고 계행을 갖추며, 바른 견해를 성취하여,\n감각적 욕망에 대한 탐욕을 버리면, 결코 다시 태에 들지 않으리라.',
+  grammarNotes: [
+    '문장 구조: 세 개의 절대분사(anupagamma, sampanno, vineyya)가 조건을 나열 → 주절 na eti(가지 않는다)로 결론. 아라한과의 성취를 묘사하는 결구',
+    '핵심 문법: anupagamma는 an+upagacchati의 절대분사(~에 다가가지 않고). vineyya는 vineti(제거하다)의 절대분사. sampanno는 sam+pāpuṇāti의 과거분사(성취한). eti는 i(가다)의 현재 3인칭 단수',
+    '복합어: gabbha-seyyaṃ(태+누움, 의존복합어 tappurisa, 태에 누움=재생). sīla-vā(계+가진, 소유접미사 -vant, 계를 가진 자)',
+    '연성법: diṭṭhiṃ+ca → diṭṭhiñca (ṃ+c → ñc 비음동화). puna+eti+iti → punaretīti (a+e → e 모음연성, i+i → ī). na+hi+jātu(강조 부사 결합, 결코~않다)',
+  ],
 }
 
 export const VERSE_10_WORDS: VerseWord[] = [

@@ -91,6 +91,7 @@ export interface VerseStep {
   pronKo: string
   translation: string
   words: VerseWord[]     // 단어별 정보
+  grammarNotes?: string[] // 문법 분석 (문장 구조, 핵심 문법, 복합어 등)
   note?: string
 }
 

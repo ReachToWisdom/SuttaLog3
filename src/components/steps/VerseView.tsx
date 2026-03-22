@@ -1,4 +1,4 @@
-// 경전 원문 표시 — 원문 + 번역 + 문법 글로서리(기본 표시)
+// 경전 원문 표시 — 원문 + 번역 + 문법 분석 + 단어 풀이
 import { useState } from 'react'
 import type { VerseStep, VerseWord } from '../../data/types'
 import { speakPali } from '../../utils/pali-tts'
@@ -12,7 +12,8 @@ interface Props {
 }
 
 export default function VerseView({ step, onNext, onBack }: Props) {
-  const [glossaryOpen, setGlossaryOpen] = useState(true)
+  const [grammarOpen, setGrammarOpen] = useState(true)
+  const [glossaryOpen, setGlossaryOpen] = useState(false)
   const [highlightIdx, setHighlightIdx] = useState<number | null>(null)
   const showPron = isPronVisible()
 
@@ -102,26 +103,63 @@ export default function VerseView({ step, onNext, onBack }: Props) {
           </p>
         </div>
 
-        {/* 📝 문법 글로서리 (기본 표시, 접기/펼치기) */}
+        {/* 📝 문법 포인트 (문장 구조/핵심 문법/복합어 분석) */}
+        {step.grammarNotes && step.grammarNotes.length > 0 && (
+          <div
+            className="rounded-xl overflow-hidden card-shadow mb-3"
+            style={{ border: '1px solid var(--color-border-light)' }}
+          >
+            <button
+              onClick={() => setGrammarOpen(prev => !prev)}
+              className="w-full flex items-center justify-between px-4 py-3 text-left"
+              style={{ background: 'var(--color-surface-elevated)' }}
+            >
+              <span className="text-xs font-bold tracking-wide" style={{ color: 'var(--color-primary)' }}>
+                📝 문법 포인트
+              </span>
+              <span className="text-xs" style={{ color: 'var(--color-text-tertiary)' }}>
+                {grammarOpen ? '접기 ▲' : '펼치기 ▼'}
+              </span>
+            </button>
+
+            {grammarOpen && (
+              <div className="px-4 py-3 flex flex-col gap-2.5" style={{ background: 'var(--color-surface)' }}>
+                {step.grammarNotes.map((note, idx) => (
+                  <div key={idx} className="flex items-start gap-2">
+                    <span
+                      className="text-xs font-bold mt-0.5 shrink-0"
+                      style={{ color: 'var(--color-primary)' }}
+                    >
+                      •
+                    </span>
+                    <p className="text-sm leading-relaxed" style={{ color: 'var(--color-text)' }}>
+                      {note}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* 📖 단어 풀이 (접기/펼치기, 기본 접힘) */}
         <div
           className="rounded-xl overflow-hidden card-shadow"
           style={{ border: '1px solid var(--color-border-light)' }}
         >
-          {/* 헤더 — 접기/펼치기 */}
           <button
             onClick={() => setGlossaryOpen(prev => !prev)}
             className="w-full flex items-center justify-between px-4 py-3 text-left"
             style={{ background: 'var(--color-surface-elevated)' }}
           >
-            <span className="text-xs font-bold tracking-wide" style={{ color: 'var(--color-primary)' }}>
-              📝 문법 설명
+            <span className="text-xs font-bold tracking-wide" style={{ color: 'var(--color-text-secondary)' }}>
+              📖 단어 풀이
             </span>
             <span className="text-xs" style={{ color: 'var(--color-text-tertiary)' }}>
               {glossaryOpen ? '접기 ▲' : '펼치기 ▼'}
             </span>
           </button>
 
-          {/* 단어별 문법 목록 */}
           {glossaryOpen && (
             <div className="px-4 py-2 flex flex-col gap-1" style={{ background: 'var(--color-surface)' }}>
               {step.words.map((word, idx) => (
@@ -133,7 +171,6 @@ export default function VerseView({ step, onNext, onBack }: Props) {
                     background: highlightIdx === idx ? 'var(--color-primary-glow)' : 'transparent',
                   }}
                 >
-                  {/* 빠알리 단어 */}
                   <span
                     className="pali-text text-sm font-semibold shrink-0"
                     style={{
@@ -143,7 +180,6 @@ export default function VerseView({ step, onNext, onBack }: Props) {
                   >
                     {word.pali}
                   </span>
-                  {/* 뜻 + 문법 */}
                   <div className="flex-1 min-w-0">
                     <span className="text-sm" style={{ color: 'var(--color-text)' }}>
                       {word.meaning}

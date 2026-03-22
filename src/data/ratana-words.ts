@@ -10,6 +10,11 @@ export const VERSE_0 = {
   pali: 'Yānīdha bhūtāni samāgatāni, bhummāni vā yāni va antalikkhe;\nsabbe va bhūtā sumanā bhavantu, athopi sakkacca suṇantu bhāsitaṃ.',
   pronKo: '야-니-다 부-따-니 사마-가따-니, 붐마-니 와- 야-니 와 안딸릭케;\n삽베 와 부-따- 수마나- 바완뚜, 아토삐 삭깟짜 수난뚜 바-시땅.',
   translation: '이 자리에 모인 존재들이여, 땅 위든 하늘이든,\n모든 존재가 행복하기를, 그리고 정성껏 말씀을 들으시라.',
+  grammarNotes: [
+    '문장 구조: 관계절(Yānīdha...samāgatāni) + 주절(bhavantu/suṇantu). 명령형 동사 2개가 핵심 술어',
+    '핵심 문법: bhavantu(명령형 3인칭 복수)와 suṇantu가 청원/축원의 의미. sumanā(su+mana)는 바후브비히 복합어로 "좋은 마음을 가진"',
+    '연성법: Yānīdha = yāni + idha (모음 축약). athopi = atha + api (모음 생략)',
+  ],
 }
 
 export const VERSE_0_WORDS: VerseWord[] = [
@@ -36,6 +41,12 @@ export const VERSE_1 = {
   pali: 'Yaṃ kiñci vittaṃ idha vā huraṃ vā, saggesu vā yaṃ ratanaṃ paṇītaṃ;\nna no samaṃ atthi tathāgatena, idampi buddhe ratanaṃ paṇītaṃ;\netena saccena suvatthi hotu.',
   pronKo: '양 낀찌 윗땅 이다 와- 후랑 와-, 삭게수 와- 양 라따낭 빠니-땅;\n나 노 사망 앗티 따타-가떼나, 이담삐 붓데 라따낭 빠니-땅;\n에떼나 삿쩨나 수왓티 호뚜.',
   translation: '이 세상이든 저 세상이든, 하늘에든, 어떤 보배가 있더라도\n여래와 같은 것은 없으니, 이것이 부처님 안의 뛰어난 보배이니라.\n이 진실로 인해 행복하기를.',
+  grammarNotes: [
+    '문장 구조: 양보절(Yaṃ kiñci...paṇītaṃ) + 부정 주절(na no samaṃ atthi) + 선언절(idampi...paṇītaṃ) + 축원절(etena...hotu)',
+    '핵심 문법: tathāgatena(구격)는 비교 대상을 나타냄 — "여래와 비교하여 같은 것이 없다". kiñci는 부정대명사(kiṃ+ci)',
+    '복합어: tathāgata = tathā(그렇게) + gata(간), "진리에 도달한 자". suvatthi = su(좋은) + atthi(존재), "안녕/행복"',
+    '연성법: idampi = idaṃ + api (ṃ→m 비음 동화)',
+  ],
 }
 
 export const VERSE_1_WORDS: VerseWord[] = [
@@ -67,6 +78,12 @@ export const VERSE_2 = {
   pali: 'Khayaṃ virāgaṃ amataṃ paṇītaṃ, yadajjhagā sakyamunī samāhito;\nna tena dhammena samatthi kiñci, idampi dhamme ratanaṃ paṇītaṃ;\netena saccena suvatthi hotu.',
   pronKo: '카양 위라-강 아마땅 빠니-땅, 야닷자가- 사꺄무니- 사마-히또;\n나 떼나 담메나 사맛티 낀찌, 이담삐 담메 라따낭 빠니-땅;\n에떼나 삿쩨나 수왓티 호뚜.',
   translation: '소멸과 이욕과 불사의 뛰어난 것을 석가모니께서 삼매에서 깨달으셨으니,\n그 법과 같은 것은 없으니, 이것이 법 안의 뛰어난 보배이니라.\n이 진실로 인해 행복하기를.',
+  grammarNotes: [
+    '문장 구조: 목적어 나열(Khayaṃ virāgaṃ amataṃ paṇītaṃ) + 관계절(yad...samāhito) + 부정절(na...kiñci). 대격 목적어가 문두에 강조 배치',
+    '핵심 문법: ajjhagā(adhigacchati의 과거형, 3인칭 단수)는 "깨달았다/도달했다". samāhito(과거분사)는 주어 sakyamunī의 상태를 서술 — "삼매에 든 채로"',
+    '복합어: virāga = vi(떠남) + rāga(탐욕). amata = a(부정) + mata(죽은), 열반의 동의어',
+    '연성법: yadajjhagā = yaṃ + ajjhagā (ṃ→d 자음 삽입). samatthi = samaṃ + atthi (ṃ 탈락 + 자음 중복)',
+  ],
 }
 
 export const VERSE_2_WORDS: VerseWord[] = [
@@ -89,6 +106,12 @@ export const VERSE_3 = {
   pali: 'Yaṃ buddhaseṭṭho parivaṇṇayī suciṃ, samādhimānantarikaññamāhu;\nsamādhinā tena samo na vijjati, idampi dhamme ratanaṃ paṇītaṃ;\netena saccena suvatthi hotu.',
   pronKo: '양 붓다셋토 빠리완나이- 수찡, 사마-디마-난따리깐냐마-후;\n사마-디나- 떼나 사모 나 윗자띠, 이담삐 담메 라따낭 빠니-땅;\n에떼나 삿쩨나 수왓티 호뚜.',
   translation: '최상의 부처님이 찬탄하신 청정한 삼매를 간격 없는 것이라 하니,\n그 삼매와 같은 것은 없으니, 이것이 법 안의 뛰어난 보배이니라.\n이 진실로 인해 행복하기를.',
+  grammarNotes: [
+    '문장 구조: 관계절(Yaṃ...suciṃ) + 인용절(samādhiṃ...āhu) + 부정 주절(samo na vijjati). āhu는 "~라고 말했다"(인용 동사)',
+    '핵심 문법: parivaṇṇayī(과거형 3인칭 단수, parivaṇṇeti)는 "찬탄하다". vijjati(vindati의 수동형)는 "발견되다" — 부정문으로 "같은 것이 존재하지 않는다"',
+    '복합어: buddhaseṭṭho = buddha(깨달은 자) + seṭṭha(최상의), 띠뿝빠다 따뿝뿌리사. ānantarika = an(부정) + antara(간격) + ika(형용사 접미사)',
+    '연성법: samādhimānantarikaññamāhu = samādhiṃ + ānantarikaṃ + āhu (3단 연성, ṃ→m, ṃ→ñ+ñ)',
+  ],
 }
 
 export const VERSE_3_WORDS: VerseWord[] = [
@@ -109,6 +132,12 @@ export const VERSE_4 = {
   pali: 'Ye puggalā aṭṭha sataṃ pasatthā, cattāri etāni yugāni honti;\nte dakkhiṇeyyā sugatassa sāvakā, etesu dinnāni mahapphalāni;\nidampi saṅghe ratanaṃ paṇītaṃ;\netena saccena suvatthi hotu.',
   pronKo: '예 뿍갈라- 앗타 사땅 빠삿타-, 짯따-리 에따-니 유가-니 혼띠;\n떼 닥키네이야- 수가땃사 사-와까-, 에떼수 딘나-니 마합팔라-니;\n이담삐 상게 라따낭 빠니-땅;\n에떼나 삿쩨나 수왓티 호뚜.',
   translation: '선인들이 찬탄한 여덟 성인, 네 쌍이 되니,\n그들은 선서의 제자로서 공양 받을 만하니, 그들에게 보시하면 큰 과보가 있나니.\n이것이 승가 안의 뛰어난 보배이니라. 이 진실로 인해 행복하기를.',
+  grammarNotes: [
+    '문장 구조: 관계절(Ye...pasatthā) + 주절1(cattāri...honti) + 주절2(te...sāvakā) + 결과절(etesu...mahapphalāni). 4쌍8인의 성인을 설명하는 복합 구조',
+    '핵심 문법: pasatthā(pasaṃsati의 과거분사)는 "찬탄된". dakkhiṇeyyā(의무분사, -eyya 접미사)는 "공양 받을 만한". sataṃ(sant의 속격 복수)은 "선인들의"',
+    '복합어: mahapphalāni = mahā + phalāni (ā→a 단축 + pp 자음중복), "큰 과보". sugatassa = su(좋은) + gata(간 자), 부처님의 별칭',
+    '문법 포인트: etesu(처격 복수)는 "그들에게"로 보시의 대상. dinnāni(deti의 과거분사, 중성 복수)는 "주어진 것들"',
+  ],
 }
 
 export const VERSE_4_WORDS: VerseWord[] = [
@@ -136,6 +165,12 @@ export const VERSE_5 = {
   pali: 'Ye suppayuttā manasā daḷhena, nikkāmino gotamasāsanamhi;\nte pattipattā amataṃ vigayha, laddhā mudhā nibbutiṃ bhuñjamānā;\nidampi saṅghe ratanaṃ paṇītaṃ;\netena saccena suvatthi hotu.',
   pronKo: '예 숩빠윳따- 마나사- 달헤나, 닉까-미노 고따마사-사남히;\n떼 빳띠빳따- 아마땅 위가이하, 랃다- 무다- 닙부띵 분자마-나-;\n이담삐 상게 라따낭 빠니-땅;\n에떼나 삿쩨나 수왓티 호뚜.',
   translation: '굳건한 마음으로 잘 정진하여, 고따마 가르침에서 떠남이 없는 이들,\n불사에 들어가 도달하여 얻은 적멸의 즐거움을 누리니.\n이것이 승가 안의 뛰어난 보배이니라. 이 진실로 인해 행복하기를.',
+  grammarNotes: [
+    '문장 구조: 관계절(Ye...sāsanamhi) + 주절(te...bhuñjamānā). 절대분사 vigayha, laddhā가 순차적 행위를 연결 — "들어가고 → 얻어서 → 누리는"',
+    '핵심 문법: bhuñjamānā(현재분사, 남성 복수 주격)는 진행 중인 향유를 나타냄. manasā daḷhena(구격)는 수단/방법 — "굳건한 마음으로"',
+    '복합어: suppayuttā = su(잘) + payutta(정진한), 접두사 su-로 강조. gotamasāsanamhi = gotama(고유명) + sāsana(가르침) + mhi(처격 어미)',
+    '절대분사 연쇄: vigayha(vigāhati) → laddhā(labhati) 순서로 "불사에 들어가서 → 얻어서"의 시간 순서를 표현',
+  ],
 }
 
 export const VERSE_5_WORDS: VerseWord[] = [
