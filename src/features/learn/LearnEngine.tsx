@@ -41,7 +41,13 @@ export default function LearnEngine({ reviewMode = false }: LearnEngineProps) {
   const lesson = useMemo(() => getLessonById(lessonId ?? ''), [lessonId])
 
   // 이어하기: 리뷰 모드에서는 항상 처음부터
-  const savedStep = useMemo(() => reviewMode ? 0 : getSavedStep(lessonId ?? ''), [lessonId, reviewMode])
+  // 저장된 스텝이 현재 스텝 수를 초과하면 0으로 리셋 (버전 업데이트 대비)
+  const savedStep = useMemo(() => {
+    if (reviewMode) return 0
+    const saved = getSavedStep(lessonId ?? '')
+    const total = lesson?.steps?.length ?? 0
+    return (total > 0 && saved >= total) ? 0 : saved
+  }, [lessonId, reviewMode, lesson])
 
   const [currentStep, setCurrentStep] = useState(savedStep)
   const [hearts, setHearts] = useState(HEARTS_MAX)
@@ -158,7 +164,17 @@ export default function LearnEngine({ reviewMode = false }: LearnEngineProps) {
     )
   }
 
-  const step: Step = steps[currentStep]
+  const step: Step | undefined = steps[currentStep]
+
+  // 스텝이 없으면 처음으로 리셋
+  if (!step) {
+    if (currentStep !== 0) {
+      setCurrentStep(0)
+      setStepKey(prev => prev + 1)
+      localStorage.removeItem(resumeKey(lessonId ?? ''))
+    }
+    return null
+  }
 
   return (
     <div className="min-h-screen flex flex-col" style={{ background: 'var(--color-bg)' }}>
