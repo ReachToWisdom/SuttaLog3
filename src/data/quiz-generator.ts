@@ -231,16 +231,16 @@ export function genWritingArrange(
   }
 }
 
-// ── 문법 퀴즈 생성 (산문 경전용) ──
+// ── 실용 퀴즈 생성 (수행 중심 — 학문적 분석 없이 뜻 이해에 집중) ──
 
-/** TeachGrammarStep의 예시/테이블에서 문법+문장구성 퀴즈 자동 생성 */
+/** 문법 예시에서 "이 단어/문장의 뜻은?" 퀴즈 생성 */
 export function generateGrammarQuizzes(
   grammarSteps: import('./types').TeachGrammarStep[],
 ): (QuizStep | ArrangeReadingStep | ArrangeWritingStep)[] {
   const quizzes: (QuizStep | ArrangeReadingStep | ArrangeWritingStep)[] = []
 
   for (const step of grammarSteps) {
-    // 예시에서 퀴즈: 빠알리 → 의미 매칭
+    // 뜻 퀴즈: "이 빠알리 표현의 뜻은?"
     if (step.examples.length >= 4) {
       const target = step.examples[Math.floor(Math.random() * step.examples.length)]
       const wrongs = shuffle(step.examples.filter(e => e !== target))
@@ -249,66 +249,50 @@ export function generateGrammarQuizzes(
       const options = shuffle([target.meaning, ...wrongs])
       quizzes.push({
         type: 'quiz',
-        question: `"${target.pali}"의 문법적 의미는?`,
+        question: `"${target.pali}"의 뜻은?`,
         options,
         answer: options.indexOf(target.meaning),
         explanation: {
-          correct: `${target.pali} = ${target.breakdown}`,
-          detail: `${target.meaning}`,
+          correct: `${target.pali} = "${target.meaning}"`,
+          detail: target.breakdown,
           tip: step.tip,
         },
       })
     }
 
-    // 테이블에서 퀴즈: 격/형태 → 어미 매칭
+    // 테이블에서 퀴즈: "이 단어의 뜻은?"
     if (step.table && step.table.rows.length >= 4) {
       const row = step.table.rows[Math.floor(Math.random() * step.table.rows.length)]
-      const wrongEndings = shuffle(step.table.rows.filter(r => r !== row))
+      const wrongMeanings = shuffle(step.table.rows.filter(r => r !== row))
         .slice(0, 3)
-        .map(r => r.ending)
-      const options = shuffle([row.ending, ...wrongEndings])
+        .map(r => r.meaning)
+      const options = shuffle([row.meaning, ...wrongMeanings])
       quizzes.push({
         type: 'quiz',
-        question: `${step.table.label}에서 ${row.case}의 어미는?`,
+        question: `"${row.example}"의 뜻은?`,
         options,
-        answer: options.indexOf(row.ending),
+        answer: options.indexOf(row.meaning),
         explanation: {
-          correct: `${row.case}: ${row.ending} (예: ${row.example} = ${row.meaning})`,
+          correct: `${row.example} = "${row.meaning}"`,
           tip: step.tip,
-        },
-      })
-
-      // 예시 → 격 판별 퀴즈
-      const row2 = step.table.rows[Math.floor(Math.random() * step.table.rows.length)]
-      const wrongCases = shuffle(step.table.rows.filter(r => r !== row2))
-        .slice(0, 3)
-        .map(r => r.case)
-      const caseOptions = shuffle([row2.case, ...wrongCases])
-      quizzes.push({
-        type: 'quiz',
-        question: `"${row2.example}"은(는) 어떤 형태입니까?`,
-        options: caseOptions,
-        answer: caseOptions.indexOf(row2.case),
-        explanation: {
-          correct: `${row2.example} = ${row2.meaning} (${row2.case}, 어미: ${row2.ending})`,
         },
       })
     }
 
-    // 분해(breakdown) 퀴즈
+    // 역방향: 뜻 보고 빠알리 맞추기
     if (step.examples.length >= 3) {
       const ex = step.examples[Math.floor(Math.random() * step.examples.length)]
-      const wrongBreakdowns = shuffle(step.examples.filter(e => e !== ex))
+      const wrongPalis = shuffle(step.examples.filter(e => e !== ex))
         .slice(0, 3)
-        .map(e => e.breakdown)
-      const bdOptions = shuffle([ex.breakdown, ...wrongBreakdowns])
+        .map(e => e.pali)
+      const paliOptions = shuffle([ex.pali, ...wrongPalis])
       quizzes.push({
         type: 'quiz',
-        question: `"${ex.pali}"의 문법적 분해는?`,
-        options: bdOptions,
-        answer: bdOptions.indexOf(ex.breakdown),
+        question: `"${ex.meaning}"에 해당하는 빠알리는?`,
+        options: paliOptions,
+        answer: paliOptions.indexOf(ex.pali),
         explanation: {
-          correct: `${ex.pali} = ${ex.breakdown} → "${ex.meaning}"`,
+          correct: `"${ex.meaning}" = ${ex.pali}`,
         },
       })
     }
