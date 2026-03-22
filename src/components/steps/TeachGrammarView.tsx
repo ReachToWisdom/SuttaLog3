@@ -1,6 +1,8 @@
-// 문법 설명 스텝 — 단어 터치 시 발음 재생
+// 문법 설명 스텝 — 단어 터치 시 발음 재생 + 한글 발음 자동 표시
 import type { TeachGrammarStep } from '../../data/types'
 import { speakPali } from '../../utils/pali-tts'
+import { autoPronoKo } from '../../utils/auto-pronko'
+import { isPronVisible } from '../../utils/pron-display'
 
 interface Props {
   step: TeachGrammarStep
@@ -8,12 +10,14 @@ interface Props {
   onBack?: () => void
 }
 
-/** 빠알리 텍스트를 터치하면 발음 재생 */
+/** 빠알리 텍스트 + 한글 발음 + 터치 재생 */
 function PaliTap({ text, className, style }: {
   text: string
   className?: string
   style?: React.CSSProperties
 }) {
+  const showPron = isPronVisible()
+
   const handleTap = () => {
     const soundOn = localStorage.getItem('suttalog3-sound') !== 'off'
     if (soundOn) speakPali(text)
@@ -22,11 +26,18 @@ function PaliTap({ text, className, style }: {
   return (
     <span
       onClick={handleTap}
-      className={`cursor-pointer active:opacity-60 transition-opacity ${className ?? ''}`}
+      className={`cursor-pointer active:opacity-60 transition-opacity inline-flex flex-col items-start ${className ?? ''}`}
       style={style}
     >
-      {text}
-      <span className="text-xs ml-1 opacity-40">🔊</span>
+      <span className="flex items-center gap-1">
+        {text}
+        <span className="text-xs opacity-40">🔊</span>
+      </span>
+      {showPron && (
+        <span className="text-xs" style={{ color: 'var(--color-primary)' }}>
+          {autoPronoKo(text)}
+        </span>
+      )}
     </span>
   )
 }

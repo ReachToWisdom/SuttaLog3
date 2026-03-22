@@ -186,6 +186,13 @@ export default function LearnEngine({ reviewMode = false }: LearnEngineProps) {
         onBack={currentStep > 0 ? handleBack : undefined}
       />
 
+      {/* 상단 머릿말: 지금 뭐 배우고 있는지 */}
+      <div className="px-4 py-1.5 max-w-lg mx-auto w-full">
+        <span className="text-xs font-medium" style={{ color: 'var(--color-text-tertiary)' }}>
+          {lesson.icon} {lesson.title} · {lesson.subtitle}
+        </span>
+      </div>
+
       <div className="flex-1 max-w-lg mx-auto w-full overflow-y-auto" key={stepKey}>
         {renderStep(step, advance, handleCorrect, handleWrong, currentStep > 0 ? handleBack : undefined, handleSkip)}
       </div>
