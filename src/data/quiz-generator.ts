@@ -351,7 +351,66 @@ export function generateGrammarQuizzes(
       })
     }
 
-    // (테이블/예시 기반 arrange 퀴즈는 fill-blank로 대체됨)
+    // ── 문법 맥락 퀴즈 (헷갈리기 쉬운 쌍/형태 구분) ──
+
+    // 테이블에서: 같은 어근의 다른 형태 구분
+    // "buddhassa"와 "buddhaṃ"의 차이는?
+    if (step.table && step.table.rows.length >= 3) {
+      const rows = shuffle([...step.table.rows])
+      const r1 = rows[0]
+      const r2 = rows[1]
+      if (r1.example !== r2.example) {
+        const options = shuffle([
+          `"${r1.example}"은 "${r1.meaning}", "${r2.example}"은 "${r2.meaning}"`,
+          `"${r1.example}"은 "${r2.meaning}", "${r2.example}"은 "${r1.meaning}"`,
+          `둘 다 "${r1.meaning}"`,
+          `둘 다 "${r2.meaning}"`,
+        ])
+        const correct = options[0]
+        quizzes.push({
+          type: 'quiz',
+          question: `"${r1.example}"과 "${r2.example}"의 차이는?`,
+          options: shuffle(options),
+          answer: shuffle(options).indexOf(correct),
+          explanation: {
+            correct: `${r1.example} = ${r1.meaning} (${r1.ending})\n${r2.example} = ${r2.meaning} (${r2.ending})`,
+            tip: '같은 어근이라도 어미에 따라 뜻이 달라집니다.',
+          },
+        })
+        // answer 재계산
+        const q = quizzes[quizzes.length - 1] as QuizStep
+        q.answer = q.options.indexOf(correct)
+      }
+    }
+
+    // 예시에서: 반대/유사 쌍 구분
+    // "anattā vs attā", "aniccaṃ vs niccaṃ" 등
+    if (step.examples.length >= 2) {
+      for (let i = 0; i < step.examples.length - 1; i++) {
+        const e1 = step.examples[i]
+        const e2 = step.examples[i + 1]
+        // 비슷한 형태인지 확인 (3글자 이상 공통)
+        const common = e1.pali.slice(0, 3) === e2.pali.slice(0, 3) ||
+                       e1.pali.includes(e2.pali) || e2.pali.includes(e1.pali)
+        if (common && e1.meaning !== e2.meaning) {
+          const options = shuffle([e1.meaning, e2.meaning,
+            ...shuffle(step.examples.filter(e => e !== e1 && e !== e2)).slice(0, 2).map(e => e.meaning)
+          ].slice(0, 4))
+          quizzes.push({
+            type: 'quiz',
+            question: `"${e1.pali}"은(는) "${e2.pali}"과 어떻게 다릅니까?\n"${e1.pali}"의 뜻은?`,
+            options,
+            answer: options.indexOf(e1.meaning),
+            explanation: {
+              correct: `${e1.pali} = "${e1.meaning}"\n${e2.pali} = "${e2.meaning}"`,
+              detail: `${e1.breakdown}\n${e2.breakdown}`,
+              tip: '비슷해 보이지만 접두사/어미/격에 따라 뜻이 완전히 달라집니다.',
+            },
+          })
+          break // 한 쌍만
+        }
+      }
+    }
   }
 
   return shuffle(quizzes)
