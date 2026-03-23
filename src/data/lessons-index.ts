@@ -135,20 +135,127 @@ function buildLesson01(): Step[] {
 }
 
 // ══════════════════════════════════════════
-// 교재 2~8과: a-어간 남성 격변화
-// PRIMER_GRAMMAR[0-1]: a-어간 남성 단수/복수
+// 교재 2과: 목적격
+// PRIMER_GRAMMAR[0]
 // ══════════════════════════════════════════
-function buildLesson0208(): Step[] {
+function buildLesson02(): Step[] {
   const steps: Step[] = []
   steps.push({
     type: 'intro',
-    title: '2~8과: a-어간 남성 격변화',
-    subtitle: '주격부터 전체 격변화 정리',
-    description: '빠알리어에서 가장 흔한 명사 유형인 a-어간 남성 명사의 8격 단수·복수를 배웁니다.',
+    title: '2과: 목적격',
+    subtitle: '~을/를 (-ṃ/-e)',
+    description: '동작의 대상을 나타내는 목적격을 배웁니다. 1과에서 배운 주격(-o)과 비교하면서 익히세요.',
     icon: '📐',
   })
-  // a-어간 남성 단수/복수
-  steps.push(...PRIMER_GRAMMAR.slice(0, 2))
+  steps.push(PRIMER_GRAMMAR[0])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR[0]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 3과: 구격
+// PRIMER_GRAMMAR[1]
+// ══════════════════════════════════════════
+function buildLesson03(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '3과: 구격',
+    subtitle: '~에 의해, ~(으)로 (-ena/-ehi)',
+    description: '행위의 수단·도구·원인을 나타내는 구격을 배웁니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR[1])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR[1]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 4과: 여격·탈격
+// PRIMER_GRAMMAR[2]
+// ══════════════════════════════════════════
+function buildLesson04(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '4과: 여격·탈격',
+    subtitle: '~에게 (-ssa) · ~로부터 (-ā/-smā)',
+    description: '여격은 "~에게" 주는 대상, 탈격은 "~로부터" 떠나는 기점을 나타냅니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR[2])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR[2]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 5과: 소유격
+// PRIMER_GRAMMAR[3]
+// ══════════════════════════════════════════
+function buildLesson05(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '5과: 소유격',
+    subtitle: '~의 (-ssa/-ānaṃ)',
+    description: '소유·소속을 나타내는 소유격을 배웁니다. 형태는 여격과 같지만 의미가 다릅니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR[3])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR[3]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 6과: 처소격
+// PRIMER_GRAMMAR[4]
+// ══════════════════════════════════════════
+function buildLesson06(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '6과: 처소격',
+    subtitle: '~에서 (-e/-smiṃ/-esu)',
+    description: '장소·시간·조건을 나타내는 처소격을 배웁니다. 경전 서문의 "Jetavane viharati"가 대표적.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR[4])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR[4]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 7과: 호격
+// PRIMER_GRAMMAR[5]
+// ══════════════════════════════════════════
+function buildLesson07(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '7과: 호격',
+    subtitle: '~이여 (-a/-ā)',
+    description: '부르는 대상을 나타내는 호격을 배웁니다. 경전에서 bhikkhave(비구들이여)가 가장 흔합니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR[5])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR[5]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 8과: 전체 격변화 정리
+// PRIMER_GRAMMAR[6]
+// ══════════════════════════════════════════
+function buildLesson08(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '8과: a-어간 남성 전체 격변화',
+    subtitle: '단수+복수 한 테이블로 정리',
+    description: '2~7과에서 배운 격변화를 전체 정리합니다. 격변화 기초 퀴즈도 함께 풀어봅니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR[6])
   steps.push(...generateGrammarBasicsQuizzes())
   return steps
 }
@@ -191,7 +298,7 @@ function buildLesson10(): Step[] {
 
 // ══════════════════════════════════════════
 // 교재 11과: a-어간 중성명사
-// PRIMER_GRAMMAR[4-5]: a-어간 중성 단수/복수
+// PRIMER_GRAMMAR[9-10]: a-어간 중성 단수/복수
 // ══════════════════════════════════════════
 function buildLesson11(): Step[] {
   const steps: Step[] = []
@@ -202,14 +309,14 @@ function buildLesson11(): Step[] {
     description: 'a-어간 중성명사는 남성과 거의 같지만, 주격·목적격·호격만 다릅니다. dukkhaṃ, sukhaṃ, cittaṃ 등이 대표적입니다.',
     icon: '📐',
   })
-  steps.push(...PRIMER_GRAMMAR.slice(4, 6))
-  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(4, 6)))
+  steps.push(...PRIMER_GRAMMAR.slice(9, 11))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(9, 11)))
   return steps
 }
 
 // ══════════════════════════════════════════
 // 교재 12~13과: 동사 현재형
-// PRIMER_GRAMMAR[2-3]: 동사 현재형 기본/10선
+// PRIMER_GRAMMAR[7-8]: 동사 현재형 기본/10선
 // ══════════════════════════════════════════
 function buildLesson1213(): Step[] {
   const steps: Step[] = []
@@ -220,8 +327,8 @@ function buildLesson1213(): Step[] {
     description: '빠알리어 동사 현재형의 인칭·수별 활용을 배우고, 경전에서 가장 자주 나오는 동사 10개를 익힙니다.',
     icon: '📐',
   })
-  steps.push(...PRIMER_GRAMMAR.slice(2, 4))
-  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(2, 4)))
+  steps.push(...PRIMER_GRAMMAR.slice(7, 9))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(7, 9)))
   return steps
 }
 
@@ -320,7 +427,7 @@ function buildLesson16(): Step[] {
 
 // ══════════════════════════════════════════
 // 교재 17과: 과거형
-// PRIMER_GRAMMAR[9-10]: 과거형 Aorist 기본/불규칙
+// PRIMER_GRAMMAR[14-15]: 과거형 Aorist 기본/불규칙
 // ══════════════════════════════════════════
 function buildLesson17(): Step[] {
   const steps: Step[] = []
@@ -331,14 +438,14 @@ function buildLesson17(): Step[] {
     description: '과거를 나타내는 Aorist 형태와 경전에서 자주 나오는 불규칙 과거형을 배웁니다.',
     icon: '📐',
   })
-  steps.push(...PRIMER_GRAMMAR.slice(9, 11))
-  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(9, 11)))
+  steps.push(...PRIMER_GRAMMAR.slice(14, 16))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(14, 16)))
   return steps
 }
 
 // ══════════════════════════════════════════
 // 교재 18과: ā-어간 여성명사
-// PRIMER_GRAMMAR[6-7]: ā-어간 여성 단수/복수
+// PRIMER_GRAMMAR[11-12]: ā-어간 여성 단수/복수
 // ══════════════════════════════════════════
 function buildLesson18(): Step[] {
   const steps: Step[] = []
@@ -349,8 +456,8 @@ function buildLesson18(): Step[] {
     description: '-ā로 끝나는 여성 명사의 격변화를 배웁니다. paññā(지혜), saddhā(믿음) 등이 대표적입니다.',
     icon: '📐',
   })
-  steps.push(...PRIMER_GRAMMAR.slice(6, 8))
-  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(6, 8)))
+  steps.push(...PRIMER_GRAMMAR.slice(11, 13))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(11, 13)))
   return steps
 }
 
@@ -442,7 +549,7 @@ function buildLesson19(): Step[] {
 
 // ══════════════════════════════════════════
 // 교재 20과: i-어간 여성명사
-// PRIMER_GRAMMAR[12]: i-어간 여성 명사
+// PRIMER_GRAMMAR[17]: i-어간 여성 명사
 // ══════════════════════════════════════════
 function buildLesson20(): Step[] {
   const steps: Step[] = []
@@ -453,8 +560,8 @@ function buildLesson20(): Step[] {
     description: '-i로 끝나는 여성 명사의 격변화를 배웁니다. bhūmi(땅), ratti(밤) 등이 대표적입니다.',
     icon: '📐',
   })
-  steps.push(PRIMER_GRAMMAR[12])
-  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR[12]]))
+  steps.push(PRIMER_GRAMMAR[17])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR[17]]))
   return steps
 }
 
@@ -549,8 +656,8 @@ function buildLesson23(): Step[] {
 
 // ══════════════════════════════════════════
 // 교재 24~29과: i/u-어간 격변화 + 자음어간
-// PRIMER_GRAMMAR[11]: i-어간 남성/중성
-// PRIMER_GRAMMAR[13-14]: u-어간 남성/여성
+// PRIMER_GRAMMAR[16]: i-어간 남성/중성
+// PRIMER_GRAMMAR[18-19]: u-어간 남성/여성
 // PRIMER_GRAMMAR_2[14-15]: 자음어간 명사
 // ══════════════════════════════════════════
 function buildLesson2429(): Step[] {
@@ -563,14 +670,14 @@ function buildLesson2429(): Step[] {
     icon: '📐',
   })
   // i-어간 남성/중성
-  steps.push(PRIMER_GRAMMAR[11])
+  steps.push(PRIMER_GRAMMAR[16])
   // u-어간 남성, u-어간 여성
-  steps.push(...PRIMER_GRAMMAR.slice(13, 15))
+  steps.push(...PRIMER_GRAMMAR.slice(18, 20))
   // 자음어간 명사 2스텝
   steps.push(...PRIMER_GRAMMAR_2.slice(14, 16))
   steps.push(...generateGrammarQuizzes([
-    PRIMER_GRAMMAR[11],
-    ...PRIMER_GRAMMAR.slice(13, 15),
+    PRIMER_GRAMMAR[16],
+    ...PRIMER_GRAMMAR.slice(18, 20),
     ...PRIMER_GRAMMAR_2.slice(14, 16),
   ]))
   return steps
@@ -613,7 +720,7 @@ function buildAnattaSteps(): Step[] {
 
 // ══════════════════════════════════════════
 // 교재 30~32과: 형용사·대명사·복합어·연성법·총정리
-// PRIMER_GRAMMAR[8]: 형용사
+// PRIMER_GRAMMAR[13]: 형용사
 // PRIMER_GRAMMAR_2[0-3]: 대명사 4종
 // PRIMER_GRAMMAR_3 전체: 복합어~총정리
 // ══════════════════════════════════════════
@@ -627,13 +734,13 @@ function buildLesson3032(): Step[] {
     icon: '📐',
   })
   // 형용사
-  steps.push(PRIMER_GRAMMAR[8])
+  steps.push(PRIMER_GRAMMAR[13])
   // 대명사 4종 (인칭/지시/관계/의문)
   steps.push(...PRIMER_GRAMMAR_2.slice(0, 4))
   // 복합어, 연성법, 접두사/접미사, 수사/비교/불변어, 총정리
   steps.push(...PRIMER_GRAMMAR_3)
   steps.push(...generateGrammarQuizzes([
-    PRIMER_GRAMMAR[8],
+    PRIMER_GRAMMAR[13],
     ...PRIMER_GRAMMAR_2.slice(0, 4),
     ...PRIMER_GRAMMAR_3,
   ]))
@@ -720,7 +827,13 @@ const LESSON_META = [
   { id: 'primer-01', title: '1과: 자모와 발음', subtitle: '모음 8 · 자음 33', icon: '🔤', category: 'grammar' as const, builder: buildLesson01 },
 
   // 교재 2~8과
-  { id: 'primer-02-08', title: '2~8과: a-어간 남성 격변화', subtitle: '주격→전체 정리', icon: '📐', category: 'grammar' as const, builder: buildLesson0208 },
+  { id: 'primer-02', title: '2과: 목적격', subtitle: '~을/를 (-ṃ/-e)', icon: '📐', category: 'grammar' as const, builder: buildLesson02 },
+  { id: 'primer-03', title: '3과: 구격', subtitle: '~에 의해 (-ena/-ehi)', icon: '📐', category: 'grammar' as const, builder: buildLesson03 },
+  { id: 'primer-04', title: '4과: 여격·탈격', subtitle: '~에게·~로부터', icon: '📐', category: 'grammar' as const, builder: buildLesson04 },
+  { id: 'primer-05', title: '5과: 소유격', subtitle: '~의 (-ssa/-ānaṃ)', icon: '📐', category: 'grammar' as const, builder: buildLesson05 },
+  { id: 'primer-06', title: '6과: 처소격', subtitle: '~에서 (-e/-esu)', icon: '📐', category: 'grammar' as const, builder: buildLesson06 },
+  { id: 'primer-07', title: '7과: 호격', subtitle: '~이여 (-a/-ā)', icon: '📐', category: 'grammar' as const, builder: buildLesson07 },
+  { id: 'primer-08', title: '8과: 전체 격변화 정리', subtitle: '단수+복수 총정리', icon: '📐', category: 'grammar' as const, builder: buildLesson08 },
 
   // 교재 9과
   { id: 'primer-09', title: '9과: 절대분사', subtitle: '-tvā/-tvāna', icon: '📐', category: 'grammar' as const, builder: buildLesson09 },

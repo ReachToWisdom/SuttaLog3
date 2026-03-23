@@ -6,62 +6,190 @@ import type { TeachGrammarStep } from './types'
 export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
 
   // ═══════════════════════════════════════
-  // Lesson 2: a-어간 남성 명사
+  // 2과: 목적격 (~을/를)
   // ═══════════════════════════════════════
 
   {
     type: 'teach-grammar',
-    title: 'a-어간 남성 명사: 단수 격변화',
+    title: '2과: 목적격 (~을/를)',
     description:
-      '빠알리어에서 가장 흔한 명사 유형. -a로 끝나는 남성 명사.',
+      '동작의 대상을 나타내는 목적격. 단수 -ṃ, 복수 -e.',
     examples: [
-      { pali: 'Gāravo ca nivāto ca', breakdown: 'gārava + o / nivāta + o', meaning: '존경과 겸손이 (주격) — 행복경 8게송', highlight: 'o' },
-      { pali: 'Anāthapiṇḍikassa ārāme', breakdown: 'Anāthapiṇḍika + ssa / ārāma + e', meaning: '아나타삔디까의 동산에서 (소유격+처소격) — 행복경 서문', highlight: 'ssa' },
-      { pali: 'Jetavane viharati', breakdown: 'Jetavana + e / vi + harati', meaning: '제따와나에서 머무시다 (처소격) — 행복경 서문', highlight: 'e' },
-      { pali: 'vinayo ca susikkhito', breakdown: 'vinaya + o / su + sikkhita + o', meaning: '잘 배운 계율이 (주격) — 행복경 4게송', highlight: 'o' },
+      { pali: 'Tathāgato dhammaṃ bhāsati', breakdown: 'dhamma + ṃ', meaning: '여래는 법을 말한다 (목적격 단수)', highlight: 'ṃ', source: 'Pali Primer L2' },
+      { pali: 'Buddhaṃ vandati', breakdown: 'Buddha + ṃ', meaning: '붓다를 경배한다 (목적격 단수)', highlight: 'ṃ', source: 'Pali Primer L2' },
+      { pali: 'Vihāraṃ gacchati', breakdown: 'vihāra + ṃ', meaning: '사원에 간다 (목적격 단수)', highlight: 'ṃ', source: 'Pali Primer L2' },
+      { pali: 'Ekaṃ samayaṃ', breakdown: 'eka + ṃ / samaya + ṃ', meaning: '한 때에 (목적격) — 행복경 서문', highlight: 'ṃ', source: '행복경 서문' },
     ],
     table: {
-      label: 'a-어간 남성 명사 단수',
+      label: '2과: a-어간 남성 목적격',
       rows: [
-        { case: '주격 (nom.)', ending: '-o', example: 'gāravo (행복경)', meaning: '~이/가' },
-        { case: '목적격 (acc.)', ending: '-aṃ', example: 'samayaṃ (행복경)', meaning: '~을/를' },
-        { case: '구격 (ins.)', ending: '-ena', example: 'kālena (행복경)', meaning: '~에 의해' },
-        { case: '여격 (dat.)', ending: '-ssa/-āya', example: 'devassa', meaning: '~에게' },
-        { case: '탈격 (abl.)', ending: '-ā/-smā/-mhā/-to', example: 'pāpā (행복경)', meaning: '~로부터' },
-        { case: '소유격 (gen.)', ending: '-ssa', example: 'Anāthapiṇḍikassa (행복경)', meaning: '~의' },
-        { case: '처소격 (loc.)', ending: '-e/-smiṃ/-mhi', example: 'Jetavane (행복경)', meaning: '~에서' },
-        { case: '호격 (voc.)', ending: '-a/-ā', example: 'buddha', meaning: '~이여' },
+        { case: '목적격 단수', ending: '-ṃ', example: 'dhammaṃ, Buddhaṃ', meaning: '~을/를' },
+        { case: '목적격 복수', ending: '-e', example: 'deve, nare', meaning: '~들을' },
+        { case: '(참고) 주격 단수', ending: '-o', example: 'dhammo, Buddho', meaning: '~이/가' },
+        { case: '(참고) 주격 복수', ending: '-ā', example: 'devā, narā', meaning: '~들이' },
       ],
     },
-    tip: '-o로 끝나면 남성 주격 단수. 행복경 서문에서 gāravo, vinayo 등 다수 등장',
+    tip: '단수 -ṃ은 가장 자주 보이는 어미. "Buddhaṃ saraṇaṃ gacchāmi"에서 Buddhaṃ, saraṇaṃ 모두 목적격',
     relatedLesson: 'Primer Lesson 2',
   },
 
+  // ═══════════════════════════════════════
+  // 3과: 구격 (~에 의해, ~(으)로)
+  // ═══════════════════════════════════════
+
   {
     type: 'teach-grammar',
-    title: 'a-어간 남성 명사: 복수 격변화',
-    description: '복수형도 규칙적. 주격 -ā, 목적격 -e 를 먼저 익히세요.',
+    title: '3과: 구격 (~에 의해, ~(으)로)',
+    description:
+      '행위의 수단·도구·원인을 나타내는 구격. 단수 -ena, 복수 -ehi/-ebhi.',
     examples: [
-      { pali: 'Bahū devā manussā ca', breakdown: 'deva + ā / manussa + ā', meaning: '많은 천신들과 인간들이 (주격 복수) — 행복경 1게송', highlight: 'ā' },
-      { pali: 'bālānaṃ', breakdown: 'bāla + ānaṃ', meaning: '어리석은 이들의 (소유격 복수) — 행복경 2게송', highlight: 'ānaṃ' },
-      { pali: 'dhammesu', breakdown: 'dhamma + esu', meaning: '법들에 대해 (처소격 복수) — 행복경 7게송', highlight: 'esu' },
-      { pali: 'kammantā', breakdown: 'kammanta + ā', meaning: '생업들이 (주격 복수) — 행복경 5게송', highlight: 'ā' },
+      { pali: 'narena kataṃ', breakdown: 'nara + ena', meaning: '사람에 의해 행해진 (구격 단수)', highlight: 'ena', source: 'Pali Primer L3' },
+      { pali: 'hatthena gaṇhāti', breakdown: 'hattha + ena', meaning: '손으로 잡는다 (구격 단수)', highlight: 'ena', source: 'Pali Primer L3' },
+      { pali: 'kālena dhammasavanaṃ', breakdown: 'kāla + ena', meaning: '때맞춰 법을 들음 (구격) — 행복경 8게송', highlight: 'ena', source: '행복경 8게송' },
     ],
     table: {
-      label: 'a-어간 남성 명사 복수',
+      label: '3과: a-어간 남성 구격',
       rows: [
-        { case: '주격 (nom.)', ending: '-ā/-āse', example: 'devā (행복경)', meaning: '~들이' },
-        { case: '목적격 (acc.)', ending: '-e', example: 'ante (전법륜경)', meaning: '~들을' },
-        { case: '구격 (ins.)', ending: '-ehi/-ebhi', example: 'piyehi (전법륜경)', meaning: '~들에 의해' },
-        { case: '여격 (dat.)', ending: '-ānaṃ', example: 'bālānaṃ (행복경)', meaning: '~들에게' },
-        { case: '탈격 (abl.)', ending: '-ehi/-ebhi', example: 'appiyehi (전법륜경)', meaning: '~들로부터' },
-        { case: '소유격 (gen.)', ending: '-ānaṃ', example: 'pūjanīyānaṃ (행복경)', meaning: '~들의' },
-        { case: '처소격 (loc.)', ending: '-esu', example: 'dhammesu (행복경)', meaning: '~들에서' },
-        { case: '호격 (voc.)', ending: '-ā', example: 'bhikkhave (전법륜경)', meaning: '~들이여' },
+        { case: '구격 단수', ending: '-ena', example: 'narena, hatthena', meaning: '~에 의해, ~(으)로' },
+        { case: '구격 복수', ending: '-ehi/-ebhi', example: 'narehi, piyehi', meaning: '~들에 의해' },
       ],
     },
-    tip: '복수 여격과 소유격은 둘 다 -ānaṃ (같은 형태). 행복경에서 devā, bālānaṃ 등 자주 등장',
-    relatedLesson: 'Primer Lesson 2',
+    tip: '구격은 "~에 의해, ~(으)로". 행복경 kālena(때에 맞춰)가 대표적',
+    relatedLesson: 'Primer Lesson 3',
+  },
+
+  // ═══════════════════════════════════════
+  // 4과: 여격·탈격 (~에게, ~로부터)
+  // ═══════════════════════════════════════
+
+  {
+    type: 'teach-grammar',
+    title: '4과: 여격·탈격 (~에게, ~로부터)',
+    description:
+      '여격은 "~에게" 주는 대상, 탈격은 "~로부터" 떠나는 기점을 나타냅니다.',
+    examples: [
+      { pali: 'devassa dadāti', breakdown: 'deva + ssa', meaning: '신에게 준다 (여격 단수)', highlight: 'ssa', source: 'Pali Primer L4' },
+      { pali: 'pāpā nivāraye', breakdown: 'pāpa + ā', meaning: '악으로부터 물러나야 한다 (탈격) — 행복경 7게송', highlight: 'ā', source: '행복경 7게송' },
+      { pali: 'gāmā gāmaṃ', breakdown: 'gāma + ā / gāma + ṃ', meaning: '마을로부터 마을로 (탈격+목적격)', highlight: 'ā', source: 'Pali Primer L4' },
+    ],
+    table: {
+      label: '4과: a-어간 남성 여격·탈격',
+      rows: [
+        { case: '여격 단수', ending: '-ssa/-āya', example: 'devassa, narāya', meaning: '~에게' },
+        { case: '여격 복수', ending: '-ānaṃ', example: 'devānaṃ, bālānaṃ', meaning: '~들에게' },
+        { case: '탈격 단수', ending: '-ā/-smā/-mhā', example: 'pāpā, lokamhā', meaning: '~로부터' },
+        { case: '탈격 복수', ending: '-ehi/-ebhi', example: 'piyehi, appiyehi', meaning: '~들로부터' },
+      ],
+    },
+    tip: '여격 -ssa와 소유격 -ssa는 같은 형태! 문맥으로 구분. 탈격 -ā는 "~로부터"',
+    relatedLesson: 'Primer Lesson 4',
+  },
+
+  // ═══════════════════════════════════════
+  // 5과: 소유격 (~의)
+  // ═══════════════════════════════════════
+
+  {
+    type: 'teach-grammar',
+    title: '5과: 소유격 (~의)',
+    description:
+      '소유·소속을 나타내는 소유격. 형태는 여격과 같으나 의미가 다릅니다.',
+    examples: [
+      { pali: 'Anāthapiṇḍikassa ārāme', breakdown: 'Anāthapiṇḍika + ssa', meaning: '아나타삔디까의 동산에서 — 행복경 서문', highlight: 'ssa', source: '행복경 서문' },
+      { pali: 'bālānaṃ asevanā', breakdown: 'bāla + ānaṃ', meaning: '어리석은 이들의 가까이하지 않음 — 행복경 2게송', highlight: 'ānaṃ', source: '행복경 2게송' },
+      { pali: 'pūjanīyānaṃ pūjā', breakdown: 'pūjanīya + ānaṃ', meaning: '공양받을 분들의 공양 — 행복경 2게송', highlight: 'ānaṃ', source: '행복경 2게송' },
+    ],
+    table: {
+      label: '5과: a-어간 남성 소유격',
+      rows: [
+        { case: '소유격 단수', ending: '-ssa', example: 'Anāthapiṇḍikassa', meaning: '~의' },
+        { case: '소유격 복수', ending: '-ānaṃ', example: 'bālānaṃ, pūjanīyānaṃ', meaning: '~들의' },
+      ],
+    },
+    tip: '소유격 -ssa = 여격 -ssa와 형태 동일. 복수 -ānaṃ도 여격과 동일. 문맥으로 구분!',
+    relatedLesson: 'Primer Lesson 5',
+  },
+
+  // ═══════════════════════════════════════
+  // 6과: 처소격 (~에서)
+  // ═══════════════════════════════════════
+
+  {
+    type: 'teach-grammar',
+    title: '6과: 처소격 (~에서)',
+    description:
+      '장소·시간·조건을 나타내는 처소격. 경전 서문의 "Jetavane viharati"가 대표적.',
+    examples: [
+      { pali: 'Jetavane viharati', breakdown: 'Jetavana + e', meaning: '제따와나에서 머무신다 — 행복경 서문', highlight: 'e', source: '행복경 서문' },
+      { pali: 'dhammesu ca anudhammapaṭipatti', breakdown: 'dhamma + esu', meaning: '법들에 대한 바른 수행 — 행복경 7게송', highlight: 'esu', source: '행복경 7게송' },
+      { pali: 'tāsu tāsu jātīsu', breakdown: 'jāti + su', meaning: '그 각각의 태어남에서 — 전법륜경 결게', highlight: 'su', source: '전법륜경' },
+    ],
+    table: {
+      label: '6과: a-어간 남성 처소격',
+      rows: [
+        { case: '처소격 단수', ending: '-e/-smiṃ/-mhi', example: 'Jetavane, lokasmiṃ', meaning: '~에서, ~에' },
+        { case: '처소격 복수', ending: '-esu', example: 'dhammesu, saggesu', meaning: '~들에서' },
+      ],
+    },
+    tip: '경전 서문 정형구 "Sāvatthiyaṃ viharati Jetavane"에서 -e가 처소격',
+    relatedLesson: 'Primer Lesson 6',
+  },
+
+  // ═══════════════════════════════════════
+  // 7과: 호격 (~이여)
+  // ═══════════════════════════════════════
+
+  {
+    type: 'teach-grammar',
+    title: '7과: 호격 (~이여)',
+    description:
+      '부르는 대상을 나타내는 호격. 단수는 어간 그대로(-a), 복수는 주격과 같습니다.',
+    examples: [
+      { pali: 'bhikkhave', breakdown: 'bhikkhu + ave (특수)', meaning: '비구들이여 — 전법륜경', highlight: 'ave', source: '전법륜경' },
+      { pali: 'āvuso', breakdown: 'āvusa + o (특수)', meaning: '도반이여, 벗이여', highlight: 'o', source: '경전 대화문' },
+      { pali: 'mārisa', breakdown: 'mārisa + ∅', meaning: '존자여', highlight: 'a', source: 'Pali Primer L7' },
+    ],
+    table: {
+      label: '7과: a-어간 남성 호격',
+      rows: [
+        { case: '호격 단수', ending: '-a/-ā', example: 'buddha, mārisa', meaning: '~이여' },
+        { case: '호격 복수', ending: '-ā (=주격)', example: 'devā', meaning: '~들이여' },
+        { case: '(특수) bhikkhu의 호격', ending: 'bhikkhave', example: '전법륜경', meaning: '비구들이여' },
+      ],
+    },
+    tip: '호격 단수는 어간 그대로(nara→nara!). 경전에서 가장 흔한 호격은 bhikkhave(비구들이여)',
+    relatedLesson: 'Primer Lesson 7',
+  },
+
+  // ═══════════════════════════════════════
+  // 8과: a-어간 남성 전체 격변화 정리
+  // ═══════════════════════════════════════
+
+  {
+    type: 'teach-grammar',
+    title: '8과: a-어간 남성 전체 격변화',
+    description:
+      '2~7과에서 배운 격변화를 단수·복수 한 테이블로 정리합니다.',
+    examples: [
+      { pali: 'Gāravo ca nivāto ca', breakdown: 'gārava + o / nivāta + o', meaning: '존경과 겸손이 (주격) — 행복경 8게송', highlight: 'o', source: '행복경 8게송' },
+      { pali: 'Bahū devā manussā ca', breakdown: 'deva + ā / manussa + ā', meaning: '많은 천신들과 인간들이 (주격 복수) — 행복경 1게송', highlight: 'ā', source: '행복경 1게송' },
+      { pali: 'vinayo ca susikkhito', breakdown: 'vinaya + o / su + sikkhita + o', meaning: '잘 배운 계율이 (주격) — 행복경 4게송', highlight: 'o', source: '행복경 4게송' },
+    ],
+    table: {
+      label: '8과: a-어간 남성 전체 격변화 (nara = 사람)',
+      rows: [
+        { case: '주격 ~이/가', ending: '-o / -ā', example: 'naro / narā', meaning: '단수 / 복수' },
+        { case: '목적격 ~을/를', ending: '-ṃ / -e', example: 'naraṃ / nare', meaning: '단수 / 복수' },
+        { case: '구격 ~에 의해', ending: '-ena / -ehi', example: 'narena / narehi', meaning: '단수 / 복수' },
+        { case: '여격 ~에게', ending: '-ssa / -ānaṃ', example: 'narassa / narānaṃ', meaning: '단수 / 복수' },
+        { case: '탈격 ~로부터', ending: '-ā,-smā / -ehi', example: 'narā / narehi', meaning: '단수 / 복수' },
+        { case: '소유격 ~의', ending: '-ssa / -ānaṃ', example: 'narassa / narānaṃ', meaning: '단수 / 복수' },
+        { case: '처소격 ~에서', ending: '-e,-smiṃ / -esu', example: 'nare / naresu', meaning: '단수 / 복수' },
+        { case: '호격 ~이여', ending: '-a / -ā', example: 'nara / narā', meaning: '단수 / 복수' },
+      ],
+    },
+    tip: '여격과 소유격의 어미가 같고(-ssa/-ānaṃ), 구격과 탈격의 복수 어미도 같습니다(-ehi). 문맥으로 구분!',
+    relatedLesson: 'Primer Lesson 8',
   },
 
   // ═══════════════════════════════════════
