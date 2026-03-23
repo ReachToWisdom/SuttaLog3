@@ -96,6 +96,34 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
 
   {
     type: 'teach-grammar',
+    title: '-nā 어간 동사: jānāti, suṇāti',
+    description:
+      '일부 동사는 현재형 어간에 -nā가 나타납니다. 하지만 과거형·분사에서는 -nā가 탈락하므로, 같은 동사인지 알아보기 어려울 수 있습니다.',
+    examples: [
+      { pali: 'jānāti', breakdown: 'ñā + nā + ti', meaning: '(그가) 안다', highlight: 'nā', source: 'Pali Primer L13' },
+      { pali: 'suṇāti', breakdown: 'su + ṇā + ti', meaning: '(그가) 듣는다', highlight: 'ṇā', source: 'Pali Primer L13' },
+      { pali: 'kīṇāti', breakdown: 'ki + ṇā + ti', meaning: '(그가) 산다(買)', highlight: 'ṇā', source: 'Pali Primer L13' },
+      { pali: 'aññāsi', breakdown: 'a + ñā + si (과거형 — nā 탈락)', meaning: '(그가) 알았다 — 전법륜경 결게', highlight: '과거: nā 탈락', source: '전법륜경(SN 56.11) 결게' },
+    ],
+    table: {
+      label: '-nā 어간 동사: 현재형 vs 과거형/분사',
+      rows: [
+        { case: '알다 (현재)', ending: 'jānāti', example: 'jānāti (Pali Primer)', meaning: '-nā 있음' },
+        { case: '알다 (과거)', ending: 'aññāsi', example: 'aññāsi (전법륜경)', meaning: '-nā 탈락' },
+        { case: '알다 (과거분사)', ending: 'ñāta', example: 'ñātaṃ (Pali Primer)', meaning: '-nā 탈락' },
+        { case: '듣다 (현재)', ending: 'suṇāti', example: 'suṇāti (Pali Primer)', meaning: '-nā 있음' },
+        { case: '듣다 (과거)', ending: 'assosi', example: 'assosi (Pali Primer)', meaning: '-nā 탈락' },
+        { case: '듣다 (과거분사)', ending: 'suta', example: 'sutaṃ (행복경 서문)', meaning: '-nā 탈락' },
+        { case: '사다 (현재)', ending: 'kīṇāti', example: 'kīṇāti (Pali Primer)', meaning: '-nā 있음' },
+        { case: '사다 (과거분사)', ending: 'kīta', example: 'kītaṃ (Pali Primer)', meaning: '-nā 탈락' },
+      ],
+    },
+    tip: 'jānāti(현재) → aññāsi(과거) → ñāta(분사): 같은 어근 ñā인데 형태가 매우 다릅니다. 현재형에만 -nā가 나타나는 것이 핵심!',
+    relatedLesson: 'Primer Lesson 13',
+  },
+
+  {
+    type: 'teach-grammar',
     title: '자주 나오는 동사 10선',
     description: '경전에서 반복적으로 등장하는 핵심 동사들.',
     examples: [
@@ -286,6 +314,31 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
     },
     tip: '경전에서 3인칭 -i와 -uṃ이 가장 많이 보인다. 전법륜경 "udapādi"는 15회 반복!',
     relatedLesson: 'Primer Lesson 7',
+  },
+
+  {
+    type: 'teach-grammar',
+    title: '어두첨자 a- (과거시제 표지)',
+    description:
+      '과거형 동사에는 어두에 a-가 붙기도 합니다. 이것은 부정 접두사 a-(aniccaṃ의 a-)와 다른 것으로, 과거 시제를 나타내는 표지입니다. 문맥으로 구분해야 합니다.',
+    examples: [
+      { pali: 'acintayuṃ', breakdown: 'a(과거표지) + cintay + uṃ', meaning: '(그들이) 생각했다 — a-는 과거시제', highlight: 'a-', source: '행복경(Maṅgala Sutta) 1게송' },
+      { pali: 'āmantesi', breakdown: 'ā(과거표지) + mantes + i', meaning: '(세존께서) 말씀하셨다', highlight: 'ā-', source: '전법륜경(SN 56.11) 서문' },
+      { pali: 'aniccaṃ', breakdown: 'a(부정) + nicca(영원한) + ṃ', meaning: '무상한 — a-는 부정 접두사', highlight: 'a-', source: '무아경(SN 22.59)' },
+      { pali: 'anattā', breakdown: 'an(부정) + attā(자아)', meaning: '무아 — a-는 부정 접두사', highlight: 'an-', source: '무아경(SN 22.59)' },
+    ],
+    table: {
+      label: '과거시제 a- vs 부정 a- 구분',
+      rows: [
+        { case: '과거시제 a-', ending: 'a- + 동사', example: 'acintayuṃ (행복경)', meaning: '생각했다 (과거)' },
+        { case: '과거시제 a-', ending: 'a- + 동사', example: 'apaci (Pali Primer)', meaning: '요리했다 (과거)' },
+        { case: '과거시제 a-', ending: 'a- + 동사', example: 'apaciṃsu (Pali Primer)', meaning: '(그들이) 요리했다' },
+        { case: '부정 a-', ending: 'a- + 명사/형용사', example: 'aniccaṃ (무아경)', meaning: '무상한 (not nicca)' },
+        { case: '부정 an-', ending: 'an- + 모음', example: 'anattā (무아경)', meaning: '무아 (not attā)' },
+      ],
+    },
+    tip: 'a-로 시작하는 단어를 볼 때: 동사이면 과거시제(agacchi = 갔다), 명사/형용사이면 부정(anicca = 무상한). 문맥으로 구분!',
+    relatedLesson: 'Primer Lesson 17',
   },
 
   {
@@ -504,5 +557,176 @@ export const PRIMER_GRAMMAR: TeachGrammarStep[] = [
     },
     tip: '여성 u-어간 구격~소유격 -uyā = i-어간의 -iyā, ā-어간의 -āya와 같은 패턴!',
     relatedLesson: 'Primer Lesson 10',
+  },
+
+  // ═══════════════════════════════════════
+  // ī-어간 여성 명사 (Lesson 20)
+  // ═══════════════════════════════════════
+
+  {
+    type: 'teach-grammar',
+    title: 'ī-어간 여성 명사: nadī(강), devī(여신)',
+    description:
+      '장모음 -ī로 끝나는 여성 명사입니다. 단모음 i-어간 여성과 비슷하지만, 목적격에서 -iṃ/-iyaṃ 두 형태가 있고, 복수 주격에서 -iyo/-ī 등이 나타납니다.',
+    examples: [
+      { pali: 'nadī', breakdown: 'nadī (어간)', meaning: '강이 (주격)', highlight: 'ī' },
+      { pali: 'nadiṃ', breakdown: 'nad + iṃ', meaning: '강을 (목적격)', highlight: 'iṃ' },
+      { pali: 'nadiyā', breakdown: 'nad + iyā', meaning: '강의/강에 의해 (소유격/구격)', highlight: 'iyā' },
+      { pali: 'mahī', breakdown: 'mahī (어간)', meaning: '대지가 (주격)', highlight: 'ī' },
+    ],
+    table: {
+      label: 'ī-어간 여성 명사 단수',
+      rows: [
+        { case: '주격 (nom.)', ending: '-ī', example: 'nadī', meaning: '~이/가' },
+        { case: '목적격 (acc.)', ending: '-iṃ/-iyaṃ', example: 'nadiṃ / nadiyaṃ', meaning: '~을/를' },
+        { case: '구격 (ins.)', ending: '-iyā', example: 'nadiyā', meaning: '~에 의해' },
+        { case: '여격 (dat.)', ending: '-iyā', example: 'nadiyā', meaning: '~에게' },
+        { case: '탈격 (abl.)', ending: '-iyā', example: 'nadiyā', meaning: '~로부터' },
+        { case: '소유격 (gen.)', ending: '-iyā', example: 'nadiyā', meaning: '~의' },
+        { case: '처소격 (loc.)', ending: '-iyā/-iyaṃ', example: 'nadiyaṃ', meaning: '~에서' },
+        { case: '호격 (voc.)', ending: '-i', example: 'nadi', meaning: '~이여' },
+      ],
+    },
+    tip: 'ī-어간 여성은 i-어간 여성과 거의 같습니다. 주격만 장모음 -ī, 나머지 격은 -iyā 패턴으로 동일합니다.',
+    relatedLesson: 'Primer Lesson 20',
+  },
+
+  {
+    type: 'teach-grammar',
+    title: 'ī-어간 여성 명사: 복수 격변화',
+    description: '복수 주격은 -iyo/-ī 두 형태. 나머지는 i-어간 여성 복수와 동일합니다.',
+    examples: [
+      { pali: 'nadiyo', breakdown: 'nad + iyo', meaning: '강들이 (주격 복수)', highlight: 'iyo' },
+      { pali: 'nadī', breakdown: 'nadī (복수 주격 이형태)', meaning: '강들이 (주격 복수)', highlight: 'ī' },
+      { pali: 'nadīhi', breakdown: 'nad + īhi', meaning: '강들에 의해 (구격 복수)', highlight: 'īhi' },
+    ],
+    table: {
+      label: 'ī-어간 여성 명사 복수',
+      rows: [
+        { case: '주격 (nom.)', ending: '-iyo/-ī', example: 'nadiyo / nadī', meaning: '~들이' },
+        { case: '목적격 (acc.)', ending: '-iyo/-ī', example: 'nadiyo', meaning: '~들을' },
+        { case: '구격 (ins.)', ending: '-īhi/-ībhi', example: 'nadīhi', meaning: '~들에 의해' },
+        { case: '탈격 (abl.)', ending: '-īhi/-ībhi', example: 'nadīhi', meaning: '~들로부터' },
+        { case: '여격/소유격 (dat./gen.)', ending: '-īnaṃ', example: 'nadīnaṃ', meaning: '~들에게/~들의' },
+        { case: '처소격 (loc.)', ending: '-īsu', example: 'nadīsu', meaning: '~들에서' },
+        { case: '호격 (voc.)', ending: '= 주격', example: 'nadiyo', meaning: '~들이여' },
+      ],
+    },
+    tip: 'ī-어간 여성 복수는 i-어간 여성 복수와 완전히 같은 패턴입니다.',
+    relatedLesson: 'Primer Lesson 20',
+  },
+
+  // ═══════════════════════════════════════
+  // ū-어간 남성 명사 (Lesson 27-28)
+  // ═══════════════════════════════════════
+
+  {
+    type: 'teach-grammar',
+    title: 'ū-어간 남성 명사: abhibhū(정복자), sayambhū(자존자)',
+    description:
+      '장모음 -ū로 끝나는 남성 명사입니다. u-어간과 유사하지만, 복수 주격에서 -ū/-uvo/-uno/-ūno 등 이형태가 더 다양합니다. 주로 행위자를 나타내는 단어에 쓰입니다.',
+    examples: [
+      { pali: 'abhibhū', breakdown: 'abhibhū (어간)', meaning: '정복자가 (주격)', highlight: 'ū' },
+      { pali: 'abhibhuṃ', breakdown: 'abhibh + uṃ', meaning: '정복자를 (목적격)', highlight: 'uṃ' },
+      { pali: 'abhibhunā', breakdown: 'abhibh + unā', meaning: '정복자에 의해 (구격)', highlight: 'unā' },
+      { pali: 'sayambhū', breakdown: 'sayam + bhū', meaning: '자존자가, 스스로 존재하는 분 (주격)', highlight: 'ū' },
+    ],
+    table: {
+      label: 'ū-어간 남성 명사 단수',
+      rows: [
+        { case: '주격 (nom.)', ending: '-ū', example: 'abhibhū', meaning: '~이/가' },
+        { case: '목적격 (acc.)', ending: '-uṃ', example: 'abhibhuṃ', meaning: '~을/를' },
+        { case: '구격 (ins.)', ending: '-unā', example: 'abhibhunā', meaning: '~에 의해' },
+        { case: '여격 (dat.)', ending: '-uno/-ussa', example: 'abhibhuno', meaning: '~에게' },
+        { case: '탈격 (abl.)', ending: '-unā/-umhā/-usmā', example: 'abhibhunā', meaning: '~로부터' },
+        { case: '소유격 (gen.)', ending: '-uno/-ussa', example: 'abhibhuno', meaning: '~의' },
+        { case: '처소격 (loc.)', ending: '-umhi/-usmiṃ', example: 'abhibhumhi', meaning: '~에서' },
+        { case: '호격 (voc.)', ending: '-u', example: 'abhibhu', meaning: '~이여' },
+      ],
+    },
+    tip: 'ū-어간 단수는 u-어간과 동일한 격변화입니다. 주격만 장모음 -ū로 끝나는 것이 차이점입니다.',
+    relatedLesson: 'Primer Lesson 27-28',
+  },
+
+  {
+    type: 'teach-grammar',
+    title: 'ū-어간 남성 명사: 복수 격변화',
+    description: '복수에서 -ū/-uvo/-uno/-ūno 등 이형태가 다양합니다. u-어간 복수보다 형태가 더 많습니다.',
+    examples: [
+      { pali: 'abhibhū', breakdown: 'abhibh + ū (복수 주격)', meaning: '정복자들이 (주격 복수)', highlight: 'ū' },
+      { pali: 'abhibhuvo', breakdown: 'abhibh + uvo', meaning: '정복자들이 (주격 복수 이형태)', highlight: 'uvo' },
+      { pali: 'abhibhūnaṃ', breakdown: 'abhibh + ūnaṃ', meaning: '정복자들의 (소유격 복수)', highlight: 'ūnaṃ' },
+    ],
+    table: {
+      label: 'ū-어간 남성 명사 복수',
+      rows: [
+        { case: '주격 (nom.)', ending: '-ū/-uvo/-uno/-ūno', example: 'abhibhū / abhibhuvo', meaning: '~들이' },
+        { case: '목적격 (acc.)', ending: '-ū/-uvo', example: 'abhibhū', meaning: '~들을' },
+        { case: '구격 (ins.)', ending: '-ūhi/-ūbhi', example: 'abhibhūhi', meaning: '~들에 의해' },
+        { case: '탈격 (abl.)', ending: '-ūhi/-ūbhi', example: 'abhibhūhi', meaning: '~들로부터' },
+        { case: '여격/소유격 (dat./gen.)', ending: '-ūnaṃ', example: 'abhibhūnaṃ', meaning: '~들에게/~들의' },
+        { case: '처소격 (loc.)', ending: '-ūsu', example: 'abhibhūsu', meaning: '~들에서' },
+        { case: '호격 (voc.)', ending: '= 주격', example: 'abhibhū', meaning: '~들이여' },
+      ],
+    },
+    tip: 'ū-어간 복수 주격은 -ū/-uvo/-uno/-ūno 4가지 형태가 있습니다. u-어간 복수(-avo/-ū)보다 이형태가 많습니다.',
+    relatedLesson: 'Primer Lesson 27-28',
+  },
+
+  // ═══════════════════════════════════════
+  // u-어간 중성 명사 (Lesson 29)
+  // ═══════════════════════════════════════
+
+  {
+    type: 'teach-grammar',
+    title: 'u-어간 중성 명사: cakkhu(눈), āyu(수명)',
+    description:
+      '-u로 끝나는 중성 명사입니다. 중성의 특징대로 주격 = 목적격이며, 복수 주격/목적격은 -ūni/-ū로 끝납니다. 나머지 격은 u-어간 남성과 유사합니다.',
+    examples: [
+      { pali: 'cakkhu', breakdown: 'cakkhu (어간)', meaning: '눈이 (주격)', highlight: 'u' },
+      { pali: 'cakkhuṃ', breakdown: 'cakkh + uṃ', meaning: '눈이/눈을 (주격/목적격)', highlight: 'uṃ' },
+      { pali: 'cakkhuṃ udapādi', breakdown: 'cakkhu(눈이) + udapādi(생겨났다)', meaning: '눈이 생겨났다', highlight: 'cakkhuṃ', source: '전법륜경(SN 56.11) 삼전' },
+      { pali: 'āyu', breakdown: 'āyu (어간)', meaning: '수명이 (주격)', highlight: 'u' },
+    ],
+    table: {
+      label: 'u-어간 중성 명사 단수',
+      rows: [
+        { case: '주격 (nom.)', ending: '-u/-uṃ', example: 'cakkhu / cakkhuṃ', meaning: '~이/가' },
+        { case: '목적격 (acc.)', ending: '-u/-uṃ', example: 'cakkhuṃ (전법륜경)', meaning: '~을/를 (= 주격)' },
+        { case: '구격 (ins.)', ending: '-unā', example: 'cakkhunā', meaning: '~에 의해' },
+        { case: '여격 (dat.)', ending: '-uno/-ussa', example: 'cakkhussa', meaning: '~에게' },
+        { case: '탈격 (abl.)', ending: '-unā/-umhā/-usmā', example: 'cakkhunā', meaning: '~로부터' },
+        { case: '소유격 (gen.)', ending: '-uno/-ussa', example: 'cakkhuno', meaning: '~의' },
+        { case: '처소격 (loc.)', ending: '-umhi/-usmiṃ', example: 'cakkhumhi', meaning: '~에서' },
+        { case: '호격 (voc.)', ending: '-u', example: 'cakkhu', meaning: '~이여' },
+      ],
+    },
+    tip: '전법륜경 삼전에서 "cakkhuṃ udapādi"(눈이 생겨났다)가 반복됩니다. 중성은 주격 = 목적격!',
+    relatedLesson: 'Primer Lesson 29',
+  },
+
+  {
+    type: 'teach-grammar',
+    title: 'u-어간 중성 명사: 복수 격변화',
+    description: '복수 주격/목적격은 -ūni/-ū로 끝납니다. 나머지는 남성 복수와 동일합니다.',
+    examples: [
+      { pali: 'dārūni', breakdown: 'dār + ūni', meaning: '나무들이 (주격 복수)', highlight: 'ūni' },
+      { pali: 'dārū', breakdown: 'dārū (복수 주격 이형태)', meaning: '나무들이 (주격 복수)', highlight: 'ū' },
+      { pali: 'dārūnaṃ', breakdown: 'dār + ūnaṃ', meaning: '나무들의 (소유격 복수)', highlight: 'ūnaṃ' },
+    ],
+    table: {
+      label: 'u-어간 중성 명사 복수',
+      rows: [
+        { case: '주격 (nom.)', ending: '-ūni/-ū', example: 'dārūni / dārū', meaning: '~들이' },
+        { case: '목적격 (acc.)', ending: '-ūni/-ū', example: 'dārūni', meaning: '~들을 (= 주격)' },
+        { case: '구격 (ins.)', ending: '-ūhi/-ūbhi', example: 'dārūhi', meaning: '~들에 의해' },
+        { case: '탈격 (abl.)', ending: '-ūhi/-ūbhi', example: 'dārūhi', meaning: '~들로부터' },
+        { case: '여격/소유격 (dat./gen.)', ending: '-ūnaṃ', example: 'dārūnaṃ', meaning: '~들에게/~들의' },
+        { case: '처소격 (loc.)', ending: '-ūsu', example: 'dārūsu', meaning: '~들에서' },
+        { case: '호격 (voc.)', ending: '= 주격', example: 'dārūni', meaning: '~들이여' },
+      ],
+    },
+    tip: 'u-어간 중성 복수 -ūni는 a-어간 중성 복수 -āni와 같은 패턴입니다. 어간 모음만 다를 뿐!',
+    relatedLesson: 'Primer Lesson 29',
   },
 ]

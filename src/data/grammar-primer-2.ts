@@ -112,6 +112,36 @@ export const PRIMER_GRAMMAR_2: TeachGrammarStep[] = [
     tip: 'kiṃ + ci → kiñci (비음동화). Taṃ kiṃ maññatha는 무아경의 반복 정형 의문구입니다.',
   },
 
+  // ── Lesson 32: 대명사적 형용사 ──
+
+  {
+    type: 'teach-grammar',
+    title: '대명사적 형용사: sabba, aññatara, para',
+    description:
+      '일부 형용사는 대명사처럼 격변화합니다. 특히 탈격 -smā/-smā, 처소격 -smiṃ 형태를 사용하는 것이 특징입니다. sabba(모든), aññatara(어떤), katara(어느), para(다른) 등이 해당됩니다.',
+    examples: [
+      { pali: 'sabbesaṃ', breakdown: 'sabba + esaṃ (소유격 복수)', meaning: '모든 것들의', highlight: 'esaṃ', source: '경전 정형구' },
+      { pali: 'sabbattha', breakdown: 'sabba + ttha (처소 부사)', meaning: '어디서나, 모든 곳에서', highlight: 'sabbattha', source: '행복경(Maṅgala Sutta) 결게' },
+      { pali: 'sabbesu dhammesu', breakdown: 'sabba + esu (처소격 복수) + dhamma + esu', meaning: '모든 법들에 있어서', highlight: 'sabbesu', source: '사념처경(DN 22)' },
+      { pali: 'sabbatthamaparājitā', breakdown: 'sabbattha(어디서나) + a(부정) + parājita(패한) + ā', meaning: '어디서나 패하지 않은', highlight: 'sabbattha', source: '행복경(Maṅgala Sutta) 결게' },
+    ],
+    table: {
+      label: '대명사적 형용사 sabba (모든) 남성 격변화',
+      rows: [
+        { case: '주격 단수', ending: 'sabbo', example: 'sabbo dhammo', meaning: '모든 법이' },
+        { case: '목적격 단수', ending: 'sabbaṃ', example: 'sabbaṃ dukkhaṃ', meaning: '모든 괴로움을' },
+        { case: '구격 단수', ending: 'sabbena', example: 'sabbena kammena', meaning: '모든 행위에 의해' },
+        { case: '소유격 단수', ending: 'sabbassa', example: 'sabbassa lokassa', meaning: '모든 세계의' },
+        { case: '탈격 단수', ending: 'sabbasmā/-smā', example: 'sabbasmā', meaning: '모든 것으로부터' },
+        { case: '처소격 단수', ending: 'sabbasmiṃ/-smiṃ', example: 'sabbasmiṃ', meaning: '모든 것에서' },
+        { case: '주격 복수', ending: 'sabbe', example: 'sabbe bhikkhū', meaning: '모든 비구들이' },
+        { case: '소유격 복수', ending: 'sabbesaṃ', example: 'sabbesaṃ (경전 정형구)', meaning: '모든 것들의' },
+      ],
+    },
+    tip: '대명사적 형용사는 탈격 -smā, 처소격 -smiṃ을 사용하는 것이 일반 형용사와 다릅니다. sabba는 경전에서 매우 빈번합니다.',
+    relatedLesson: 'Primer Lesson 32',
+  },
+
   // ── Lesson 14-15: 현재분사/과거분사 ──
 
   // 스텝1: 현재분사
