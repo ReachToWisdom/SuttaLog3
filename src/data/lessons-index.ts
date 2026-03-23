@@ -315,20 +315,40 @@ function buildLesson11(): Step[] {
 }
 
 // ══════════════════════════════════════════
-// 교재 12~13과: 동사 현재형
-// PRIMER_GRAMMAR[7-8]: 동사 현재형 기본/10선
+// 교재 12과: 동사 현재형 기본
+// PRIMER_GRAMMAR[7]: 동사 현재형 기본 활용
 // ══════════════════════════════════════════
-function buildLesson1213(): Step[] {
+function buildLesson12(): Step[] {
   const steps: Step[] = []
   steps.push({
     type: 'intro',
-    title: '12~13과: 동사 현재형',
-    subtitle: '인칭·수에 따른 활용변화',
-    description: '빠알리어 동사 현재형의 인칭·수별 활용을 배우고, 경전에서 가장 자주 나오는 동사 10개를 익힙니다.',
+    title: '12과: 동사 현재형',
+    subtitle: '1/2/3인칭 단수+복수 활용',
+    description: '빠알리어 동사 현재형의 인칭·수별 활용을 배웁니다. gacchati(간다), passati(본다) 등의 기본 활용입니다.',
     icon: '📐',
   })
-  steps.push(...PRIMER_GRAMMAR.slice(7, 9))
-  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(7, 9)))
+  steps.push(PRIMER_GRAMMAR[7])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR[7]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 13과: 특수 동사
+// PRIMER_GRAMMAR[8]: -nā 어간 동사
+// PRIMER_GRAMMAR[9]: 자주 나오는 동사 10선
+// ══════════════════════════════════════════
+function buildLesson13(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '13과: 특수 동사',
+    subtitle: 'atthi/karoti 불규칙 · -nā어간',
+    description: '-nā어간 동사(jānāti=안다, suṇāti=듣다)와 불규칙 동사, 경전에서 자주 나오는 동사 10개를 익힙니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR[8])
+  steps.push(PRIMER_GRAMMAR[9])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR[8], PRIMER_GRAMMAR[9]]))
   return steps
 }
 
@@ -655,31 +675,121 @@ function buildLesson23(): Step[] {
 }
 
 // ══════════════════════════════════════════
-// 교재 24~29과: i/u-어간 격변화 + 자음어간
-// PRIMER_GRAMMAR[16]: i-어간 남성/중성
-// PRIMER_GRAMMAR[18-19]: u-어간 남성/여성
-// PRIMER_GRAMMAR_2[14-15]: 자음어간 명사
+// 교재 24과: u-어간 여성명사
+// PRIMER_GRAMMAR[24]: u-어간 여성
 // ══════════════════════════════════════════
-function buildLesson2429(): Step[] {
+function buildLesson24(): Step[] {
   const steps: Step[] = []
   steps.push({
     type: 'intro',
-    title: '24~29과: i/u-어간 · 자음어간 격변화',
-    subtitle: '다양한 어간의 명사',
-    description: 'i-어간(남성/중성), u-어간(남성/여성), 자음어간(-ant/-mant/-vant, -in/-ar) 명사의 격변화를 배웁니다.',
+    title: '24과: u-어간 여성명사',
+    subtitle: 'dhenu=암소, dhātu=요소',
+    description: '-u로 끝나는 여성 명사의 격변화를 배웁니다. dhātu(요소)는 사념처경 요소관찰에서 핵심 단어입니다.',
     icon: '📐',
   })
-  // i-어간 남성/중성
-  steps.push(PRIMER_GRAMMAR[16])
-  // u-어간 남성, u-어간 여성
+  steps.push(PRIMER_GRAMMAR[24])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR[24]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 25과: i-어간 남성명사
+// PRIMER_GRAMMAR[18]: i-어간 남성/중성 단수
+// PRIMER_GRAMMAR[19]: i-어간 남성 복수
+// ══════════════════════════════════════════
+function buildLesson25(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '25과: i-어간 남성명사',
+    subtitle: 'aggi=불, gahapati=가주',
+    description: '-i로 끝나는 남성 명사의 격변화를 배웁니다. aggi(불), gahapati(가주), muni(성자) 등이 대표적입니다.',
+    icon: '📐',
+  })
   steps.push(...PRIMER_GRAMMAR.slice(18, 20))
-  // 자음어간 명사 2스텝
-  steps.push(...PRIMER_GRAMMAR_2.slice(14, 16))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(18, 20)))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 26과: ī-어간 명사
+// PRIMER_GRAMMAR[25]: ī-어간 여성 단수
+// PRIMER_GRAMMAR[26]: ī-어간 여성 복수
+// ══════════════════════════════════════════
+function buildLesson26(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '26과: ī-어간 명사',
+    subtitle: 'nadī=강, devī=여신',
+    description: '-ī로 끝나는 명사의 격변화를 배웁니다. nadī(강), devī(여신), senānī(장수) 등이 대표적입니다.',
+    icon: '📐',
+  })
+  steps.push(...PRIMER_GRAMMAR.slice(25, 27))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(25, 27)))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 27과: u-어간 남성명사 + ū-어간
+// PRIMER_GRAMMAR[22]: u-어간 남성 단수
+// PRIMER_GRAMMAR[23]: u-어간 남성 복수
+// PRIMER_GRAMMAR[27]: ū-어간 남성 단수
+// PRIMER_GRAMMAR[28]: ū-어간 남성 복수
+// ══════════════════════════════════════════
+function buildLesson27(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '27과: u/ū-어간 남성명사',
+    subtitle: 'bhikkhu=비구, abhibhū=정복자',
+    description: '-u로 끝나는 남성 명사(bhikkhu=비구)와 -ū로 끝나는 남성 명사(abhibhū=정복자)의 격변화를 배웁니다.',
+    icon: '📐',
+  })
+  steps.push(...PRIMER_GRAMMAR.slice(22, 24))
+  steps.push(...PRIMER_GRAMMAR.slice(27, 29))
   steps.push(...generateGrammarQuizzes([
-    PRIMER_GRAMMAR[16],
-    ...PRIMER_GRAMMAR.slice(18, 20),
-    ...PRIMER_GRAMMAR_2.slice(14, 16),
+    ...PRIMER_GRAMMAR.slice(22, 24),
+    ...PRIMER_GRAMMAR.slice(27, 29),
   ]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 28과: 자음어간 명사
+// PRIMER_GRAMMAR_2[15]: -ant/-mant/-vant
+// PRIMER_GRAMMAR_2[16]: -in/-ar
+// ══════════════════════════════════════════
+function buildLesson28(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '28과: 자음어간 명사',
+    subtitle: 'satthā=스승, mātā=어머니',
+    description: '-ant/-mant/-vant, -in/-ar로 끝나는 자음어간 명사의 격변화를 배웁니다. bhagavant(세존), satthā(스승) 등이 대표적입니다.',
+    icon: '📐',
+  })
+  steps.push(...PRIMER_GRAMMAR_2.slice(15, 17))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR_2.slice(15, 17)))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 29과: i/u-어간 중성명사
+// PRIMER_GRAMMAR[29]: u-어간 중성 단수
+// PRIMER_GRAMMAR[30]: u-어간 중성 복수
+// ══════════════════════════════════════════
+function buildLesson29(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '29과: 중성명사 (i/u-어간)',
+    subtitle: 'akkhi=눈, cakkhu=눈, āyu=수명',
+    description: '-i/-u로 끝나는 중성 명사의 격변화를 배웁니다. cakkhu(눈), āyu(수명), aṭṭhi(뼈) 등이 대표적입니다.',
+    icon: '📐',
+  })
+  steps.push(...PRIMER_GRAMMAR.slice(29, 31))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR.slice(29, 31)))
   return steps
 }
 
@@ -719,31 +829,77 @@ function buildAnattaSteps(): Step[] {
 }
 
 // ══════════════════════════════════════════
-// 교재 30~32과: 형용사·대명사·복합어·연성법·총정리
-// PRIMER_GRAMMAR[13]: 형용사
-// PRIMER_GRAMMAR_2[0-3]: 대명사 4종
-// PRIMER_GRAMMAR_3 전체: 복합어~총정리
+// 교재 30과: -vantu/-mantu 형용사
+// PRIMER_GRAMMAR[14]: 형용사 — 명사와 같은 격변화
 // ══════════════════════════════════════════
-function buildLesson3032(): Step[] {
+function buildLesson30(): Step[] {
   const steps: Step[] = []
   steps.push({
     type: 'intro',
-    title: '30~32과: 형용사·대명사·복합어·총정리',
-    subtitle: '문법 완성',
-    description: '형용사, 대명사(인칭/지시/관계/의문), 복합어, 연성법, 접두사/접미사, 수사, 비교급, 불변어, 문법 총정리입니다.',
+    title: '30과: 형용사 격변화',
+    subtitle: '-vantu/-mantu: 덕있는, 새김있는',
+    description: '형용사는 수식하는 명사와 성·수·격이 일치합니다. guṇavant(덕있는), satimant(새김있는) 등 -vantu/-mantu 형용사를 배웁니다.',
     icon: '📐',
   })
-  // 형용사
-  steps.push(PRIMER_GRAMMAR[13])
-  // 대명사 4종 (인칭/지시/관계/의문)
-  steps.push(...PRIMER_GRAMMAR_2.slice(0, 4))
-  // 복합어, 연성법, 접두사/접미사, 수사/비교/불변어, 총정리
+  steps.push(PRIMER_GRAMMAR[14])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR[14]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 31과: 대명사 1인칭·2인칭
+// PRIMER_GRAMMAR_2[0]: 인칭 대명사 (나/너)
+// ══════════════════════════════════════════
+function buildLesson31(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '31과: 인칭 대명사',
+    subtitle: 'ahaṃ/mayaṃ · tvaṃ/tumhe',
+    description: '1인칭(ahaṃ=나, mayaṃ=우리)과 2인칭(tvaṃ=너, tumhe=너희) 대명사의 격변화를 배웁니다.',
+    icon: '📐',
+  })
+  steps.push(PRIMER_GRAMMAR_2[0])
+  steps.push(...generateGrammarQuizzes([PRIMER_GRAMMAR_2[0]]))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 교재 32과: 지시·관계·의문 대명사
+// PRIMER_GRAMMAR_2[1]: 지시대명사 (so/sā/taṃ)
+// PRIMER_GRAMMAR_2[2]: 관계대명사 (yo/yā/yaṃ)
+// PRIMER_GRAMMAR_2[3]: 의문대명사 (ko/kā/kiṃ)
+// PRIMER_GRAMMAR_2[4]: 대명사적 형용사 (sabba, añña)
+// ══════════════════════════════════════════
+function buildLesson32(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '32과: 지시·관계·의문 대명사',
+    subtitle: 'so/sā · yo/yā · ko/kā · sabba',
+    description: '3인칭/지시대명사(so/sā/taṃ), 관계대명사(yo/yā/yaṃ), 의문대명사(ko/kā/kiṃ), 대명사적 형용사(sabba/añña)를 배웁니다.',
+    icon: '📐',
+  })
+  steps.push(...PRIMER_GRAMMAR_2.slice(1, 5))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR_2.slice(1, 5)))
+  return steps
+}
+
+// ══════════════════════════════════════════
+// 추가학습: 복합어·연성법·접두사·수사·총정리
+// PRIMER_GRAMMAR_3 전체
+// ══════════════════════════════════════════
+function buildPrimerSummary(): Step[] {
+  const steps: Step[] = []
+  steps.push({
+    type: 'intro',
+    title: '추가학습: 복합어·연성법·총정리',
+    subtitle: '복합어 · 연성법 · 접두사 · 수사 · 격변화·동사 총정리',
+    description: '복합어(4종류), 연성법(모음/자음), 접두사/접미사, 수사, 비교급, 불변어, 명사 격변화·동사 활용 총정리입니다.',
+    icon: '📐',
+  })
   steps.push(...PRIMER_GRAMMAR_3)
-  steps.push(...generateGrammarQuizzes([
-    PRIMER_GRAMMAR[13],
-    ...PRIMER_GRAMMAR_2.slice(0, 4),
-    ...PRIMER_GRAMMAR_3,
-  ]))
+  steps.push(...generateGrammarQuizzes(PRIMER_GRAMMAR_3))
   return steps
 }
 
@@ -844,8 +1000,10 @@ const LESSON_META = [
   // 교재 11과
   { id: 'primer-11', title: '11과: a-어간 중성명사', subtitle: '중성 격변화', icon: '📐', category: 'grammar' as const, builder: buildLesson11 },
 
-  // 교재 12~13과
-  { id: 'primer-12-13', title: '12~13과: 동사 현재형', subtitle: '활용변화', icon: '📐', category: 'grammar' as const, builder: buildLesson1213 },
+  // 교재 12과
+  { id: 'primer-12', title: '12과: 동사 현재형', subtitle: '인칭·수 활용', icon: '📐', category: 'grammar' as const, builder: buildLesson12 },
+  // 교재 13과
+  { id: 'primer-13', title: '13과: 특수 동사', subtitle: '-nā어간·불규칙', icon: '📐', category: 'grammar' as const, builder: buildLesson13 },
 
   // ★ 행복경 삽입 (+ 연성법 보충설명)
   { id: 'mangala', title: 'Maṅgala Sutta', subtitle: '행복경', icon: '🪷', category: 'gatha' as const, builder: buildMangalaSteps },
@@ -887,14 +1045,30 @@ const LESSON_META = [
   // 교재 23과
   { id: 'primer-23', title: '23과: 사역형', subtitle: '-āpeti/-eti', icon: '📐', category: 'grammar' as const, builder: buildLesson23 },
 
-  // 교재 24~29과
-  { id: 'primer-24-29', title: '24~29과: i/u-어간 격변화', subtitle: '다양한 어간', icon: '📐', category: 'grammar' as const, builder: buildLesson2429 },
+  // 교재 24과
+  { id: 'primer-24', title: '24과: u-어간 여성명사', subtitle: 'dhenu·dhātu', icon: '📐', category: 'grammar' as const, builder: buildLesson24 },
+  // 교재 25과
+  { id: 'primer-25', title: '25과: i-어간 남성명사', subtitle: 'aggi·gahapati', icon: '📐', category: 'grammar' as const, builder: buildLesson25 },
+  // 교재 26과
+  { id: 'primer-26', title: '26과: ī-어간 명사', subtitle: 'nadī·devī', icon: '📐', category: 'grammar' as const, builder: buildLesson26 },
+  // 교재 27과
+  { id: 'primer-27', title: '27과: u/ū-어간 남성명사', subtitle: 'bhikkhu·abhibhū', icon: '📐', category: 'grammar' as const, builder: buildLesson27 },
+  // 교재 28과
+  { id: 'primer-28', title: '28과: 자음어간 명사', subtitle: 'satthā·mātā', icon: '📐', category: 'grammar' as const, builder: buildLesson28 },
+  // 교재 29과
+  { id: 'primer-29', title: '29과: 중성명사 (i/u-어간)', subtitle: 'akkhi·cakkhu', icon: '📐', category: 'grammar' as const, builder: buildLesson29 },
 
   // ★ 무아경 삽입
   { id: 'anatta', title: 'Anattalakkhaṇa Sutta', subtitle: '무아경', icon: '🔍', category: 'prose' as const, builder: buildAnattaSteps },
 
-  // 교재 30~32과 + 복합어 + 수사 + 연성법 + 총정리
-  { id: 'primer-30-32', title: '30~32과: 형용사·대명사·복합어·총정리', subtitle: '문법 완성', icon: '📐', category: 'grammar' as const, builder: buildLesson3032 },
+  // 교재 30과
+  { id: 'primer-30', title: '30과: 형용사 격변화', subtitle: '-vantu/-mantu', icon: '📐', category: 'grammar' as const, builder: buildLesson30 },
+  // 교재 31과
+  { id: 'primer-31', title: '31과: 인칭 대명사', subtitle: 'ahaṃ·tvaṃ', icon: '📐', category: 'grammar' as const, builder: buildLesson31 },
+  // 교재 32과
+  { id: 'primer-32', title: '32과: 지시·관계·의문 대명사', subtitle: 'so·yo·ko·sabba', icon: '📐', category: 'grammar' as const, builder: buildLesson32 },
+  // 추가학습: 복합어·연성법·총정리
+  { id: 'primer-extra', title: '추가학습: 복합어·연성법·총정리', subtitle: '문법 완성', icon: '📐', category: 'grammar' as const, builder: buildPrimerSummary },
 
   // ★ 사념처경 1부/2부 삽입
   { id: 'satipatthana-1', title: 'Mahāsatipaṭṭhāna Sutta (1부)', subtitle: '사념처경 · 신념처', icon: '🧘', category: 'prose' as const, builder: buildSatipatthana1Steps },
