@@ -3,10 +3,9 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 const TABS = [
   { path: '/', label: '홈', icon: '🏠' },
-  { path: '/courses', label: '목차', icon: '📚' },
+  { path: '/courses', label: '과목', icon: '📚' },
   { path: '/review', label: '복습', icon: '🔄' },
-  { path: '/stats', label: '기록', icon: '📊' },
-  { path: '/profile', label: '설정', icon: '⚙️' },
+  { path: '/profile', label: '프로필', icon: '👤' },
 ] as const
 
 export default function BottomNav() {

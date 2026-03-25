@@ -150,6 +150,9 @@ export default function Settings() {
         <p className="text-xs" style={{ color: 'var(--color-text-tertiary)' }}>
           빠알리어 공부3 v{APP_VERSION}
         </p>
+        <p className="text-xs mt-1" style={{ color: 'var(--color-text-tertiary)' }}>
+          제작: 혜통
+        </p>
       </div>
     </div>
   )

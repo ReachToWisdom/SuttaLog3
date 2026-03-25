@@ -4,6 +4,7 @@ import { LESSONS } from '../../data/lessons-index'
 import { STORAGE_PREFIX } from '../../config'
 import { QUOTES } from '../../data/quotes'
 import { formatPron, isPronVisible } from '../../utils/pron-display'
+import { getRecentDays } from '../../utils/study-tracker'
 
 /** 단원별 학습 진도 조회 */
 function getProgress(lessonId: string): number {
@@ -250,6 +251,49 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </div>
+      {/* ── 학습 캘린더 (최근 30일) ── */}
+      <div
+        className="rounded-2xl overflow-hidden mt-5 intro-fade-up-delay2"
+        style={{
+          background: 'var(--color-surface)',
+          boxShadow: 'var(--shadow-sm)',
+          border: '1px solid var(--color-border-light)',
+        }}
+      >
+        <div className="p-4">
+          <h3 className="text-xs font-bold mb-3" style={{ color: 'var(--color-text-secondary)' }}>
+            학습 캘린더 (최근 30일)
+          </h3>
+          <div className="flex flex-wrap gap-1.5">
+            {getRecentDays(30).map(day => (
+              <div
+                key={day.date}
+                className="w-5 h-5 rounded-sm"
+                title={`${day.date}: ${day.minutes}분`}
+                style={{
+                  background: day.minutes === 0
+                    ? 'var(--color-border-light)'
+                    : day.minutes < 10
+                      ? 'rgba(192, 107, 10, 0.3)'
+                      : day.minutes < 30
+                        ? 'rgba(192, 107, 10, 0.6)'
+                        : 'var(--color-primary)',
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── 제작자 ── */}
+      <div className="mt-8 mb-4 text-center">
+        <p className="text-xs" style={{ color: 'var(--color-text-tertiary)' }}>
+          제작: 혜통
+        </p>
+        <p className="text-[10px] mt-1" style={{ color: 'var(--color-text-tertiary)' }}>
+          교재: De Silva Pali Primer (백도수 편역)
+        </p>
       </div>
     </div>
   )
