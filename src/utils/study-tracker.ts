@@ -81,3 +81,20 @@ export function getTotalDays(): number {
   const log = getStudyLog()
   return Object.values(log).filter(d => d.minutes > 0).length
 }
+
+/** 특정 월의 학습 날짜 (캘린더용) */
+export function getMonthStudyDates(year: number, month: number): Set<string> {
+  const log = getStudyLog()
+  const prefix = `${year}-${String(month + 1).padStart(2, '0')}`
+  const dates = new Set<string>()
+  for (const date of Object.keys(log)) {
+    if (date.startsWith(prefix) && log[date].minutes > 0) dates.add(date)
+  }
+  return dates
+}
+
+/** 특정 날짜 로그 조회 */
+export function getDayLog(date: string): DailyLog | null {
+  const log = getStudyLog()
+  return log[date] ?? null
+}

@@ -1,10 +1,11 @@
 // 홈 화면 — 프리미엄 학습앱 디자인
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LESSONS } from '../../data/lessons-index'
 import { STORAGE_PREFIX } from '../../config'
 import { QUOTES } from '../../data/quotes'
 import { formatPron, isPronVisible } from '../../utils/pron-display'
-import { getRecentDays } from '../../utils/study-tracker'
+import { getMonthStudyDates, getDayLog, type DailyLog } from '../../utils/study-tracker'
 
 /** 단원별 학습 진도 조회 */
 function getProgress(lessonId: string): number {
@@ -252,39 +253,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* ── 학습 캘린더 (최근 30일) ── */}
-      <div
-        className="rounded-2xl overflow-hidden mt-5 intro-fade-up-delay2"
-        style={{
-          background: 'var(--color-surface)',
-          boxShadow: 'var(--shadow-sm)',
-          border: '1px solid var(--color-border-light)',
-        }}
-      >
-        <div className="p-4">
-          <h3 className="text-xs font-bold mb-3" style={{ color: 'var(--color-text-secondary)' }}>
-            학습 캘린더 (최근 30일)
-          </h3>
-          <div className="flex flex-wrap gap-1.5">
-            {getRecentDays(30).map(day => (
-              <div
-                key={day.date}
-                className="w-5 h-5 rounded-sm"
-                title={`${day.date}: ${day.minutes}분`}
-                style={{
-                  background: day.minutes === 0
-                    ? 'var(--color-border-light)'
-                    : day.minutes < 10
-                      ? 'rgba(192, 107, 10, 0.3)'
-                      : day.minutes < 30
-                        ? 'rgba(192, 107, 10, 0.6)'
-                        : 'var(--color-primary)',
-                }}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* ── 학습 캘린더 ── */}
+      <StudyCalendar />
 
       {/* ── 제작자 ── */}
       <div className="mt-8 mb-4 text-center">
@@ -333,6 +303,89 @@ function StatCard({ icon, label, value, iconBg, delay }: {
       >
         {label}
       </p>
+    </div>
+  )
+}
+
+// ── 학습 캘린더 (SuttaLog2 동일) ──
+const WEEKDAYS = ['일', '월', '화', '수', '목', '금', '토']
+
+function StudyCalendar() {
+  const [viewDate, setViewDate] = useState(new Date())
+  const [selectedDay, setSelectedDay] = useState<DailyLog | null>(null)
+  const year = viewDate.getFullYear()
+  const month = viewDate.getMonth()
+  const studyDates = getMonthStudyDates(year, month)
+  const firstDow = new Date(year, month, 1).getDay()
+  const daysInMonth = new Date(year, month + 1, 0).getDate()
+  const today = new Date().toISOString().slice(0, 10)
+
+  return (
+    <div className="rounded-2xl p-4 mt-5"
+      style={{ background: 'var(--color-surface)', border: '1px solid var(--color-border-light)', boxShadow: 'var(--shadow-sm)' }}>
+      {/* 월 이동 */}
+      <div className="flex items-center justify-between mb-3">
+        <button onClick={() => setViewDate(new Date(year, month - 1, 1))}
+          className="w-8 h-8 flex items-center justify-center rounded-full active:scale-90"
+          style={{ color: 'var(--color-text-secondary)' }}>
+          ←
+        </button>
+        <p className="text-sm font-bold" style={{ color: 'var(--color-text)' }}>{year}년 {month + 1}월</p>
+        <button onClick={() => setViewDate(new Date(year, month + 1, 1))}
+          className="w-8 h-8 flex items-center justify-center rounded-full active:scale-90"
+          style={{ color: 'var(--color-text-secondary)' }}>
+          →
+        </button>
+      </div>
+      {/* 요일 */}
+      <div className="grid grid-cols-7 gap-1 mb-1">
+        {WEEKDAYS.map(d => (
+          <div key={d} className="text-center text-[10px] font-semibold py-1"
+            style={{ color: d === '일' ? '#EF5350' : d === '토' ? '#42A5F5' : 'var(--color-text-tertiary)' }}>{d}</div>
+        ))}
+      </div>
+      {/* 날짜 */}
+      <div className="grid grid-cols-7 gap-1">
+        {Array.from({ length: firstDow }, (_, i) => <div key={`e${i}`} className="aspect-square" />)}
+        {Array.from({ length: daysInMonth }, (_, i) => {
+          const day = i + 1
+          const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`
+          const hasStudy = studyDates.has(dateStr)
+          const isToday = dateStr === today
+          return (
+            <button key={day} onClick={() => setSelectedDay(getDayLog(dateStr))}
+              className="aspect-square flex flex-col items-center justify-center rounded-xl text-xs font-medium transition-all active:scale-90"
+              style={{
+                backgroundColor: hasStudy ? 'color-mix(in srgb, var(--color-primary) 15%, transparent)' : 'transparent',
+                border: isToday ? '2px solid var(--color-primary)' : '2px solid transparent',
+                color: hasStudy ? 'var(--color-primary)' : 'var(--color-text-secondary)',
+                fontWeight: hasStudy ? 700 : 400,
+              }}>
+              {day}
+              {hasStudy && <span className="w-1 h-1 rounded-full mt-0.5" style={{ backgroundColor: 'var(--color-primary)' }} />}
+            </button>
+          )
+        })}
+      </div>
+      {/* 선택 날짜 상세 */}
+      {selectedDay && (
+        <div className="mt-3 pt-3" style={{ borderTop: '1px solid var(--color-border-light)' }}>
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-xs font-bold">{selectedDay.date}</p>
+            <button onClick={() => setSelectedDay(null)} className="text-xs" style={{ color: 'var(--color-text-tertiary)' }}>닫기</button>
+          </div>
+          <div className="flex gap-3 text-center">
+            <div className="flex-1 rounded-xl py-2" style={{ background: 'var(--color-surface-elevated)' }}>
+              <p className="text-base font-bold" style={{ color: 'var(--color-primary)' }}>{selectedDay.sessions}</p>
+              <p className="text-[10px]" style={{ color: 'var(--color-text-secondary)' }}>학습 횟수</p>
+            </div>
+            <div className="flex-1 rounded-xl py-2" style={{ background: 'var(--color-surface-elevated)' }}>
+              <p className="text-base font-bold" style={{ color: 'var(--color-primary)' }}>{selectedDay.minutes}</p>
+              <p className="text-[10px]" style={{ color: 'var(--color-text-secondary)' }}>분</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
