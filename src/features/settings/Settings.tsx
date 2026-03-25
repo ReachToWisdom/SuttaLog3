@@ -148,7 +148,7 @@ export default function Settings() {
       {/* 앱 정보 */}
       <div className="mt-8 text-center">
         <p className="text-xs" style={{ color: 'var(--color-text-tertiary)' }}>
-          빠알리 경전 학습 v{APP_VERSION}
+          빠알리어 공부3 v{APP_VERSION}
         </p>
       </div>
     </div>

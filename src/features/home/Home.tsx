@@ -67,7 +67,7 @@ export default function Home() {
           <span className="text-3xl">{greeting.emoji}</span>
           <div>
             <p className="text-sm opacity-80 font-medium">{greeting.text}</p>
-            <h1 className="text-xl font-bold tracking-tight">빠알리 경전 학습</h1>
+            <h1 className="text-xl font-bold tracking-tight">빠알리어 공부3</h1>
           </div>
         </div>
       </div>
